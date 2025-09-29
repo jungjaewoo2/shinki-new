@@ -112,8 +112,10 @@ public class RequestController {
                 }
                 
                 // 파일 업로드 처리 - 절대경로 사용
-                String webappPath = System.getProperty("user.dir") + "/src/main/webapp";
-                String uploadDir = webappPath + "/uploads/request/";
+                //String webappPath = System.getProperty("user.dir") + "/src/main/webapp";
+                //String uploadDir = webappPath + "/uploads/request/";
+                String uploadDir = uploadPath + "/request/";
+                
                 File dir = new File(uploadDir);
                 if (!dir.exists()) {
                     dir.mkdirs();
@@ -368,7 +370,8 @@ public class RequestController {
              }
              
              // 파일 존재 확인
-             File file = new File("src/main/webapp/uploads/request/" + fileName);
+             //File file = new File("src/main/webapp/uploads/request/" + fileName);
+             File file = new File(uploadPath + "/request/" + fileName);
              if (!file.exists()) {
                  response.sendError(HttpServletResponse.SC_NOT_FOUND, "파일을 찾을 수 없습니다.");
                  return;

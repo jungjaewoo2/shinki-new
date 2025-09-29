@@ -97,6 +97,10 @@ public class InquiryController {
                     dir.mkdirs();
                     logger.info("업로드 디렉토리 생성: {}", uploadDir);
                 }
+
+                System.out.println("=== 파일 업로드 디버깅 ===");
+                System.out.println("업로드 디렉토리: " + uploadDir);
+                System.out.println("디렉토리 존재 여부: " + dir.exists());
                 
                 String fileName = System.currentTimeMillis() + "_" + file.getOriginalFilename();
                 Path filePath = Paths.get(uploadDir + fileName);
@@ -242,7 +246,8 @@ public class InquiryController {
             logger.info("저장된 파일명: {}", fileName);
             
             // 파일명만 저장되므로 경로 추가
-            Path path = Paths.get("src/main/webapp/uploads/inquiry/" + fileName);
+            //Path path = Paths.get("src/main/webapp/uploads/inquiry/" + fileName);
+            Path path = Paths.get(uploadPath + "/inquiry/" + fileName);
             logger.info("찾는 파일 경로: {}", path.toString());
             
             Resource resource = new UrlResource(path.toUri());
