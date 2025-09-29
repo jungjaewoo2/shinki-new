@@ -1,58 +1,68 @@
 package com.shinki.shinki.controller;
 
-import com.shinki.shinki.entity.Admin;
-import com.shinki.shinki.entity.Member;
-import com.shinki.shinki.entity.Request;
-import com.shinki.shinki.entity.Inquiry;
-import com.shinki.shinki.entity.ReplyInquiry;
-import com.shinki.shinki.entity.ReplyRequest;
-import com.shinki.shinki.entity.ConReg;
-import com.shinki.shinki.repository.AdminRepository;
-import com.shinki.shinki.service.AdminService;
-import com.shinki.shinki.service.MemberService;
-import com.shinki.shinki.service.RequestService;
-import com.shinki.shinki.service.InquiryService;
-import com.shinki.shinki.service.ReplyInquiryService;
-import com.shinki.shinki.service.ReplyRequestService;
-import com.shinki.shinki.service.ConRegService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.ui.Model;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import org.springframework.http.ResponseEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.ByteArrayResource;
-import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.time.format.DateTimeFormatter;
-import java.net.URLEncoder;
-import org.springframework.core.io.UrlResource;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.util.List;
-import java.util.Optional;
-import java.util.Date;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.Arrays;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-import java.time.ZoneId;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.shinki.shinki.entity.Admin;
+import com.shinki.shinki.entity.ConReg;
+import com.shinki.shinki.entity.Inquiry;
+import com.shinki.shinki.entity.Member;
+import com.shinki.shinki.entity.ReplyInquiry;
+import com.shinki.shinki.entity.ReplyRequest;
+import com.shinki.shinki.entity.Request;
+import com.shinki.shinki.repository.AdminRepository;
+import com.shinki.shinki.service.AdminService;
+import com.shinki.shinki.service.ConRegService;
+import com.shinki.shinki.service.InquiryService;
+import com.shinki.shinki.service.MemberService;
+import com.shinki.shinki.service.ReplyInquiryService;
+import com.shinki.shinki.service.ReplyRequestService;
+import com.shinki.shinki.service.RequestService;
+
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -84,6 +94,9 @@ public class AdminController {
     
     @Autowired
     private ConRegService conRegService;
+
+    @Value("${file.upload.path}")
+    private String uploadPath;
     
     // 권한 체크 헬퍼 메서드
     private boolean hasAuthority(HttpSession session, String requiredAuthority) {
@@ -485,7 +498,8 @@ public class AdminController {
             logger.info("저장된 파일명: {}", fileName);
             
             // 파일명만 저장되므로 경로 추가
-            Path path = Paths.get("src/main/webapp/uploads/inquiry/" + fileName);
+            //Path path = Paths.get("src/main/webapp/uploads/inquiry/" + fileName);
+            Path path = Paths.get(uploadPath + "/inquiry/" + fileName);
             logger.info("찾는 파일 경로: {}", path.toString());
             
             Resource resource = new UrlResource(path.toUri());
@@ -529,7 +543,8 @@ public class AdminController {
             String fileName = filePath;
             
             // uploads/inquiry 폴더에서 파일 찾기
-            Path path = Paths.get("src/main/webapp/uploads/inquiry/" + fileName);
+            //Path path = Paths.get("src/main/webapp/uploads/inquiry/" + fileName);
+            Path path = Paths.get(uploadPath + "/inquiry/" + fileName);
             logger.info("찾는 파일 경로: {}", path.toString());
             Resource resource = new UrlResource(path.toUri());
             
@@ -573,7 +588,8 @@ public class AdminController {
             logger.info("저장된 파일명: {}", fileName);
             
             // 파일명만 저장되므로 경로 추가
-            Path path = Paths.get("src/main/webapp/uploads/request/" + fileName);
+            //Path path = Paths.get("src/main/webapp/uploads/request/" + fileName);
+            Path path = Paths.get(uploadPath + "/request/" + fileName);
             logger.info("찾는 파일 경로: {}", path.toString());
             
             Resource resource = new UrlResource(path.toUri());
