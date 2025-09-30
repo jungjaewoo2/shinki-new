@@ -433,13 +433,19 @@ public class AdminController {
                                     @RequestParam(value = "replyFile", required = false) MultipartFile replyFile,
                                     RedirectAttributes redirectAttributes) {
         try {
+            // 답변 내용 유효성 검사
+            if (adminReply == null || adminReply.trim().isEmpty()) {
+                redirectAttributes.addFlashAttribute("error", "답변 내용을 입력해주세요.");
+                return "redirect:/admin/inquiry-response-management?id=" + inquiryId;
+            }
+            
             Inquiry inquiry = inquiryService.getInquiryById(inquiryId);
             
             // 상태 업데이트
             inquiry.setStatus(status);
             
             // 관리자 답변 설정
-            inquiry.setAdminReply(adminReply);
+            inquiry.setAdminReply(adminReply.trim());
             
             // 답변일시 설정
             inquiry.setReplyDate(new Date());
@@ -455,13 +461,17 @@ public class AdminController {
             
             // 답변 파일 업로드 처리
             if (replyFile != null && !replyFile.isEmpty()) {
-                String uploadDir = "src/main/webapp/uploads/inquiry/";
+                String uploadDir = uploadPath + "/inquiry/";
                 File dir = new File(uploadDir);
                 if (!dir.exists()) {
                     dir.mkdirs();
                 }
                 
-                String fileName = System.currentTimeMillis() + "_" + replyFile.getOriginalFilename();
+                // 날짜시간_아이디_파일명 형식으로 파일명 생성 (YYYYMMDDHHMM 형식)
+                java.time.LocalDateTime now = java.time.LocalDateTime.now();
+                String timestamp = now.format(java.time.format.DateTimeFormatter.ofPattern("yyyyMMddHHmm"));
+                String adminUsername = "admin"; // 관리자 아이디 (필요시 세션에서 가져올 수 있음)
+                String fileName = timestamp + "_" + adminUsername + "_" + replyFile.getOriginalFilename();
                 Path filePath = Paths.get(uploadDir + fileName);
                 
                 try {
@@ -484,7 +494,7 @@ public class AdminController {
             redirectAttributes.addFlashAttribute("error", "답변 저장 중 오류가 발생했습니다: " + e.getMessage());
         }
         
-        return "redirect:/admin/consultation-request";
+        return "redirect:/admin/inquiry-response-management?id=" + inquiryId;
     }
     
     @GetMapping("/download-inquiry-file")
@@ -815,6 +825,11 @@ public class AdminController {
             if (member.getCreatedAt() != null) {
                 String createdAtStr = member.getCreatedAt().format(java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd"));
                 model.addAttribute("memberCreatedAtStr", createdAtStr);
+            }
+            
+            if (member.getUpdatedAt() != null) {
+                String updatedAtStr = member.getUpdatedAt().format(java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
+                model.addAttribute("memberUpdatedAtStr", updatedAtStr);
             }
             
             model.addAttribute("member", member);
@@ -1412,10 +1427,12 @@ public class AdminController {
             // 각 파일 처리
             for (MultipartFile file : files) {
                 if (!file.isEmpty()) {
-                    // 파일명 중복 방지를 위해 타임스탬프 추가
+                    // 날짜시간_아이디_파일명 형식으로 파일명 생성 (YYYYMMDDHHMM 형식)
                     String originalFileName = file.getOriginalFilename();
-                    String timestamp = String.valueOf(System.currentTimeMillis());
-                    String fileName = timestamp + "_" + originalFileName;
+                    java.time.LocalDateTime now = java.time.LocalDateTime.now();
+                    String timestamp = now.format(java.time.format.DateTimeFormatter.ofPattern("yyyyMMddHHmm"));
+                    String adminUsername = "admin"; // 관리자 아이디 (필요시 세션에서 가져올 수 있음)
+                    String fileName = timestamp + "_" + adminUsername + "_" + originalFileName;
                     
                     // 파일 저장
                     Path targetPath = uploadPath.resolve(fileName);

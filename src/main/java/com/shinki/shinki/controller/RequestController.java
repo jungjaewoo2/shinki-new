@@ -125,7 +125,10 @@ public class RequestController {
                 System.out.println("업로드 디렉토리: " + uploadDir);
                 System.out.println("디렉토리 존재 여부: " + dir.exists());
                 
-                String fileName = System.currentTimeMillis() + "_" + originalFilename;
+                // 날짜시간_아이디_파일명 형식으로 파일명 생성 (YYYYMMDDHHMM 형식)
+                java.time.LocalDateTime now = java.time.LocalDateTime.now();
+                String timestamp = now.format(java.time.format.DateTimeFormatter.ofPattern("yyyyMMddHHmm"));
+                String fileName = timestamp + "_" + username + "_" + originalFilename;
                 Path filePath = Paths.get(uploadDir + fileName);
                 Files.write(filePath, file.getBytes());
                 

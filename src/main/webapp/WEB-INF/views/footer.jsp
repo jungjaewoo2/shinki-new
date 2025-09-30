@@ -182,24 +182,27 @@
 
     function resizeCanvas() {
         const dpi = Math.min(2, window.devicePixelRatio || 1);
-        neuroCanvas.width = window.innerWidth * dpi;
-        neuroCanvas.height = window.innerHeight * dpi;
-        neuroCanvas.style.width = window.innerWidth + 'px';
-        neuroCanvas.style.height = window.innerHeight + 'px';
+        if (neuroCanvas) { // Add null check for neuroCanvas
+            neuroCanvas.width = window.innerWidth * dpi;
+            neuroCanvas.height = window.innerHeight * dpi;
+            neuroCanvas.style.width = window.innerWidth + 'px';
+            neuroCanvas.style.height = window.innerHeight + 'px';
 
-        const count = Math.floor(window.innerWidth * window.innerHeight * particleDensity);
-        particles.length = 0;
-        for (let i = 0; i < count; i++) {
-            particles.push({
-                x: Math.random() * neuroCanvas.width,
-                y: Math.random() * neuroCanvas.height,
-                vx: (Math.random() * 2 - 1) * particleSpeed,
-                vy: (Math.random() * 2 - 1) * particleSpeed
-            });
+            const count = Math.floor(window.innerWidth * window.innerHeight * particleDensity);
+            particles.length = 0;
+            for (let i = 0; i < count; i++) {
+                particles.push({
+                    x: Math.random() * neuroCanvas.width,
+                    y: Math.random() * neuroCanvas.height,
+                    vx: (Math.random() * 2 - 1) * particleSpeed,
+                    vy: (Math.random() * 2 - 1) * particleSpeed
+                });
+            }
         }
     }
 
     function drawNeuroParticles() {
+        if (!neuroCtx || !neuroCanvas) return; // Add null checks
         neuroCtx.clearRect(0, 0, neuroCanvas.width, neuroCanvas.height);
         neuroCtx.fillStyle = 'rgba(255, 255, 255, 0.55)';
         particles.forEach(p => {
@@ -242,13 +245,16 @@
 
     function resizeGridCanvas() {
         const dpi = Math.min(2, window.devicePixelRatio || 1);
-        gridCanvas.width = window.innerWidth * dpi;
-        gridCanvas.height = window.innerHeight * dpi;
-        gridCanvas.style.width = window.innerWidth + 'px';
-        gridCanvas.style.height = window.innerHeight + 'px';
+        if (gridCanvas) { // Add null check for gridCanvas
+            gridCanvas.width = window.innerWidth * dpi;
+            gridCanvas.height = window.innerHeight * dpi;
+            gridCanvas.style.width = window.innerWidth + 'px';
+            gridCanvas.style.height = window.innerHeight + 'px';
+        }
     }
 
     function drawFlowGrid() {
+        if (!gridCtx || !gridCanvas) return; // Add null checks
         gridCtx.clearRect(0, 0, gridCanvas.width, gridCanvas.height);
         gridCtx.strokeStyle = 'rgba(255, 255, 255, 0.06)';
         gridCtx.lineWidth = 1;
@@ -287,12 +293,12 @@
     drawFlowGrid();
 
     // Form submissions (prevent default)
-    document.querySelectorAll('form').forEach(form => {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('폼이 제출되었습니다. (데모 버전)');
-        });
-    });
+    // document.querySelectorAll('form').forEach(form => {
+    //     form.addEventListener('submit', (e) => {
+    //         e.preventDefault();
+    //         alert('폼이 제출되었습니다. (데모 버전)');
+    //     });
+    // });
 
     // Add smooth scroll behavior
     document.documentElement.style.scrollBehavior = 'smooth';
@@ -493,7 +499,7 @@
     });
 
     console.log('SHINKISA Medical 3D Visualization Site - Loaded Successfully');
-    
+
     // 즉시 실행되는 간단한 테스트
     console.log('🧪 DOM 상태 테스트:', {
         readyState: document.readyState,
@@ -501,55 +507,49 @@
         getElementById: typeof document.getElementById
     });
 
-    // 🚀 상담 신청 - 가장 단순한 방식
-    /*
+    // 🚀 상담 신청 - 단순하고 안정적인 방식
     console.log('🔥 상담 신청 스크립트 시작');
     
-    // 즉시 실행되는 간단한 함수
+    // 전역 변수로 설정하여 중복 실행 방지
+    let consultationFormInitialized = false;
+    
     function setupConsultationForm() {
+        if (consultationFormInitialized) {
+            console.log('상담 폼이 이미 초기화됨');
+            return;
+        }
+        
         console.log('🔄 상담 폼 설정 시작');
         
         const submitBtn = document.getElementById('submitConsultation');
         const privacyCheckbox = document.getElementById('privacyAgreement');
         const callCheckbox = document.getElementById('callAgreement');
         
-        console.log('요소 확인:', {
-            submitBtn: !!submitBtn,
-            privacyCheckbox: !!privacyCheckbox,
-            callCheckbox: !!callCheckbox
-        });
-        
-        if (!submitBtn) {
-            console.error('❌ 상담 신청 버튼을 찾을 수 없습니다!');
-            return;
-        }
-        
-        if (!privacyCheckbox || !callCheckbox) {
-            console.error('❌ 체크박스를 찾을 수 없습니다!');
+        if (!submitBtn || !privacyCheckbox || !callCheckbox) {
+            console.log('상담 폼 요소를 찾을 수 없음 - 나중에 다시 시도');
             return;
         }
         
         console.log('✅ 모든 요소 발견됨!');
+        consultationFormInitialized = true;
         
         // 버튼 상태 업데이트 함수
         function updateButton() {
             const bothChecked = privacyCheckbox.checked && callCheckbox.checked;
             submitBtn.disabled = !bothChecked;
             submitBtn.style.opacity = bothChecked ? '1' : '0.6';
-            console.log('버튼 상태:', bothChecked ? '활성화' : '비활성화');
         }
         
-        // 체크박스 이벤트
+        // 체크박스 이벤트 (한 번만 등록)
         privacyCheckbox.addEventListener('change', updateButton);
         callCheckbox.addEventListener('change', updateButton);
         
         // 초기 상태 설정
         updateButton();
         
-        // 🖱️ 버튼 클릭 이벤트 - 가장 단순하게
-        submitBtn.onclick = function(e) {
+        // 버튼 클릭 이벤트 (한 번만 등록)
+        submitBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            console.log('🖱️ 버튼 클릭됨!');
             
             // 체크박스 확인
             if (!privacyCheckbox.checked || !callCheckbox.checked) {
@@ -565,15 +565,31 @@
             const consultationTime = document.getElementById('consultationTime').value;
             const consultationContent = document.getElementById('consultationContent').value.trim();
             
-            console.log('폼 데이터:', { name, hospitalName, phone, consultationDate, consultationTime, consultationContent });
-            
             // 필수 필드 검증
-            if (!name) { alert('이름을 입력해주세요.'); return; }
-            if (!hospitalName) { alert('병원명을 입력해주세요.'); return; }
-            if (!phone) { alert('전화번호를 입력해주세요.'); return; }
-            if (!consultationDate) { alert('상담날짜를 선택해주세요.'); return; }
-            if (!consultationTime) { alert('상담시간을 선택해주세요.'); return; }
-            if (!consultationContent) { alert('상담내용을 입력해주세요.'); return; }
+            if (!name) { 
+                alert('이름을 입력해주세요.'); 
+                return; 
+            }
+            if (!hospitalName) { 
+                alert('병원명을 입력해주세요.'); 
+                return; 
+            }
+            if (!phone) { 
+                alert('전화번호를 입력해주세요.'); 
+                return; 
+            }
+            if (!consultationDate) { 
+                alert('상담날짜를 선택해주세요.'); 
+                return; 
+            }
+            if (!consultationTime) { 
+                alert('상담시간을 선택해주세요.'); 
+                return; 
+            }
+            if (!consultationContent) { 
+                alert('상담내용을 입력해주세요.'); 
+                return; 
+            }
             
             // FormData 생성
             const formData = new FormData();
@@ -584,19 +600,13 @@
             formData.append('consultationTime', consultationTime);
             formData.append('consultationContent', consultationContent);
             
-            console.log('🚀 서버 전송 시작');
-            
             // 서버 전송
             fetch('/consultation/register', {
                 method: 'POST',
                 body: formData
             })
-            .then(response => {
-                console.log('📡 서버 응답:', response.status);
-                return response.json();
-            })
+            .then(response => response.json())
             .then(data => {
-                console.log('📦 응답 데이터:', data);
                 if (data.success) {
                     alert('상담 신청이 완료되었습니다.');
                     // 폼 초기화
@@ -617,20 +627,35 @@
                 }
             })
             .catch(error => {
-                console.error('❌ 오류:', error);
+                console.error('오류:', error);
                 alert('상담 신청 중 오류가 발생했습니다.');
             });
-        };
+        });
         
         console.log('✅ 상담 폼 설정 완료!');
     }
     
-    // 여러 번 시도
-    setupConsultationForm();
-    setTimeout(setupConsultationForm, 500);
-    setTimeout(setupConsultationForm, 1000);
-    setTimeout(setupConsultationForm, 2000);
-    */
+    // DOM 로드 완료 후 실행
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupConsultationForm);
+    } else {
+        setupConsultationForm();
+    }
+    
+    // 모달이 열릴 때마다 폼 상태 업데이트
+    document.addEventListener('shown.bs.modal', function(e) {
+        if (e.target.id === 'consult') {
+            const submitBtn = document.getElementById('submitConsultation');
+            const privacyCheckbox = document.getElementById('privacyAgreement');
+            const callCheckbox = document.getElementById('callAgreement');
+            
+            if (submitBtn && privacyCheckbox && callCheckbox) {
+                const bothChecked = privacyCheckbox.checked && callCheckbox.checked;
+                submitBtn.disabled = !bothChecked;
+                submitBtn.style.opacity = bothChecked ? '1' : '0.6';
+            }
+        }
+    });
 </script>
 
 

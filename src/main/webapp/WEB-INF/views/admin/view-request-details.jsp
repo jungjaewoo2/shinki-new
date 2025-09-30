@@ -494,7 +494,7 @@
                          <div class="upload-icon mb-3">
                              <i class="bi bi-cloud-upload" style="font-size: 3rem; color: #6c757d;"></i>
                          </div>
-                         <p class="mb-3 text-muted">첨부하실 파일을 마우스로 끌어서 넣어주세요.</p>
+                         <!--<p class="mb-3 text-muted">첨부하실 파일을 마우스로 끌어서 넣어주세요.</p>-->
 
                          <div class="mb-3">
                              <input class="form-control" type="file" id="fileInput" multiple style="display: none;" accept="*/*">

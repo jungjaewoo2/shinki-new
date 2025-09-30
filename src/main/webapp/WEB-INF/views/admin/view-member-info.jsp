@@ -85,23 +85,32 @@
                              </tr>
                              <tr>
                                  <th>주소</th>
-                                 <td class="text-start">
-                                     <div class="align-items-baseline d-flex flex-column">
-                                         <!--<div><button class="btn btn-outline-secondary btn-sm">우편번호 검색</button></div>-->
-                                         <div>서울시 성북구 지안빌딩 123번지</div>
-                                     </div>
-                                 </td>
-                                 <th>회원상태</th>
-                                 <td class="text-start">
+                                 <td class="text-start" colspan="3">
                                      <c:choose>
-                                         <c:when test="${member.status eq 'Y'}">
-                                             <span class="badge bg-success">정상</span>
+                                         <c:when test="${not empty member.address}">
+                                             ${member.address}
+                                             <c:if test="${not empty member.addressEtc}">
+                                                 <br>${member.addressEtc}
+                                             </c:if>
                                          </c:when>
                                          <c:otherwise>
-                                             <span class="badge bg-danger">탈퇴</span>
+                                             <span class="text-muted">주소 정보 없음</span>
                                          </c:otherwise>
                                      </c:choose>
                                  </td>
+                             </tr>
+                             <tr>
+                                 <th>회원상태</th>
+                                 <td class="text-start" colspan="3">
+                                    <c:choose>
+                                        <c:when test="${member.status eq 'Y'}">
+                                            <span class="badge bg-success">정상</span>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <span class="badge bg-danger">탈퇴</span>
+                                        </c:otherwise>
+                                    </c:choose>                                 
+                                </td>
                              </tr>
                              <tr>
                                  <th>메모</th>
@@ -144,10 +153,19 @@
                              <th>방문횟수</th>
                              <td class="text-start">${member.visitNum}회</td>
                          </tr>
-                         <tr>
-                             <th>최근 로그인</th>
-                             <td class="text-start">2025-05-01</td>
-                         </tr>
+                        <tr>
+                            <th>최근 수정일</th>
+                            <td class="text-start">
+                                <c:choose>
+                                    <c:when test="${not empty memberUpdatedAtStr}">
+                                        ${memberUpdatedAtStr}
+                                    </c:when>
+                                    <c:otherwise>
+                                        정보 없음
+                                    </c:otherwise>
+                                </c:choose>
+                            </td>
+                        </tr>
                          <tr>
                              <th>총 결제금액</th>
                              <td class="text-start">

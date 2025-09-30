@@ -62,6 +62,12 @@ public class Member {
     @Column(name = "memo", columnDefinition = "TEXT")
     private String memo; // 메모
     
+    @Column(name = "address")
+    private String address; // 주소
+    
+    @Column(name = "address_etc")
+    private String addressEtc; // 상세주소
+    
     @Transient
     private Long requestCount; // 의뢰건수 (DB에 저장되지 않음)
     
@@ -140,6 +146,12 @@ public class Member {
     
     public Long getTotalPaymentAmount() { return totalPaymentAmount; }
     public void setTotalPaymentAmount(Long totalPaymentAmount) { this.totalPaymentAmount = totalPaymentAmount; }
+    
+    public String getAddress() { return address; }
+    public void setAddress(String address) { this.address = address; }
+    
+    public String getAddressEtc() { return addressEtc; }
+    public void setAddressEtc(String addressEtc) { this.addressEtc = addressEtc; }
     
     @PrePersist
     protected void onCreate() {

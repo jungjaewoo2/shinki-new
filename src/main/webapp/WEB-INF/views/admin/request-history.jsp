@@ -54,11 +54,11 @@
                      <tbody class="">
                          <c:forEach var="request" items="${requests}" varStatus="status">
                              <tr onclick="location.href='/admin/view-request-details?id=${request.id}'">
-                                 <td>
-                                     <div class="form-check d-flex justify-content-center">
-                                         <input class="form-check-input" type="checkbox" value="${request.id}" name="selectedRequests">
-                                     </div>
-                                 </td>
+                                <td>
+                                    <div class="form-check d-flex justify-content-center">
+                                        <input class="form-check-input" type="checkbox" value="${request.id}" name="selectedRequests" onclick="event.stopPropagation();">
+                                    </div>
+                                </td>
                                  <td>${totalElements - (currentPage * size) - status.index}</td>
                                  <td>${request.applicationType}</td>
                                  <td>${request.member != null ? request.member.hospitalName : '-'}</td>

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <jsp:include page="header.jsp" />
 
  <!-- 자료실 페이지 -->
@@ -36,9 +36,9 @@
                          <div class="d-none d-lg-block">
                              <table class="table table-bordered">
                                 <colgroup>
-                                    <col width="10%">
-                                    <col width="15%">
-                                    <col width="75%">
+                                    <col width="5%">
+                                    <col width="40%">
+                                    <col width="55%">
                                 </colgroup>
                                  <thead>
                                      <tr>
@@ -47,7 +47,7 @@
                                                  <input class="form-check-input group-checkbox" type="checkbox" value="" data-group="${groupKey}">
                                              </div>
                                          </th>
-                                         <th>No.</th>
+                                         <th>제목</th>
                                          <th>의뢰내용</th>
                                      </tr>
                                  </thead>
@@ -59,9 +59,18 @@
                                                      <input class="form-check-input request-checkbox" type="checkbox" value="${request.id}" data-group="${groupKey}">
                                                  </div>
                                              </td>
-                                             <td>Project${request.id}</td>
+                                             <td>${request.title}</td>
                                              <td class="w-50">
-                                                 <div class="request-details">${request.content}</div>
+                                                 <div class="request-details">
+                                                     <c:choose>
+                                                         <c:when test="${fn:length(request.content) > 100}">
+                                                             ${fn:substring(request.content, 0, 100)}....
+                                                         </c:when>
+                                                         <c:otherwise>
+                                                             ${request.content}
+                                                         </c:otherwise>
+                                                     </c:choose>
+                                                 </div>
                                              </td>
                                          </tr>
                                      </c:forEach>

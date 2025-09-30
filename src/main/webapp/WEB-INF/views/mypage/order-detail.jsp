@@ -336,13 +336,13 @@
                      </div>
                      <div class="">
                          <c:choose>
-                             <c:when test="${not empty request and (request.status == '견적중' || request.status == '결제 진행' || request.status == '작업중' || request.status == '작업 완료')}">견적 완료</c:when>
+                             <c:when test="${not empty request and (request.status == '견적중' || request.status == '결제 진행' || request.status == '작업중' || request.status == '작업 완료')}">견적중</c:when>
                              <c:otherwise>견적중</c:otherwise>
                          </c:choose>
                      </div>
                      <div class="text-black-50">
                          <c:choose>
-                             <c:when test="${not empty request and (request.status == '견적중' || request.status == '결제 진행' || request.status == '작업중' || request.status == '작업 완료')}">견적이 완료되었습니다.</c:when>
+                             <c:when test="${not empty request and (request.status == '견적중' || request.status == '결제 진행' || request.status == '작업중' || request.status == '작업 완료')}"></c:when>
                              <c:otherwise>요청하신 내용으로 연락 예정입니다.</c:otherwise>
                          </c:choose>
                      </div>

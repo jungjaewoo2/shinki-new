@@ -76,7 +76,7 @@
                  </div>
              </div>
          </div>
-         <form action="/admin/inquiry-response-management" method="post" enctype="multipart/form-data">
+         <form action="/admin/inquiry-response-management" method="post" enctype="multipart/form-data" onsubmit="return validateReply()">
              <input type="hidden" name="inquiryId" value="${inquiry.id}">
              
              <div class="card">
@@ -162,7 +162,7 @@
              <c:if test="${canReply}">
                  <button type="submit" class="btn btn-lg btn-outline-secondary">답변하기</button>
              </c:if>
-             <button type="button" class="btn btn-lg btn-secondary" onclick="location.href='/admin/consultation-request'">목록</button>
+             <button type="button" class="btn btn-lg btn-secondary" onclick="location.href='/admin/inquiry-history'">목록</button>
          </div>
          </form>
          
@@ -327,6 +327,21 @@ window.onload = function() {
         }
     }
 };
+
+// 답변 유효성 검사 함수
+function validateReply() {
+    const adminReply = document.getElementById('adminReply');
+    
+    if (!adminReply || !adminReply.value || adminReply.value.trim() === '') {
+        alert('답변 내용을 입력해주세요.');
+        if (adminReply) {
+            adminReply.focus();
+        }
+        return false;
+    }
+    
+    return true;
+}
 </script>
 
  <jsp:include page="footer.jsp" />

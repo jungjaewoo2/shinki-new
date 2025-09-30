@@ -58,6 +58,59 @@ public class MemberController {
                                 @RequestParam String confirmPassword,
                                 RedirectAttributes redirectAttributes) {
         try {
+            // 필수 필드 검증
+            if (member.getHospitalName() == null || member.getHospitalName().trim().isEmpty()) {
+                redirectAttributes.addFlashAttribute("error", "병원명을 입력해주세요.");
+                return "redirect:/mypage/join";
+            }
+            
+            if (member.getDepartment() == null || member.getDepartment().trim().isEmpty()) {
+                redirectAttributes.addFlashAttribute("error", "진료과를 입력해주세요.");
+                return "redirect:/mypage/join";
+            }
+            
+            if (member.getName() == null || member.getName().trim().isEmpty()) {
+                redirectAttributes.addFlashAttribute("error", "이름을 입력해주세요.");
+                return "redirect:/mypage/join";
+            }
+            
+            if (member.getUsername() == null || member.getUsername().trim().isEmpty()) {
+                redirectAttributes.addFlashAttribute("error", "아이디를 입력해주세요.");
+                return "redirect:/mypage/join";
+            }
+            
+            if (member.getPassword() == null || member.getPassword().trim().isEmpty()) {
+                redirectAttributes.addFlashAttribute("error", "비밀번호를 입력해주세요.");
+                return "redirect:/mypage/join";
+            }
+            
+            if (member.getAddress() == null || member.getAddress().trim().isEmpty()) {
+                redirectAttributes.addFlashAttribute("error", "주소를 입력해주세요.");
+                return "redirect:/mypage/join";
+            }
+            
+            if (member.getPhone() == null || member.getPhone().trim().isEmpty()) {
+                redirectAttributes.addFlashAttribute("error", "연락처를 입력해주세요.");
+                return "redirect:/mypage/join";
+            }
+            
+            if (member.getEmail() == null || member.getEmail().trim().isEmpty()) {
+                redirectAttributes.addFlashAttribute("error", "이메일을 입력해주세요.");
+                return "redirect:/mypage/join";
+            }
+            
+            // 아이디 길이 확인 (최소 4자)
+            if (member.getUsername().length() < 4) {
+                redirectAttributes.addFlashAttribute("error", "아이디는 최소 4자 이상이어야 합니다.");
+                return "redirect:/mypage/join";
+            }
+            
+            // 비밀번호 길이 확인 (최소 6자)
+            if (member.getPassword().length() < 6) {
+                redirectAttributes.addFlashAttribute("error", "비밀번호는 최소 6자 이상이어야 합니다.");
+                return "redirect:/mypage/join";
+            }
+            
             // 비밀번호 확인
             if (!member.getPassword().equals(confirmPassword)) {
                 redirectAttributes.addFlashAttribute("error", "비밀번호가 일치하지 않습니다.");
@@ -204,6 +257,8 @@ public class MemberController {
             existingMember.setEmail(member.getEmail());
             existingMember.setRecommendedEmployee(member.getRecommendedEmployee());
             existingMember.setRecommendCode(member.getRecommendCode());
+            existingMember.setAddress(member.getAddress());
+            existingMember.setAddressEtc(member.getAddressEtc());
             
             memberService.updateMember(existingMember);
             redirectAttributes.addFlashAttribute("message", "정보가 성공적으로 수정되었습니다.");
