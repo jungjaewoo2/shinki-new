@@ -243,7 +243,7 @@
                     </div>
                     <div class="swiper-slide">
                         <video autoplay muted loop playsinline>
-                            <source src="assets/images/main-video2.mp4" type="video/mp4">
+                            <source src="assets/images/main-video.mp4" type="video/mp4">
                         </video>
                         <div class="main-title text-center" style="margin: 0 auto;">
                             <h1>Clarity<br>In<br>Beyond<br>Every<br>Dimension</h1>

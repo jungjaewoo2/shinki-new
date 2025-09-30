@@ -68,7 +68,7 @@
 
             <div class="form-group">
                 <label class="form-label required">연락처</label>
-                <input type="text" name="phone" id="phone" class="form-input" value="${member.phone}" placeholder="010-0000-0000" maxlength="13" required>
+                <input type="text" name="phone" id="phone" class="form-input" value="${member.phone}" placeholder="전화번호를 입력하세요" maxlength="13" required>
             </div>
 
             <div class="form-group">
@@ -140,26 +140,51 @@ function formatPhoneNumber(input) {
     // 숫자만 추출
     let value = input.value.replace(/[^0-9]/g, '');
     
-    // 길이에 따라 하이픈 추가
-    if (value.length >= 11) {
-        // 010-1234-5678 형식 (휴대폰)
-        value = value.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3');
-    } else if (value.length >= 10) {
-        // 02-123-4567 형식 (서울) 또는 031-123-4567 형식 (지역번호)
-        if (value.startsWith('02')) {
-            value = value.replace(/(\d{2})(\d{3})(\d{4})/, '$1-$2-$3');
-        } else {
-            value = value.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
-        }
-    } else if (value.length >= 7) {
-        // 123-4567 형식 (지역번호 없는 경우)
-        value = value.replace(/(\d{3})(\d{4})/, '$1-$2');
-    } else if (value.length >= 4) {
-        // 123-4 형식
-        value = value.replace(/(\d{3})(\d{1})/, '$1-$2');
+    // 최대 길이 제한
+    if (value.length > 11) {
+        value = value.substring(0, 11);
     }
     
-    input.value = value;
+    let formattedValue = '';
+    
+    // 02 (서울) 지역번호 처리
+    if (value.startsWith('02')) {
+        if (value.length <= 2) {
+            formattedValue = value;
+        } else if (value.length <= 5) {
+            formattedValue = value.replace(/(\d{2})(\d{1,3})/, '$1-$2');
+        } else if (value.length <= 9) {
+            formattedValue = value.replace(/(\d{2})(\d{3})(\d{1,4})/, '$1-$2-$3');
+        } else {
+            formattedValue = value.replace(/(\d{2})(\d{4})(\d{4})/, '$1-$2-$3');
+        }
+    }
+    // 010, 011, 016, 017, 018, 019 (휴대폰)
+    // 070 (인터넷전화)
+    // 031, 032, 033, 041, 042, 043, 044, 051, 052, 053, 054, 055, 061, 062, 063, 064 (지역번호)
+    else if (/^(01[0-9]|02[0-9]|03[1-3]|04[1-4]|05[1-5]|06[1-4]|070)/.test(value)) {
+        if (value.length <= 3) {
+            formattedValue = value;
+        } else if (value.length <= 6) {
+            formattedValue = value.replace(/(\d{3})(\d{1,3})/, '$1-$2');
+        } else if (value.length <= 10) {
+            formattedValue = value.replace(/(\d{3})(\d{3})(\d{1,4})/, '$1-$2-$3');
+        } else {
+            formattedValue = value.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3');
+        }
+    }
+    // 나머지 경우 (일반 번호)
+    else {
+        if (value.length <= 3) {
+            formattedValue = value;
+        } else if (value.length <= 7) {
+            formattedValue = value.replace(/(\d{3,4})(\d{1,4})/, '$1-$2');
+        } else {
+            formattedValue = value.replace(/(\d{3,4})(\d{3,4})(\d{1,4})/, '$1-$2-$3');
+        }
+    }
+    
+    input.value = formattedValue;
 }
 
 // 전화번호 입력 이벤트 리스너 추가

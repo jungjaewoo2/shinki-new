@@ -27,7 +27,7 @@
                     </div>
                     <div>
                         <div class="label">전화번호 <span class="text-danger">*</span></div>
-                        <div><input type="text" class="form-control" id="consultationPhone" name="phone" placeholder="전화번호를 입력해주세요" required></div>
+                        <div><input type="text" class="form-control" id="consultationPhone" name="phone" placeholder="전화번호를 입력해주세요" maxlength="13" required></div>
                     </div>
                     <div>
                         <div class="label">상담날짜 <span class="text-danger">*</span></div>
@@ -175,7 +175,7 @@
 
     // Neuro Particles Canvas
     const neuroCanvas = document.getElementById('neuroCanvas');
-    const neuroCtx = neuroCanvas.getContext('2d');
+    const neuroCtx = neuroCanvas ? neuroCanvas.getContext('2d') : null;
     const particles = [];
     const particleDensity = 0.00014;
     const particleSpeed = 0.4;
@@ -188,15 +188,17 @@
             neuroCanvas.style.width = window.innerWidth + 'px';
             neuroCanvas.style.height = window.innerHeight + 'px';
 
-            const count = Math.floor(window.innerWidth * window.innerHeight * particleDensity);
-            particles.length = 0;
-            for (let i = 0; i < count; i++) {
-                particles.push({
-                    x: Math.random() * neuroCanvas.width,
-                    y: Math.random() * neuroCanvas.height,
-                    vx: (Math.random() * 2 - 1) * particleSpeed,
-                    vy: (Math.random() * 2 - 1) * particleSpeed
-                });
+            if (neuroCanvas) {
+                const count = Math.floor(window.innerWidth * window.innerHeight * particleDensity);
+                particles.length = 0;
+                for (let i = 0; i < count; i++) {
+                    particles.push({
+                        x: Math.random() * neuroCanvas.width,
+                        y: Math.random() * neuroCanvas.height,
+                        vx: (Math.random() * 2 - 1) * particleSpeed,
+                        vy: (Math.random() * 2 - 1) * particleSpeed
+                    });
+                }
             }
         }
     }
@@ -240,7 +242,7 @@
 
     // Flow Grid Canvas
     const gridCanvas = document.getElementById('gridCanvas');
-    const gridCtx = gridCanvas.getContext('2d');
+    const gridCtx = gridCanvas ? gridCanvas.getContext('2d') : null;
     let gridTime = 0;
 
     function resizeGridCanvas() {
@@ -287,10 +289,15 @@
         resizeGridCanvas();
     });
 
-    resizeCanvas();
-    resizeGridCanvas();
-    drawNeuroParticles();
-    drawFlowGrid();
+    // Canvas 초기화 (canvas가 존재하는 경우에만)
+    if (neuroCanvas) {
+        resizeCanvas();
+        drawNeuroParticles();
+    }
+    if (gridCanvas) {
+        resizeGridCanvas();
+        drawFlowGrid();
+    }
 
     // Form submissions (prevent default)
     // document.querySelectorAll('form').forEach(form => {
@@ -510,15 +517,7 @@
     // 🚀 상담 신청 - 단순하고 안정적인 방식
     console.log('🔥 상담 신청 스크립트 시작');
     
-    // 전역 변수로 설정하여 중복 실행 방지
-    let consultationFormInitialized = false;
-    
     function setupConsultationForm() {
-        if (consultationFormInitialized) {
-            console.log('상담 폼이 이미 초기화됨');
-            return;
-        }
-        
         console.log('🔄 상담 폼 설정 시작');
         
         const submitBtn = document.getElementById('submitConsultation');
@@ -531,30 +530,35 @@
         }
         
         console.log('✅ 모든 요소 발견됨!');
-        consultationFormInitialized = true;
         
-        // 버튼 상태 업데이트 함수
-        function updateButton() {
-            const bothChecked = privacyCheckbox.checked && callCheckbox.checked;
-            submitBtn.disabled = !bothChecked;
-            submitBtn.style.opacity = bothChecked ? '1' : '0.6';
-        }
+        // 버튼을 항상 활성화 상태로 유지
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '1';
+        console.log('상담 신청 버튼이 항상 활성화되도록 설정됨');
         
-        // 체크박스 이벤트 (한 번만 등록)
-        privacyCheckbox.addEventListener('change', updateButton);
-        callCheckbox.addEventListener('change', updateButton);
-        
-        // 초기 상태 설정
-        updateButton();
-        
-        // 버튼 클릭 이벤트 (한 번만 등록)
-        submitBtn.addEventListener('click', function(e) {
+        // 기존 이벤트 리스너 제거 후 새로 등록
+        submitBtn.onclick = null; // 기존 onclick 제거
+        const newSubmitBtn = submitBtn.cloneNode(true);
+        submitBtn.parentNode.replaceChild(newSubmitBtn, submitBtn);
+
+        newSubmitBtn.addEventListener('click', handleSubmitClick);
+
+        function handleSubmitClick(e) {
             e.preventDefault();
-            
-            // 체크박스 확인
+            e.stopPropagation();
+
+            // 체크박스 확인 및 사용자 친화적 안내
             if (!privacyCheckbox.checked || !callCheckbox.checked) {
-                alert('개인정보 수집 및 이용동의와 상담 관련 안내 전화 동의 모두 체크해주세요.');
-                return;
+                let message = '상담 신청을 위해 다음 항목에 동의해주세요:\n\n';
+                if (!privacyCheckbox.checked) {
+                    message += '• 개인정보 수집 및 이용동의\n';
+                }
+                if (!callCheckbox.checked) {
+                    message += '• 상담과 관련된 안내 전화 동의\n';
+                }
+                message += '\n위 항목들을 체크한 후 다시 신청해주세요.';
+                alert(message);
+                return false;
             }
             
             // 폼 데이터 수집
@@ -618,7 +622,6 @@
                     document.getElementById('consultationContent').value = '';
                     privacyCheckbox.checked = false;
                     callCheckbox.checked = false;
-                    updateButton();
                     // 모달 닫기
                     const modal = bootstrap.Modal.getInstance(document.getElementById('consult'));
                     if (modal) modal.hide();
@@ -630,29 +633,98 @@
                 console.error('오류:', error);
                 alert('상담 신청 중 오류가 발생했습니다.');
             });
-        });
+        }
         
+        // 전화번호 자동 하이픈 추가 기능
+        const phoneInput = document.getElementById('consultationPhone');
+        if (phoneInput) {
+            phoneInput.addEventListener('input', function(e) {
+                // 숫자만 추출
+                let value = e.target.value.replace(/[^0-9]/g, '');
+                
+                // 최대 길이 제한
+                if (value.length > 11) {
+                    value = value.substring(0, 11);
+                }
+                
+                let formattedValue = '';
+                
+                // 02 (서울) 지역번호 처리
+                if (value.startsWith('02')) {
+                    if (value.length <= 2) {
+                        formattedValue = value;
+                    } else if (value.length <= 5) {
+                        formattedValue = value.replace(/(\d{2})(\d{1,3})/, '$1-$2');
+                    } else if (value.length <= 9) {
+                        formattedValue = value.replace(/(\d{2})(\d{3})(\d{1,4})/, '$1-$2-$3');
+                    } else {
+                        formattedValue = value.replace(/(\d{2})(\d{4})(\d{4})/, '$1-$2-$3');
+                    }
+                }
+                // 010, 011, 016, 017, 018, 019 (휴대폰)
+                // 070 (인터넷전화)
+                // 031, 032, 033, 041, 042, 043, 044, 051, 052, 053, 054, 055, 061, 062, 063, 064 (지역번호)
+                else if (/^(01[0-9]|02[0-9]|03[1-3]|04[1-4]|05[1-5]|06[1-4]|070)/.test(value)) {
+                    if (value.length <= 3) {
+                        formattedValue = value;
+                    } else if (value.length <= 6) {
+                        formattedValue = value.replace(/(\d{3})(\d{1,3})/, '$1-$2');
+                    } else if (value.length <= 10) {
+                        formattedValue = value.replace(/(\d{3})(\d{3})(\d{1,4})/, '$1-$2-$3');
+                    } else {
+                        formattedValue = value.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3');
+                    }
+                }
+                // 나머지 경우 (일반 번호)
+                else {
+                    if (value.length <= 3) {
+                        formattedValue = value;
+                    } else if (value.length <= 7) {
+                        formattedValue = value.replace(/(\d{3,4})(\d{1,4})/, '$1-$2');
+                    } else {
+                        formattedValue = value.replace(/(\d{3,4})(\d{3,4})(\d{1,4})/, '$1-$2-$3');
+                    }
+                }
+                
+                e.target.value = formattedValue;
+            });
+
+            console.log('✅ 전화번호 자동 하이픈 기능 설정 완료!');
+        }
+
         console.log('✅ 상담 폼 설정 완료!');
     }
     
     // DOM 로드 완료 후 실행
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', setupConsultationForm);
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM 로드 완료 - 상담 폼 초기화');
+            setupConsultationForm();
+        });
     } else {
+        console.log('DOM 이미 로드됨 - 상담 폼 초기화');
         setupConsultationForm();
     }
     
     // 모달이 열릴 때마다 폼 상태 업데이트
     document.addEventListener('shown.bs.modal', function(e) {
         if (e.target.id === 'consult') {
+            console.log('상담 모달이 열림 - 폼 상태 업데이트');
+            
+            // 모달이 열릴 때 폼 초기화 재시도
+            setTimeout(() => {
+                console.log('모달 열림 후 폼 재초기화 시도');
+                setupConsultationForm();
+            }, 100);
+            
             const submitBtn = document.getElementById('submitConsultation');
             const privacyCheckbox = document.getElementById('privacyAgreement');
             const callCheckbox = document.getElementById('callAgreement');
             
-            if (submitBtn && privacyCheckbox && callCheckbox) {
-                const bothChecked = privacyCheckbox.checked && callCheckbox.checked;
-                submitBtn.disabled = !bothChecked;
-                submitBtn.style.opacity = bothChecked ? '1' : '0.6';
+            if (submitBtn) {
+                console.log('모달 내 버튼 발견됨 - 활성화 상태 유지');
+                submitBtn.disabled = false;
+                submitBtn.style.opacity = '1';
             }
         }
     });

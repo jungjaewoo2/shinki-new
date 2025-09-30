@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!-- Floating Button -->
 <button class="floating-btn" data-bs-toggle="modal" data-bs-target="#consult">
-    <i class="bi bi-headset"></i>
-    상담받기
+    <img src="/assets/images/floating-btn-img.png">
 </button>
 
 </div>
@@ -28,7 +27,7 @@
                     </div>
                     <div>
                         <div class="label">전화번호 <span class="text-danger">*</span></div>
-                        <div><input type="text" class="form-control" id="consultationPhone" name="phone" placeholder="전화번호를 입력해주세요" required></div>
+                        <div><input type="text" class="form-control" id="consultationPhone" name="phone" placeholder="전화번호를 입력해주세요" maxlength="13" required></div>
                     </div>
                     <div>
                         <div class="label">상담날짜 <span class="text-danger">*</span></div>
@@ -176,31 +175,36 @@
 
     // Neuro Particles Canvas
     const neuroCanvas = document.getElementById('neuroCanvas');
-    const neuroCtx = neuroCanvas.getContext('2d');
+    const neuroCtx = neuroCanvas ? neuroCanvas.getContext('2d') : null;
     const particles = [];
     const particleDensity = 0.00014;
     const particleSpeed = 0.4;
 
     function resizeCanvas() {
         const dpi = Math.min(2, window.devicePixelRatio || 1);
-        neuroCanvas.width = window.innerWidth * dpi;
-        neuroCanvas.height = window.innerHeight * dpi;
-        neuroCanvas.style.width = window.innerWidth + 'px';
-        neuroCanvas.style.height = window.innerHeight + 'px';
+        if (neuroCanvas) { // Add null check for neuroCanvas
+            neuroCanvas.width = window.innerWidth * dpi;
+            neuroCanvas.height = window.innerHeight * dpi;
+            neuroCanvas.style.width = window.innerWidth + 'px';
+            neuroCanvas.style.height = window.innerHeight + 'px';
 
-        const count = Math.floor(window.innerWidth * window.innerHeight * particleDensity);
-        particles.length = 0;
-        for (let i = 0; i < count; i++) {
-            particles.push({
-                x: Math.random() * neuroCanvas.width,
-                y: Math.random() * neuroCanvas.height,
-                vx: (Math.random() * 2 - 1) * particleSpeed,
-                vy: (Math.random() * 2 - 1) * particleSpeed
-            });
+            if (neuroCanvas) {
+                const count = Math.floor(window.innerWidth * window.innerHeight * particleDensity);
+                particles.length = 0;
+                for (let i = 0; i < count; i++) {
+                    particles.push({
+                        x: Math.random() * neuroCanvas.width,
+                        y: Math.random() * neuroCanvas.height,
+                        vx: (Math.random() * 2 - 1) * particleSpeed,
+                        vy: (Math.random() * 2 - 1) * particleSpeed
+                    });
+                }
+            }
         }
     }
 
     function drawNeuroParticles() {
+        if (!neuroCtx || !neuroCanvas) return; // Add null checks
         neuroCtx.clearRect(0, 0, neuroCanvas.width, neuroCanvas.height);
         neuroCtx.fillStyle = 'rgba(255, 255, 255, 0.55)';
         particles.forEach(p => {
@@ -238,18 +242,21 @@
 
     // Flow Grid Canvas
     const gridCanvas = document.getElementById('gridCanvas');
-    const gridCtx = gridCanvas.getContext('2d');
+    const gridCtx = gridCanvas ? gridCanvas.getContext('2d') : null;
     let gridTime = 0;
 
     function resizeGridCanvas() {
         const dpi = Math.min(2, window.devicePixelRatio || 1);
-        gridCanvas.width = window.innerWidth * dpi;
-        gridCanvas.height = window.innerHeight * dpi;
-        gridCanvas.style.width = window.innerWidth + 'px';
-        gridCanvas.style.height = window.innerHeight + 'px';
+        if (gridCanvas) { // Add null check for gridCanvas
+            gridCanvas.width = window.innerWidth * dpi;
+            gridCanvas.height = window.innerHeight * dpi;
+            gridCanvas.style.width = window.innerWidth + 'px';
+            gridCanvas.style.height = window.innerHeight + 'px';
+        }
     }
 
     function drawFlowGrid() {
+        if (!gridCtx || !gridCanvas) return; // Add null checks
         gridCtx.clearRect(0, 0, gridCanvas.width, gridCanvas.height);
         gridCtx.strokeStyle = 'rgba(255, 255, 255, 0.06)';
         gridCtx.lineWidth = 1;
@@ -282,18 +289,23 @@
         resizeGridCanvas();
     });
 
-    resizeCanvas();
-    resizeGridCanvas();
-    drawNeuroParticles();
-    drawFlowGrid();
+    // Canvas 초기화 (canvas가 존재하는 경우에만)
+    if (neuroCanvas) {
+        resizeCanvas();
+        drawNeuroParticles();
+    }
+    if (gridCanvas) {
+        resizeGridCanvas();
+        drawFlowGrid();
+    }
 
     // Form submissions (prevent default)
-    document.querySelectorAll('form').forEach(form => {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('폼이 제출되었습니다. (데모 버전)');
-        });
-    });
+    // document.querySelectorAll('form').forEach(form => {
+    //     form.addEventListener('submit', (e) => {
+    //         e.preventDefault();
+    //         alert('폼이 제출되었습니다. (데모 버전)');
+    //     });
+    // });
 
     // Add smooth scroll behavior
     document.documentElement.style.scrollBehavior = 'smooth';
@@ -494,7 +506,7 @@
     });
 
     console.log('SHINKISA Medical 3D Visualization Site - Loaded Successfully');
-    
+
     // 즉시 실행되는 간단한 테스트
     console.log('🧪 DOM 상태 테스트:', {
         readyState: document.readyState,
@@ -502,11 +514,9 @@
         getElementById: typeof document.getElementById
     });
 
-    // 🚀 상담 신청 - 가장 단순한 방식
-    /*
+    // 🚀 상담 신청 - 단순하고 안정적인 방식
     console.log('🔥 상담 신청 스크립트 시작');
     
-    // 즉시 실행되는 간단한 함수
     function setupConsultationForm() {
         console.log('🔄 상담 폼 설정 시작');
         
@@ -514,48 +524,41 @@
         const privacyCheckbox = document.getElementById('privacyAgreement');
         const callCheckbox = document.getElementById('callAgreement');
         
-        console.log('요소 확인:', {
-            submitBtn: !!submitBtn,
-            privacyCheckbox: !!privacyCheckbox,
-            callCheckbox: !!callCheckbox
-        });
-        
-        if (!submitBtn) {
-            console.error('❌ 상담 신청 버튼을 찾을 수 없습니다!');
-            return;
-        }
-        
-        if (!privacyCheckbox || !callCheckbox) {
-            console.error('❌ 체크박스를 찾을 수 없습니다!');
+        if (!submitBtn || !privacyCheckbox || !callCheckbox) {
+            console.log('상담 폼 요소를 찾을 수 없음 - 나중에 다시 시도');
             return;
         }
         
         console.log('✅ 모든 요소 발견됨!');
         
-        // 버튼 상태 업데이트 함수
-        function updateButton() {
-            const bothChecked = privacyCheckbox.checked && callCheckbox.checked;
-            submitBtn.disabled = !bothChecked;
-            submitBtn.style.opacity = bothChecked ? '1' : '0.6';
-            console.log('버튼 상태:', bothChecked ? '활성화' : '비활성화');
-        }
+        // 버튼을 항상 활성화 상태로 유지
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '1';
+        console.log('상담 신청 버튼이 항상 활성화되도록 설정됨');
         
-        // 체크박스 이벤트
-        privacyCheckbox.addEventListener('change', updateButton);
-        callCheckbox.addEventListener('change', updateButton);
-        
-        // 초기 상태 설정
-        updateButton();
-        
-        // 🖱️ 버튼 클릭 이벤트 - 가장 단순하게
-        submitBtn.onclick = function(e) {
+        // 기존 이벤트 리스너 제거 후 새로 등록
+        submitBtn.onclick = null; // 기존 onclick 제거
+        const newSubmitBtn = submitBtn.cloneNode(true);
+        submitBtn.parentNode.replaceChild(newSubmitBtn, submitBtn);
+
+        newSubmitBtn.addEventListener('click', handleSubmitClick);
+
+        function handleSubmitClick(e) {
             e.preventDefault();
-            console.log('🖱️ 버튼 클릭됨!');
-            
-            // 체크박스 확인
+            e.stopPropagation();
+
+            // 체크박스 확인 및 사용자 친화적 안내
             if (!privacyCheckbox.checked || !callCheckbox.checked) {
-                alert('개인정보 수집 및 이용동의와 상담 관련 안내 전화 동의 모두 체크해주세요.');
-                return;
+                let message = '상담 신청을 위해 다음 항목에 동의해주세요:\n\n';
+                if (!privacyCheckbox.checked) {
+                    message += '• 개인정보 수집 및 이용동의\n';
+                }
+                if (!callCheckbox.checked) {
+                    message += '• 상담과 관련된 안내 전화 동의\n';
+                }
+                message += '\n위 항목들을 체크한 후 다시 신청해주세요.';
+                alert(message);
+                return false;
             }
             
             // 폼 데이터 수집
@@ -566,15 +569,31 @@
             const consultationTime = document.getElementById('consultationTime').value;
             const consultationContent = document.getElementById('consultationContent').value.trim();
             
-            console.log('폼 데이터:', { name, hospitalName, phone, consultationDate, consultationTime, consultationContent });
-            
             // 필수 필드 검증
-            if (!name) { alert('이름을 입력해주세요.'); return; }
-            if (!hospitalName) { alert('병원명을 입력해주세요.'); return; }
-            if (!phone) { alert('전화번호를 입력해주세요.'); return; }
-            if (!consultationDate) { alert('상담날짜를 선택해주세요.'); return; }
-            if (!consultationTime) { alert('상담시간을 선택해주세요.'); return; }
-            if (!consultationContent) { alert('상담내용을 입력해주세요.'); return; }
+            if (!name) { 
+                alert('이름을 입력해주세요.'); 
+                return; 
+            }
+            if (!hospitalName) { 
+                alert('병원명을 입력해주세요.'); 
+                return; 
+            }
+            if (!phone) { 
+                alert('전화번호를 입력해주세요.'); 
+                return; 
+            }
+            if (!consultationDate) { 
+                alert('상담날짜를 선택해주세요.'); 
+                return; 
+            }
+            if (!consultationTime) { 
+                alert('상담시간을 선택해주세요.'); 
+                return; 
+            }
+            if (!consultationContent) { 
+                alert('상담내용을 입력해주세요.'); 
+                return; 
+            }
             
             // FormData 생성
             const formData = new FormData();
@@ -585,19 +604,13 @@
             formData.append('consultationTime', consultationTime);
             formData.append('consultationContent', consultationContent);
             
-            console.log('🚀 서버 전송 시작');
-            
             // 서버 전송
             fetch('/consultation/register', {
                 method: 'POST',
                 body: formData
             })
-            .then(response => {
-                console.log('📡 서버 응답:', response.status);
-                return response.json();
-            })
+            .then(response => response.json())
             .then(data => {
-                console.log('📦 응답 데이터:', data);
                 if (data.success) {
                     alert('상담 신청이 완료되었습니다.');
                     // 폼 초기화
@@ -609,7 +622,6 @@
                     document.getElementById('consultationContent').value = '';
                     privacyCheckbox.checked = false;
                     callCheckbox.checked = false;
-                    updateButton();
                     // 모달 닫기
                     const modal = bootstrap.Modal.getInstance(document.getElementById('consult'));
                     if (modal) modal.hide();
@@ -618,32 +630,133 @@
                 }
             })
             .catch(error => {
-                console.error('❌ 오류:', error);
+                console.error('오류:', error);
                 alert('상담 신청 중 오류가 발생했습니다.');
             });
-        };
+        }
         
+        // 전화번호 자동 하이픈 추가 기능
+        const phoneInput = document.getElementById('consultationPhone');
+        if (phoneInput) {
+            phoneInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/[^0-9]/g, ''); // 숫자만 남김
+                let formattedValue = '';
+
+                if (value.length <= 3) {
+                    formattedValue = value;
+                } else if (value.length <= 7) {
+                    formattedValue = value.substring(0, 3) + '-' + value.substring(3);
+                } else if (value.length <= 11) {
+                    formattedValue = value.substring(0, 3) + '-' + value.substring(3, 7) + '-' + value.substring(7);
+                } else {
+                    // 11자리를 초과하면 잘라냄
+                    value = value.substring(0, 11);
+                    formattedValue = value.substring(0, 3) + '-' + value.substring(3, 7) + '-' + value.substring(7);
+                }
+
+                e.target.value = formattedValue;
+            });
+
+            // 백스페이스로 하이픈 삭제 처리
+            phoneInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Backspace') {
+                    const value = e.target.value;
+                    const cursorPosition = e.target.selectionStart;
+
+                    // 커서가 하이픈 바로 뒤에 있을 때 하이픈까지 함께 삭제
+                    if (cursorPosition > 0 && value[cursorPosition - 1] === '-') {
+                        e.preventDefault();
+                        const newValue = value.substring(0, cursorPosition - 2) + value.substring(cursorPosition);
+                        e.target.value = newValue;
+                        e.target.setSelectionRange(cursorPosition - 2, cursorPosition - 2);
+
+                        // input 이벤트 강제 발생으로 재포맷팅
+                        const inputEvent = new Event('input', { bubbles: true });
+                        e.target.dispatchEvent(inputEvent);
+                    }
+                }
+            });
+
+            console.log('✅ 전화번호 자동 하이픈 기능 설정 완료!');
+        }
+
         console.log('✅ 상담 폼 설정 완료!');
     }
     
-    // 여러 번 시도
-    setupConsultationForm();
-    setTimeout(setupConsultationForm, 500);
-    setTimeout(setupConsultationForm, 1000);
-    setTimeout(setupConsultationForm, 2000);
-    */
+    // DOM 로드 완료 후 실행
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM 로드 완료 - 상담 폼 초기화');
+            setupConsultationForm();
+        });
+    } else {
+        console.log('DOM 이미 로드됨 - 상담 폼 초기화');
+        setupConsultationForm();
+    }
+    
+    // 모달이 열릴 때마다 폼 상태 업데이트
+    document.addEventListener('shown.bs.modal', function(e) {
+        if (e.target.id === 'consult') {
+            console.log('상담 모달이 열림 - 폼 상태 업데이트');
+            
+            // 모달이 열릴 때 폼 초기화 재시도
+            setTimeout(() => {
+                console.log('모달 열림 후 폼 재초기화 시도');
+                setupConsultationForm();
+            }, 100);
+            
+            const submitBtn = document.getElementById('submitConsultation');
+            const privacyCheckbox = document.getElementById('privacyAgreement');
+            const callCheckbox = document.getElementById('callAgreement');
+            
+            if (submitBtn) {
+                console.log('모달 내 버튼 발견됨 - 활성화 상태 유지');
+                submitBtn.disabled = false;
+                submitBtn.style.opacity = '1';
+            }
+        }
+    });
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- Footer -->
 <footer>
-    <div class="footer-content align-items-baseline flex-lg-row flex-md-column ">
-        <div class="text-start">
+    <div class="footer-content align-items-start flex-xl-row flex-md-column ">
+
+        <div class="d-flex flex-column flex-xl-row gap-2 text-start">
             <div>
-                <div>서울시 서초구 강남대로34길 33 신기빌딩 / Tel. 1544-8368 / Fax. 02)573-7370 / Mail : master@shinkisa.co.kr</div>
-                <div>부산지사 : 051)892-7317 / 광주지사 : 062)350-8790 / 대전사무소 : 042)824-2213 / 대구사무소 : 053)753-1250</div>
-                <div>의료기기판매업신고번호: 제1250호</div>
+                <img src="/assets/images/logo.png">
             </div>
-            <div>© 2025 SHINKISA Co., Ltd. All rights reserved.</div>
+            <div>
+                <div>
+                    <div>서울시 서초구 강남대로34길 33 신기빌딩 / Tel. 1544-8368 / Fax. 02)573-7370 / Mail : master@shinkisa.co.kr</div>
+                    <div>부산지사 : 051)892-7317 / 광주지사 : 062)350-8790 / 대전사무소 : 042)824-2213 / 대구사무소 : 053)753-1250</div>
+                    <div>의료기기판매업신고번호: 제1250호</div>
+                </div>
+                <div>© 2025 SHINKISA Co., Ltd. All rights reserved.</div>
+            </div>
         </div>
         <div class="footer-links">
             <a href="#">개인정보처리방침</a>
