@@ -58,8 +58,17 @@
                      <div class="d-flex gap-3">
                         <div class="fw-bold">파일명</div>
                         <div>
-                            <a href="/admin/download-inquiry-file?filePath=${fn:escapeXml(inquiry.filePath)}" class="btn btn-sm btn-outline-primary">
-                                <i class="bi bi-download"></i> 파일 다운로드
+                            <a href="/admin/download-inquiry-file?filePath=${fn:escapeXml(inquiry.filePath)}" class="btn btn-sm btn-outline-primary" style="font-size: 0.8rem;">
+                                <i class="bi bi-download"></i> 
+                                <c:set var="fileName" value="${fn:substringAfter(inquiry.filePath, '_')}" />
+                                <c:choose>
+                                    <c:when test="${not empty fileName}">
+                                        ${fn:escapeXml(fileName)}
+                                    </c:when>
+                                    <c:otherwise>
+                                        파일 다운로드
+                                    </c:otherwise>
+                                </c:choose>
                             </a>
                         </div>
                     </div>

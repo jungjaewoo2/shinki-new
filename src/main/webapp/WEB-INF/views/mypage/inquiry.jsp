@@ -106,9 +106,19 @@
              
              console.log('유효성 검사 통과 - 폼 제출 진행');
              
+             // 파일 정보 로깅
+             console.log('제출 시 파일 정보:');
+             console.log('- 파일 수:', fileInput.files.length);
+             if (fileInput.files.length > 0) {
+                 console.log('- 첫 번째 파일명:', fileInput.files[0].name);
+                 console.log('- 첫 번째 파일 크기:', fileInput.files[0].size);
+                 console.log('- 첫 번째 파일 타입:', fileInput.files[0].type);
+             }
+             
              // 폼 제출
              var form = document.getElementById('inquiryForm');
              if (form) {
+                 console.log('폼 제출 시작');
                  form.submit();
              } else {
                  console.error('inquiryForm 요소를 찾을 수 없습니다.');
@@ -128,6 +138,11 @@
 
      // 파일 입력 변경 시 파일 목록 업데이트
      fileInput.addEventListener('change', function() {
+         console.log('파일 입력 변경됨, 파일 수:', this.files.length);
+         if (this.files.length > 0) {
+             console.log('첫 번째 파일명:', this.files[0].name);
+             console.log('첫 번째 파일 크기:', this.files[0].size);
+         }
          handleFiles(this.files);
      });
 
@@ -164,7 +179,15 @@
          var dt = e.dataTransfer;
          var files = dt.files;
          
-         fileInput.files = files; // 드롭된 파일을 input 요소에 할당
+         // 드롭된 파일을 input 요소에 할당
+         if (files.length > 0) {
+             // DataTransfer 객체를 사용하여 파일을 input에 설정
+             var dataTransfer = new DataTransfer();
+             for (var i = 0; i < files.length; i++) {
+                 dataTransfer.items.add(files[i]);
+             }
+             fileInput.files = dataTransfer.files;
+         }
          handleFiles(files);
      }
 

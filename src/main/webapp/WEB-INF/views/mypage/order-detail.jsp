@@ -194,10 +194,10 @@
                             어느 일방이 중대한 의무를 위반하고 상대방의 시정요구에도 불구하고 상당 기간 내 시정하지 않는 경우, 상대방은 본 약정을 해지할 수 있습니다.
                         </div>
                     </div>
-                     <!--<div class="form-group flex-column align-items-baseline gap-1">
+                     <div class="form-group flex-column align-items-baseline gap-1">
                          <label class="form-label w-100"><i class="bi bi-arrow-right-circle-fill"></i> 의뢰내용</label>
-                         <textarea class="form-input" rows="1" placeholder="내용을 입력하세요" readonly>${not empty request ? request.content : ''}</textarea>
-                     </div>-->
+                         <textarea class="form-input" rows="5" placeholder="내용을 입력하세요" readonly>${not empty request ? request.content : ''}</textarea>
+                     </div>
                      
                      <!--댓글 ui 추가-->
                      <div class="form-group flex-column align-items-baseline gap-1">
