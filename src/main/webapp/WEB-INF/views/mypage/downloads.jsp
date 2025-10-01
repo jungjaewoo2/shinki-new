@@ -21,7 +21,7 @@
                      <c:set var="datePart" value="${fn:substringBefore(groupKey, '_')}" />
                      <c:set var="appType" value="${fn:substringAfter(groupKey, '_')}" />
                      
-                     <div class="card">
+                     <div class="card" data-group-container="${groupKey}">
                          <div class="align-items-center d-flex flex-column flex-lg-row gap-2 gap-lg-0 justify-content-between mb-3 mb-lg-0">
                              <div class="title fw-bold">${datePart} <span class="text-danger fs-5">${appType}</span></div>
                              <div>
@@ -106,11 +106,21 @@
          // 그룹별 전체 선택 기능
          document.querySelectorAll('.group-checkbox').forEach(function(groupCheckbox) {
              const groupKey = groupCheckbox.dataset.group;
-             const requestCheckboxes = document.querySelectorAll(`.request-checkbox[data-group="${groupKey}"]`);
              
              groupCheckbox.addEventListener('change', function() {
+                 console.log('그룹 ' + groupKey + ' 전체 선택: ' + groupCheckbox.checked);
+                 
+                 // 같은 그룹 컨테이너 내의 모든 request-checkbox를 찾아서 상태 동기화
+                 const groupContainer = document.querySelector('[data-group-container="' + groupKey + '"]');
+                 const requestCheckboxes = groupContainer ? 
+                     groupContainer.querySelectorAll('input.request-checkbox') : 
+                     document.querySelectorAll('input.request-checkbox[data-group="' + groupKey + '"]');
+                 
+                 console.log('영향받을 체크박스 수: ' + requestCheckboxes.length);
+                 
                  requestCheckboxes.forEach(checkbox => {
                      checkbox.checked = groupCheckbox.checked;
+                     console.log('체크박스 ID ' + checkbox.value + ' 선택됨: ' + checkbox.checked);
                  });
              });
          });
@@ -119,11 +129,29 @@
          document.querySelectorAll('.request-checkbox').forEach(function(checkbox) {
              checkbox.addEventListener('change', function() {
                  const groupKey = this.dataset.group;
-                 const groupCheckbox = document.querySelector(`.group-checkbox[data-group="${groupKey}"]`);
-                 const requestCheckboxes = document.querySelectorAll(`.request-checkbox[data-group="${groupKey}"]`);
-                 const checkedCheckboxes = document.querySelectorAll(`.request-checkbox[data-group="${groupKey}"]:checked`);
+                 console.log('개별 체크박스 ' + this.value + ' 변경됨, 그룹: ' + groupKey);
                  
-                 groupCheckbox.checked = checkedCheckboxes.length === requestCheckboxes.length;
+                 // 같은 그룹 컨테이너 내의 체크박스들만 찾기
+                 const groupContainer = document.querySelector('[data-group-container="' + groupKey + '"]');
+                 const groupCheckbox = groupContainer ? 
+                     groupContainer.querySelector('input.group-checkbox') : 
+                     document.querySelector('input.group-checkbox[data-group="' + groupKey + '"]');
+                 
+                 const requestCheckboxes = groupContainer ? 
+                     groupContainer.querySelectorAll('input.request-checkbox') : 
+                     document.querySelectorAll('input.request-checkbox[data-group="' + groupKey + '"]');
+                 
+                 const checkedCheckboxes = groupContainer ? 
+                     groupContainer.querySelectorAll('input.request-checkbox:checked') : 
+                     document.querySelectorAll('input.request-checkbox[data-group="' + groupKey + '"]:checked');
+                 
+                 console.log('그룹 ' + groupKey + ' - 전체: ' + requestCheckboxes.length + ', 선택됨: ' + checkedCheckboxes.length);
+                 
+                 // 그룹 체크박스 상태 업데이트
+                 if (groupCheckbox) {
+                     groupCheckbox.checked = checkedCheckboxes.length === requestCheckboxes.length;
+                     groupCheckbox.indeterminate = checkedCheckboxes.length > 0 && checkedCheckboxes.length < requestCheckboxes.length;
+                 }
              });
          });
          
@@ -131,8 +159,16 @@
          document.querySelectorAll('.download-all').forEach(function(button) {
              button.addEventListener('click', function() {
                  const groupKey = this.dataset.group;
-                 const requestCheckboxes = document.querySelectorAll(`.request-checkbox[data-group="${groupKey}"]`);
+                 
+                 // 같은 그룹 컨테이너 내의 모든 체크박스 찾기
+                 const groupContainer = document.querySelector('[data-group-container="' + groupKey + '"]');
+                 const requestCheckboxes = groupContainer ? 
+                     groupContainer.querySelectorAll('input.request-checkbox') : 
+                     document.querySelectorAll('input.request-checkbox[data-group="' + groupKey + '"]');
+                 
                  const requestIds = Array.from(requestCheckboxes).map(checkbox => checkbox.value);
+                 
+                 console.log('그룹 ' + groupKey + ' 전체 다운로드 - 파일 수: ' + requestIds.length);
                  
                  if (requestIds.length > 0) {
                      downloadFiles(requestIds);
@@ -146,8 +182,16 @@
          document.querySelectorAll('.download-selected').forEach(function(button) {
              button.addEventListener('click', function() {
                  const groupKey = this.dataset.group;
-                 const checkedCheckboxes = document.querySelectorAll(`.request-checkbox[data-group="${groupKey}"]:checked`);
+                 
+                 // 같은 그룹 컨테이너 내의 선택된 체크박스만 찾기
+                 const groupContainer = document.querySelector('[data-group-container="' + groupKey + '"]');
+                 const checkedCheckboxes = groupContainer ? 
+                     groupContainer.querySelectorAll('input.request-checkbox:checked') : 
+                     document.querySelectorAll('input.request-checkbox[data-group="' + groupKey + '"]:checked');
+                 
                  const requestIds = Array.from(checkedCheckboxes).map(checkbox => checkbox.value);
+                 
+                 console.log('그룹 ' + groupKey + ' 선택 다운로드 - 선택된 파일 수: ' + requestIds.length);
                  
                  if (requestIds.length > 0) {
                      downloadFiles(requestIds);
