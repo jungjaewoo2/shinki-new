@@ -1406,8 +1406,9 @@ public class AdminController {
             }
 
             // 업로드 디렉토리 설정 (절대 경로 사용)
-            String webappPath = System.getProperty("user.dir") + "/src/main/webapp";
-            String uploadDirPath = webappPath + "/uploads/request";
+            //String webappPath = System.getProperty("user.dir") + "/src/main/webapp";
+            //String uploadDirPath = webappPath + "/uploads/request";
+            String uploadDirPath = uploadPath + "/request";
             
             // 디렉토리 생성
             Path uploadPath = Paths.get(uploadDirPath);

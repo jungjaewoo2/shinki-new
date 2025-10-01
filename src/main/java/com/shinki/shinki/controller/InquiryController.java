@@ -294,7 +294,8 @@ public class InquiryController {
             String fileName = filePath;
             
             // uploads/inquiry 폴더에서 파일 찾기
-            Path path = Paths.get("src/main/webapp/uploads/inquiry/" + fileName);
+            //Path path = Paths.get("src/main/webapp/uploads/inquiry/" + fileName);
+            Path path = Paths.get(uploadPath + "/inquiry/" + fileName);
             logger.info("찾는 파일 경로: {}", path.toString());
             Resource resource = new UrlResource(path.toUri());
             

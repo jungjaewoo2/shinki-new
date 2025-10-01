@@ -437,7 +437,8 @@ public class RequestController {
             
             try (ZipOutputStream zipOut = new ZipOutputStream(response.getOutputStream())) {
                 for (String filePath : filePaths) {
-                    File file = new File("src/main/webapp/uploads/request/" + filePath);
+                    //File file = new File("src/main/webapp/uploads/request/" + filePath);
+                	File file = new File(uploadPath + "/request/" + filePath);
                     if (file.exists()) {
                         ZipEntry zipEntry = new ZipEntry(filePath);
                         zipOut.putNextEntry(zipEntry);
