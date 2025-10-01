@@ -367,7 +367,7 @@ public class RequestController {
              // 권한 확인 및 파일 존재 확인
              if (!request.getMember().getId().equals(member.getId()) || 
                  !"작업 완료".equals(request.getStatus()) || 
-                 !fileName.equals(request.getFilePath())) {
+                 !fileName.equals(request.getAdminFilePath())) {
                  response.sendError(HttpServletResponse.SC_FORBIDDEN, "파일 다운로드 권한이 없습니다.");
                  return;
              }
@@ -413,20 +413,32 @@ public class RequestController {
         try {
             Member member = memberService.findByUsername(username);
             
-            // 선택된 의뢰들의 파일 경로 가져오기
+            // 선택된 의뢰들의 관리자 파일 경로 가져오기
             List<String> filePaths = new ArrayList<>();
             for (Long requestId : requestIds) {
                 Request request = requestService.getRequestById(requestId);
                 if (request != null) {
                     if (request.getMember().getId().equals(member.getId()) && 
-                    "작업 완료".equals(request.getStatus()) && request.getFilePath() != null) {
-                        filePaths.add(request.getFilePath());
+                    "작업 완료".equals(request.getStatus()) && request.getAdminFilePath() != null) {
+                        // adminFilePath는 여러 파일 경로를 구분자로 연결된 형태일 수 있음
+                        String adminFilePath = request.getAdminFilePath();
+                        if (adminFilePath.contains(",")) {
+                            // 여러 파일이 있는 경우 쉼표로 분리
+                            String[] files = adminFilePath.split(",");
+                            for (String file : files) {
+                                if (file.trim().length() > 0) {
+                                    filePaths.add(file.trim());
+                                }
+                            }
+                        } else {
+                            filePaths.add(adminFilePath);
+                        }
                     }
                 }
             }
             
             if (filePaths.isEmpty()) {
-                response.sendError(HttpServletResponse.SC_NOT_FOUND, "다운로드할 파일이 없습니다.");
+                response.sendError(HttpServletResponse.SC_NOT_FOUND, "다운로드할 관리자 파일이 없습니다. 작업이 완료되지 않았거나 관리자가 파일을 업로드하지 않았습니다.");
                 return;
             }
             

@@ -408,20 +408,20 @@ public class MemberController {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
             }
 
-            // 파일 경로 확인
-            String filePath = request.getFilePath();
-            if (filePath == null || filePath.trim().isEmpty()) {
+            // 관리자 파일 경로 확인
+            String adminFilePath = request.getAdminFilePath();
+            if (adminFilePath == null || adminFilePath.trim().isEmpty()) {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
             }
 
-            // 파일 경로 구성 - uploads/request 폴더 기준
+            // 관리자 파일 경로 구성 - uploads/request 폴더 기준
             String fullPath;
-            if (filePath.startsWith("uploads/request/")) {
+            if (adminFilePath.startsWith("uploads/request/")) {
                 // 이미 전체 경로가 포함된 경우
-                fullPath = "src/main/webapp/" + filePath;
+                fullPath = "src/main/webapp/" + adminFilePath;
             } else {
                 // 파일명만 있는 경우
-                fullPath = "src/main/webapp/uploads/request/" + filePath;
+                fullPath = "src/main/webapp/uploads/request/" + adminFilePath;
             }
 
             // 파일 존재 확인
