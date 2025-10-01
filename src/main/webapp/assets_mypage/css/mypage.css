@@ -176,6 +176,11 @@ a {
     color: rgba(0, 0, 0, 0.7) !important;
 }
 
+.nav-item .btn {
+	transition: unset;
+    font-size: 18px;
+}
+
 .nav-menu .btn:hover {
     color: #000 !important;
 }

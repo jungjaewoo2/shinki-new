@@ -1072,8 +1072,8 @@ h1 {
     align-items: center;
     gap: 0.5rem;
     transition: transform 0.2s;
-    width: 72px;
-    height: 72px;
+    width: 65px;
+    height: 65px;
     background-color: #fff;
 }
 
@@ -1259,12 +1259,18 @@ h1 {
     height: 98%;
     background: #fff;
     cursor: pointer;
+    overflow-y: scroll;
+	-ms-overflow-style: none;
+}
+
+.use-box::-webkit-scrollbar {
+	display: none;
 }
 
 .use-title {
     font-size: 30px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     color: #1d3557;
 }
 
@@ -1275,8 +1281,67 @@ h1 {
 }
 
 .use-name {
-    font-size: 18px;
-    text-decoration: underline;
+	text-decoration: underline;
+	font-size: 18px;
+}
+
+.use-name {
+	white-space: normal;
+	max-width: 600px; /* 텍스트가 3줄/4줄 초과하도록 컨테이너 크기 제한 */
+	line-height: 1.5; /* 명확한 줄 높이 설정 */
+	padding: 0; /* 패딩 제거로 높이 계산 정확도 향상 */
+	margin-bottom: 10px;
+}
+
+/* .use-name에 3줄 초과 시 적용 */
+.use-name.clamp {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* 3줄로 제한 */
+  -webkit-box-orient: vertical;
+  line-clamp: 3; /* 현대 브라우저 지원 */
+}
+
+/* .use-sub > div:first-child에 4줄 초과 시 적용 */
+.use-sub > div:first-child.clamp {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* 4줄로 제한 */
+  -webkit-box-orient: vertical;
+  line-clamp: 4; /* 현대 브라우저 지원 */
+}
+
+.use-name.expanded, .use-sub>div:first-child.expanded {
+	display: block; /* 전체 텍스트 표시 */
+	-webkit-line-clamp: unset;
+	line-clamp: unset;
+	text-overflow: unset;
+	overflow: visible;
+}
+
+.toggle-btn {
+	background: none;
+	border: none;
+	font-size: 16px;
+	cursor: pointer;
+	color: #0f4376;
+	margin-left: 10px;
+	display: flex;
+	justify-content: end;
+	width: 100%;
+	padding-right: 10px;
+	margin-bottom: 10px;
+}
+
+.toggle-btn i {
+	padding: 2.5px;
+	border-color: #0f4376 !important;
+}
+
+.toggle-btn:hover {
+	color: #0056b3;
 }
 
 .use-sub {
@@ -1288,16 +1353,16 @@ h1 {
     position: relative;
 }
 
-.use-sub > div {
-    padding: 15px 0;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+.use-sub>div {
+	padding: 15px 0;
+	border-top: 1px solid #ccc;
+	margin-top: 15px;
 }
 
-.use-sub > div:nth-child(2) {
-    border-top: 0;
-    border-bottom: 0;
+.use-sub>div:nth-child(1) {
+	padding: 15px 0 0;
 }
+
 
 .use-sub div.fw-bold {
     font-size: 16px;
@@ -1347,7 +1412,7 @@ h1 {
     }
 
     .swiper.mySwiper2 .swiper-slide {
-        height: 830px !important;
+        
     }
 
 

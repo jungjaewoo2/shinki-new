@@ -3,159 +3,137 @@
 <jsp:include page="header.jsp" />
 
  <style>
-     /* 기존 CSS 유지 및 Swiper 관련 스타일 추가/수정 */
-     .page-section {
-         position: relative;
-         overflow: hidden;
-     }
+/* 기존 CSS 유지 및 Swiper 관련 스타일 추가/수정 */
+.page-section {
+	position: relative;
+	overflow: hidden;
+}
 
-     .swiper.mySwiperAirway,
-     .swiper.mySwiperResection,
-     .swiper.mySwiperScope {
-         width: 100%;
-     }
+.swiper.mySwiperAirway, .swiper.mySwiperResection, .swiper.mySwiperScope
+	{
+	width: 100%;
+}
 
-     .swiper-slide video {
-         width: 100%;
-         height: 100%;
-         object-fit: cover;
-     }
+.swiper-slide video {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
 
-     .swiper-slide-active {
-         opacity: 1 !important;
-     }
+.swiper-slide-active {
+	opacity: 1 !important;
+}
 
-     .swiper-slide {
-         opacity: 0;
-         transition: opacity 2s cubic-bezier(0.33, 1, 0.68, 1);
-         text-align: center;
-     }
+.swiper-slide {
+	opacity: 0;
+	transition: opacity 2s cubic-bezier(0.33, 1, 0.68, 1);
+	text-align: center;
+}
 
-     .container>.text-center,
-     .container>.feature-grid {
-         position: relative;
-         z-index: 10;
-     }
+.container>.text-center, .container>.feature-grid {
+	position: relative;
+	z-index: 10;
+}
 
-     /* Swiper 내비게이션 버튼 스타일링 */
-     .swiper-button-prev-airway,
-     .swiper-button-next-airway,
-     .swiper-button-prev-resection,
-     .swiper-button-next-resection,
-     .swiper-button-prev-scope,
-     .swiper-button-next-scope {
-         color: #fff !important;
-         z-index: 10;
-     }
+/* Swiper 내비게이션 버튼 스타일링 */
+.swiper-button-prev-airway, .swiper-button-next-airway,
+	.swiper-button-prev-resection, .swiper-button-next-resection,
+	.swiper-button-prev-scope, .swiper-button-next-scope {
+	color: #fff !important;
+	z-index: 10;
+}
 
-     .swiper-button-prev-airway:after,
-     .swiper-button-next-airway:after,
-     .swiper-button-prev-resection:after,
-     .swiper-button-next-resection:after,
-     .swiper-button-prev-scope:after,
-     .swiper-button-next-scope:after {
-         font-family: swiper-icons;
-         font-size: 24px;
-         text-transform: none !important;
-         letter-spacing: 0;
-         font-variant: initial;
-         line-height: 1.3;
-     }
+.swiper-button-prev-airway:after, .swiper-button-next-airway:after,
+	.swiper-button-prev-resection:after, .swiper-button-next-resection:after,
+	.swiper-button-prev-scope:after, .swiper-button-next-scope:after {
+	font-family: swiper-icons;
+	font-size: 24px;
+	text-transform: none !important;
+	letter-spacing: 0;
+	font-variant: initial;
+	line-height: 1.3;
+}
 
-     .swiper-button-prev-airway:after,
-     .swiper-button-prev-resection:after,
-     .swiper-button-prev-scope:after {
-         content: 'prev';
-     }
+.swiper-button-prev-airway:after, .swiper-button-prev-resection:after,
+	.swiper-button-prev-scope:after {
+	/* content: 'prev'; */
+	
+}
 
-     .swiper-button-next-airway:after,
-     .swiper-button-next-resection:after,
-     .swiper-button-next-scope:after {
-         content: 'next';
-     }
+.swiper-button-next-airway:after, .swiper-button-next-resection:after,
+	.swiper-button-next-scope:after {
+	/* content: 'next'; */
+	
+}
 
-     .mask {
-         position: absolute;
-         top: 0;
-         left: 0;
-         width: 100%;
-         background-color: #000;
-         z-index: 1;
-         height: 100%;
-         opacity: .3;
-     }
+.mask {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #000;
+	z-index: 1;
+	height: 100%;
+	opacity: .3;
+}
 
+.swiper-slide-active {
+	opacity: 1 !important;
+}
 
-     .swiper-slide-active {
-         opacity: 1 !important;
-     }
+.swiper-slide {
+	opacity: 0;
+	transition: opacity 2s cubic-bezier(0.33, 1, 0.68, 1);
+	text-align: center;
+	height: 596px;
+}
 
-     .swiper-slide {
-         opacity: 0;
-         transition: opacity 2s cubic-bezier(0.33, 1, 0.68, 1);
-         text-align: center;
-         height: 596px;
-     }
+.swiper-slide img {
+	width: 512px;
+	height: 512px;
+}
 
-     .swiper-slide img {
-         width: 512px;
-         height: 512px;
-     }
+@media ( max-width : 1024px) {
+	.swiper-slide img {
+		width: 100%;
+		height: auto;
+	}
+	.swiper-slide {
+		height: auto;
+	}
+}
 
-     @media (max-width: 1024px) {
-         .swiper-slide img {
-             width: 100%;
-             height: auto;
-         }
-         
-         .swiper-slide {
-             height: auto;
-         }
-     }
+.container>.text-center, .container>.feature-grid {
+	position: relative;
+	z-index: 10;
+}
 
-     .container>.text-center,
-     .container>.feature-grid {
-         position: relative;
-         z-index: 10;
-     }
+/* Swiper 페이지 네비게이션 스타일링 */
+.swiper-button-next-airway, .swiper-button-prev-airway,
+	.swiper-button-next-resection, .swiper-button-prev-resection,
+	.swiper-button-next-scope, .swiper-button-prev-scope {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
 
-     /* Swiper 페이지 네비게이션 스타일링 */
+.swiper-button-next-airway, .swiper-button-next-resection,
+	.swiper-button-next-scope {
+	right: var(--swiper-navigation-sides-offset, -30px);
+}
 
-     .swiper-button-next-airway,
-     .swiper-button-prev-airway,
-     .swiper-button-next-resection,
-     .swiper-button-prev-resection,
-     .swiper-button-next-scope,
-     .swiper-button-prev-scope {
-         position: absolute;
-         top: 50%;
-         background-color: rgb(0, 0, 0, .4);
-         width: 30px;
-         height: 30px;
-         text-align: center;
-         border-radius: 4px;
-     }
+.swiper-button-prev-airway, .swiper-button-prev-resection,
+	.swiper-button-prev-scope {
+	left: var(--swiper-navigation-sides-offset, -10px);
+}
 
-     .swiper-button-next-airway,
-     .swiper-button-next-resection,
-     .swiper-button-next-scope {
-         right: var(--swiper-navigation-sides-offset, 10px);
-     }
-
-     .swiper-button-prev-airway,
-     .swiper-button-prev-resection,
-     .swiper-button-prev-scope {
-         left: var(--swiper-navigation-sides-offset, 10px);
-     }
-
-     .swiper-horizontal>.swiper-pagination-bullets,
-     .swiper-pagination-bullets.swiper-pagination-horizontal {
-         z-index: 1;
-         position: absolute;
-         bottom: 30px !important;
-     }
-
- </style>
+.swiper-horizontal>.swiper-pagination-bullets,
+	.swiper-pagination-bullets.swiper-pagination-horizontal {
+	z-index: 1;
+	position: absolute;
+	bottom: 30px !important;
+}
+</style>
 
  <!-- Application Page -->
  <section id="application" class="application-details page-section">
@@ -181,7 +159,7 @@
          </h2>
 
          <div class="row d-flex justify-content-between flex-lg-row gap-5 gap-lg-0">
-             <div class="col-12 col-xl-4">
+             <div class="col-12 col-xl-5">
                  <div class="accordion" id="accordionExample">
                      <div class="accordion-item">
                          <h2 class="accordion-header">
@@ -240,96 +218,114 @@
                  <!-- Lung Analysis / Airway Swiper -->
                  <div class="swiper mySwiperAirway" id="swiperAirway">
                      <div class="swiper-wrapper">
-                         <div class="swiper-slide slide01">
+						<div class="swiper-slide slide01">
 
-                             <img src="/assets/images/Airway-img01.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
-                             <div class="slide-title fs-4 pt-1"> Bronchus CPR</div>
-                         </div>
-                         <div class="swiper-slide slide02">
+							<img src="/assets/images/Airway-img01.jpg" width=""
+								data-bs-toggle="modal" data-bs-target="#imageModal">
+							<div class="slide-title fs-4 pt-1">Bronchus CPR</div>
+						</div>
+						<div class="swiper-slide slide02">
 
-                             <img src="/assets/images/Airway-img02.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
-                             <div class="slide-title fs-4 pt-1"> Cluster View</div>
-                         </div>
-                         <div class="swiper-slide slide03">
+							<img src="/assets/images/Airway-img02.jpg" width=""
+								data-bs-toggle="modal" data-bs-target="#imageModal">
+							<div class="slide-title fs-4 pt-1">Cluster View</div>
+						</div>
+						<div class="swiper-slide slide03">
 
-                             <img src="/assets/images/Airway-img03.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
-                             <div class="slide-title fs-4 pt-1"> Goddard Score</div>
-                         </div>
-                         <div class="swiper-slide slide04">
+							<img src="/assets/images/Airway-img03.jpg" width=""
+								data-bs-toggle="modal" data-bs-target="#imageModal">
+							<div class="slide-title fs-4 pt-1">Goddard Score</div>
+						</div>
+						<div class="swiper-slide slide04">
 
-                             <img src="/assets/images/Airway-img04.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
-                             <div class="slide-title fs-4 pt-1"> LAA View</div>
-                         </div>
-                         <div class="swiper-slide slide05">
+							<img src="/assets/images/Airway-img04.jpg" width=""
+								data-bs-toggle="modal" data-bs-target="#imageModal">
+							<div class="slide-title fs-4 pt-1">LAA View</div>
+						</div>
+						<div class="swiper-slide slide05">
 
-                             <img src="/assets/images/Airway-img05.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
-                             <div class="slide-title fs-4 pt-1"> Various View</div>
-                         </div>
-                     </div>
+							<img src="/assets/images/Airway-img05.jpg" width=""
+								data-bs-toggle="modal" data-bs-target="#imageModal">
+							<div class="slide-title fs-4 pt-1">Axial view</div>
+						</div>
+					</div>
                      <!--<div class="swiper-pagination-airway text-center"></div>-->
-                     <div class="swiper-button-next-airway"></div>
-                     <div class="swiper-button-prev-airway"></div>
+                     <div class="swiper-button-next-airway">
+						<img class="w-75" src="assets/images/arrow-left.png">
+					</div>
+					<div class="swiper-button-prev-airway">
+						<img class="w-75" src="assets/images/arrow-right.png">
+					</div>
                  </div>
                  <!-- Lung Analysis Resection Swiper -->
                  <div class="swiper mySwiperResection" id="swiperResection" style="display: none;">
                      <div class="swiper-wrapper">
-                         <div class="swiper-slide slide01">
+						<div class="swiper-slide slide01">
 
-                             <img src="/assets/images/resection-img01.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
-                             <div class="slide-title fs-4 pt-1"> Cut Plane</div>
-                         </div>
-                         <div class="swiper-slide slide02">
+							<img src="/assets/images/resection-img01.jpg" width=""
+								data-bs-toggle="modal" data-bs-target="#imageModal">
+							<div class="slide-title fs-4 pt-1">Cut Plane</div>
+						</div>
+						<div class="swiper-slide slide02">
 
-                             <img src="/assets/images/resection-img02.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
-                             <div class="slide-title fs-4 pt-1"> GGN Analysis</div>
-                         </div>
-                         <div class="swiper-slide slide03">
+							<img src="/assets/images/resection-img02.jpg" width=""
+								data-bs-toggle="modal" data-bs-target="#imageModal">
+							<div class="slide-title fs-4 pt-1">GGN Analysis</div>
+						</div>
+						<div class="swiper-slide slide03">
 
-                             <img src="/assets/images/resection-img03.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
-                             <div class="slide-title fs-4 pt-1"> Lung 3D</div>
-                         </div>
-                         <div class="swiper-slide slide04">
+							<img src="/assets/images/resection-img03.jpg" width=""
+								data-bs-toggle="modal" data-bs-target="#imageModal">
+							<div class="slide-title fs-4 pt-1">Lung 3D</div>
+						</div>
+						<div class="swiper-slide slide04">
 
-                             <img src="/assets/images/resection-img04.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
-                             <div class="slide-title fs-4 pt-1"> Lung Rendering</div>
-                         </div>
-                         <div class="swiper-slide slide05">
+							<img src="/assets/images/resection-img04.jpg" width=""
+								data-bs-toggle="modal" data-bs-target="#imageModal">
+							<div class="slide-title fs-4 pt-1">Vessel rendering</div>
+						</div>
+						<div class="swiper-slide slide05">
 
-                             <img src="/assets/images/resection-img05.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
-                             <div class="slide-title fs-4 pt-1"> Territory</div>
-                         </div>
-                         <div class="swiper-slide slide05">
+							<img src="/assets/images/resection-img05.jpg" width=""
+								data-bs-toggle="modal" data-bs-target="#imageModal">
+							<div class="slide-title fs-4 pt-1">Territory</div>
+						</div>
+						<div class="swiper-slide slide06">
 
-                             <img src="/assets/images/resection-img05.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
-                             <div class="slide-title fs-4 pt-1"> Various view</div>
-                         </div>
-                     </div>
+							<img src="/assets/images/resection-img06.jpg" width=""
+								data-bs-toggle="modal" data-bs-target="#imageModal">
+							<div class="slide-title fs-4 pt-1">Various view</div>
+						</div>
+					</div>
                      <!--<div class="swiper-pagination-resection text-center"></div>-->
-                     <div class="swiper-button-next-resection"></div>
-                     <div class="swiper-button-prev-resection"></div>
+                     <div class="swiper-button-next-resection"><img class="w-75" src="assets/images/arrow-left.png"></div>
+					<div class="swiper-button-prev-resection"><img class="w-75" src="assets/images/arrow-right.png"></div>
                  </div>
                  <!-- Lung Analysis Scope Swiper -->
                  <div class="swiper mySwiperScope" id="swiperScope" style="display: none;">
                      <div class="swiper-wrapper">
-                         <div class="swiper-slide slide01">
+						<div class="swiper-slide slide01">
 
-                             <img src="/assets/images/scope-img01.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
-                             <div class="slide-title fs-4 pt-1"> Path Creation</div>
-                         </div>
-                         <div class="swiper-slide slide02">
+							<img src="/assets/images/scope-img01.jpg" width=""
+								data-bs-toggle="modal" data-bs-target="#imageModal">
+							<div class="slide-title fs-4 pt-1">Path Creation</div>
+						</div>
+						<div class="swiper-slide slide02">
 
-                             <img src="/assets/images/scope-img02.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
-                             <div class="slide-title fs-4 pt-1"> Variouse view</div>
-                         </div>
-                         <div class="swiper-slide slide03">
+							<img src="/assets/images/scope-img02.jpg" width=""
+								data-bs-toggle="modal" data-bs-target="#imageModal">
+							<div class="slide-title fs-4 pt-1">Variouse view</div>
+						</div>
+						<div class="swiper-slide slide03">
 
-                             <img src="/assets/images/scope-img03.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
-                             <div class="slide-title fs-4 pt-1"> VE view</div>
-                         </div>
-                     </div>
+							<img src="/assets/images/scope-img03.jpg" width=""
+								data-bs-toggle="modal" data-bs-target="#imageModal">
+							<div class="slide-title fs-4 pt-1">VE view</div>
+						</div>
+					</div>
                      <!--<div class="swiper-pagination-scope text-center"></div>-->
-                     <div class="swiper-button-next-scope"></div>
-                     <div class="swiper-button-prev-scope"></div>
+                     <div class="swiper-button-next-scope"><img class="w-75" src="assets/images/arrow-left.png"></div>
+					<div class="swiper-button-prev-scope"><img class="w-75" src="assets/images/arrow-right.png"></div>
                  </div>
              </div>
          </div>

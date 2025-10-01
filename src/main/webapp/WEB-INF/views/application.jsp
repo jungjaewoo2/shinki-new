@@ -207,7 +207,7 @@
                          </div>
                          <div class="swiper-slide slide04">
                              <img src="assets/images/tab1-cont-img04.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
-                             <div class="slide-title fs-4 pt-1">MRI fusion</div>
+                             <div class="slide-title fs-4 pt-1">Endoscopic view</div>
 
                          </div>
                          <div class="swiper-slide slide05">
@@ -215,19 +215,34 @@
                              <div class="slide-title fs-4 pt-1">Patial Resection</div>
 
                          </div>
-                         <div class="swiper-slide slide05">
+                         <div class="swiper-slide slide06">
                              <img src="assets/images/tab1-cont-img06.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
                              <div class="slide-title fs-4 pt-1">Region segmentation</div>
 
                          </div>
-                         <div class="swiper-slide slide05">
+                         <div class="swiper-slide slide07">
                              <img src="assets/images/tab1-cont-img07.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
                              <div class="slide-title fs-4 pt-1">Segmentation</div>
 
                          </div>
-                         <div class="swiper-slide slide05">
+                         <div class="swiper-slide slide08">
                              <img src="assets/images/tab1-cont-img08.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
                              <div class="slide-title fs-4 pt-1">SPECT fusion</div>
+
+                         </div>
+                         <div class="swiper-slide slide09">
+                             <img src="assets/images/tab1-cont-img09.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
+                             <div class="slide-title fs-4 pt-1">Liver rendering</div>
+
+                         </div>
+                         <div class="swiper-slide slide10">
+                             <img src="assets/images/tab1-cont-img10.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
+                             <div class="slide-title fs-4 pt-1">Various view</div>
+
+                         </div>
+                         <div class="swiper-slide slide11">
+                             <img src="assets/images/tab1-cont-img11.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
+                             <div class="slide-title fs-4 pt-1">Sector MPR</div>
 
                          </div>
                      </div>
@@ -243,10 +258,20 @@
                              <div class="slide-title fs-4 pb-4">Pancreas 3D</div>
 
                          </div>
+                         <div class="swiper-slide slide02">
+                             <img src="assets/images/pancreas-img02.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
+                             <div class="slide-title fs-4 pb-4">Endoscopic view</div>
+
+                         </div>
+                         <div class="swiper-slide slide03">
+                             <img src="assets/images/pancreas-img03.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
+                             <div class="slide-title fs-4 pb-4">Region segmentation</div>
+
+                         </div>
                      </div>
                      <!--<div class="swiper-pagination-pancreas text-center"></div>-->
-                     <div class="swiper-button-next-pancreas"></div>
-                     <div class="swiper-button-prev-pancreas"></div>
+                     <div class="swiper-button-next-pancreas"><img class="w-75" src="assets/images/arrow-left.png"></div>
+                     <div class="swiper-button-prev-pancreas"><img class="w-75" src="assets/images/arrow-right.png"></div>
                  </div>
              </div>
          </div>

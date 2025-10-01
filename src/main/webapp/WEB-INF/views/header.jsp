@@ -66,14 +66,16 @@
                     </div>
 
                 </div>
-
-                <div class="d-none d-xl-block position-relative" style="right: 15%">
-                    <div class="d-flex align-items-center gap-3">
-                        <!--<div class=""><a href="#" class="pe-auto">LOGOUT</a></div>-->
-                        <!--<div class=""><a href="#" class="pe-auto">MYPAGE</a></div>-->
-                        <!--<div class=""><a href="#" class="pe-auto text-decoration-underline">신기사님</a></div>-->
-                    </div>
-                    <div class="dropdown">
+				<div class="d-none d-lg-block w-25">
+					<div class="align-items-center d-flex gap-1 justify-content-between">
+                	<div class="d-none d-xl-block position-relative" style="right: 15%">
+	                    <div class="d-flex align-items-center gap-3">
+	                        <!--<div class=""><a href="#" class="pe-auto">LOGOUT</a></div>-->
+	                        <!--<div class=""><a href="#" class="pe-auto">MYPAGE</a></div>-->
+	                        <!--<div class=""><a href="#" class="pe-auto text-decoration-underline">신기사님</a></div>-->
+	                    </div>
+                    
+                    	<div class="dropdown">
                         <!--<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             신기사님
                         </button>
@@ -113,8 +115,14 @@
                                 <div class="cursor-pointer" style="color: rgba(255, 255, 255, 0.7);" onclick="location.href='/mypage/login'">로그인</div>
                             </c:otherwise>
                         </c:choose>
+                        
                     </div>
-                </div>
+                    
+                    </div>
+                    <div class="align-items-baseline d-flex gap-1 mb-2" style=""><img src="/assets/images/logo.png" height="45"><img src="../assets/images/fujifilm-logo.png" alt="후지필름로고" height="30"></div>
+                    </div>
+				</div>
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                     <i class="bi bi-list fs-2 text-white"></i>
                 </button>
@@ -150,13 +158,13 @@
                     <div class="collapse navbar-collapse show" id="navbarNavDarkDropdown">
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
-                                <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class="btn" data-bs-toggle="dropdown" aria-expanded="false">
                                     Q&A
                                 </button>
-                                <ul class="dropdown-menu">
+                                <!-- <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="mypage/inquiry">- 문의하기</a></li>
                                     <li><a class="dropdown-item" href="mypage/inquiry-history">- 문의내역조회</a></li>
-                                </ul>
+                                </ul> -->
                             </li>
                         </ul>
                     </div>
@@ -176,6 +184,7 @@
                             <div class=""><a href="#" class="pe-auto" onclick="location.href='/mypage/login'">로그인</a></div>
                         </c:otherwise>
                     </c:choose>
+                    <div class="align-items-baseline d-flex gap-1" style=""><img src="/assets/images/logo_header.png" height="45"><img src="../assets/images/fujifilm-logo.png" alt="후지필름로고" height="30"></div>
                 </div>
             </div>
         </div>

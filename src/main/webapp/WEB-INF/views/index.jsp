@@ -83,7 +83,7 @@
 
     .swiper.mySwiper2 .swiper-slide {
         width: 100%;
-        height: 700px;
+        height: 650px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -243,7 +243,7 @@
                     </div>
                     <div class="swiper-slide">
                         <video autoplay muted loop playsinline>
-                            <source src="assets/images/main-video.mp4" type="video/mp4">
+                            <source src="assets/images/main-video2.mp4" type="video/mp4">
                         </video>
                         <div class="main-title text-center" style="margin: 0 auto;">
                             <h1>Clarity<br>In<br>Beyond<br>Every<br>Dimension</h1>
@@ -514,7 +514,7 @@
                         <div>직관적인 인터페이스를 통한 쉽고 효과적인 사용</div>
                     </div>
                 </div>
-                <div class="business-box rounded-5 d-flex align-items-lg-center gap-3 p-4 cursor-pointer">
+                <div class="business-box rounded-5 d-flex align-items-lg-center gap-3 p-4">
                     <div><img src="assets/images/business-icon09.png" width="88"></div>
                     <div class="business-txt">
                         <div class="feature-title">Support for Various Data Formats</div>
@@ -1198,10 +1198,10 @@
             crossFade: true
         },
         spaceBetween: 0,
-        /* autoplay: {
+        autoplay: {
             delay: 10000,
             disableOnInteraction: false,
-        }, */
+        },
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
@@ -1330,10 +1330,10 @@
     try {
         const swiper = new Swiper('.mySwiper', {
             loop: true,
-            /*autoplay: {
+            autoplay: {
                 delay: 10000,
                 disableOnInteraction: false,
-            },*/
+            },
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
@@ -1383,7 +1383,129 @@
 
 </script>
 
+<!-- <script>
+document.addEventListener('DOMContentLoaded', () => {
+	  // 모든 .use-name과 .use-sub > div:first-child 요소 선택
+	  const elements = document.querySelectorAll('.use-name, .use-sub > div:first-child');
 
+	  elements.forEach(element => {
+	    // 줄 수 기준 설정
+	    const maxLines = element.classList.contains('use-name') ? 4 : 5; // .use-name은 4줄, .use-sub > div:first-child는 5줄
+	    const clampLines = element.classList.contains('use-name') ? 3 : 4; // .use-name은 3줄, .use-sub > div:first-child는 4줄에서 생략
+	    const lineHeight = parseFloat(getComputedStyle(element).lineHeight) || 18; // 줄 높이 가져오기
+	    const maxHeight = lineHeight * maxLines;
+
+	    // 임시로 clamp 스타일 적용하여 실제 높이 확인
+	    const originalClasses = element.className;
+	    element.classList.add('clamp');
+	    const actualHeight = element.scrollHeight;
+	    const calculatedLines = Math.ceil(actualHeight / lineHeight); // 실제 줄 수 계산
+	    element.className = originalClasses; // 원래 클래스 복원
+
+	    // 디버깅 로그 (최종 배포 시 제거 가능)
+	    console.log(`Element: ${element.textContent.slice(0, 20)}..., class: ${element.className}, lineHeight: ${lineHeight}, actualHeight: ${actualHeight}, maxHeight: ${maxHeight}, maxLines: ${maxLines}, calculatedLines: ${calculatedLines}`);
+
+	    // 텍스트가 maxLines를 초과하는 경우
+	    if (calculatedLines > maxLines) { // 줄 수로 직접 비교
+	      // clamp 클래스 추가로 ellipsis 적용
+	      element.classList.add('clamp');
+
+	      // 버튼 생성
+	      const button = document.createElement('button');
+	      button.className = 'toggle-btn';
+	      button.innerHTML = '<i class="bi bi-caret-down-fill border p-1 rounded-5"></i>'; // 아래 화살표
+	      // 버튼을 대상 요소 바로 다음에 삽입
+	      element.parentNode.insertBefore(button, element.nextSibling);
+
+	      // 토글 이벤트 추가
+	      button.addEventListener('click', (event) => {
+	        event.preventDefault(); // a 태그의 링크 이동 방지
+	        event.stopPropagation(); // 이벤트 버블링 방지
+
+	        // 모든 요소의 expanded 클래스 제거 및 버튼 아이콘 초기화
+	        elements.forEach(otherElement => {
+	          if (otherElement !== element && otherElement.classList.contains('expanded')) {
+	            otherElement.classList.remove('expanded');
+	            otherElement.classList.add('clamp');
+	            const otherButton = otherElement.nextSibling;
+	            if (otherButton && otherButton.classList.contains('toggle-btn')) {
+	              otherButton.innerHTML = '<i class="bi bi-caret-down-fill border p-1 rounded-5"></i>';
+	            }
+	          }
+	        });
+
+	        // 현재 요소 토글
+	        if (element.classList.contains('expanded')) {
+	          // 축약 상태로 복귀
+	          element.classList.remove('expanded');
+	          element.classList.add('clamp');
+	          button.innerHTML = '<i class="bi bi-caret-down-fill border p-1 rounded-5"></i>'; // 아래 화살표
+	        } else {
+	          // 전체 텍스트 표시
+	          element.classList.add('expanded');
+	          element.classList.remove('clamp');
+	          button.innerHTML = '<i class="bi bi-caret-up-fill border p-1 rounded-5"></i>'; // 위 화살표
+	        }
+	      });
+	    }
+	  });
+	});
+  </script> -->
+  
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+	  // 모든 .use-name과 .use-sub > div:first-child 요소 선택
+	  const elements = document.querySelectorAll('.use-name, .use-sub > div:first-child');
+
+	  elements.forEach(element => {
+	    // 줄 수 기준 설정
+	    const maxLines = element.classList.contains('use-name') ? 4 : 5; // .use-name은 4줄, .use-sub > div:first-child는 5줄
+	    const lineHeight = parseFloat(getComputedStyle(element).lineHeight) || 18; // 줄 높이 가져오기
+	    const maxHeight = lineHeight * maxLines;
+
+	    // 임시로 clamp 스타일 적용하여 실제 높이 확인
+	    const originalClasses = element.className;
+	    element.classList.add('clamp');
+	    const actualHeight = element.scrollHeight;
+	    const calculatedLines = Math.ceil(actualHeight / lineHeight); // 실제 줄 수 계산
+	    element.className = originalClasses; // 원래 클래스 복원
+
+	    // 디버깅 로그 (최종 배포 시 제거 가능)
+	    console.log(`Element: ${element.textContent.slice(0, 20)}..., class: ${element.className}, lineHeight: ${lineHeight}, actualHeight: ${actualHeight}, maxHeight: ${maxHeight}, maxLines: ${maxLines}, calculatedLines: ${calculatedLines}`);
+
+	    // 텍스트가 maxLines를 초과하는 경우
+	    if (calculatedLines > maxLines) { // 줄 수로 직접 비교
+	      // clamp 클래스 추가로 ellipsis 적용
+	      element.classList.add('clamp');
+
+	      // 클릭 이벤트 추가
+	      element.addEventListener('click', (event) => {
+	        event.preventDefault(); // a 태그의 링크 이동 방지
+	        event.stopPropagation(); // 이벤트 버블링 방지
+
+	        // 모든 요소의 expanded 클래스 제거 및 clamp 복원
+	        elements.forEach(otherElement => {
+	          if (otherElement !== element && otherElement.classList.contains('expanded')) {
+	            otherElement.classList.remove('expanded');
+	            otherElement.classList.add('clamp');
+	          }
+	        });
+
+	        // 현재 요소 토글
+	        if (element.classList.contains('expanded')) {
+	          // 축약 상태로 복귀
+	          element.classList.remove('expanded');
+	          element.classList.add('clamp');
+	        } else {
+	          // 전체 텍스트 표시
+	          element.classList.add('expanded');
+	          element.classList.remove('clamp');
+	        }
+	      });
+	    }
+	  });
+	});
+  </script>
 
 
 <jsp:include page="footer.jsp" />
