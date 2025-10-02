@@ -1303,6 +1303,16 @@ h1 {
   line-clamp: 3; /* 현대 브라우저 지원 */
 }
 
+.use-name.clamp {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  line-clamp: 3 !important;
+  max-height: 81px !important; /* 3줄 * 27px */
+}
+
 /* .use-sub > div:first-child에 4줄 초과 시 적용 */
 .use-sub > div:first-child.clamp {
   overflow: hidden;

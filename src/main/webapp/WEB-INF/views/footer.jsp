@@ -489,7 +489,7 @@
             box-sizing: border-box;
         }
 
-        .carousel-prev, .carousel-next {
+        /* .carousel-prev, .carousel-next {
             background: rgba(255, 255, 255, 0.1);
             border: none;
             border-radius: 50%;
@@ -500,13 +500,13 @@
             align-items: center;
             justify-content: center;
             transition: background 0.3s ease;
-        }
+        } */
 
-        .carousel-prev:hover, .carousel-next:hover {
+        /*.carousel-prev:hover, .carousel-next:hover {
             background: rgba(255, 255, 255, 0.3);
         }
 
-        .carousel-prev::before, .carousel-next::before {
+         .carousel-prev::before, .carousel-next::before {
             content: '';
             display: inline-block;
             width: 12px;
@@ -521,7 +521,7 @@
 
         .carousel-next::before {
             transform: rotate(-45deg);
-        }
+        } */
     `;
     document.head.appendChild(style);
 

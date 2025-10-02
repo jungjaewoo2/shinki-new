@@ -205,12 +205,12 @@
 
      .swiper-button-next-liver,
      .swiper-button-next-pancreas {
-         right: var(--swiper-navigation-sides-offset, -30px);
+         right: var(--swiper-navigation-sides-offset, -60px);
      }
 
      .swiper-button-prev-liver,
      .swiper-button-prev-pancreas {
-         left: var(--swiper-navigation-sides-offset, -10px);
+         left: var(--swiper-navigation-sides-offset, -30px);
      }
 
      .swiper-horizontal>.swiper-pagination-bullets,
@@ -268,6 +268,7 @@
                  </div>
              </div>
              <div class="col-12 col-xl-6">
+             <div class="position-relative">
                  <div class="swiper mySwiper3">
                      <div class="swiper-wrapper">
                          <div class="swiper-slide slide01">
@@ -297,8 +298,10 @@
                          </div>
                      </div>
                      <!--<div class="swiper-pagination2 text-center"></div>-->
-                     <div class="swiper-button-next-liver"><img class="w-75" src="assets/images/arrow-left.png"></div>
-                     <div class="swiper-button-prev-liver"><img class="w-75" src="assets/images/arrow-right.png"></div>
+                     
+                 </div>
+                 <div class="swiper-button-next-liver"><img class="w-75" src="assets/images/arrow-left.png"></div>
+                  <div class="swiper-button-prev-liver"><img class="w-75" src="assets/images/arrow-right.png"></div>
                  </div>
              </div>
          </div>

@@ -119,7 +119,7 @@
                     </div>
                     
                     </div>
-                    <div class="align-items-baseline d-flex gap-1 mb-2" style=""><img src="/assets/images/logo.png" height="45"><img src="../assets/images/fujifilm-logo-w.png" alt="후지필름로고" height="32"></div>
+                    <div class="align-items-baseline d-flex gap-1" style=""><img src="../assets/images/fujifilm-logo-w.png" alt="후지필름로고" height="32"></div>
                     </div>
 				</div>
                 
@@ -184,7 +184,7 @@
                             <div class=""><a href="#" class="pe-auto" onclick="location.href='/mypage/login'">로그인</a></div>
                         </c:otherwise>
                     </c:choose>
-                    <div class="align-items-baseline d-flex gap-1" style=""><img src="/assets/images/logo_header.png" height="45"><img src="../assets/images/fujifilm-logo-w.png" alt="후지필름로고" height="30"></div>
+                    <div class="align-items-baseline d-flex gap-1" style=""><img src="../assets/images/fujifilm-logo.png" alt="후지필름로고" height="30"></div>
                 </div>
             </div>
         </div>

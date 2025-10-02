@@ -119,12 +119,12 @@
 
 .swiper-button-next-airway, .swiper-button-next-resection,
 	.swiper-button-next-scope {
-	right: var(--swiper-navigation-sides-offset, -30px);
+	right: var(--swiper-navigation-sides-offset, -60px);
 }
 
 .swiper-button-prev-airway, .swiper-button-prev-resection,
 	.swiper-button-prev-scope {
-	left: var(--swiper-navigation-sides-offset, -10px);
+	left: var(--swiper-navigation-sides-offset, -30px);
 }
 
 .swiper-horizontal>.swiper-pagination-bullets,
@@ -216,6 +216,7 @@
              </div>
              <div class="col-12 col-xl-6">
                  <!-- Lung Analysis / Airway Swiper -->
+                 <div class="position-relative">
                  <div class="swiper mySwiperAirway" id="swiperAirway">
                      <div class="swiper-wrapper">
 						<div class="swiper-slide slide01">
@@ -250,14 +251,17 @@
 						</div>
 					</div>
                      <!--<div class="swiper-pagination-airway text-center"></div>-->
-                     <div class="swiper-button-next-airway">
+                     
+                 </div>
+                 <div class="swiper-button-next-airway">
 						<img class="w-75" src="assets/images/arrow-left.png">
 					</div>
 					<div class="swiper-button-prev-airway">
 						<img class="w-75" src="assets/images/arrow-right.png">
 					</div>
-                 </div>
+				</div>
                  <!-- Lung Analysis Resection Swiper -->
+                 <div class="position-relative">
                  <div class="swiper mySwiperResection" id="swiperResection" style="display: none;">
                      <div class="swiper-wrapper">
 						<div class="swiper-slide slide01">
@@ -298,10 +302,13 @@
 						</div>
 					</div>
                      <!--<div class="swiper-pagination-resection text-center"></div>-->
-                     <div class="swiper-button-next-resection"><img class="w-75" src="assets/images/arrow-left.png"></div>
-					<div class="swiper-button-prev-resection"><img class="w-75" src="assets/images/arrow-right.png"></div>
+                     
                  </div>
+                 <div class="swiper-button-next-resection"><img class="w-75" src="assets/images/arrow-left.png"></div>
+					<div class="swiper-button-prev-resection"><img class="w-75" src="assets/images/arrow-right.png"></div>
+					</div>
                  <!-- Lung Analysis Scope Swiper -->
+                 <div class="position-relative">
                  <div class="swiper mySwiperScope" id="swiperScope" style="display: none;">
                      <div class="swiper-wrapper">
 						<div class="swiper-slide slide01">
@@ -324,9 +331,11 @@
 						</div>
 					</div>
                      <!--<div class="swiper-pagination-scope text-center"></div>-->
-                     <div class="swiper-button-next-scope"><img class="w-75" src="assets/images/arrow-left.png"></div>
-					<div class="swiper-button-prev-scope"><img class="w-75" src="assets/images/arrow-right.png"></div>
+                     
                  </div>
+                 <div class="swiper-button-next-scope"><img class="w-75" src="assets/images/arrow-left.png"></div>
+					<div class="swiper-button-prev-scope"><img class="w-75" src="assets/images/arrow-right.png"></div>
+					</div>
              </div>
          </div>
      </div>
@@ -505,117 +514,146 @@
  <!-- Swiper JS -->
  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
  <script>
-     // Swiper 인스턴스 초기화
-     var swiperAirway = new Swiper(".mySwiperAirway", {
-         slidesPerView: 1,
-         spaceBetween: 10,
-         pagination: {
-             el: ".swiper-pagination-airway",
-             clickable: true,
-         },
-         navigation: {
-             nextEl: ".swiper-button-next-airway",
-             prevEl: ".swiper-button-prev-airway",
-         },
-         breakpoints: {
-             768: {
-                 slidesPerView: 1,
-                 spaceBetween: 0,
-             },
-         },
-         loop: true,
-     });
+    // Swiper 인스턴스 초기화
+    var swiperAirway = new Swiper(".mySwiperAirway", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+            el: ".swiper-pagination-airway",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next-airway",
+            prevEl: ".swiper-button-prev-airway",
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+            },
+        },
+        loop: true,
+    });
 
-     var swiperResection = new Swiper(".mySwiperResection", {
-         slidesPerView: 1,
-         spaceBetween: 10,
-         pagination: {
-             el: ".swiper-pagination-resection",
-             clickable: true,
-         },
-         navigation: {
-             nextEl: ".swiper-button-next-resection",
-             prevEl: ".swiper-button-prev-resection",
-         },
-         breakpoints: {
-             768: {
-                 slidesPerView: 1,
-                 spaceBetween: 0,
-             },
-         },
-         loop: true,
-     });
+    var swiperResection = new Swiper(".mySwiperResection", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+            el: ".swiper-pagination-resection",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next-resection",
+            prevEl: ".swiper-button-prev-resection",
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+            },
+        },
+        loop: true,
+    });
 
-     var swiperScope = new Swiper(".mySwiperScope", {
-         slidesPerView: 1,
-         spaceBetween: 10,
-         pagination: {
-             el: ".swiper-pagination-scope",
-             clickable: true,
-         },
-         navigation: {
-             nextEl: ".swiper-button-next-scope",
-             prevEl: ".swiper-button-prev-scope",
-         },
-         breakpoints: {
-             768: {
-                 slidesPerView: 1,
-                 spaceBetween: 0,
-             },
-         },
-         loop: true,
-     });
+    var swiperScope = new Swiper(".mySwiperScope", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+            el: ".swiper-pagination-scope",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next-scope",
+            prevEl: ".swiper-button-prev-scope",
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+            },
+        },
+        loop: true,
+    });
 
-     // 아코디언 이벤트 리스너
-     document.addEventListener('DOMContentLoaded', function() {
-         const swiperAirwayContainer = document.querySelector('#swiperAirway');
-         const swiperResectionContainer = document.querySelector('#swiperResection');
-         const swiperScopeContainer = document.querySelector('#swiperScope');
+    // 아코디언 이벤트 리스너
+    document.addEventListener('DOMContentLoaded', function() {
+        const swiperAirwayContainer = document.querySelector('#swiperAirway');
+        const swiperResectionContainer = document.querySelector('#swiperResection');
+        const swiperScopeContainer = document.querySelector('#swiperScope');
+        const airwayNextButton = document.querySelector('.swiper-button-next-airway');
+        const airwayPrevButton = document.querySelector('.swiper-button-prev-airway');
+        const resectionNextButton = document.querySelector('.swiper-button-next-resection');
+        const resectionPrevButton = document.querySelector('.swiper-button-prev-resection');
+        const scopeNextButton = document.querySelector('.swiper-button-next-scope');
+        const scopePrevButton = document.querySelector('.swiper-button-prev-scope');
 
-         // 초기 상태: Lung Analysis / Airway Swiper만 표시
-         swiperAirwayContainer.style.display = 'block';
-         swiperResectionContainer.style.display = 'none';
-         swiperScopeContainer.style.display = 'none';
+        // 초기 상태: Airway Swiper와 화살표만 표시
+        swiperAirwayContainer.style.display = 'block';
+        airwayNextButton.style.display = 'block';
+        airwayPrevButton.style.display = 'block';
+        swiperResectionContainer.style.display = 'none';
+        resectionNextButton.style.display = 'none';
+        resectionPrevButton.style.display = 'none';
+        swiperScopeContainer.style.display = 'none';
+        scopeNextButton.style.display = 'none';
+        scopePrevButton.style.display = 'none';
 
-         // 아코디언이 열릴 때 Swiper 전환
-         document.querySelector('#collapseOne').addEventListener('shown.bs.collapse', function() {
-             swiperAirwayContainer.style.display = 'block';
-             swiperResectionContainer.style.display = 'none';
-             swiperScopeContainer.style.display = 'none';
-             swiperAirway.update();
-         });
+        // 아코디언이 열릴 때 Swiper 및 화살표 전환
+        document.querySelector('#collapseOne').addEventListener('shown.bs.collapse', function() {
+            swiperAirwayContainer.style.display = 'block';
+            airwayNextButton.style.display = 'block';
+            airwayPrevButton.style.display = 'block';
+            swiperResectionContainer.style.display = 'none';
+            resectionNextButton.style.display = 'none';
+            resectionPrevButton.style.display = 'none';
+            swiperScopeContainer.style.display = 'none';
+            scopeNextButton.style.display = 'none';
+            scopePrevButton.style.display = 'none';
+            swiperAirway.update();
+        });
 
-         document.querySelector('#collapseTwo').addEventListener('shown.bs.collapse', function() {
-             swiperAirwayContainer.style.display = 'none';
-             swiperResectionContainer.style.display = 'block';
-             swiperScopeContainer.style.display = 'none';
-             swiperResection.update();
-         });
+        document.querySelector('#collapseTwo').addEventListener('shown.bs.collapse', function() {
+            swiperAirwayContainer.style.display = 'none';
+            airwayNextButton.style.display = 'none';
+            airwayPrevButton.style.display = 'none';
+            swiperResectionContainer.style.display = 'block';
+            resectionNextButton.style.display = 'block';
+            resectionPrevButton.style.display = 'block';
+            swiperScopeContainer.style.display = 'none';
+            scopeNextButton.style.display = 'none';
+            scopePrevButton.style.display = 'none';
+            swiperResection.update();
+        });
 
-         document.querySelector('#collapseThree').addEventListener('shown.bs.collapse', function() {
-             swiperAirwayContainer.style.display = 'none';
-             swiperResectionContainer.style.display = 'none';
-             swiperScopeContainer.style.display = 'block';
-             swiperScope.update();
-         });
+        document.querySelector('#collapseThree').addEventListener('shown.bs.collapse', function() {
+            swiperAirwayContainer.style.display = 'none';
+            airwayNextButton.style.display = 'none';
+            airwayPrevButton.style.display = 'none';
+            swiperResectionContainer.style.display = 'none';
+            resectionNextButton.style.display = 'none';
+            resectionPrevButton.style.display = 'none';
+            swiperScopeContainer.style.display = 'block';
+            scopeNextButton.style.display = 'block';
+            scopePrevButton.style.display = 'block';
+            swiperScope.update();
+        });
 
-         // 모달 이미지 업데이트
-         const slides = document.querySelectorAll('.swiper-slide');
-         const modal = document.querySelector('#imageModal');
-         const modalImg = modal.querySelector('#modalImage');
-         const modalTitle = modal.querySelector('#imageModalLabel');
+        // 모달 이미지 업데이트
+        const slides = document.querySelectorAll('.swiper-slide');
+        const modal = document.querySelector('#imageModal');
+        const modalImg = modal.querySelector('#modalImage');
+        const modalTitle = document.querySelector('#imageModalLabel');
 
-         slides.forEach(slide => {
-             const img = slide.querySelector('img');
-             const title = slide.querySelector('div').textContent;
-             img.addEventListener('click', function() {
-                 const imgSrc = this.getAttribute('src');
-                 modalImg.setAttribute('src', imgSrc);
-                 modalTitle.textContent = title;
-             });
-         });
-     });
-
- </script>
+        slides.forEach(slide => {
+            const img = slide.querySelector('img');
+            const title = slide.querySelector('div').textContent;
+            img.addEventListener('click', function() {
+                const imgSrc = this.getAttribute('src');
+                modalImg.setAttribute('src', imgSrc);
+                modalTitle.textContent = title;
+            });
+        });
+    });
+</script>
 
 <jsp:include page="footer.jsp" />
