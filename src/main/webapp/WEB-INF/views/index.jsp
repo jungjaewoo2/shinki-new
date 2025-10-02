@@ -307,7 +307,7 @@
                         <button class="nav-link align-items-end d-flex justify-content-center" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">KNEE</button>
                     </li>
                 </ul>
-                <div class="align-items-end d-flex justify-content-end"><button class="btn px-4 text-white rounded-5" style="background: linear-gradient(to right, #975cf8, #5d55fe);" onclick="location.href='./mypage/request.html'">의뢰하기 <i class="bi bi-arrow-right"></i></button></div>
+                <div class="align-items-end d-flex justify-content-end"><button class="btn px-4 text-white rounded-5" style="background: linear-gradient(to right, #975cf8, #5d55fe);" onclick="location.href='./mypage/request'">의뢰하기 <i class="bi bi-arrow-right"></i></button></div>
             </div>
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
@@ -321,7 +321,7 @@
                                             <div>혈관 선택으로 간단하게 절단면 확인</div>
                                             <div>Region 부위 volume의 정확한 측정</div>
                                         </div>
-                                        <div class="start-0 button-group justify-content-center justify-content-lg-end"><button class="btn-secondary" onclick="location.href='all-application.html'" style="padding: 0.5rem 1.25rem;">Learn more</button></div>
+                                        <div class="start-0 button-group justify-content-center justify-content-lg-end"><button class="btn-secondary" onclick="location.href='all-application'" style="padding: 0.5rem 1.25rem;">Learn more</button></div>
                                     </div>
                                     <div class="d-flex flex-column flex-fill h-100 justify-content-center gap-3 w-50 carousel-img">
                                         <div class="">
@@ -339,7 +339,7 @@
                                             <div>췌장 주변 장기나 혈관의 자동추출. </div>
                                             <div>그 관계성을 3D Simulation을 통해 관찰.</div>
                                         </div>
-                                        <div class="button-group justify-content-center justify-content-lg-end"><button class="btn-secondary" onclick="location.href='all-application.html'" style="padding: 0.5rem 1.25rem;">Learn more</button></div>
+                                        <div class="button-group justify-content-center justify-content-lg-end"><button class="btn-secondary" onclick="location.href='all-application'" style="padding: 0.5rem 1.25rem;">Learn more</button></div>
                                         <div class="txt-sub">
                                             <div></div>
                                             <div></div>
@@ -375,7 +375,7 @@
                                             <div>폐동맥(PA), 폐정맥(PV), 기관지, </div>
                                             <div>폐엽을 자동으로 추출.</div>
                                         </div>
-                                        <div class="button-group justify-content-center justify-content-lg-end"><button class="btn-secondary" onclick="location.href='all-application.html'" style="padding: 0.5rem 1.25rem;">Learn more</button></div>
+                                        <div class="button-group justify-content-center justify-content-lg-end"><button class="btn-secondary" onclick="location.href='all-application'" style="padding: 0.5rem 1.25rem;">Learn more</button></div>
                                     </div>
                                     <div class="d-flex flex-column flex-fill h-100 justify-content-center gap-3 w-50 carousel-img">
                                         <div class="">
@@ -403,7 +403,7 @@
                                             <div>판막(Valve), 관상동맥(Coronary Arteries) 등 </div>
                                             <div>심장의 여러 구조물들의 분석 및 정량적 평가.</div>
                                         </div>
-                                        <div class="button-group justify-content-end"><button class="btn-secondary" onclick="location.href='all-application.html'" style="padding: 0.5rem 1.25rem;">Learn more</button></div>
+                                        <div class="button-group justify-content-end"><button class="btn-secondary" onclick="location.href='all-application'" style="padding: 0.5rem 1.25rem;">Learn more</button></div>
                                     </div>
                                     <div class="d-flex flex-column flex-fill h-100 justify-content-center gap-3 w-50 carousel-img">
                                         <div class="">
@@ -430,11 +430,11 @@
                                             <div>무릎 연골(Cartilage)의 자동 추출. </div>
                                             <div>Thickness와 Volume,Loss area의 분석 및 정량적 평가.</div>
                                         </div>
-                                        <div class="button-group justify-content-end"><button class="btn-secondary" onclick="location.href='all-application.html'" style="padding: 0.5rem 1.25rem;">Learn more</button></div>
+                                        <div class="button-group justify-content-end"><button class="btn-secondary" onclick="location.href='all-application'" style="padding: 0.5rem 1.25rem;">Learn more</button></div>
                                     </div>
                                     <div class="d-flex flex-column flex-fill h-100 justify-content-center gap-3 w-50 carousel-img">
                                         <div class="">
-                                            <img src="assets/images/tab1-cont-img04.jpg" width="" height="516" style="padding-right: 50px;">
+                                            <img src="assets/images/tab4-knee-img.png" width="" height="516" style="padding-right: 50px;">
                                         </div>
 
                                     </div>
@@ -1199,10 +1199,10 @@
             crossFade: true
         },
         spaceBetween: 0,
-       /*  autoplay: {
+       autoplay: {
             delay: 10000,
             disableOnInteraction: false,
-        }, */
+        },
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
@@ -1331,10 +1331,10 @@
     try {
         const swiper = new Swiper('.mySwiper', {
             loop: true,
-            /* autoplay: {
+            autoplay: {
                 delay: 10000,
                 disableOnInteraction: false,
-            }, */
+            },
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,

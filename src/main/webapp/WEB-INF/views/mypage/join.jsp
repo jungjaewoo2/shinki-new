@@ -126,7 +126,7 @@
 									<input class="form-check-input" type="checkbox" id="agree1">
 								</div>
 								<div>
-									만 14세입니다.(필수)
+									(필수)만 14세입니다.
 								</div>
 							</div>
 							<div class="d-flex align-items-center gap-2">
@@ -134,7 +134,7 @@
 									<input class="form-check-input" type="checkbox" id="agree2">
 								</div>
 								<div class="">
-									개인정보 수집 및 이용에 대한 동의합니다.(필수) <span class="btn-secondary h-auto rounded-1" style="cursor: pointer;padding: 4px 8px;" data-bs-toggle="modal" data-bs-target="#termsBox_list2">더보기</span>
+									(필수)개인정보 수집 및 이용에 대한 동의합니다. <span class="h-auto rounded-1" style="cursor: pointer;padding: 4px 8px;" data-bs-toggle="modal" data-bs-target="#termsBox_list2">(약관보기)</span>
 								</div>
 							</div>
 							<div class="d-flex align-items-center gap-2">
@@ -142,7 +142,7 @@
 									<input class="form-check-input" type="checkbox" id="agree4" name="termYn" value="Y">
 								</div>
 								<div>
-									마케팅 및 이벤트 정보 수신에 동의합니다(문자/이메일).(선택)
+									(선택)마케팅 및 이벤트 정보 수신에 동의합니다(문자/이메일).
 								</div>
 							</div>
 						</div>
@@ -467,5 +467,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!-- 다음 우편번호 서비스 API -->
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const allCheckbox = document.querySelector('#terms-checkbox');
+        const checkboxes = document.querySelectorAll('#agree1, #agree2, #agree4');
+
+        // "모두 동의합니다" 체크박스 클릭 시
+        allCheckbox.addEventListener('change', function() {
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = this.checked;
+            });
+        });
+
+        // 개별 체크박스 변경 시 "모두 동의합니다" 상태 업데이트
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+                allCheckbox.checked = allChecked;
+            });
+        });
+    });
+</script>
 
 <jsp:include page="footer.jsp" />

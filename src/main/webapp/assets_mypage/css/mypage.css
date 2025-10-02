@@ -137,8 +137,15 @@ a {
     border-bottom: 1px solid #d9d9d9;
 }
 
+.navbar-collapse {
+	font-family: 'Segoe UI' !important;
+}
+
 .nav-link {
     color: rgba(0, 0, 0, 0.7);
+    font-size: 18px;
+    padding: 0.5rem 0.75rem;
+    font-family: 'Segoe UI' !important;
 }
 
 .nav-title {
@@ -165,6 +172,11 @@ a {
     padding: 12px 40px;
     cursor: pointer;
     transition: all 0.3s;
+}
+
+.top-nav .nav-item {
+	width: 200px;
+	padding: 0;
 }
 
 .nav-item button {

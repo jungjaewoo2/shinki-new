@@ -16,12 +16,12 @@
                  <label class="form-label">의뢰일자</label>
                  <form method="GET" action="/mypage/orders" class="d-flex gap-2 align-items-center">
                      <!-- 기간 검색 -->
-                     <span style="font-size: 14px;">시작일:</span>
+                     <span style="font-size: 14px;"></span>
                      <input type="date" name="startDate" class="form-input" style="max-width: 150px;" value="${param.startDate}">
-                     <span style="font-size: 14px;">종료일:</span>
+                     <span style="font-size: 14px;">~</span>
                      <input type="date" name="endDate" class="form-input" style="max-width: 150px;" value="${param.endDate}">
-                     <button type="submit" class="btn btn-block">검색</button>
-                     <a href="/mypage/orders" class="btn btn-secondary" style="padding: 8px 20px; font-size: 14px; min-width: 100px;">전체보기</a>
+                     <button type="submit" class="btn btn-primary w-100">검색</button>
+                     <a href="/mypage/orders" class="btn btn-secondary" style="min-width: 100px;">전체보기</a>
                  </form>
              </div>
 

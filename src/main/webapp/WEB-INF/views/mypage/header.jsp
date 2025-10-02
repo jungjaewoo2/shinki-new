@@ -36,7 +36,7 @@
     <div class="container-fluid p-0 flex-column">
 
         <nav class="top-nav navbar navbar-expand-lg">
-            <div class="container-fluid">
+            <div class="container-fluid" style="height: 56px;">
                 <div class="logo" onclick="location.href='/'">
                     <img src="/assets/images/logo_B.png" height="30">
                     <!--<span class="fs-4 text-white">SYNAPSE 3D</span>-->
@@ -92,8 +92,8 @@
                         <c:when test="${not empty sessionScope.username}">
                             <!-- 로그인된 경우: 사용자명과 드롭다운 메뉴 -->
                             <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    ${sessionScope.username}님
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="height: unset !important">
+                                   <i class="bi bi-person-circle fs-5"></i> ${sessionScope.username}님
                                 </button>
                                 <ul class="dropdown-menu">
                                     <li>
@@ -117,7 +117,7 @@
                         </c:otherwise>
                     </c:choose>
                 </div>
-                <div class="align-items-baseline d-flex gap-1" style=""><img src="../assets/images/fujifilm-logo.png" alt="후지필름로고" height="27"></div>
+                <div class="align-items-baseline d-flex gap-1" style=""><img src="../assets/images/fujifilm-logo.png" alt="후지필름로고" width="96" height="32"></div>
                 </div>
             </div>
         </nav>

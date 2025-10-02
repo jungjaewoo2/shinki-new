@@ -36,7 +36,7 @@
     <div class="container-fluid p-0 flex-column">
 
         <nav class="top-nav navbar navbar-expand-lg">
-            <div class="container-fluid">
+            <div class="container-fluid" style="height: 56px;">
                 <div class="logo" onclick="location.href='/'">
                     <img src="/assets/images/logo_B.png" height="30">
                     <!--<span class="fs-4 text-white">SYNAPSE 3D</span>-->

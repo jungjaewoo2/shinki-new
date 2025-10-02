@@ -180,7 +180,7 @@
                                      <li>- Pancreatic duct를 따라 절단면을 설정하여 Remnant pancreas volume 등을 측정할 수 있으며, 절단면에서의 Pancreatic duct의 위치를 관찰하고 diameter를 측정할 수 있습니다.</li>
                                      <li>- 3D로 재구성 된 복합적인 장기들을 Laparasopic view로 관찰할 수 있습니다.</li>
                                  </ul>
-                                 <button class="btn rounded-5 text-white" type="button" style="background-color: #2b88f6" data-bs-toggle="modal" data-bs-target="#func_01">Function 알아보기</button>
+                                 <button class="btn rounded-5 text-white" type="button" style="background-color: #2b88f6" data-bs-toggle="modal" data-bs-target="#func_02">Function 알아보기</button>
                              </div>
                          </div>
                      </div>

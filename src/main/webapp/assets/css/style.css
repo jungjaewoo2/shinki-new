@@ -67,7 +67,7 @@ body {
 .nav-container {
     max-width: 100%;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 12px;
     height: 56px;
     display: flex;
     align-items: center;
@@ -106,6 +106,8 @@ body {
     cursor: pointer;
     transition: color 0.2s;
     font-size: 18px;
+    line-height: 28.8px;
+    
 }
 
 .nav-link:hover,
@@ -1525,7 +1527,8 @@ button:focus:not(:focus-visible) {
     text-indent: -.6em;
 }
 
-#func_01 .modal-body {
+#func_01 .modal-body,
+#func_02 .modal-body {
     height: 460px;
 }
 
@@ -1646,4 +1649,8 @@ footer {
 #type .container-fluid,
 #use-cases .container-fluid {
     width: 95%;
+}
+
+.modal {
+	z-index: 2000000;
 }

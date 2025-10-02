@@ -273,7 +273,7 @@
                      <div class="swiper-wrapper">
                          <div class="swiper-slide slide01">
                              
-                             <img src="/assets/images/cardiac-analysis-img01.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
+                             <img src="/assets/images/tab1-cont-img03.png" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
                              <div class="slide-title fs-4">이미지 타이틀</div>
                          </div>
                          <div class="swiper-slide slide02">

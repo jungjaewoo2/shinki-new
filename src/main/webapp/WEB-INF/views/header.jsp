@@ -68,7 +68,7 @@
                 </div>
 				<div class="d-none d-lg-block w-25">
 					<div class="align-items-center d-flex gap-1 justify-content-between">
-                	<div class="d-none d-xl-block position-relative" style="right: 15%">
+                	<div class="d-none d-xl-block position-relative" style="">
 	                    <div class="d-flex align-items-center gap-3">
 	                        <!--<div class=""><a href="#" class="pe-auto">LOGOUT</a></div>-->
 	                        <!--<div class=""><a href="#" class="pe-auto">MYPAGE</a></div>-->
