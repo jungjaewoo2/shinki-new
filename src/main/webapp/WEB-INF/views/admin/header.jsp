@@ -81,8 +81,8 @@
                     </div>
 
                 </div>
-                <div class="align-items-center d-flex gap-2">
-                	<div class="align-items-baseline d-flex gap-1 mb-2" style=""><img src="/assets/images/logo_header.png" height="45"><img src="../assets/images/fujifilm-logo.png" alt="후지필름로고" height="30"></div>
+                <div class="align-items-center d-flex gap-4">
+                	<div class="align-items-baseline d-flex gap-1" style=""><img src="../assets/images/fujifilm-logo.png" alt="후지필름로고" height="27"></div>
                 <div class="d-none d-lg-block">
                     <div class="d-flex align-items-center gap-3">
                         <c:choose>

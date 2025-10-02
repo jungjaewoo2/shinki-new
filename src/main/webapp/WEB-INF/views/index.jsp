@@ -230,7 +230,8 @@
                             <source src="assets/images/main-video.mp4" type="video/mp4">
                         </video>
                         <div class="main-title main-f text-center" style="margin: 0 auto;">
-                            <h1>Synapse 3D</h1>
+                        	<h1>Synapse 3D</h1>
+                            <!-- <div style="height:120px"><img src="/assets/images/logo_W.png" height="45"></div> -->
                             <p class="subtitle m-lg-5">
                                 Synapse 3D는 후지필름 고유의 3D 재구성 기술을 기반으로 CT 및 MRI 등의<br>영상을 정밀하게 시각화하고 분석하는 고성능 의료 영상 소프트웨어입니다.
                             </p>
@@ -245,7 +246,7 @@
                         <video autoplay muted loop playsinline>
                             <source src="assets/images/main-video2.mp4" type="video/mp4">
                         </video>
-                        <div class="main-title text-center" style="margin: 0 auto;">
+                        <div class="main-title" style="margin: 0 auto;">
                             <h1>Clarity<br>In<br>Beyond<br>Every<br>Dimension</h1>
                             <p class="subtitle m-5 ms-0">
                                 Accurate, high-resolution 3D visualization to support better diagnosis<br>
@@ -263,7 +264,7 @@
                         <video autoplay muted loop playsinline>
                             <source src="assets/images/main-video3.mp4" type="video/mp4">
                         </video>
-                        <div class="main-title text-center" style="margin: 0 auto;">
+                        <div class="main-title" style="margin: 0 auto;">
                             <h1>Visualize<br>the Invisible.</h1>
                             <p class="subtitle m-5 ms-0">
                                 보이지 않는 내부 구조의 정밀하게 시각화합니다.
@@ -1198,10 +1199,10 @@
             crossFade: true
         },
         spaceBetween: 0,
-        autoplay: {
+       /*  autoplay: {
             delay: 10000,
             disableOnInteraction: false,
-        },
+        }, */
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
@@ -1330,10 +1331,10 @@
     try {
         const swiper = new Swiper('.mySwiper', {
             loop: true,
-            autoplay: {
+            /* autoplay: {
                 delay: 10000,
                 disableOnInteraction: false,
-            },
+            }, */
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
