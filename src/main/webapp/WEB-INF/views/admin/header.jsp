@@ -38,7 +38,7 @@
         <nav class="top-nav navbar navbar-expand-lg">
             <div class="container-fluid">
                 <div class="logo" onclick="location.href='/'">
-                    <img src="/assets/images/logo_B.png">
+                    <img src="/assets/images/logo_B.png" height="30">
                     <!--<span class="fs-4 text-white">SYNAPSE 3D</span>-->
                 </div>
 
@@ -67,13 +67,13 @@
                         <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                             <ul class="navbar-nav">
                                 <li class="nav-item dropdown">
-                                    <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Contact
+                                    <button class="btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Q&A
                                     </button>
-                                    <ul class="dropdown-menu">
+                                    <!-- <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="/mypage/inquiry">문의하기</a></li>
                                         <li><a class="dropdown-item" href="/mypage/inquiry-history">문의내역조회</a></li>
-                                    </ul>
+                                    </ul> -->
                                 </li>
                             </ul>
                         </div>
@@ -81,6 +81,8 @@
                     </div>
 
                 </div>
+                <div class="align-items-center d-flex gap-4">
+                	<div class="align-items-baseline d-flex gap-1" style=""><img src="../assets/images/fujifilm-logo.png" alt="후지필름로고" height="27"></div>
                 <div class="d-none d-lg-block">
                     <div class="d-flex align-items-center gap-3">
                         <c:choose>
@@ -117,6 +119,7 @@
                             </c:otherwise>
                         </c:choose>
                     </div>
+                </div>
                 </div>
 
             </div>

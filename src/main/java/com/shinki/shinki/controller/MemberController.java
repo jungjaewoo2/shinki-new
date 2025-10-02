@@ -1,27 +1,36 @@
 package com.shinki.shinki.controller;
 
-import com.shinki.shinki.entity.Member;
-import com.shinki.shinki.entity.ReplyRequest;
-import com.shinki.shinki.service.MemberService;
-import com.shinki.shinki.service.RequestService;
-import com.shinki.shinki.service.ReplyRequestService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import org.springframework.http.ResponseEntity;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpHeaders;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.UrlResource;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.shinki.shinki.entity.Member;
+import com.shinki.shinki.entity.ReplyRequest;
+import com.shinki.shinki.entity.Request;
+import com.shinki.shinki.service.MemberService;
+import com.shinki.shinki.service.ReplyRequestService;
+import com.shinki.shinki.service.RequestService;
+
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
-import com.shinki.shinki.entity.Request;
-import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/mypage")
@@ -35,6 +44,9 @@ public class MemberController {
 
     @Autowired
     private ReplyRequestService replyRequestService;
+    
+    @Value("${file.upload.path}")
+    String uploadPath;
     
     @GetMapping("/profile")
     public String profilePage(HttpSession session, Model model) {
@@ -496,9 +508,9 @@ public class MemberController {
             }
 
             // 파일 경로 구성 - uploads/request 폴더 기준
-            String webappPath = System.getProperty("user.dir") + "/src/main/webapp";
-            java.nio.file.Path filePath = java.nio.file.Paths.get(webappPath + "/uploads/request/" + fileName.trim());
-
+            //String webappPath = System.getProperty("user.dir") + "/src/main/webapp";
+            java.nio.file.Path filePath = java.nio.file.Paths.get(uploadPath + "/request/" + fileName.trim());
+            
             // 파일 존재 확인
             if (!java.nio.file.Files.exists(filePath)) {
                 System.out.println("파일을 찾을 수 없습니다: " + filePath.toString());

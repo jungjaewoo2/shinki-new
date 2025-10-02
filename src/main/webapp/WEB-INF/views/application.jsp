@@ -105,12 +105,12 @@
 
      .swiper-button-next-liver,
      .swiper-button-next-pancreas {
-         right: var(--swiper-navigation-sides-offset, -30px);
+         right: var(--swiper-navigation-sides-offset, -60px);
      }
 
      .swiper-button-prev-liver,
      .swiper-button-prev-pancreas {
-         left: var(--swiper-navigation-sides-offset, -10px);
+         left: var(--swiper-navigation-sides-offset, -30px);
      }
 
      .swiper-horizontal>.swiper-pagination-bullets,
@@ -188,7 +188,8 @@
              </div>
              <div class="col-12 col-xl-6">
                  <!-- Liver Analysis용 Swiper -->
-                 <div class="swiper mySwiperLiver" id="swiperLiver">
+                 <div class="position-relative">
+                 	<div class="swiper mySwiperLiver" id="swiperLiver">
                      <div class="swiper-wrapper">
                          <div class="swiper-slide slide01">
                              <img src="assets/images/tab1-cont-img01.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
@@ -207,7 +208,7 @@
                          </div>
                          <div class="swiper-slide slide04">
                              <img src="assets/images/tab1-cont-img04.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
-                             <div class="slide-title fs-4 pt-1">MRI fusion</div>
+                             <div class="slide-title fs-4 pt-1">Endoscopic view</div>
 
                          </div>
                          <div class="swiper-slide slide05">
@@ -215,38 +216,68 @@
                              <div class="slide-title fs-4 pt-1">Patial Resection</div>
 
                          </div>
-                         <div class="swiper-slide slide05">
+                         <div class="swiper-slide slide06">
                              <img src="assets/images/tab1-cont-img06.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
                              <div class="slide-title fs-4 pt-1">Region segmentation</div>
 
                          </div>
-                         <div class="swiper-slide slide05">
+                         <div class="swiper-slide slide07">
                              <img src="assets/images/tab1-cont-img07.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
                              <div class="slide-title fs-4 pt-1">Segmentation</div>
 
                          </div>
-                         <div class="swiper-slide slide05">
+                         <div class="swiper-slide slide08">
                              <img src="assets/images/tab1-cont-img08.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
                              <div class="slide-title fs-4 pt-1">SPECT fusion</div>
 
                          </div>
+                         <div class="swiper-slide slide09">
+                             <img src="assets/images/tab1-cont-img09.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
+                             <div class="slide-title fs-4 pt-1">Liver rendering</div>
+
+                         </div>
+                         <div class="swiper-slide slide10">
+                             <img src="assets/images/tab1-cont-img10.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
+                             <div class="slide-title fs-4 pt-1">Various view</div>
+
+                         </div>
+                         <div class="swiper-slide slide11">
+                             <img src="assets/images/tab1-cont-img11.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
+                             <div class="slide-title fs-4 pt-1">Sector MPR</div>
+
+                         </div>
                      </div>
                      <!--<div class="swiper-pagination-liver text-center"></div>-->
-                     <div class="swiper-button-next-liver"><img class="w-75" src="assets/images/arrow-left.png"></div>
-                     <div class="swiper-button-prev-liver"><img class="w-75" src="assets/images/arrow-right.png"></div>
+                     
+                 </div>
+                 <div class="swiper-button-next-liver"><img class="w-75" src="assets/images/arrow-left.png"></div>
+                 <div class="swiper-button-prev-liver"><img class="w-75" src="assets/images/arrow-right.png"></div>
                  </div>
                  <!-- Pancreas Analysis용 Swiper -->
-                 <div class="swiper mySwiperPancreas" id="swiperPancreas" style="display: none;">
+                 <div class="position-relative">
+                 	<div class="swiper mySwiperPancreas" id="swiperPancreas" style="display: none;">
                      <div class="swiper-wrapper">
                          <div class="swiper-slide slide01">
                              <img src="assets/images/pancreas-img01.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
                              <div class="slide-title fs-4 pb-4">Pancreas 3D</div>
 
                          </div>
+                         <div class="swiper-slide slide02">
+                             <img src="assets/images/pancreas-img02.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
+                             <div class="slide-title fs-4 pb-4">Endoscopic view</div>
+
+                         </div>
+                         <div class="swiper-slide slide03">
+                             <img src="assets/images/pancreas-img03.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
+                             <div class="slide-title fs-4 pb-4">Region segmentation</div>
+
+                         </div>
                      </div>
                      <!--<div class="swiper-pagination-pancreas text-center"></div>-->
-                     <div class="swiper-button-next-pancreas"></div>
-                     <div class="swiper-button-prev-pancreas"></div>
+                     
+                 </div>
+                 <div class="swiper-button-next-pancreas"><img class="w-75" src="assets/images/arrow-left.png"></div>
+                 <div class="swiper-button-prev-pancreas"><img class="w-75" src="assets/images/arrow-right.png"></div>
                  </div>
              </div>
          </div>
@@ -412,86 +443,101 @@
  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
  <script>
-     // Swiper 인스턴스 초기화
-     var swiperLiver = new Swiper(".mySwiperLiver", {
-         slidesPerView: 1,
-         spaceBetween: 10,
-         pagination: {
-             el: ".swiper-pagination-liver",
-             clickable: true,
-         },
-         navigation: {
-             nextEl: ".swiper-button-next-liver",
-             prevEl: ".swiper-button-prev-liver",
-         },
-         breakpoints: {
-             768: {
-                 slidesPerView: 1,
-                 spaceBetween: 0,
-             },
-         },
-         loop: true,
-     });
+    // Swiper 인스턴스 초기화
+    var swiperLiver = new Swiper(".mySwiperLiver", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+            el: ".swiper-pagination-liver",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next-liver",
+            prevEl: ".swiper-button-prev-liver",
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+            },
+        },
+        loop: true,
+    });
 
-     var swiperPancreas = new Swiper(".mySwiperPancreas", {
-         slidesPerView: 1,
-         spaceBetween: 10,
-         pagination: {
-             el: ".swiper-pagination-pancreas",
-             clickable: true,
-         },
-         navigation: {
-             nextEl: ".swiper-button-next-pancreas",
-             prevEl: ".swiper-button-prev-pancreas",
-         },
-         breakpoints: {
-             768: {
-                 slidesPerView: 1,
-                 spaceBetween: 0,
-             },
-         },
-         loop: true,
-     });
+    var swiperPancreas = new Swiper(".mySwiperPancreas", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+            el: ".swiper-pagination-pancreas",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next-pancreas",
+            prevEl: ".swiper-button-prev-pancreas",
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+            },
+        },
+        loop: true,
+    });
 
-     // 아코디언 이벤트 리스너
-     document.addEventListener('DOMContentLoaded', function() {
-         const swiperLiverContainer = document.querySelector('#swiperLiver');
-         const swiperPancreasContainer = document.querySelector('#swiperPancreas');
+    // 아코디언 이벤트 리스너
+    document.addEventListener('DOMContentLoaded', function() {
+        const swiperLiverContainer = document.querySelector('#swiperLiver');
+        const swiperPancreasContainer = document.querySelector('#swiperPancreas');
+        const liverNextButton = document.querySelector('.swiper-button-next-liver');
+        const liverPrevButton = document.querySelector('.swiper-button-prev-liver');
+        const pancreasNextButton = document.querySelector('.swiper-button-next-pancreas');
+        const pancreasPrevButton = document.querySelector('.swiper-button-prev-pancreas');
 
-         // 초기 상태: Liver Analysis용 Swiper만 표시
-         swiperLiverContainer.style.display = 'block';
-         swiperPancreasContainer.style.display = 'none';
+        // 초기 상태: Liver Analysis용 Swiper와 화살표만 표시
+        swiperLiverContainer.style.display = 'block';
+        liverNextButton.style.display = 'block';
+        liverPrevButton.style.display = 'block';
+        swiperPancreasContainer.style.display = 'none';
+        pancreasNextButton.style.display = 'none';
+        pancreasPrevButton.style.display = 'none';
 
-         // 아코디언이 열릴 때 Swiper 전환
-         document.querySelector('#collapseOne').addEventListener('shown.bs.collapse', function() {
-             swiperLiverContainer.style.display = 'block';
-             swiperPancreasContainer.style.display = 'none';
-             swiperLiver.update(); // Swiper 새로고침
-         });
+        // 아코디언이 열릴 때 Swiper 및 화살표 전환
+        document.querySelector('#collapseOne').addEventListener('shown.bs.collapse', function() {
+            swiperLiverContainer.style.display = 'block';
+            liverNextButton.style.display = 'block';
+            liverPrevButton.style.display = 'block';
+            swiperPancreasContainer.style.display = 'none';
+            pancreasNextButton.style.display = 'none';
+            pancreasPrevButton.style.display = 'none';
+            swiperLiver.update(); // Swiper 새로고침
+        });
 
-         document.querySelector('#collapseTwo').addEventListener('shown.bs.collapse', function() {
-             swiperLiverContainer.style.display = 'none';
-             swiperPancreasContainer.style.display = 'block';
-             swiperPancreas.update(); // Swiper 새로고침
-         });
+        document.querySelector('#collapseTwo').addEventListener('shown.bs.collapse', function() {
+            swiperLiverContainer.style.display = 'none';
+            liverNextButton.style.display = 'none';
+            liverPrevButton.style.display = 'none';
+            swiperPancreasContainer.style.display = 'block';
+            pancreasNextButton.style.display = 'block';
+            pancreasPrevButton.style.display = 'block';
+            swiperPancreas.update(); // Swiper 새로고침
+        });
 
-         // 모달 이미지 업데이트
-         const slides = document.querySelectorAll('.swiper-slide');
-         const modal = document.querySelector('#imageModal');
-         const modalImg = modal.querySelector('#modalImage');
-         const modalTitle = modal.querySelector('#imageModalLabel');
+        // 모달 이미지 업데이트
+        const slides = document.querySelectorAll('.swiper-slide');
+        const modal = document.querySelector('#imageModal');
+        const modalImg = modal.querySelector('#modalImage');
+        const modalTitle = modal.querySelector('#imageModalLabel');
 
-         slides.forEach(slide => {
-             const img = slide.querySelector('img');
-             const title = slide.querySelector('div').textContent;
-             img.addEventListener('click', function() {
-                 const imgSrc = this.getAttribute('src');
-                 modalImg.setAttribute('src', imgSrc);
-                 modalTitle.textContent = title; // 모달 제목 업데이트
-             });
-         });
-     });
-
- </script>
+        slides.forEach(slide => {
+            const img = slide.querySelector('img');
+            const title = slide.querySelector('div').textContent;
+            img.addEventListener('click', function() {
+                const imgSrc = this.getAttribute('src');
+                modalImg.setAttribute('src', imgSrc);
+                modalTitle.textContent = title; // 모달 제목 업데이트
+            });
+        });
+    });
+</script>
 
 <jsp:include page="footer.jsp" />

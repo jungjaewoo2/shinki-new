@@ -83,7 +83,7 @@
 
     .swiper.mySwiper2 .swiper-slide {
         width: 100%;
-        height: 700px;
+        height: 650px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -230,12 +230,13 @@
                             <source src="assets/images/main-video.mp4" type="video/mp4">
                         </video>
                         <div class="main-title main-f text-center" style="margin: 0 auto;">
-                            <h1>Synapse 3D</h1>
+                        	<!-- <h1>Synapse 3D</h1> -->
+                            <h1 style="height:60px;margin-top: 1em;"><img src="/assets/images/synapse_W.png" height="100%"></h1>
                             <p class="subtitle m-lg-5">
                                 Synapse 3D는 후지필름 고유의 3D 재구성 기술을 기반으로 CT 및 MRI 등의<br>영상을 정밀하게 시각화하고 분석하는 고성능 의료 영상 소프트웨어입니다.
                             </p>
                             <div class="button-group justify-content-center">
-                                <button class="btn-secondary" onclick="location.href='all-application.html'" style="padding: 0.5rem 1.25rem;">
+                                <button class="btn-secondary" onclick="location.href='all-application'" style="padding: 0.5rem 1.25rem;">
                                     Learn more
                                 </button>
                             </div>
@@ -243,9 +244,9 @@
                     </div>
                     <div class="swiper-slide">
                         <video autoplay muted loop playsinline>
-                            <source src="assets/images/main-video.mp4" type="video/mp4">
+                            <source src="assets/images/main-video2.mp4" type="video/mp4">
                         </video>
-                        <div class="main-title text-center" style="margin: 0 auto;">
+                        <div class="main-title" style="margin: 0 auto;">
                             <h1>Clarity<br>In<br>Beyond<br>Every<br>Dimension</h1>
                             <p class="subtitle m-5 ms-0">
                                 Accurate, high-resolution 3D visualization to support better diagnosis<br>
@@ -253,7 +254,7 @@
 
                             </p>
                             <div class="button-group">
-                                <button class="btn-secondary" onclick="location.href='all-application.html'" style="padding: 0.5rem 1.25rem;position: absolute;bottom: 0;z-index: 10;">
+                                <button class="btn-secondary" onclick="location.href='all-application'" style="padding: 0.5rem 1.25rem;position: absolute;bottom: 0;z-index: 10;">
                                     Learn more
                                 </button>
                             </div>
@@ -263,13 +264,13 @@
                         <video autoplay muted loop playsinline>
                             <source src="assets/images/main-video3.mp4" type="video/mp4">
                         </video>
-                        <div class="main-title text-center" style="margin: 0 auto;">
+                        <div class="main-title" style="margin: 0 auto;">
                             <h1>Visualize<br>the Invisible.</h1>
                             <p class="subtitle m-5 ms-0">
                                 보이지 않는 내부 구조의 정밀하게 시각화합니다.
                             </p>
                             <div class="button-group">
-                                <button class="btn-secondary" onclick="location.href='all-application.html'" style="padding: 0.5rem 1.25rem;">
+                                <button class="btn-secondary" onclick="location.href='all-application'" style="padding: 0.5rem 1.25rem;">
                                     Learn more
                                 </button>
                             </div>
@@ -514,7 +515,7 @@
                         <div>직관적인 인터페이스를 통한 쉽고 효과적인 사용</div>
                     </div>
                 </div>
-                <div class="business-box rounded-5 d-flex align-items-lg-center gap-3 p-4 cursor-pointer">
+                <div class="business-box rounded-5 d-flex align-items-lg-center gap-3 p-4">
                     <div><img src="assets/images/business-icon09.png" width="88"></div>
                     <div class="business-txt">
                         <div class="feature-title">Support for Various Data Formats</div>
@@ -522,7 +523,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-5 pb-5"><button class="btn rounded-5 text-white btn-lg" onclick="location.href='all-application.html'" style="background: linear-gradient(to right, #427290, #0d5e83, #106287)">View all application</button></div>
+            <div class="text-center mt-5 pb-5"><button class="btn rounded-5 text-white btn-lg" onclick="location.href='all-application'" style="background: linear-gradient(to right, #427290, #0d5e83, #106287)">View all application</button></div>
         </div>
     </section>
     <section id="type" class="page-section transition-transform-bg">
@@ -1198,7 +1199,7 @@
             crossFade: true
         },
         spaceBetween: 0,
-        /* autoplay: {
+       /*  autoplay: {
             delay: 10000,
             disableOnInteraction: false,
         }, */
@@ -1330,10 +1331,10 @@
     try {
         const swiper = new Swiper('.mySwiper', {
             loop: true,
-            /*autoplay: {
+            /* autoplay: {
                 delay: 10000,
                 disableOnInteraction: false,
-            },*/
+            }, */
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
@@ -1383,7 +1384,61 @@
 
 </script>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const h1 = document.querySelector('h1');
+    h1.innerHTML = '<img src="/assets/images/synapse_W.png" height="45" alt="Test Image">';
+  });
+</script>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+	  // 모든 .use-name과 .use-sub > div:first-child 요소 선택
+	  const elements = document.querySelectorAll('.use-name, .use-sub > div:first-child');
 
+	  elements.forEach(element => {
+	    // 줄 수 기준 설정
+	    const maxLines = element.classList.contains('use-name') ? 3 : 5; // .use-name은 3줄, .use-sub > div:first-child는 5줄
+	    const lineHeight = parseFloat(getComputedStyle(element).lineHeight) || 27; // 고정값 27px 사용
+	    const maxHeight = lineHeight * maxLines;
+	    const actualHeight = element.scrollHeight;
+	    const calculatedLines = Math.ceil(actualHeight / lineHeight);
+
+	    // 디버깅 로그 (최종 배포 시 제거 가능)
+	    console.log(`Element: ${element.textContent.slice(0, 20)}..., class: ${element.className}, lineHeight: ${lineHeight}, actualHeight: ${actualHeight}, maxHeight: ${maxHeight}, maxLines: ${maxLines}, calculatedLines: ${calculatedLines}`);
+
+	    // 텍스트가 maxLines를 초과하는 경우
+	    if (calculatedLines > maxLines && element.textContent.trim()) { // 줄 수로 직접 비교, 비어 있는 요소 제외
+	      // clamp 클래스 추가로 ellipsis 적용
+	      element.classList.add('clamp');
+
+	      // 클릭 이벤트 추가
+	      element.addEventListener('click', (event) => {
+	        event.preventDefault(); // a 태그의 링크 이동 방지
+	        event.stopPropagation(); // 이벤트 버블링 방지
+
+	        // 모든 요소의 expanded 클래스 제거 및 clamp 복원
+	        elements.forEach(otherElement => {
+	          if (otherElement !== element && otherElement.classList.contains('expanded')) {
+	            otherElement.classList.remove('expanded');
+	            otherElement.classList.add('clamp');
+	          }
+	        });
+
+	        // 현재 요소 토글
+	        if (element.classList.contains('expanded')) {
+	          // 축약 상태로 복귀
+	          element.classList.remove('expanded');
+	          element.classList.add('clamp');
+	        } else {
+	          // 전체 텍스트 표시
+	          element.classList.add('expanded');
+	          element.classList.remove('clamp');
+	        }
+	      });
+	    }
+	  });
+	});
+</script>
 
 <jsp:include page="footer.jsp" />

@@ -77,7 +77,7 @@
 
                                 <div class="form-group">
                                     <label class="form-label required">주소</label>
-                                    <div class="d-flex gap-2">
+                                    <div class="d-flex gap-2 w-100">
                                         <input type="text" name="address" id="address" class="form-input flex-fill" placeholder="주소를 검색해주세요" readonly required>
                                         <button type="button" class="btn btn-outline-secondary" onclick="searchAddress()" style="min-width: 100px; white-space: nowrap;">주소검색</button>
                                     </div>
@@ -108,6 +108,44 @@
                                     <input type="text" name="recommendCode" class="form-input" placeholder="추천코드를 입력하세요">
                                 </div>
                             </div>
+                            <div class="position-relative mt-4 mb-4">
+								<div class="m-auto position-relative w-50 text-center" style="background-color: #fff;z-index: 1;">동의 사항 체크</div>
+								<div class="border-top position-absolute top-50 w-100"></div>
+							</div>
+							<div class="d-flex flex-column gap-1">
+							<div class="d-flex align-items-center gap-2">
+								<div>
+									<input class="form-check-input" type="checkbox" id="terms-checkbox">
+								</div>
+								<div>
+									모두 동의합니다.
+								</div>
+							</div>
+							<div class="d-flex align-items-center gap-2">
+								<div>
+									<input class="form-check-input" type="checkbox" id="agree1">
+								</div>
+								<div>
+									만 14세입니다.(필수)
+								</div>
+							</div>
+							<div class="d-flex align-items-center gap-2">
+								<div>
+									<input class="form-check-input" type="checkbox" id="agree2">
+								</div>
+								<div class="">
+									개인정보 수집 및 이용에 대한 동의합니다.(필수) <span class="btn-secondary h-auto rounded-1" style="cursor: pointer;padding: 4px 8px;" data-bs-toggle="modal" data-bs-target="#termsBox_list2">더보기</span>
+								</div>
+							</div>
+							<div class="d-flex align-items-center gap-2">
+								<div>
+									<input class="form-check-input" type="checkbox" id="agree4" name="termYn" value="Y">
+								</div>
+								<div>
+									마케팅 및 이벤트 정보 수신에 동의합니다(문자/이메일).(선택)
+								</div>
+							</div>
+						</div>
                             <div class="d-grid col-12 mx-auto mt-4">
                                 <button type="submit" class="btn btn-dark">회원가입</button>
                             </div>
@@ -131,8 +169,8 @@
                 <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="d-flex flex-column gap-3 justify-content-center">
-                <div class="contents">
-                    <div class="title">제1조 수집하는 개인정보 항목 및 수집방법</div>
+                <div class="contents"><br />
+                    <div class="title fw-bold fs-5">제1조 수집하는 개인정보 항목 및 수집방법</div>
                     <br />
                     <div>
                         Synapse 3D(이하 "회사")는 『개인정보 보호법』 및 관련 법령에 따라,
@@ -140,7 +178,7 @@
                     </div>
                     <br />
 
-                    <div class="nb_list">1.수집항목</div>
+                    <div class="nb_list fw-bold">1.수집항목</div>
                     <br />
                     <div class="nb_list2">1)회원가입 및 기본 서비스 제공 시</div>
                     <br />
@@ -158,7 +196,7 @@
                     </div>
                     <br />
 
-                    <div class="nb_list">2.수집 및 이용 목적</div>
+                    <div class="nb_list fw-bold">2.수집 및 이용 목적</div>
                     <br />
                     <div class="dot-list">
                         ·회원 가입 및 서비스 이용에 따른 본인 확인, 민원 응대, 고지사항 전달 등
@@ -168,10 +206,10 @@
                         ·이벤트 및 프로모션 정보 제공, 신규 서비스 안내 및 마케팅 활용 (선택 동의 시)
                     </div>
                     <br />
-                    <div class="title">제2조 개인정보의 수집 및 이용 목적</div>
+                    <div class="title fw-bold fs-5">제2조 개인정보의 수집 및 이용 목적</div>
                     <br />
 
-                    <div class="nb_list">3.개인정보 보유 및 이용 기간</div>
+                    <div class="nb_list fw-bold">3.개인정보 보유 및 이용 기간</div>
                     <br />
                     <div class="dot-list">
                         (사진 참조)
@@ -187,7 +225,7 @@
                     </div>
                     <br />
 
-                    <div class="nb_list">4.동의 거부권 및 거부에 따른 불이익</div>
+                    <div class="nb_list fw-bold">4.동의 거부권 및 거부에 따른 불이익</div>
                     <br />
                     <div class="dot-list">
                         * 귀하는 위 개인정보 수집·이용에 대한 동의를 거부할 권리가 있습니다.

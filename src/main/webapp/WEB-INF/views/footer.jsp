@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!-- Floating Button -->
 <button class="floating-btn" data-bs-toggle="modal" data-bs-target="#consult">
-    <img src="/assets/images/floating-btn-img.png">
+    <img src="/assets/images/floating-btn-img.png" width="100%">
 </button>
 
 </div>
@@ -43,7 +43,7 @@
                     </div>
                     <div class="d-flex align-items-center gap-1">
                         <div><input class="form-check-input" type="checkbox" value="" id="privacyAgreement" required></div>
-                        <div>(필수) 개인정보 수집 및 이용동의</div>
+                        <div>(필수) 개인정보 수집 및 이용동의 <span class="bg-secondary h-auto rounded-1 text-white" style="cursor: pointer;padding: 4px 8px;" data-bs-toggle="modal" data-bs-target="#termsBox_list2">더보기</span></div>
                     </div>
                     <div class="d-flex align-items-center gap-1">
                         <div><input class="form-check-input" type="checkbox" value="" id="callAgreement" required></div>
@@ -57,6 +57,93 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="termsBox_list2" tabindex="-1" aria-labelledby="termsBoxLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg justify-content-center">
+        <div class="modal-content p-3" style="height: 700px; overflow-y: scroll">
+            <div class="border-bottom d-flex justify-content-between mb-10">
+                <h4>개인정보 수집 및 이용 약관</h4>
+                <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="d-flex flex-column gap-3 justify-content-center">
+                <div class="contents"><br />
+                    <div class="title fw-bold fs-5">제1조 수집하는 개인정보 항목 및 수집방법</div>
+                    <br />
+                    <div>
+                        Synapse 3D(이하 "회사")는 『개인정보 보호법』 및 관련 법령에 따라,
+                        아래와 같이 이용자의 개인정보를 수집·이용하며, 이에 대해 동의를 받고자 합니다.
+                    </div>
+                    <br />
+
+                    <div class="nb_list fw-bold">1.수집항목</div>
+                    <br />
+                    <div class="nb_list2">1)회원가입 및 기본 서비스 제공 시</div>
+                    <br />
+                    <div class="dot-list">* 필수 : 이름, 휴대전화번호, 이메일 주소, 상품을 제공받는 해당 채널의 주소 및 ID, 주소지</div>
+                    <br />
+                    <div class="nb_list2">
+                        2)마케팅 및 이벤트 안내 시 – 선택 동의
+                    </div>
+                    <br />
+                    <div class="dot-list">
+                        * 선택항목: 이름, 휴대전화번호, 이메일 주소
+                    </div>
+                    <div class="dot-list">
+                        ※ 쿠키, 접속 IP, 브라우저 정보 등 자동 수집 항목은 별도의 ‘개인정보 처리방침’에 따릅니다.
+                    </div>
+                    <br />
+
+                    <div class="nb_list fw-bold">2.수집 및 이용 목적</div>
+                    <br />
+                    <div class="dot-list">
+                        ·회원 가입 및 서비스 이용에 따른 본인 확인, 민원 응대, 고지사항 전달 등
+                    </div>
+                    <br />
+                    <div class="dot-list">
+                        ·이벤트 및 프로모션 정보 제공, 신규 서비스 안내 및 마케팅 활용 (선택 동의 시)
+                    </div>
+                    <br />
+                    <div class="title fw-bold fs-5">제2조 개인정보의 수집 및 이용 목적</div>
+                    <br />
+
+                    <div class="nb_list fw-bold">3.개인정보 보유 및 이용 기간</div>
+                    <br />
+                    <div class="dot-list">
+                        (사진 참조)
+                        ※ 관련 법령에 따라 아래와 같이 별도 보존될 수 있습니다.
+                    </div>
+                    <br />
+                    <div class="dot-list">
+                        * 계약 또는 청약 철회 등에 관한 기록: 5년 (전자상거래법)
+                    </div>
+                    <br />
+                    <div class="dot-list">
+                        * 소비자 불만 또는 분쟁처리에 관한 기록: 3년 (전자상거래법)
+                    </div>
+                    <br />
+
+                    <div class="nb_list fw-bold">4.동의 거부권 및 거부에 따른 불이익</div>
+                    <br />
+                    <div class="dot-list">
+                        * 귀하는 위 개인정보 수집·이용에 대한 동의를 거부할 권리가 있습니다.
+                    </div>
+                    <br />
+                    <div class="dot-list">
+                        * 단, 필수항목에 대한 동의를 거부할 경우, 회원가입 및 서비스 제공이 제한될 수 있습니다.
+                    </div>
+                    <br />
+
+                </div>
+                <div class="text-end">
+                    <button type="button" class="btn btn-dark" data-bs-target="#consult" data-bs-toggle="modal">
+                        확인
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <div class="modal fade" id="consult2" aria-hidden="true" aria-labelledby="consultLabel2" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
@@ -402,7 +489,7 @@
             box-sizing: border-box;
         }
 
-        .carousel-prev, .carousel-next {
+        /* .carousel-prev, .carousel-next {
             background: rgba(255, 255, 255, 0.1);
             border: none;
             border-radius: 50%;
@@ -413,13 +500,13 @@
             align-items: center;
             justify-content: center;
             transition: background 0.3s ease;
-        }
+        } */
 
-        .carousel-prev:hover, .carousel-next:hover {
+        /*.carousel-prev:hover, .carousel-next:hover {
             background: rgba(255, 255, 255, 0.3);
         }
 
-        .carousel-prev::before, .carousel-next::before {
+         .carousel-prev::before, .carousel-next::before {
             content: '';
             display: inline-block;
             width: 12px;
@@ -434,7 +521,7 @@
 
         .carousel-next::before {
             transform: rotate(-45deg);
-        }
+        } */
     `;
     document.head.appendChild(style);
 
@@ -757,9 +844,9 @@
 <footer>
     <div class="footer-content align-items-start flex-xl-row flex-md-column ">
 
-        <div class="d-flex flex-column flex-xl-row gap-2 text-start">
+        <div class="d-flex flex-column flex-xl-row gap-2 gap-lg-5 text-start">
             <div>
-                <img src="/assets/images/logo.png">
+                <img src="/assets/images/logo.png" width="150">
             </div>
             <div>
                 <div>

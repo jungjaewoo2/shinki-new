@@ -54,9 +54,10 @@
                 <div class="nav-item" onclick="location.href='/mypage/inquiry-history'">문의내역조회</div>
             </div>
         </div>
+        <div class="position-absolute start-50 translate-middle" style="bottom: 5%"><img src="/assets/images/logo_header.png" height="45"></div>
     </nav>
     <!--<div class="d-block d-lg-none" onclick="location.href='#'" style="padding: 15px 20px;font-weight: bold;position: absolute;bottom: 0;"></div>-->
-    <div class="d-block d-lg-none " style="padding: 15px 20px;font-weight: bold;position: absolute;bottom: 0;">
+    <div class="d-block d-lg-none " style="padding: 15px 20px;font-weight: bold;">
                 <div class="d-flex flex-column gap-2">
             <div><i class="bi bi-person-circle fs-5"></i> 마이페이지</div>
             <div onclick="location.href='/mypage/logout'"><i class="bi bi-box-arrow-right fs-5"></i> 로그아웃</div>

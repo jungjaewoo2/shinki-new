@@ -85,6 +85,11 @@
          left: auto;
      }
 
+     .swiper-button-next:after,
+     .swiper-button-prev:after {
+         font-size: 24px;
+     }
+
      .swiper-button-prev2:after,
      .swiper-rtl .swiper-button-next2:after {
          content: 'prev';
@@ -115,7 +120,7 @@
          height: 100%;
          opacity: .3;
      }
-
+     
      .swiper-slide-active {
          opacity: 1 !important;
      }
@@ -128,10 +133,11 @@
      }
 
      .swiper-slide img {
-        width: 512px;
+         width: 512px;
          height: 512px;
+         background: #000;
      }
-     
+
      @media (max-width: 1024px) {
          .swiper-slide img {
              width: 100%;
@@ -151,8 +157,12 @@
 
      /* Swiper 페이지 네비게이션 스타일링 */
 
-     .swiper-button-next,
-     .swiper-button-prev {
+     .swiper-button-next-airway,
+     .swiper-button-prev-airway,
+     .swiper-button-next-resection,
+     .swiper-button-prev-resection,
+     .swiper-button-next-scope,
+     .swiper-button-prev-scope {
          position: absolute;
          top: 50%;
          background-color: rgb(0, 0, 0, .4);
@@ -162,11 +172,15 @@
          border-radius: 4px;
      }
 
-     .swiper-button-next {
+     .swiper-button-next-airway,
+     .swiper-button-next-resection,
+     .swiper-button-next-scope {
          right: var(--swiper-navigation-sides-offset, 10px);
      }
 
-     .swiper-button-prev {
+     .swiper-button-prev-airway,
+     .swiper-button-prev-resection,
+     .swiper-button-prev-scope {
          left: var(--swiper-navigation-sides-offset, 10px);
      }
 
@@ -176,11 +190,36 @@
          position: absolute;
          bottom: 30px !important;
      }
+     
+     /* Swiper 페이지 네비게이션 스타일링 */
 
-     .swiper-button-next:after,
-     .swiper-button-prev:after {
-         font-size: 24px;
+     .swiper-button-next-liver,
+     .swiper-button-prev-liver,
+     .swiper-button-next-pancreas,
+     .swiper-button-prev-pancreas {
+         position: absolute;
+         top: 50%;
+         transform: translateY(-50%);
+         z-index: 1000000;
      }
+
+     .swiper-button-next-liver,
+     .swiper-button-next-pancreas {
+         right: var(--swiper-navigation-sides-offset, -60px);
+     }
+
+     .swiper-button-prev-liver,
+     .swiper-button-prev-pancreas {
+         left: var(--swiper-navigation-sides-offset, -30px);
+     }
+
+     .swiper-horizontal>.swiper-pagination-bullets,
+     .swiper-pagination-bullets.swiper-pagination-horizontal {
+         z-index: 1;
+         position: absolute;
+         bottom: 30px !important;
+     }
+
 
  </style>
 
@@ -209,7 +248,7 @@
          </h2>
 
          <div class="row d-flex justify-content-between flex-lg-row gap-5 gap-lg-0">
-             <div class="col-12 col-xl-4">
+             <div class="col-12 col-xl-5">
                  <div class="accordion" id="accordionExample">
                      <div class="accordion-item">
                          <h2 class="accordion-header">
@@ -230,6 +269,7 @@
                  </div>
              </div>
              <div class="col-12 col-xl-6">
+             <div class="position-relative">
                  <div class="swiper mySwiper3">
                      <div class="swiper-wrapper">
                          <div class="swiper-slide slide01">
@@ -257,26 +297,28 @@
                              <img src="/assets/images/knee-analysis-img05.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
                              <div class="slide-title fs-4 pt-1">Meniscus Signal intensity</div>
                          </div>
-                         <div class="swiper-slide slide05">
+                         <div class="swiper-slide slide06">
                              
-                             <img src="/assets/images/knee-analysis-img05.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
+                             <img src="/assets/images/knee-analysis-img06.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
                              <div class="slide-title fs-4 pt-1">Meniscus</div>
                          </div>
-                         <div class="swiper-slide slide05">
+                         <div class="swiper-slide slide07">
                              
-                             <img src="/assets/images/knee-analysis-img05.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
+                             <img src="/assets/images/knee-analysis-img07.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
                              <div class="slide-title fs-4 pt-1">Patella Cartilage</div>
                          </div>
-                         <div class="swiper-slide slide05">
+                         <div class="swiper-slide slide08">
                              
-                             <img src="/assets/images/knee-analysis-img05.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
+                             <img src="/assets/images/knee-analysis-img08.jpg" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
                              <div class="slide-title fs-4 pt-1">Tibia Cartilage</div>
                          </div>
                      </div>
                      <!--<div class="swiper-pagination2 text-center"></div>-->
-                     <div class="swiper-button-next"></div>
-                     <div class="swiper-button-prev"></div>
+                     
                  </div>
+                 <div class="swiper-button-next-liver"><img class="w-75" src="assets/images/arrow-left.png"></div>
+                     <div class="swiper-button-prev-liver"><img class="w-75" src="assets/images/arrow-right.png"></div>
+                     </div>
              </div>
          </div>
 
@@ -348,8 +390,8 @@
              clickable: true,
          },
          navigation: {
-             nextEl: ".swiper-button-next",
-             prevEl: ".swiper-button-prev",
+             nextEl: ".swiper-button-next-liver",
+             prevEl: ".swiper-button-prev-liver",
          },
          breakpoints: {
              768: {
