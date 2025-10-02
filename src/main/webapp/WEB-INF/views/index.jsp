@@ -231,7 +231,7 @@
                         </video>
                         <div class="main-title main-f text-center" style="margin: 0 auto;">
                         	<!-- <h1>Synapse 3D</h1> -->
-                            <h1 style="height:70px"><img src="/assets/images/synapse_W.png" height="100%"></h1>
+                            <h1 style="height:60px;margin-top: 1em;"><img src="/assets/images/synapse_W.png" height="100%"></h1>
                             <p class="subtitle m-lg-5">
                                 Synapse 3D는 후지필름 고유의 3D 재구성 기술을 기반으로 CT 및 MRI 등의<br>영상을 정밀하게 시각화하고 분석하는 고성능 의료 영상 소프트웨어입니다.
                             </p>
