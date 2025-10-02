@@ -103,41 +103,6 @@ public class ConRegController {
         }
     }
     
-    /**
-     * 관리자 - 상담 등록 목록 조회 및 페이징, 검색
-     */
-    @GetMapping("/admin/consultation-request")
-    public String adminConRegList(Model model,
-                                  @RequestParam(defaultValue = "0") int page,
-                                  @RequestParam(defaultValue = "10") int size,
-                                  @RequestParam(defaultValue = "createdAt") String sortBy,
-                                  @RequestParam(defaultValue = "desc") String sortDir,
-                                  @RequestParam(required = false) String searchType,
-                                  @RequestParam(required = false) String searchValue) {
-        
-        System.out.println("=== ConRegController.adminConRegList 호출됨 ===");
-        System.out.println("page: " + page + ", size: " + size + ", sortBy: " + sortBy + ", sortDir: " + sortDir);
-        System.out.println("searchType: " + searchType + ", searchValue: " + searchValue);
-        
-        Page<ConReg> consultationPage = conRegService.searchAndPageConsultations(page, size, sortBy, sortDir, searchType, searchValue);
-        
-        System.out.println("consultationPage: " + consultationPage);
-        System.out.println("consultationPage.getContent(): " + consultationPage.getContent());
-        System.out.println("consultationPage.getTotalElements(): " + consultationPage.getTotalElements());
-        
-        model.addAttribute("consultations", consultationPage.getContent());
-        model.addAttribute("currentPage", consultationPage.getNumber());
-        model.addAttribute("totalPages", consultationPage.getTotalPages());
-        model.addAttribute("totalElements", consultationPage.getTotalElements());
-        model.addAttribute("size", consultationPage.getSize());
-        model.addAttribute("searchType", searchType);
-        model.addAttribute("searchValue", searchValue);
-        model.addAttribute("sortBy", sortBy);
-        model.addAttribute("sortDir", sortDir);
-        
-        System.out.println("=== ConRegController.adminConRegList 완료 ===");
-        return "admin/consultation-request";
-    }
     
     /**
      * 관리자 - 상담 등록 상세 조회
@@ -150,7 +115,7 @@ public class ConRegController {
             model.addAttribute("consultation", consultation.get());
             return "admin/consultation-detail";
         } else {
-            return "redirect:/consultation/admin/consultation-request?error=notfound";
+            return "redirect:/admin/consultation-request?error=notfound";
         }
     }
     

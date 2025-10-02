@@ -69,6 +69,33 @@ public class RequestService {
         }
     }
     
+    // 회원별 기간별 의뢰 조회
+    public List<Request> getRequestsByMemberIdAndDateRange(Long memberId, String startDateStr, String endDateStr) {
+        try {
+            System.out.println("RequestService - 기간 검색: " + startDateStr + " ~ " + endDateStr);
+            LocalDate startDate = LocalDate.parse(startDateStr, DateTimeFormatter.ISO_LOCAL_DATE);
+            LocalDate endDate = LocalDate.parse(endDateStr, DateTimeFormatter.ISO_LOCAL_DATE);
+            System.out.println("RequestService - 파싱된 시작일: " + startDate);
+            System.out.println("RequestService - 파싱된 종료일: " + endDate);
+            
+            // 시작일의 시작 시간과 종료일의 다음 날 시작 시간으로 범위 설정
+            LocalDateTime startDateTime = startDate.atStartOfDay();
+            LocalDateTime endDateTime = endDate.plusDays(1).atStartOfDay();
+            
+            System.out.println("RequestService - 시작 시간: " + startDateTime);
+            System.out.println("RequestService - 종료 시간: " + endDateTime);
+            
+            List<Request> result = requestRepository.findByMemberIdAndCreatedAtDateOrderByCreatedAtDesc(memberId, startDateTime, endDateTime);
+            System.out.println("RequestService - 기간 검색 결과 수: " + result.size());
+            
+            return result;
+        } catch (Exception e) {
+            System.out.println("RequestService - 기간 검색 날짜 파싱 오류: " + e.getMessage());
+            // 날짜 파싱 오류 시 빈 리스트 반환
+            return List.of();
+        }
+    }
+    
     // 의뢰 생성
     public Request createRequest(@Valid Request request, Long memberId) {
         Member member = new Member();

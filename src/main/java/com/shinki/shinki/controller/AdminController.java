@@ -299,6 +299,14 @@ public class AdminController {
                                      @RequestParam(required = false) String searchValue,
                                      Model model) {
         try {
+            // null 값 안전 처리
+            if (searchType == null) {
+                searchType = "consultationContent"; // 기본 검색 타입
+            }
+            if (searchValue == null) {
+                searchValue = ""; // 빈 문자열로 변경
+            }
+            
             // ConRegService를 사용하여 상담 신청 목록 조회
             Page<ConReg> consultationPage = conRegService.searchAndPageConsultations(page, size, sortBy, sortDir, searchType, searchValue);
             

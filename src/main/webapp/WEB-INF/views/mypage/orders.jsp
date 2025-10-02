@@ -15,8 +15,12 @@
              <div class="form-group flex-fill flex-row m-0">
                  <label class="form-label">의뢰일자</label>
                  <form method="GET" action="/mypage/orders" class="d-flex gap-2 align-items-center">
-                     <input type="date" name="searchDate" class="form-input" style="max-width: 200px;" value="${param.searchDate}">
-                     <button type="submit" class="btn btn-primary" style="padding: 8px 20px; font-size: 14px; min-width: 70px;">검색</button>
+                     <!-- 기간 검색 -->
+                     <span style="font-size: 14px;">시작일:</span>
+                     <input type="date" name="startDate" class="form-input" style="max-width: 150px;" value="${param.startDate}">
+                     <span style="font-size: 14px;">종료일:</span>
+                     <input type="date" name="endDate" class="form-input" style="max-width: 150px;" value="${param.endDate}">
+                     <button type="submit" class="btn btn-block">검색</button>
                      <a href="/mypage/orders" class="btn btn-secondary" style="padding: 8px 20px; font-size: 14px; min-width: 100px;">전체보기</a>
                  </form>
              </div>
@@ -55,8 +59,8 @@
                  <div class="card">
                      <div class="card-body text-center py-5">
                          <c:choose>
-                             <c:when test="${not empty param.searchDate}">
-                                 <div class="text-muted">${param.searchDate}에 등록된 의뢰가 없습니다.</div>
+                             <c:when test="${not empty param.startDate and not empty param.endDate}">
+                                 <div class="text-muted">${param.startDate} ~ ${param.endDate} 기간에 등록된 의뢰가 없습니다.</div>
                              </c:when>
                              <c:otherwise>
                                  <div class="text-muted">등록된 의뢰가 없습니다.</div>

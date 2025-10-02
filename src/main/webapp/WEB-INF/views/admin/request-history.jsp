@@ -14,7 +14,7 @@
         <div class="card d-flex align-items-center flex-lg-row flex-column justify-content-end gap-2">
             <form method="get" action="/admin/request-history" class="d-flex gap-2">
                 <div class="position-relative">
-                    <input class="form-control" type="text" name="search" placeholder="의뢰항목, 병원명, 이름, 제목, 의뢰내용으로 검색" aria-label="default input example" value="${search}">
+                    의뢰항목, 병원명, 이름, 제목, 의뢰내용으로 검색<input class="form-control" type="text" name="search"  aria-label="default input example" value="${search}">
                     <div class="end-0 position-absolute top-50 translate-middle"><i class="bi bi-search"></i></div>
                 </div>
                 <button type="submit" class="btn btn-primary"><span class="fw-bold">검색</span></button>

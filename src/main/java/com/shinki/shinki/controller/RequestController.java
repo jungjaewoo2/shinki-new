@@ -146,7 +146,8 @@ public class RequestController {
     }
     
     @GetMapping("/orders")
-    public String ordersPage(@RequestParam(required = false) String searchDate,
+    public String ordersPage(@RequestParam(required = false) String startDate,
+                           @RequestParam(required = false) String endDate,
                            HttpSession session, 
                            Model model) {
         // 세션에서 로그인된 사용자 정보 가져오기
@@ -159,21 +160,15 @@ public class RequestController {
             Member member = memberService.findByUsername(username);
             List<Request> requests;
             
-            // 날짜 검색이 있는 경우 필터링
-            if (searchDate != null && !searchDate.trim().isEmpty()) {
-                System.out.println("=== 날짜 검색 디버깅 ===");
-                System.out.println("검색 날짜: " + searchDate);
+            // 기간 검색이 있는 경우 필터링
+            if (startDate != null && !startDate.trim().isEmpty() && 
+                endDate != null && !endDate.trim().isEmpty()) {
+                System.out.println("=== 기간 검색 디버깅 ===");
+                System.out.println("시작일: " + startDate + ", 종료일: " + endDate);
                 System.out.println("회원 ID: " + member.getId());
                 
-                // 먼저 모든 의뢰를 가져와서 확인
-                List<Request> allRequests = requestService.getRequestsByMemberId(member.getId());
-                System.out.println("전체 의뢰 수: " + allRequests.size());
-                for (Request req : allRequests) {
-                    System.out.println("의뢰 ID: " + req.getId() + ", 제목: " + req.getTitle() + ", 생성일: " + req.getCreatedAt());
-                }
-                
-                requests = requestService.getRequestsByMemberIdAndDate(member.getId(), searchDate);
-                System.out.println("날짜 검색 결과 수: " + requests.size());
+                requests = requestService.getRequestsByMemberIdAndDateRange(member.getId(), startDate, endDate);
+                System.out.println("기간 검색 결과 수: " + requests.size());
                 System.out.println("========================");
             } else {
                 requests = requestService.getRequestsByMemberId(member.getId());
@@ -187,7 +182,8 @@ public class RequestController {
                 .collect(Collectors.toList());
 
             model.addAttribute("requests", requests);
-            model.addAttribute("searchDate", searchDate);
+            model.addAttribute("startDate", startDate);
+            model.addAttribute("endDate", endDate);
 
             // '진행중' 및 '완료' 상태의 요청 개수 계산 (orders.jsp와 동일한 로직)
             long inProgressCount = requests.stream()

@@ -86,7 +86,15 @@ public class ConRegService {
         Sort sort = Sort.by(Sort.Direction.fromString(sortDir), sortBy);
         Pageable pageable = PageRequest.of(page, size, sort);
 
-        if (searchValue != null && !searchValue.trim().isEmpty()) {
+        // null 값 안전 처리
+        if (searchValue == null) {
+            searchValue = "";
+        }
+        if (searchType == null) {
+            searchType = "consultationContent";
+        }
+
+        if (!searchValue.trim().isEmpty()) {
             String searchPattern = "%" + searchValue.trim() + "%";
             switch (searchType) {
                 case "hospitalName":
@@ -98,7 +106,8 @@ public class ConRegService {
                 case "consultationContent":
                     return conRegRepository.findByConsultationContentLike(searchPattern, pageable);
                 default:
-                    return conRegRepository.findAll(pageable);
+                    // 기본적으로 상담내용으로 검색
+                    return conRegRepository.findByConsultationContentLike(searchPattern, pageable);
             }
         } else {
             return conRegRepository.findAll(pageable);
