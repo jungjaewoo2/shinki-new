@@ -134,7 +134,7 @@
 									<input class="form-check-input" type="checkbox" id="agree2">
 								</div>
 								<div class="">
-									(필수)개인정보 수집 및 이용에 대한 동의합니다. <span class="h-auto rounded-1" style="cursor: pointer;padding: 4px 8px;" data-bs-toggle="modal" data-bs-target="#termsBox_list2">(약관보기)</span>
+									(필수)개인정보 수집 및 이용에 대한 동의합니다. <span class="h-auto rounded-1" style="cursor: pointer;padding: 4px 8px;" data-bs-toggle="modal" data-bs-target="#termsBox_list1">(약관보기)</span>
 								</div>
 							</div>
 							<div class="d-flex align-items-center gap-2">
@@ -142,7 +142,7 @@
 									<input class="form-check-input" type="checkbox" id="agree4" name="termYn" value="Y">
 								</div>
 								<div>
-									(선택)마케팅 및 이벤트 정보 수신에 동의합니다(문자/이메일).
+									(선택)마케팅 및 이벤트 정보 수신에 동의합니다(문자/이메일).<span class="h-auto rounded-1" style="cursor: pointer;padding: 4px 8px;" data-bs-toggle="modal" data-bs-target="#termsBox_list2">(약관보기)</span>
 								</div>
 							</div>
 						</div>
@@ -161,7 +161,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="termsBox_list2" tabindex="-1" aria-labelledby="termsBoxLabel" aria-hidden="true">
+<div class="modal fade" id="termsBox_list1" tabindex="-1" aria-labelledby="termsBoxLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg justify-content-center">
         <div class="modal-content p-3" style="height: 700px; overflow-y: scroll">
             <div class="border-bottom d-flex justify-content-between mb-10">
@@ -173,7 +173,7 @@
                     <div class="title fw-bold fs-5">제1조 수집하는 개인정보 항목 및 수집방법</div>
                     <br />
                     <div>
-                        Synapse 3D(이하 "회사")는 『개인정보 보호법』 및 관련 법령에 따라,
+                        신기사(이하 "회사")는 『개인정보 보호법』 및 관련 법령에 따라,
                         아래와 같이 이용자의 개인정보를 수집·이용하며, 이에 대해 동의를 받고자 합니다.
                     </div>
                     <br />
@@ -235,6 +235,68 @@
                         * 단, 필수항목에 대한 동의를 거부할 경우, 회원가입 및 서비스 제공이 제한될 수 있습니다.
                     </div>
                     <br />
+
+                </div>
+                <div class="text-end">
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
+                        확인
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="termsBox_list2" tabindex="-1" aria-labelledby="termsBoxLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg justify-content-center">
+        <div class="modal-content p-3" style="height: 700px; overflow-y: scroll">
+            <div class="border-bottom d-flex justify-content-between mb-10">
+                <h4>마케팅 및 이벤트 정보 수신 동의 약관</h4>
+                <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="d-flex flex-column gap-3 justify-content-center">
+                <div class="contents"><br />
+                    <div class="title fw-bold fs-5">제1조 (목적)</div>
+                    <br />
+                    <div>
+                        본 약관은 신기사(이하 '회사')가 제공하는 서비스와 관련하여 이용자가 회사의 각종 마케팅 정보 및 이벤트 관련 정보를 수신하는 것에 대한 동의 절차와 이용자의 권리, 의무를 규정함을 목적으로 합니다.
+                    </div>
+                    <br />
+					<div class="title fw-bold fs-5">제2조 (수집 및 이용 항목)</div>
+                    <br />
+                    <div>회사는 마케팅 및 이벤트 정보 제공을 위하여 다음의 개인정보를 수집·이용할 수 있습니다.</div>
+                    <br />
+                    <div>- 필수 항목: 이름, 이메일, 휴대전화 번호</div>
+                    <div>- 선택 항목: 직책, 소속, 관심 장비</div>
+                    <br />
+                    <div class="title fw-bold fs-5">제3조 (정보 이용 목적)</div>
+                    <br />
+                    <div>회사는 수집한 개인정보를 다음 목적을 위하여 이용합니다.</div>
+                    <br />
+                    <div class="nb_list">1.신제품 출시, 기술 세미나, 학술행사 등 안내</div>
+                    <br />
+                    <div class="nb_list">2. 프로모션, 이벤트 초대 및 참여 기회 제공</div>
+                    <br />
+                    <div class="nb_list">3. 서비스 관련 뉴스레터, 공지사항 제공</div>
+                    <br />
+
+                    <div class="title fw-bold fs-5">제4조 (보유 및 이용기간)</div>
+                    <br />
+                    <div class="dot-list">
+                        이용자가 동의한 날로부터 개인정보 이용 목적 달성 시까지 보유·이용합니다. 다만, 이용자가 동의를 철회하는 경우 즉시 파기합니다.
+                    </div>
+                    <br />
+                    <div class="title fw-bold fs-5">제5조 (동의 철회 및 거부권)</div>
+                    <br />
+                    <div>이용자는 언제든지 마케팅 및 이벤트 정보 수신에 대한 동의를 철회할 수 있습니다. 철회는 고객센터, 이메일 등을 통해 가능하며, 철회 시 회사는 해당 이용자의 개인정보를 지체 없이 파기합니다. 동의를 거부하더라도 서비스 이용에는 제한이 없습니다.</div>
+                    <br />
+                    <div class="title fw-bold fs-5">제6조 (개인정보 제3자 제공 및 위탁)</div>
+                    <br />
+                    <div>회사는 이용자의 동의 없이 수집된 개인정보를 외부에 제공하지 않습니다. 다만, 이벤트 진행을 위해 업무를 위탁할 수 있으며, 이 경우 위탁 업체명과 위탁 범위를 사전 고지합니다.</div>
+                    <br />
+                    <div class="title fw-bold fs-5">제7조 (기타 사항)</div>
+                    <br />
+                    <div>본 약관에서 정하지 아니한 사항은 개인정보 처리방침 및 관련 법령에 따릅니다.</div>
 
                 </div>
                 <div class="text-end">

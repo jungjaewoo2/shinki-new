@@ -10,7 +10,7 @@
     <title>Synapse 3D - 관리자페이지</title>
 
     <link rel="stylesheet" href="/assets_admin/css/style.css">
-
+	<link rel="icon" href="/assets_admin/images/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 

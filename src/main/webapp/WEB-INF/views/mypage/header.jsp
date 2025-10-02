@@ -10,7 +10,7 @@
     <title>Synapse 3D - 마이페이지</title>
 
     <link rel="stylesheet" href="/assets_mypage/css/style.css">
-
+	<link rel="icon" href="/assets/images/favicon.png">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
@@ -92,7 +92,7 @@
                         <c:when test="${not empty sessionScope.username}">
                             <!-- 로그인된 경우: 사용자명과 드롭다운 메뉴 -->
                             <div class="dropdown">
-                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="height: unset !important">
+                                <button class="dropdown-toggle bg-white border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="height: unset !important">
                                    <i class="bi bi-person-circle fs-5"></i> ${sessionScope.username}님
                                 </button>
                                 <ul class="dropdown-menu">
