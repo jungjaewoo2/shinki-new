@@ -82,7 +82,7 @@
 
                 </div>
                 
-                <div class="align-items-center d-flex gap-1 justify-content-between w-25">
+                <div class="align-items-center d-flex gap-1 justify-content-between w-25 px-3">
                 	<div class="d-none d-lg-block">
                     <div class="d-flex align-items-center gap-3">
                     </div>
@@ -92,7 +92,7 @@
                         <c:when test="${not empty sessionScope.username}">
                             <!-- 로그인된 경우: 사용자명과 드롭다운 메뉴 -->
                             <div class="dropdown">
-                                <button class="dropdown-toggle bg-white border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="height: unset !important">
+                                <button class="dropdown-toggle bg-white border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="height: unset !important;padding: 0 12px;">
                                    <i class="bi bi-person-circle fs-5"></i> ${sessionScope.username}님
                                 </button>
                                 <ul class="dropdown-menu">

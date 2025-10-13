@@ -73,4 +73,1696 @@
         m1_0.phone,
         m1_0.recommend_code,
         m1_0.recommended_employee,
-        m1_0
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-13 09:16:58 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    update
+        member 
+    set
+        address=?,
+        address_etc=?,
+        created_at=?,
+        department=?,
+        email=?,
+        hospital_name=?,
+        memo=?,
+        name=?,
+        password=?,
+        phone=?,
+        recommend_code=?,
+        recommended_employee=?,
+        status=?,
+        updated_at=?,
+        username=?,
+        visit_num=? 
+    where
+        id=?
+2025-10-13 09:16:58 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.RedirectView - View name [redirect:], model {}
+2025-10-13 09:16:58 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-13 09:16:58 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:16:58 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/profile], model {message=로그인되었습니다., member=com.shinki.shinki.entity.Member@48f106fe, org.springframework.validation.BindingResult.member=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+2025-10-13 09:16:58 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/profile.jsp]
+2025-10-13 09:17:00 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-13 09:17:00 [http-nio-8080-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:17:00 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/request], model {memberId=954}
+2025-10-13 09:17:00 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/request.jsp]
+2025-10-13 09:17:04 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-13 09:17:04 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.admin_file_path,
+        r1_0.application_type,
+        r1_0.content,
+        r1_0.created_at,
+        r1_0.file_path,
+        r1_0.member_id,
+        r1_0.money,
+        r1_0.payment_amount,
+        r1_0.payment_method,
+        r1_0.payment_status,
+        r1_0.privacy_agreed,
+        r1_0.privacy_agreement,
+        r1_0.reg_condition,
+        r1_0.status,
+        r1_0.status_cancel,
+        r1_0.title,
+        r1_0.updated_at 
+    from
+        request r1_0 
+    left join
+        member m1_0 
+            on m1_0.id=r1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        r1_0.created_at desc
+2025-10-13 09:17:04 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:17:04 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/orders], model {requests=[com.shinki.shinki.entity.Request@7de69885, com.shinki.shinki.entity.Request@389186b5, com.shinki.shinki.entity.Request@4c01683c, com.shinki.shinki.entity.Request@2623c5ff, com.shinki.shinki.entity.Request@6fc8430e, com.shinki.shinki.entity.Request@5bd8c46c, com.shinki.shinki.entity.Request@1cdf17a3], startDate=null, endDate=null, inProgressCount=6, completedCount=1}
+2025-10-13 09:17:04 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/orders.jsp]
+2025-10-13 09:17:07 [http-nio-8080-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:17:07 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:17:07.220955800}
+2025-10-13 09:17:07 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:18:51 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-13 09:18:51 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.admin_file_path,
+        r1_0.application_type,
+        r1_0.content,
+        r1_0.created_at,
+        r1_0.file_path,
+        r1_0.member_id,
+        r1_0.money,
+        r1_0.payment_amount,
+        r1_0.payment_method,
+        r1_0.payment_status,
+        r1_0.privacy_agreed,
+        r1_0.privacy_agreement,
+        r1_0.reg_condition,
+        r1_0.status,
+        r1_0.status_cancel,
+        r1_0.title,
+        r1_0.updated_at 
+    from
+        request r1_0 
+    left join
+        member m1_0 
+            on m1_0.id=r1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        r1_0.created_at desc
+2025-10-13 09:18:51 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:18:51 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/orders], model {requests=[com.shinki.shinki.entity.Request@589093eb, com.shinki.shinki.entity.Request@71c06cc, com.shinki.shinki.entity.Request@6dbadb90, com.shinki.shinki.entity.Request@c622e82, com.shinki.shinki.entity.Request@5031eb2e, com.shinki.shinki.entity.Request@377cad82, com.shinki.shinki.entity.Request@c2196a6], startDate=null, endDate=null, inProgressCount=6, completedCount=1}
+2025-10-13 09:18:51 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/orders.jsp]
+2025-10-13 09:18:52 [http-nio-8080-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:18:52 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:18:52.104596700}
+2025-10-13 09:18:52 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:19:33 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-13 09:19:33 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.admin_file_path,
+        r1_0.application_type,
+        r1_0.content,
+        r1_0.created_at,
+        r1_0.file_path,
+        r1_0.member_id,
+        r1_0.money,
+        r1_0.payment_amount,
+        r1_0.payment_method,
+        r1_0.payment_status,
+        r1_0.privacy_agreed,
+        r1_0.privacy_agreement,
+        r1_0.reg_condition,
+        r1_0.status,
+        r1_0.status_cancel,
+        r1_0.title,
+        r1_0.updated_at 
+    from
+        request r1_0 
+    left join
+        member m1_0 
+            on m1_0.id=r1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        r1_0.created_at desc
+2025-10-13 09:19:33 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:19:33 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/orders], model {requests=[com.shinki.shinki.entity.Request@7e2e6829, com.shinki.shinki.entity.Request@3e4592fd, com.shinki.shinki.entity.Request@658198ea, com.shinki.shinki.entity.Request@a34156d, com.shinki.shinki.entity.Request@7d64b22, com.shinki.shinki.entity.Request@1516e35f, com.shinki.shinki.entity.Request@7c396fdf], startDate=null, endDate=null, inProgressCount=6, completedCount=1}
+2025-10-13 09:19:33 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/orders.jsp]
+2025-10-13 09:19:33 [http-nio-8080-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:19:33 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:19:33.461188800}
+2025-10-13 09:19:33 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:19:40 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-13 09:19:40 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.admin_file_path,
+        r1_0.application_type,
+        r1_0.content,
+        r1_0.created_at,
+        r1_0.file_path,
+        r1_0.member_id,
+        r1_0.money,
+        r1_0.payment_amount,
+        r1_0.payment_method,
+        r1_0.payment_status,
+        r1_0.privacy_agreed,
+        r1_0.privacy_agreement,
+        r1_0.reg_condition,
+        r1_0.status,
+        r1_0.status_cancel,
+        r1_0.title,
+        r1_0.updated_at 
+    from
+        request r1_0 
+    left join
+        member m1_0 
+            on m1_0.id=r1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        r1_0.created_at desc
+2025-10-13 09:19:40 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:19:40 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/orders], model {requests=[com.shinki.shinki.entity.Request@50760a65, com.shinki.shinki.entity.Request@5da7887e, com.shinki.shinki.entity.Request@722a1f97, com.shinki.shinki.entity.Request@2238483a, com.shinki.shinki.entity.Request@427d5b3a, com.shinki.shinki.entity.Request@23f8df73, com.shinki.shinki.entity.Request@10cba3c], startDate=null, endDate=null, inProgressCount=6, completedCount=1}
+2025-10-13 09:19:40 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/orders.jsp]
+2025-10-13 09:19:40 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:19:40 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:19:40.975729400}
+2025-10-13 09:19:40 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:20:31 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-13 09:20:31 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.admin_file_path,
+        r1_0.application_type,
+        r1_0.content,
+        r1_0.created_at,
+        r1_0.file_path,
+        r1_0.member_id,
+        r1_0.money,
+        r1_0.payment_amount,
+        r1_0.payment_method,
+        r1_0.payment_status,
+        r1_0.privacy_agreed,
+        r1_0.privacy_agreement,
+        r1_0.reg_condition,
+        r1_0.status,
+        r1_0.status_cancel,
+        r1_0.title,
+        r1_0.updated_at 
+    from
+        request r1_0 
+    left join
+        member m1_0 
+            on m1_0.id=r1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        r1_0.created_at desc
+2025-10-13 09:20:31 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:20:31 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/orders], model {requests=[com.shinki.shinki.entity.Request@5ecdbe8, com.shinki.shinki.entity.Request@70583bc7, com.shinki.shinki.entity.Request@2671cf89, com.shinki.shinki.entity.Request@7390b505, com.shinki.shinki.entity.Request@10c00304, com.shinki.shinki.entity.Request@217794d8, com.shinki.shinki.entity.Request@9d20af8], startDate=null, endDate=null, inProgressCount=6, completedCount=1}
+2025-10-13 09:20:31 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/orders.jsp]
+2025-10-13 09:20:31 [http-nio-8080-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:20:31 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:20:31.166220}
+2025-10-13 09:20:31 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:20:48 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-13 09:20:48 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.admin_file_path,
+        r1_0.application_type,
+        r1_0.content,
+        r1_0.created_at,
+        r1_0.file_path,
+        r1_0.member_id,
+        r1_0.money,
+        r1_0.payment_amount,
+        r1_0.payment_method,
+        r1_0.payment_status,
+        r1_0.privacy_agreed,
+        r1_0.privacy_agreement,
+        r1_0.reg_condition,
+        r1_0.status,
+        r1_0.status_cancel,
+        r1_0.title,
+        r1_0.updated_at 
+    from
+        request r1_0 
+    left join
+        member m1_0 
+            on m1_0.id=r1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        r1_0.created_at desc
+2025-10-13 09:20:48 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:20:48 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/orders], model {requests=[com.shinki.shinki.entity.Request@d8016aa, com.shinki.shinki.entity.Request@4e08887a, com.shinki.shinki.entity.Request@3395d77f, com.shinki.shinki.entity.Request@eab2381, com.shinki.shinki.entity.Request@31341b8, com.shinki.shinki.entity.Request@95252f8, com.shinki.shinki.entity.Request@14615282], startDate=null, endDate=null, inProgressCount=6, completedCount=1}
+2025-10-13 09:20:48 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/orders.jsp]
+2025-10-13 09:20:48 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:20:48 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:20:48.479101600}
+2025-10-13 09:20:48 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:21:01 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-13 09:21:01 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.admin_file_path,
+        r1_0.application_type,
+        r1_0.content,
+        r1_0.created_at,
+        r1_0.file_path,
+        r1_0.member_id,
+        r1_0.money,
+        r1_0.payment_amount,
+        r1_0.payment_method,
+        r1_0.payment_status,
+        r1_0.privacy_agreed,
+        r1_0.privacy_agreement,
+        r1_0.reg_condition,
+        r1_0.status,
+        r1_0.status_cancel,
+        r1_0.title,
+        r1_0.updated_at 
+    from
+        request r1_0 
+    left join
+        member m1_0 
+            on m1_0.id=r1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        r1_0.created_at desc
+2025-10-13 09:21:01 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:21:01 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/orders], model {requests=[com.shinki.shinki.entity.Request@5f1c8e1e, com.shinki.shinki.entity.Request@7778e8c1, com.shinki.shinki.entity.Request@12c974dc, com.shinki.shinki.entity.Request@35f0a73f, com.shinki.shinki.entity.Request@e27b3e1, com.shinki.shinki.entity.Request@3ea97c04, com.shinki.shinki.entity.Request@679f8099], startDate=null, endDate=null, inProgressCount=6, completedCount=1}
+2025-10-13 09:21:01 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/orders.jsp]
+2025-10-13 09:21:02 [http-nio-8080-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:21:02 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:21:02.094308400}
+2025-10-13 09:21:02 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:21:51 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-13 09:21:51 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.admin_file_path,
+        r1_0.application_type,
+        r1_0.content,
+        r1_0.created_at,
+        r1_0.file_path,
+        r1_0.member_id,
+        r1_0.money,
+        r1_0.payment_amount,
+        r1_0.payment_method,
+        r1_0.payment_status,
+        r1_0.privacy_agreed,
+        r1_0.privacy_agreement,
+        r1_0.reg_condition,
+        r1_0.status,
+        r1_0.status_cancel,
+        r1_0.title,
+        r1_0.updated_at 
+    from
+        request r1_0 
+    left join
+        member m1_0 
+            on m1_0.id=r1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        r1_0.created_at desc
+2025-10-13 09:21:51 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:21:51 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/orders], model {requests=[com.shinki.shinki.entity.Request@2ec720bf, com.shinki.shinki.entity.Request@15c9b208, com.shinki.shinki.entity.Request@7e132a0d, com.shinki.shinki.entity.Request@4ffe6a0f, com.shinki.shinki.entity.Request@58ab6997, com.shinki.shinki.entity.Request@aac978, com.shinki.shinki.entity.Request@670ec822], startDate=null, endDate=null, inProgressCount=6, completedCount=1}
+2025-10-13 09:21:51 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/orders.jsp]
+2025-10-13 09:21:51 [http-nio-8080-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:21:51 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:21:51.174275300}
+2025-10-13 09:21:51 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:22:16 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-13 09:22:16 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.admin_file_path,
+        r1_0.application_type,
+        r1_0.content,
+        r1_0.created_at,
+        r1_0.file_path,
+        r1_0.member_id,
+        r1_0.money,
+        r1_0.payment_amount,
+        r1_0.payment_method,
+        r1_0.payment_status,
+        r1_0.privacy_agreed,
+        r1_0.privacy_agreement,
+        r1_0.reg_condition,
+        r1_0.status,
+        r1_0.status_cancel,
+        r1_0.title,
+        r1_0.updated_at 
+    from
+        request r1_0 
+    left join
+        member m1_0 
+            on m1_0.id=r1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        r1_0.created_at desc
+2025-10-13 09:22:16 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:22:16 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/orders], model {requests=[com.shinki.shinki.entity.Request@7ccd16c8, com.shinki.shinki.entity.Request@1baf9e1, com.shinki.shinki.entity.Request@6dd3c76f, com.shinki.shinki.entity.Request@21578ff7, com.shinki.shinki.entity.Request@3538a643, com.shinki.shinki.entity.Request@631b24f4, com.shinki.shinki.entity.Request@10007f47], startDate=null, endDate=null, inProgressCount=6, completedCount=1}
+2025-10-13 09:22:16 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/orders.jsp]
+2025-10-13 09:22:16 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:22:16 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:22:16.718633300}
+2025-10-13 09:22:16 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:22:25 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-13 09:22:25 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.admin_file_path,
+        r1_0.application_type,
+        r1_0.content,
+        r1_0.created_at,
+        r1_0.file_path,
+        r1_0.member_id,
+        r1_0.money,
+        r1_0.payment_amount,
+        r1_0.payment_method,
+        r1_0.payment_status,
+        r1_0.privacy_agreed,
+        r1_0.privacy_agreement,
+        r1_0.reg_condition,
+        r1_0.status,
+        r1_0.status_cancel,
+        r1_0.title,
+        r1_0.updated_at 
+    from
+        request r1_0 
+    left join
+        member m1_0 
+            on m1_0.id=r1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        r1_0.created_at desc
+2025-10-13 09:22:25 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:22:25 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/orders], model {requests=[com.shinki.shinki.entity.Request@6d6c731a, com.shinki.shinki.entity.Request@64b38b09, com.shinki.shinki.entity.Request@4208d74a, com.shinki.shinki.entity.Request@552e0016, com.shinki.shinki.entity.Request@5b544d0a, com.shinki.shinki.entity.Request@23476eaa, com.shinki.shinki.entity.Request@27714f0f], startDate=null, endDate=null, inProgressCount=6, completedCount=1}
+2025-10-13 09:22:25 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/orders.jsp]
+2025-10-13 09:22:25 [http-nio-8080-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:22:25 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:22:25.260401800}
+2025-10-13 09:22:25 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:23:13 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-13 09:23:13 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.admin_file_path,
+        r1_0.application_type,
+        r1_0.content,
+        r1_0.created_at,
+        r1_0.file_path,
+        r1_0.member_id,
+        r1_0.money,
+        r1_0.payment_amount,
+        r1_0.payment_method,
+        r1_0.payment_status,
+        r1_0.privacy_agreed,
+        r1_0.privacy_agreement,
+        r1_0.reg_condition,
+        r1_0.status,
+        r1_0.status_cancel,
+        r1_0.title,
+        r1_0.updated_at 
+    from
+        request r1_0 
+    left join
+        member m1_0 
+            on m1_0.id=r1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        r1_0.created_at desc
+2025-10-13 09:23:13 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:23:13 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/orders], model {requests=[com.shinki.shinki.entity.Request@5e69df3a, com.shinki.shinki.entity.Request@19b00264, com.shinki.shinki.entity.Request@1e4b54d2, com.shinki.shinki.entity.Request@46ab22cf, com.shinki.shinki.entity.Request@562ba52f, com.shinki.shinki.entity.Request@4f113eac, com.shinki.shinki.entity.Request@bb81e58], startDate=null, endDate=null, inProgressCount=6, completedCount=1}
+2025-10-13 09:23:13 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/orders.jsp]
+2025-10-13 09:23:13 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:23:13 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:23:13.511008400}
+2025-10-13 09:23:13 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:23:17 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-13 09:23:17 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.admin_file_path,
+        r1_0.application_type,
+        r1_0.content,
+        r1_0.created_at,
+        r1_0.file_path,
+        r1_0.member_id,
+        r1_0.money,
+        r1_0.payment_amount,
+        r1_0.payment_method,
+        r1_0.payment_status,
+        r1_0.privacy_agreed,
+        r1_0.privacy_agreement,
+        r1_0.reg_condition,
+        r1_0.status,
+        r1_0.status_cancel,
+        r1_0.title,
+        r1_0.updated_at 
+    from
+        request r1_0 
+    left join
+        member m1_0 
+            on m1_0.id=r1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        r1_0.created_at desc
+2025-10-13 09:23:17 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:23:17 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/orders], model {requests=[com.shinki.shinki.entity.Request@4a685f6f, com.shinki.shinki.entity.Request@66421bf5, com.shinki.shinki.entity.Request@238af5f2, com.shinki.shinki.entity.Request@52011c9e, com.shinki.shinki.entity.Request@5a1aa296, com.shinki.shinki.entity.Request@2cf19793, com.shinki.shinki.entity.Request@5820c29a], startDate=null, endDate=null, inProgressCount=6, completedCount=1}
+2025-10-13 09:23:17 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/orders.jsp]
+2025-10-13 09:23:17 [http-nio-8080-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:23:17 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:23:17.070235100}
+2025-10-13 09:23:17 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:27:52 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:27:52 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [cardiac], model {}
+2025-10-13 09:27:52 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/cardiac.jsp]
+2025-10-13 09:27:52 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8]
+2025-10-13 09:27:52 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:27:52.603603800}
+2025-10-13 09:27:52 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:27:52 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8]
+2025-10-13 09:27:52 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:27:52.609589300}
+2025-10-13 09:27:52 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:27:52 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8]
+2025-10-13 09:27:52 [http-nio-8080-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8]
+2025-10-13 09:27:52 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:27:52.619562600}
+2025-10-13 09:27:52 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:27:52.619562600}
+2025-10-13 09:27:52 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:27:52 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:27:55 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:27:55 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [cardiac], model {}
+2025-10-13 09:27:55 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/cardiac.jsp]
+2025-10-13 09:27:55 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8]
+2025-10-13 09:27:55 [http-nio-8080-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8]
+2025-10-13 09:27:55 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:27:55.649913}
+2025-10-13 09:27:55 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:27:55.649913}
+2025-10-13 09:27:55 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:27:55 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:27:55 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8]
+2025-10-13 09:27:55 [http-nio-8080-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8]
+2025-10-13 09:27:55 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:27:55.661881600}
+2025-10-13 09:27:55 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:27:55.661881600}
+2025-10-13 09:27:55 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:27:55 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:28:02 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:28:02 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [application], model {}
+2025-10-13 09:28:02 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/application.jsp]
+2025-10-13 09:28:24 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:28:24 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {message=Hello from Spring Boot JSP!}
+2025-10-13 09:28:24 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/index.jsp]
+2025-10-13 09:28:24 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:28:24 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:28:24.818967800}
+2025-10-13 09:28:24 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:29:18 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:29:18 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [admin/login], model {}
+2025-10-13 09:29:18 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/login.jsp]
+2025-10-13 09:29:18 [http-nio-8080-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8]
+2025-10-13 09:29:18 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:29:18.268237500}
+2025-10-13 09:29:18 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:29:19 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at 
+    from
+        admin a1_0 
+    where
+        a1_0.admin_id=? 
+        and a1_0.password=?
+2025-10-13 09:29:19 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.RedirectView - View name [redirect:], model {}
+2025-10-13 09:29:19 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at 
+    from
+        admin a1_0 
+    order by
+        a1_0.admin_no desc 
+    limit
+        ?, ?
+2025-10-13 09:29:19 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:29:19 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [admin/admin-account], model {admins=[com.shinki.shinki.entity.Admin@85406ed, com.shinki.shinki.entity.Admin@6e40ebb9, com.shinki.shinki.entity.Admin@5dfd073, com.shinki.shinki.entity.Admin@114745a3, com.shinki.shinki.entity.Admin@390c5a08, com.shinki.shinki.entity.Admin@50f873b3], currentPage=0, totalPages=1, totalElements=6, size=10}
+2025-10-13 09:29:19 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/admin-account.jsp]
+2025-10-13 09:29:45 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:29:45 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:29:45.705012500}
+2025-10-13 09:29:45 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:37:59 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:37:59 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {message=Hello from Spring Boot JSP!}
+2025-10-13 09:37:59 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/index.jsp]
+2025-10-13 09:37:59 [http-nio-8080-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:37:59 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:37:59.732207200}
+2025-10-13 09:37:59 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:37:59 [http-nio-8080-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:37:59 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:37:59.932673100}
+2025-10-13 09:37:59 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:39:28 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:39:28 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:39:28.427157200}
+2025-10-13 09:39:28 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:42:03 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at 
+    from
+        admin a1_0 
+    order by
+        a1_0.admin_no desc 
+    limit
+        ?, ?
+2025-10-13 09:42:03 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:42:03 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [admin/admin-account], model {admins=[com.shinki.shinki.entity.Admin@6e667843, com.shinki.shinki.entity.Admin@7e1d2b5f, com.shinki.shinki.entity.Admin@3cecc33b, com.shinki.shinki.entity.Admin@55cd60d, com.shinki.shinki.entity.Admin@58251285, com.shinki.shinki.entity.Admin@4f759d0d], currentPage=0, totalPages=1, totalElements=6, size=10}
+2025-10-13 09:42:03 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/admin-account.jsp]
+2025-10-13 09:42:03 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:42:03 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:42:03.498379900}
+2025-10-13 09:42:03 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:42:10 [http-nio-8080-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:42:10 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {message=Hello from Spring Boot JSP!}
+2025-10-13 09:42:10 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/index.jsp]
+2025-10-13 09:42:10 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:42:10 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:42:10.960284800}
+2025-10-13 09:42:10 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:42:11 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:42:11 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:42:11.107889700}
+2025-10-13 09:42:11 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:42:25 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-13 09:42:25 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.admin_file_path,
+        r1_0.application_type,
+        r1_0.content,
+        r1_0.created_at,
+        r1_0.file_path,
+        r1_0.member_id,
+        r1_0.money,
+        r1_0.payment_amount,
+        r1_0.payment_method,
+        r1_0.payment_status,
+        r1_0.privacy_agreed,
+        r1_0.privacy_agreement,
+        r1_0.reg_condition,
+        r1_0.status,
+        r1_0.status_cancel,
+        r1_0.title,
+        r1_0.updated_at 
+    from
+        request r1_0 
+    left join
+        member m1_0 
+            on m1_0.id=r1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        r1_0.created_at desc
+2025-10-13 09:42:25 [http-nio-8080-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:42:25 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/orders], model {requests=[com.shinki.shinki.entity.Request@c2e4aac, com.shinki.shinki.entity.Request@4e4426f3, com.shinki.shinki.entity.Request@5f1f4a58, com.shinki.shinki.entity.Request@46a17004, com.shinki.shinki.entity.Request@38243956, com.shinki.shinki.entity.Request@57b8f31f, com.shinki.shinki.entity.Request@72d02e3a], startDate=null, endDate=null, inProgressCount=6, completedCount=1}
+2025-10-13 09:42:25 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/orders.jsp]
+2025-10-13 09:42:25 [http-nio-8080-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:42:25 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:42:25.547184500}
+2025-10-13 09:42:25 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:42:29 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-13 09:42:29 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.admin_file_path,
+        r1_0.application_type,
+        r1_0.content,
+        r1_0.created_at,
+        r1_0.file_path,
+        r1_0.member_id,
+        r1_0.money,
+        r1_0.payment_amount,
+        r1_0.payment_method,
+        r1_0.payment_status,
+        r1_0.privacy_agreed,
+        r1_0.privacy_agreement,
+        r1_0.reg_condition,
+        r1_0.status,
+        r1_0.status_cancel,
+        r1_0.title,
+        r1_0.updated_at 
+    from
+        request r1_0 
+    left join
+        member m1_0 
+            on m1_0.id=r1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        r1_0.created_at desc
+2025-10-13 09:42:29 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:42:29 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/orders], model {requests=[com.shinki.shinki.entity.Request@d1c7e0, com.shinki.shinki.entity.Request@2b421b25, com.shinki.shinki.entity.Request@7c25e524, com.shinki.shinki.entity.Request@3103b4ea, com.shinki.shinki.entity.Request@3f638bed, com.shinki.shinki.entity.Request@4c32417, com.shinki.shinki.entity.Request@579ced6e], startDate=null, endDate=null, inProgressCount=6, completedCount=1}
+2025-10-13 09:42:29 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/orders.jsp]
+2025-10-13 09:42:29 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:42:29 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:42:29.236185400}
+2025-10-13 09:42:29 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:42:43 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at 
+    from
+        admin a1_0 
+    order by
+        a1_0.admin_no desc 
+    limit
+        ?, ?
+2025-10-13 09:42:43 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:42:43 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [admin/admin-account], model {admins=[com.shinki.shinki.entity.Admin@3c0b4648, com.shinki.shinki.entity.Admin@44373b4c, com.shinki.shinki.entity.Admin@571d3b9c, com.shinki.shinki.entity.Admin@44a37cb8, com.shinki.shinki.entity.Admin@22fc5b62, com.shinki.shinki.entity.Admin@5fecf92a], currentPage=0, totalPages=1, totalElements=6, size=10}
+2025-10-13 09:42:43 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/admin-account.jsp]
+2025-10-13 09:42:43 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:42:43 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:42:43.682600600}
+2025-10-13 09:42:43 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:42:45 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-13 09:42:45 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.admin_file_path,
+        r1_0.application_type,
+        r1_0.content,
+        r1_0.created_at,
+        r1_0.file_path,
+        r1_0.member_id,
+        r1_0.money,
+        r1_0.payment_amount,
+        r1_0.payment_method,
+        r1_0.payment_status,
+        r1_0.privacy_agreed,
+        r1_0.privacy_agreement,
+        r1_0.reg_condition,
+        r1_0.status,
+        r1_0.status_cancel,
+        r1_0.title,
+        r1_0.updated_at 
+    from
+        request r1_0 
+    left join
+        member m1_0 
+            on m1_0.id=r1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        r1_0.created_at desc
+2025-10-13 09:42:45 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:42:45 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/orders], model {requests=[com.shinki.shinki.entity.Request@305ce85d, com.shinki.shinki.entity.Request@20b507a2, com.shinki.shinki.entity.Request@3a76fb82, com.shinki.shinki.entity.Request@5c4a4842, com.shinki.shinki.entity.Request@b034d96, com.shinki.shinki.entity.Request@383c343, com.shinki.shinki.entity.Request@e24925a], startDate=null, endDate=null, inProgressCount=6, completedCount=1}
+2025-10-13 09:42:45 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/orders.jsp]
+2025-10-13 09:42:45 [http-nio-8080-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:42:45 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:42:45.526389400}
+2025-10-13 09:42:45 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:42:46 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-13 09:42:46 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.admin_file_path,
+        r1_0.application_type,
+        r1_0.content,
+        r1_0.created_at,
+        r1_0.file_path,
+        r1_0.member_id,
+        r1_0.money,
+        r1_0.payment_amount,
+        r1_0.payment_method,
+        r1_0.payment_status,
+        r1_0.privacy_agreed,
+        r1_0.privacy_agreement,
+        r1_0.reg_condition,
+        r1_0.status,
+        r1_0.status_cancel,
+        r1_0.title,
+        r1_0.updated_at 
+    from
+        request r1_0 
+    left join
+        member m1_0 
+            on m1_0.id=r1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        r1_0.created_at desc
+2025-10-13 09:42:46 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:42:46 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/orders], model {requests=[com.shinki.shinki.entity.Request@4103d7ae, com.shinki.shinki.entity.Request@6acbdd25, com.shinki.shinki.entity.Request@3961dfc5, com.shinki.shinki.entity.Request@642718ce, com.shinki.shinki.entity.Request@3bc61d43, com.shinki.shinki.entity.Request@f50ddeb, com.shinki.shinki.entity.Request@3878b433], startDate=null, endDate=null, inProgressCount=6, completedCount=1}
+2025-10-13 09:42:46 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/orders.jsp]
+2025-10-13 09:42:46 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:42:46 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:42:46.798049700}
+2025-10-13 09:42:46 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:42:49 [http-nio-8080-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:42:49 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {message=Hello from Spring Boot JSP!}
+2025-10-13 09:42:49 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/index.jsp]
+2025-10-13 09:42:49 [http-nio-8080-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:42:49 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:42:49.570046500}
+2025-10-13 09:42:49 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:42:49 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:42:49 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:42:49.647838300}
+2025-10-13 09:42:49 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:42:50 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:42:50 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {message=Hello from Spring Boot JSP!}
+2025-10-13 09:42:50 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/index.jsp]
+2025-10-13 09:42:51 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:42:51 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:42:51.006859300}
+2025-10-13 09:42:51 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:42:51 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:42:51 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:42:51.084650500}
+2025-10-13 09:42:51 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:43:03 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:43:03 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {message=Hello from Spring Boot JSP!}
+2025-10-13 09:43:03 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/index.jsp]
+2025-10-13 09:43:03 [http-nio-8080-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:43:03 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:43:03.730280200}
+2025-10-13 09:43:03 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:43:04 [http-nio-8080-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:43:04 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:43:04.051637700}
+2025-10-13 09:43:04 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:43:41 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:43:41 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {message=Hello from Spring Boot JSP!}
+2025-10-13 09:43:41 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/index.jsp]
+2025-10-13 09:43:42 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:43:42 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:43:42.050410}
+2025-10-13 09:43:42 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:43:42 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:43:42 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:43:42.208986100}
+2025-10-13 09:43:42 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:45:46 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:45:46 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {message=Hello from Spring Boot JSP!}
+2025-10-13 09:45:46 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/index.jsp]
+2025-10-13 09:45:46 [http-nio-8080-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:45:46 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:45:46.210363100}
+2025-10-13 09:45:46 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:45:46 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:45:46 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:45:46.385894500}
+2025-10-13 09:45:46 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:45:49 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:45:49 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {message=Hello from Spring Boot JSP!}
+2025-10-13 09:45:49 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/index.jsp]
+2025-10-13 09:45:49 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:45:49 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:45:49.455083700}
+2025-10-13 09:45:49 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:45:49 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:45:49 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:45:49.562798}
+2025-10-13 09:45:49 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:45:51 [http-nio-8080-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:45:51 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {message=Hello from Spring Boot JSP!}
+2025-10-13 09:45:51 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/index.jsp]
+2025-10-13 09:45:51 [http-nio-8080-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:45:51 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:45:51.993914600}
+2025-10-13 09:45:51 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:45:52 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:45:52 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:45:52.099610300}
+2025-10-13 09:45:52 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:46:58 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-13 09:46:58 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.admin_file_path,
+        r1_0.application_type,
+        r1_0.content,
+        r1_0.created_at,
+        r1_0.file_path,
+        r1_0.member_id,
+        r1_0.money,
+        r1_0.payment_amount,
+        r1_0.payment_method,
+        r1_0.payment_status,
+        r1_0.privacy_agreed,
+        r1_0.privacy_agreement,
+        r1_0.reg_condition,
+        r1_0.status,
+        r1_0.status_cancel,
+        r1_0.title,
+        r1_0.updated_at 
+    from
+        request r1_0 
+    left join
+        member m1_0 
+            on m1_0.id=r1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        r1_0.created_at desc
+2025-10-13 09:46:58 [http-nio-8080-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:46:58 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/orders], model {requests=[com.shinki.shinki.entity.Request@2e292594, com.shinki.shinki.entity.Request@4b841314, com.shinki.shinki.entity.Request@1536ce9f, com.shinki.shinki.entity.Request@6f7c252, com.shinki.shinki.entity.Request@6195529d, com.shinki.shinki.entity.Request@a62e108, com.shinki.shinki.entity.Request@290394ed], startDate=null, endDate=null, inProgressCount=6, completedCount=1}
+2025-10-13 09:46:58 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/orders.jsp]
+2025-10-13 09:46:58 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:46:58 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:46:58.890858900}
+2025-10-13 09:46:58 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:47:01 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:47:01 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {message=Hello from Spring Boot JSP!}
+2025-10-13 09:47:01 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/index.jsp]
+2025-10-13 09:47:01 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:47:01 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:47:01.761137500}
+2025-10-13 09:47:01 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:47:01 [http-nio-8080-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:47:01 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:47:01.943314700}
+2025-10-13 09:47:01 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:49:12 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-13 09:49:12 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.admin_file_path,
+        r1_0.application_type,
+        r1_0.content,
+        r1_0.created_at,
+        r1_0.file_path,
+        r1_0.member_id,
+        r1_0.money,
+        r1_0.payment_amount,
+        r1_0.payment_method,
+        r1_0.payment_status,
+        r1_0.privacy_agreed,
+        r1_0.privacy_agreement,
+        r1_0.reg_condition,
+        r1_0.status,
+        r1_0.status_cancel,
+        r1_0.title,
+        r1_0.updated_at 
+    from
+        request r1_0 
+    left join
+        member m1_0 
+            on m1_0.id=r1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        r1_0.created_at desc
+2025-10-13 09:49:12 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:49:12 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/orders], model {requests=[com.shinki.shinki.entity.Request@6e56882a, com.shinki.shinki.entity.Request@5fa0da67, com.shinki.shinki.entity.Request@478da9ab, com.shinki.shinki.entity.Request@19574bb6, com.shinki.shinki.entity.Request@439a976e, com.shinki.shinki.entity.Request@1ab00e98, com.shinki.shinki.entity.Request@305a3c94], startDate=null, endDate=null, inProgressCount=6, completedCount=1}
+2025-10-13 09:49:12 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/orders.jsp]
+2025-10-13 09:49:12 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:49:12 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:49:12.821143900}
+2025-10-13 09:49:12 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:49:14 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-13 09:49:14 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.admin_file_path,
+        r1_0.application_type,
+        r1_0.content,
+        r1_0.created_at,
+        r1_0.file_path,
+        r1_0.member_id,
+        r1_0.money,
+        r1_0.payment_amount,
+        r1_0.payment_method,
+        r1_0.payment_status,
+        r1_0.privacy_agreed,
+        r1_0.privacy_agreement,
+        r1_0.reg_condition,
+        r1_0.status,
+        r1_0.status_cancel,
+        r1_0.title,
+        r1_0.updated_at 
+    from
+        request r1_0 
+    left join
+        member m1_0 
+            on m1_0.id=r1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        r1_0.created_at desc
+2025-10-13 09:49:14 [http-nio-8080-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:49:14 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/orders], model {requests=[com.shinki.shinki.entity.Request@4a3ef9f6, com.shinki.shinki.entity.Request@6ad3340f, com.shinki.shinki.entity.Request@2f7d2e8f, com.shinki.shinki.entity.Request@67873265, com.shinki.shinki.entity.Request@d18de2f, com.shinki.shinki.entity.Request@7e18e0cf, com.shinki.shinki.entity.Request@3857b0d5], startDate=null, endDate=null, inProgressCount=6, completedCount=1}
+2025-10-13 09:49:14 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/orders.jsp]
+2025-10-13 09:49:14 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:49:14 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:49:14.875538900}
+2025-10-13 09:49:14 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:50:47 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at 
+    from
+        admin a1_0 
+    order by
+        a1_0.admin_no desc 
+    limit
+        ?, ?
+2025-10-13 09:50:47 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:50:47 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - View name [admin/admin-account], model {admins=[com.shinki.shinki.entity.Admin@73b7d29b, com.shinki.shinki.entity.Admin@5a5a754f, com.shinki.shinki.entity.Admin@41aa1b8d, com.shinki.shinki.entity.Admin@a0413e7, com.shinki.shinki.entity.Admin@476a3b36, com.shinki.shinki.entity.Admin@4e13ce99], currentPage=0, totalPages=1, totalElements=6, size=10}
+2025-10-13 09:50:47 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/admin-account.jsp]
+2025-10-13 09:50:47 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:50:47 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:50:47.886291}
+2025-10-13 09:50:47 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:51:14 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at 
+    from
+        admin a1_0 
+    order by
+        a1_0.admin_no desc 
+    limit
+        ?, ?
+2025-10-13 09:51:14 [http-nio-8080-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:51:14 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [admin/admin-account], model {admins=[com.shinki.shinki.entity.Admin@5ef4a4f6, com.shinki.shinki.entity.Admin@5c07de76, com.shinki.shinki.entity.Admin@59e2f54e, com.shinki.shinki.entity.Admin@6f4efc81, com.shinki.shinki.entity.Admin@14e6268a, com.shinki.shinki.entity.Admin@7670ae0e], currentPage=0, totalPages=1, totalElements=6, size=10}
+2025-10-13 09:51:14 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/admin-account.jsp]
+2025-10-13 09:51:15 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:51:15 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:51:15.070378700}
+2025-10-13 09:51:15 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:51:49 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at 
+    from
+        admin a1_0 
+    order by
+        a1_0.admin_no desc 
+    limit
+        ?, ?
+2025-10-13 09:51:49 [http-nio-8080-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:51:49 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - View name [admin/admin-account], model {admins=[com.shinki.shinki.entity.Admin@73040312, com.shinki.shinki.entity.Admin@1e0271b1, com.shinki.shinki.entity.Admin@37ef4d2b, com.shinki.shinki.entity.Admin@46607c91, com.shinki.shinki.entity.Admin@152ffbdc, com.shinki.shinki.entity.Admin@18ad8f31], currentPage=0, totalPages=1, totalElements=6, size=10}
+2025-10-13 09:51:49 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/admin-account.jsp]
+2025-10-13 09:51:50 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:51:50 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:51:50.003341500}
+2025-10-13 09:51:50 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 09:52:21 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-13 09:52:21 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.admin_file_path,
+        r1_0.application_type,
+        r1_0.content,
+        r1_0.created_at,
+        r1_0.file_path,
+        r1_0.member_id,
+        r1_0.money,
+        r1_0.payment_amount,
+        r1_0.payment_method,
+        r1_0.payment_status,
+        r1_0.privacy_agreed,
+        r1_0.privacy_agreement,
+        r1_0.reg_condition,
+        r1_0.status,
+        r1_0.status_cancel,
+        r1_0.title,
+        r1_0.updated_at 
+    from
+        request r1_0 
+    left join
+        member m1_0 
+            on m1_0.id=r1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        r1_0.created_at desc
+2025-10-13 09:52:21 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 09:52:21 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/orders], model {requests=[com.shinki.shinki.entity.Request@75b58945, com.shinki.shinki.entity.Request@5732d338, com.shinki.shinki.entity.Request@1f08d98f, com.shinki.shinki.entity.Request@40f32bc3, com.shinki.shinki.entity.Request@19d57d39, com.shinki.shinki.entity.Request@583fd628, com.shinki.shinki.entity.Request@1a2a801], startDate=null, endDate=null, inProgressCount=6, completedCount=1}
+2025-10-13 09:52:21 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/orders.jsp]
+2025-10-13 09:52:21 [http-nio-8080-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 09:52:21 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T09:52:21.539591}
+2025-10-13 09:52:21 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 10:05:25 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 10:05:25 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {message=Hello from Spring Boot JSP!}
+2025-10-13 10:05:25 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/index.jsp]
+2025-10-13 10:05:25 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 10:05:25 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T10:05:25.772325400}
+2025-10-13 10:05:25 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 10:05:27 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 10:05:27 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T10:05:27.142489100}
+2025-10-13 10:05:27 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 10:05:28 [http-nio-8080-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 10:05:28 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {message=Hello from Spring Boot JSP!}
+2025-10-13 10:05:28 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/index.jsp]
+2025-10-13 10:05:28 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 10:05:28 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T10:05:28.692461200}
+2025-10-13 10:05:28 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 10:05:28 [http-nio-8080-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 10:05:28 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T10:05:28.781221300}
+2025-10-13 10:05:28 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 10:05:29 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 10:05:29 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {message=Hello from Spring Boot JSP!}
+2025-10-13 10:05:29 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/index.jsp]
+2025-10-13 10:05:29 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 10:05:29 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T10:05:29.935338800}
+2025-10-13 10:05:29 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 10:05:30 [http-nio-8080-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 10:05:30 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T10:05:30.290725600}
+2025-10-13 10:05:30 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 10:06:36 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 10:06:36 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {message=Hello from Spring Boot JSP!}
+2025-10-13 10:06:36 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/index.jsp]
+2025-10-13 10:06:36 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 10:06:36 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T10:06:36.977703200}
+2025-10-13 10:06:36 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 10:06:37 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 10:06:37 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T10:06:37.253817100}
+2025-10-13 10:06:37 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 10:06:38 [http-nio-8080-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 10:06:38 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {message=Hello from Spring Boot JSP!}
+2025-10-13 10:06:38 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/index.jsp]
+2025-10-13 10:06:38 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 10:06:38 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T10:06:38.661800}
+2025-10-13 10:06:38 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 10:06:38 [http-nio-8080-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 10:06:38 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T10:06:38.949572900}
+2025-10-13 10:06:38 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 10:08:11 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 10:08:11 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {message=Hello from Spring Boot JSP!}
+2025-10-13 10:08:11 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/index.jsp]
+2025-10-13 10:08:11 [http-nio-8080-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 10:08:11 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T10:08:11.202396800}
+2025-10-13 10:08:11 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 10:08:11 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 10:08:11 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T10:08:11.371939700}
+2025-10-13 10:08:11 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 10:08:16 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 10:08:16 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {message=Hello from Spring Boot JSP!}
+2025-10-13 10:08:16 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/index.jsp]
+2025-10-13 10:08:16 [http-nio-8080-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 10:08:16 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T10:08:16.590786800}
+2025-10-13 10:08:16 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 10:08:16 [http-nio-8080-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 10:08:16 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T10:08:16.683535600}
+2025-10-13 10:08:16 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 10:08:20 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-13 10:08:20 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.id,
+        r1_0.admin_file_path,
+        r1_0.application_type,
+        r1_0.content,
+        r1_0.created_at,
+        r1_0.file_path,
+        r1_0.member_id,
+        r1_0.money,
+        r1_0.payment_amount,
+        r1_0.payment_method,
+        r1_0.payment_status,
+        r1_0.privacy_agreed,
+        r1_0.privacy_agreement,
+        r1_0.reg_condition,
+        r1_0.status,
+        r1_0.status_cancel,
+        r1_0.title,
+        r1_0.updated_at 
+    from
+        request r1_0 
+    left join
+        member m1_0 
+            on m1_0.id=r1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        r1_0.created_at desc
+2025-10-13 10:08:20 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 10:08:20 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/orders], model {requests=[com.shinki.shinki.entity.Request@3d1abd45, com.shinki.shinki.entity.Request@262e4d66, com.shinki.shinki.entity.Request@3c2b3535, com.shinki.shinki.entity.Request@7a0dfae8, com.shinki.shinki.entity.Request@12959079, com.shinki.shinki.entity.Request@4604aa30, com.shinki.shinki.entity.Request@23e3ad58], startDate=null, endDate=null, inProgressCount=6, completedCount=1}
+2025-10-13 10:08:20 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/orders.jsp]
+2025-10-13 10:08:52 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 10:08:52 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {message=Hello from Spring Boot JSP!}
+2025-10-13 10:08:52 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/index.jsp]
+2025-10-13 10:08:52 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 10:08:52 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T10:08:52.487264800}
+2025-10-13 10:08:52 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 10:08:52 [http-nio-8080-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 10:08:52 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T10:08:52.639859400}
+2025-10-13 10:08:52 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 10:09:11 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-13 10:09:11 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {message=Hello from Spring Boot JSP!}
+2025-10-13 10:09:11 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/index.jsp]
+2025-10-13 10:09:11 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 10:09:11 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T10:09:11.943541600}
+2025-10-13 10:09:11 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-13 10:09:12 [http-nio-8080-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-13 10:09:12 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-13T10:09:12.122065400}
+2025-10-13 10:09:12 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
