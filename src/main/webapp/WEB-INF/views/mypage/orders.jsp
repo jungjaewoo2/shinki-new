@@ -12,16 +12,20 @@
 
      <div class="card d-flex flex-fill flex-column gap-3 overflow-auto">
          <div class="align-items-center d-flex justify-content-between flex-column flex-lg-row gap-3 gap-lg-0 mb-3">
-             <div class="form-group flex-fill flex-row m-0">
+             <div class="flex-column flex-lg-row form-group flex-fill flex-row m-0">
                  <label class="form-label">의뢰일자</label>
-                 <form method="GET" action="/mypage/orders" class="d-flex gap-2 align-items-center">
+                 <form method="GET" action="/mypage/orders" class="d-flex flex-column flex-lg-row gap-1">
                      <!-- 기간 검색 -->
-                     <span style="font-size: 14px;"></span>
-                     <input type="date" name="startDate" class="form-input" style="max-width: 150px;" value="${param.startDate}">
-                     <span style="font-size: 14px;">~</span>
-                     <input type="date" name="endDate" class="form-input" style="max-width: 150px;" value="${param.endDate}">
-                     <button type="submit" class="btn btn-primary w-100">검색</button>
+                     <div class="d-flex align-items-center gap-0 gap-lg-2">
+                     	<span style="font-size: 14px;"></span>
+	                     <input type="date" name="startDate" class="form-input" style="max-width: 150px;" value="${param.startDate}">
+	                     <span style="font-size: 14px;">~</span>
+	                     <input type="date" name="endDate" class="form-input" style="max-width: 150px;" value="${param.endDate}">
+                     </div>
+                     <div class="d-flex gap-1">
+                     	<button type="submit" class="btn btn-primary w-100">검색</button>
                      <a href="/mypage/orders" class="btn btn-secondary" style="min-width: 100px;">전체보기</a>
+                     </div>
                  </form>
              </div>
 
