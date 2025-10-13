@@ -14,18 +14,15 @@
 
      <div class="container">
          <div class="row align-items-stretch d-flex flex-wrap">
-             <h2 class="align-items-center d-flex flex-column gap-2 mb-1" style="font-size: 2rem; margin-top: 0.75rem;">
+             <h2 class="align-items-center d-flex flex-column gap-2 mb-1" style="font-size: 2rem; margin-top: 0.75rem; margin-bottom: 50px !important;">
                  <span class="pill">All Application</span>
                  <div class="d-flex flex-column justify-content-center flex-lg-row gap-4 w-100 text-center">
                      <div>All Application</div>
                  </div>
              </h2>
-             <div class="col-12 p-0 mb-3">
-                 <div><img src="/assets/images/catalog01.jpg" width="100%"></div>
-                 <div><img src="/assets/images/catalog02.jpg" width="100%"></div>
-             </div>
+             
              <!-- Head -->
-             <h2 class="align-items-center d-flex flex-column gap-2 mb-1 p-0" style=" margin: 50px 0 30px !important">
+             <h2 class="align-items-center d-flex flex-column gap-2 mb-1 p-0" style=" margin: 0 0 30px !important">
                  <div class="d-flex flex-column justify-content-center flex-lg-row gap-4 w-100 text-center" style="background: #156082;">
                      <div class="text-white">Head</div>
                  </div>
@@ -762,7 +759,10 @@
                      </div>
                  </div>
              </div>
-
+			<div class="col-12 p-0 mb-3 mt-5">
+                 <div><img src="/assets/images/catalog01.jpg" width="100%"></div>
+                 <div><img src="/assets/images/catalog02.jpg" width="100%"></div>
+             </div>
          </div>
      </div>
  </section>

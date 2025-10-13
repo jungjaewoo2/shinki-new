@@ -540,4 +540,46 @@
     });
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Check if the URL contains a specific parameter or hash to open the Pancreas accordion
+    const urlParams = new URLSearchParams(window.location.search);
+    const hash = window.location.hash;
+    
+    if (urlParams.get('section') === 'pancreas' || hash === '#pancreas') {
+        // Get the accordion buttons and collapse elements
+        const pancreasButton = document.querySelector('#collapseTwo');
+        const liverButton = document.querySelector('#collapseOne');
+        
+        // Collapse the first accordion item (Liver Analysis)
+        if (liverButton) {
+            liverButton.classList.remove('show');
+            const liverHeader = liverButton.parentElement.querySelector('.accordion-button');
+            if (liverHeader) {
+                liverHeader.classList.add('collapsed');
+                liverHeader.setAttribute('aria-expanded', 'false');
+            }
+        }
+        
+        // Expand the second accordion item (Pancreas Analysis)
+        if (pancreasButton) {
+            pancreasButton.classList.add('show');
+            const pancreasHeader = pancreasButton.parentElement.querySelector('.accordion-button');
+            if (pancreasHeader) {
+                pancreasHeader.classList.remove('collapsed');
+                pancreasHeader.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+        // Optionally, show the Pancreas Swiper and hide the Liver Swiper
+        const pancreasSwiper = document.querySelector('#swiperPancreas');
+        const liverSwiper = document.querySelector('#swiperLiver');
+        if (pancreasSwiper && liverSwiper) {
+            pancreasSwiper.style.display = 'block';
+            liverSwiper.style.display = 'none';
+        }
+    }
+});
+</script>
+
 <jsp:include page="footer.jsp" />
