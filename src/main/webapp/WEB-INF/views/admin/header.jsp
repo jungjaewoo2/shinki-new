@@ -25,7 +25,7 @@
     <div class="mobile-header">
         <div class="mobile-header-content">
             
-            <div class="mobile-title"><img src="/assets/images/logo_B.png"></div>
+            <div class="mobile-title" onclick="location.href='../'"><img src="/assets/images/logo_B.png"></div>
             <button class="hamburger-btn" onclick="toggleSidebar()">☰</button>
         </div>
     </div>

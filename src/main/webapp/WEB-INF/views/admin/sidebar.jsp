@@ -66,7 +66,7 @@
                 <div class="nav-item" onclick="location.href='consultation-request'">상담신청 내역조회</div>
             </div>
         </div>
-        <div class="position-absolute start-50 translate-middle" style="bottom: 5%"><img src="/assets/images/logo_header.png" height="45"></div>
+        
     </nav>
     <!--<div class="d-block d-lg-none" onclick="location.href='#'" style="padding: 15px 20px;font-weight: bold;position: absolute;bottom: 0;"></div>-->
     <div class="d-block d-lg-none " style="padding: 15px 20px;font-weight: bold;">
@@ -75,6 +75,7 @@
         <div onclick="location.href='login'"><i class="bi bi-box-arrow-right fs-5"></i> 로그아웃</div>
         </div>
     </div>
+    <div class="ps-3 pb-3" style="bottom: 5%"><img src="/assets/images/logo_header.png" height="45"></div>
 </div>
 
 <script>

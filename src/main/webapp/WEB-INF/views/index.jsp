@@ -1073,7 +1073,7 @@
                 <h1 class="modal-title fs-5 mt-0" id="exampleModalLabel">Server/Client Type</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body align-items-center d-flex flex-column gap-2 bg-body-secondary p-5 rounded-bottom-5">
+            <div class="d-none d-lg-block modal-body align-items-center d-flex flex-column gap-2 bg-body-secondary p-5 rounded-bottom-5">
                 <div class="d-flex justify-content-between w-100">
                     <div class="d-flex flex-column gap-3">
                         <div class="align-items-center border d-flex flex-column p-3 rounded-4 bg-white shadow">
@@ -1125,6 +1125,58 @@
 
 
             </div>
+            <div class="d-block d-lg-none modal-body align-items-center d-flex flex-column gap-2 bg-body-secondary rounded-bottom-5">
+                <div class="d-flex flex-column justify-content-between w-100">
+                    <div class="d-flex justify-content-between p-2" style="border: 3px dashed #555;">
+                        <div class="align-items-center  border d-flex flex-column p-3 rounded-4 bg-white shadow ">
+                            <img src="assets/images/type_img01.png" width="80">
+                            <div>PACS</div>
+                        </div>
+                        <div class="align-items-center justify-content-between border d-flex flex-column p-3 rounded-4 bg-white shadow">
+                            <div class="d-flex flex-wrap gap-1 justify-content-center">
+                                <div class="circle-box">CT</div>
+                                <div class="circle-box">MR</div>
+                                <div class="circle-box">PET</div>
+                            </div>
+                            <div class="d-flex flex-wrap gap-1 justify-content-center">
+                                <div class="circle-box">NM</div>
+                                <div class="circle-box">XA</div>
+                            </div>
+                            <div class="text-center">Imaging Device</div>
+                        </div>
+                    </div>
+                    <div class="align-items-center d-flex flex-column text-secondary m-3"><img src="assets/images/arrow-down.png" width="50">
+                        <div>DICOM data</div>
+                    </div>
+                    <div class="align-items-center d-flex flex-column p-2" style="border: 3px dashed #555;">
+                        <div class="align-items-center border d-flex flex-column p-3 rounded-4 bg-white shadow w-100" style="">
+                            <div class="align-items-center d-flex gap-4">
+                                <div><img src="assets/images/type_img02.png" width="80"></div>
+                                <div class="fs-2"><i class="bi bi-plus-lg"></i></div>
+                                <div>
+                                    <div style="font-size: 14px">Hardware Key</div>
+                                    <div class="text-center"><img src="assets/images/type_img03.png" width="50"></div>
+                                </div>
+                            </div>
+                            <div><img src="assets/images/logo_B.png" height="30"></div>
+                        </div>
+                        <div class="fs-2 text-secondary m-3"><i class="bi bi-arrow-down-up"></i></div>
+                        <div class="d-flex align-items-center flex-column border p-3 rounded-4 bg-white shadow w-100">
+                            <div><img src="assets/images/type_img05.png" width="280"></div>
+                            <div>Client computer</div>
+                        </div>
+                    </div>
+                    <div class="align-items-center d-flex flex-column text-secondary m-3"><img src="assets/images/arrow-down.png" width="50">
+                        <div>3D simulation data</div>
+                    </div>
+                    <div class="border p-3 rounded-4 bg-white text-center shadow h-100">
+                        <img src="assets/images/type_img04.png" width="">
+                        <div>PACS / Printer</div>
+                    </div>
+                </div>
+
+
+            </div>
         </div>
     </div>
 </div>
@@ -1137,7 +1189,7 @@
                 <h1 class="modal-title fs-5 mt-0" id="exampleModalLabel">Stand-alone Type</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body align-items-center d-flex flex-column gap-2 bg-body-secondary p-5 rounded-bottom-5">
+            <div class="d-none d-lg-block modal-body align-items-center d-flex flex-column gap-2 bg-body-secondary p-5 rounded-bottom-5">
                 <div class="d-flex align-items-center justify-content-between w-100">
                     <div class="d-flex flex-column gap-3">
                         <div class="align-items-center border d-flex flex-column p-3 rounded-4 bg-white shadow">
@@ -1178,15 +1230,63 @@
                     </div>
                     <div class="border p-3 rounded-4 bg-white text-center shadow h-100">
                         <img src="assets/images/type_img04.png" width="">
+                        </div>
+                        <div>PACS / Printer</div>
+                    </div>
+                </div>
+				<div class="d-block d-lg-none modal-body align-items-center d-flex flex-column gap-2 bg-body-secondary rounded-bottom-5">
+                <div class="d-flex flex-column justify-content-between w-100">
+                    <div class="d-flex justify-content-between p-2" style="border: 3px dashed #555;">
+                        <div class="align-items-center  border d-flex flex-column p-3 rounded-4 bg-white shadow ">
+                            <img src="assets/images/type_img01.png" width="80">
+                            <div>PACS</div>
+                        </div>
+                        <div class="align-items-center justify-content-between border d-flex flex-column p-3 rounded-4 bg-white shadow">
+                            <div class="d-flex flex-wrap gap-1 justify-content-center">
+                                <div class="circle-box">CT</div>
+                                <div class="circle-box">MR</div>
+                                <div class="circle-box">PET</div>
+                            </div>
+                            <div class="d-flex flex-wrap gap-1 justify-content-center">
+                                <div class="circle-box">NM</div>
+                                <div class="circle-box">XA</div>
+                            </div>
+                            <div class="text-center">Imaging Device</div>
+                        </div>
+                    </div>
+                    <div class="align-items-center d-flex flex-column text-secondary m-3"><img src="assets/images/arrow-down.png" width="50">
+                        <div>DICOM data</div>
+                    </div>
+                    <div class="align-items-center d-flex flex-column p-2" style="border: 3px dashed #555;">
+                        <div class="align-items-center border d-flex flex-column p-3 rounded-4 bg-white shadow w-100" style="">
+                            <div class="align-items-center d-flex gap-4">
+                                <div><img src="assets/images/type_img02.png" width="80"></div>
+                                <div class="fs-2"><i class="bi bi-plus-lg"></i></div>
+                                <div>
+                                    <div style="font-size: 14px">Hardware Key</div>
+                                    <div class="text-center"><img src="assets/images/type_img03.png" width="50"></div>
+                                </div>
+                            </div>
+                            <div><img src="assets/images/logo_B.png" height="30"></div>
+                        </div>
+                    </div>
+                    <div class="align-items-center d-flex flex-column text-secondary m-3"><img src="assets/images/arrow-down.png" width="50">
+                        <div>3D simulation data</div>
+                    </div>
+                    <div class="border p-3 rounded-4 bg-white text-center shadow h-100">
+                        <img src="assets/images/type_img04.png" width="">
                         <div>PACS / Printer</div>
                     </div>
                 </div>
 
 
             </div>
+
+            </div>
         </div>
     </div>
 </div>
+
 
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
