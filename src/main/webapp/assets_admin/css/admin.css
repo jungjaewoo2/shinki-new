@@ -33,11 +33,21 @@
     font-size: 18px;
 }
 
+.sidebar-logo {
+	position: absolute;
+	left: 50%;
+    transform: translateX(-50%);
+}
+
 @media (max-width: 768px) {
 
     .admin-account-box {
         font-size: 16px !important;
     }
+    
+    .sidebar-logo {
+		bottom: 0 !important;
+	}
 
 }
 

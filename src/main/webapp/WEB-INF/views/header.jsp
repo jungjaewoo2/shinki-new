@@ -155,7 +155,7 @@
                         </ul>
                     </div>
                     <button class="nav-link" onclick="location.href='mypage/request'">Request</button>
-                    <div class="collapse navbar-collapse show" id="navbarNavDarkDropdown">
+                    <div class="collapse navbar-collapse show" id="navbarNavDarkDropdown" onclick="location.href='mypage/inquiry'">
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
                                 <button class="btn" data-bs-toggle="dropdown" aria-expanded="false">

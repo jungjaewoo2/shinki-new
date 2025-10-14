@@ -1205,7 +1205,7 @@
     <div class="modal-dialog modal-dialog-centered modal-lg justify-content-center">
         <div class="modal-content p-3" style="height: 700px; overflow-y: scroll">
             <div class="border-bottom d-flex justify-content-between mb-10">
-                <h4>마케팅 및 이벤트 정보 수신 동의 약관</h4>
+                <h4>이용 약관</h4>
                 <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="d-flex flex-column gap-3 justify-content-center">

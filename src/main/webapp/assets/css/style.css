@@ -1398,19 +1398,33 @@ h1 {
 
 .use-link {
     color: darkturquoise;
+    width: 100%;
+    
     position: absolute;
     bottom: 5%;
-    width: 100%;
     right: 5%;
 }
 
-.use-link img {}
 
 @media (max-width: 768px) {
     .use-box {
         width: 100%;
     }
+    
+    .use-sub {
+    	height: auto;
+    }
+    
+    .use-link {
+    	position: relative;
+    	height: 100px;
+    }
 
+	.use-link div {
+		position: absolute;
+		bottom: 20px;
+		right: -5%;
+	}
 
 
 }
@@ -1535,7 +1549,8 @@ button:focus:not(:focus-visible) {
 }
 
 #func_01 .modal-body,
-#func_02 .modal-body {
+#func_02 .modal-body,
+#func_03 .modal-body {
     height: 460px;
 }
 

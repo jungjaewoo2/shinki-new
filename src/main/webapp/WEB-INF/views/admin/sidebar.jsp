@@ -75,7 +75,7 @@
         <div onclick="location.href='login'"><i class="bi bi-box-arrow-right fs-5"></i> 로그아웃</div>
         </div>
     </div>
-    <div class="ps-3 pb-3" style="bottom: 5%"><img src="/assets/images/logo_header.png" height="45"></div>
+    <div class="sidebar-logo ps-3 pb-3" style="bottom: 5%"><img src="/assets/images/logo_header.png" height="45"></div>
 </div>
 
 <script>

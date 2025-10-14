@@ -585,7 +585,7 @@
 
                                 <div class="use-link align-items-center d-flex gap-2 justify-content-end">
 
-                                    <div style="padding-right: 3px;"><img src="assets/images/use-arrow.png" width="34"></div>
+                                    <div style="padding-right: 3px;position: absolute;bottom: 20px;"><img src="assets/images/use-arrow.png" width="34"></div>
 
                                 </div>
                             </a>
