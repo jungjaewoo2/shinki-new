@@ -224,7 +224,7 @@
                                                              </c:forEach>
                                                          </select>
                                                      </div>
-                                                     <div class="col-md-1 d-flex align-items-end">
+                                                     <div class="col-md-1 d-flex align-items-baseline">
                                                          <button type="submit" class="btn btn-success btn-sm">답변</button>
                                                      </div>
                                                  </div>

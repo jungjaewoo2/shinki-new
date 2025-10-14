@@ -1230,9 +1230,9 @@
                     </div>
                     <div class="border p-3 rounded-4 bg-white text-center shadow h-100">
                         <img src="assets/images/type_img04.png" width="">
-                        </div>
                         <div>PACS / Printer</div>
                     </div>
+                </div>
                 </div>
 				<div class="d-block d-lg-none modal-body align-items-center d-flex flex-column gap-2 bg-body-secondary rounded-bottom-5">
                 <div class="d-flex flex-column justify-content-between w-100">

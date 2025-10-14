@@ -55,9 +55,9 @@
 
             <div class="form-group">
                 <label class="form-label required">주소</label>
-                <div class="d-flex gap-2">
-                    <input type="text" name="address" id="address" class="form-input flex-fill" value="${member.address}" placeholder="주소를 검색해주세요" readonly required>
-                    <button type="button" class="btn btn-outline-secondary" onclick="searchAddress()" style="min-width: 100px; white-space: nowrap;">주소검색</button>
+                <div class="d-flex gap-2 w-100">
+                    <input type="text" name="address" id="address" class="form-input w-auto" value="${member.address}" placeholder="주소를 검색해주세요" readonly required>
+                    <button type="button" class="btn btn-outline-secondary" onclick="searchAddress()" style="white-space: nowrap;">주소검색</button>
                 </div>
             </div>
             

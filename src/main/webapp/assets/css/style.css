@@ -182,7 +182,7 @@ body {
     border: 0;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
 	.top-nav {
 		min-width: 1920px;
 	}
@@ -1246,6 +1246,7 @@ h1 {
 @media (max-width: 767px) {
     .type-img img {
         width: 100%;
+        height: unset;
     }
 
 }
@@ -1406,7 +1407,7 @@ h1 {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .use-box {
         width: 100%;
     }
@@ -1554,7 +1555,7 @@ button:focus:not(:focus-visible) {
     height: 460px;
 }
 
-@media (max-width:768px) {
+@media (max-width:1024px) {
 
     .application-details .container {
         max-width: 100% !important;
