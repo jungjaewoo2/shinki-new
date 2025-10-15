@@ -121,7 +121,6 @@ body {
     border-bottom: 1px solid #ccc;
     width: 100%;
     text-align: left;
-    font-weight: bold;
 }
 
 .offcanvas-body .navbar-collapse {
@@ -650,7 +649,6 @@ h1 {
     color: #000;
     width: 100%;
     text-align: left;
-    font-weight: bold;
 }
 
 .offcanvas-body button:focus:not(:focus-visible) {
@@ -1001,6 +999,10 @@ h1 {
         font-size: 16px;
     }
     
+    .sub-title-01 {
+    	font-size: 13px;
+    }
+    
     .carousel-content {
     	height: auto;
     }
@@ -1052,6 +1054,22 @@ h1 {
 
 }
 
+@media (max-width: 768px) {
+    	.swiper.mySwiper .swiper-slide img {
+        	width: 85%;
+        }
+    }
+
+@media (min-width: 421px) {
+	
+	.main-title h1 {
+		 
+	}
+	.swiper.mySwiper .swiper-slide img {
+		width: 70% !important;
+	}
+}
+
 /* pancreas 반응형 */
 
 @media (min-width: 1200px) and (max-width: 1880px) {
@@ -1099,6 +1117,12 @@ h1 {
 @media (min-width: 768px) and (max-width: 1192px) {
 	#application .cardiac-carousel .carousel-item .txt-sub {
 		font-size: 11px !important;
+	}
+}
+
+@media (max-width: 767px) {
+	#application .cardiac-carousel .carousel-item .txt-sub {
+		letter-spacing: -0.12em;
 	}
 }
 

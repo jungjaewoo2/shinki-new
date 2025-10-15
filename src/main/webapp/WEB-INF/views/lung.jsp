@@ -143,9 +143,9 @@
 
      <div class="container">
          <h2 class="align-items-baseline d-flex flex-column gap-2 mb-4" style="font-size: 3rem; margin-top: 0.75rem;">
-             <span class="pill fw-bold" style="">LUNG</span>
+             <span class="pill fw-bold" style="">THX</span>
              <div class="d-flex flex-column flex-lg-row gap-4 w-100">
-                 <div class="fw-bold">Lung</div>
+                 <div class="fw-bold">Thorax</div>
                  <div class="d-flex flex-fill justify-content-between">
                      <div class="d-flex align-items-center gap-1">
                          <img src="/assets/images/application_icon02.png" width="30" height="30">

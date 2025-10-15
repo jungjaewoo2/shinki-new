@@ -133,7 +133,7 @@
              <span class="pill">HBP</span>
              <!--<span class="fw-bold" style="font-size: 3rem;">HBP</span>-->
              <div class="d-flex flex-column flex-lg-row gap-4 w-100">
-                 <div class="fw-bold">Hepatobiliary phase</div>
+                 <div class="fw-bold">Hepato-Biliary-Pancreatic</div>
                  <div class="d-flex flex-fill justify-content-between">
                      <div class="d-flex align-items-center gap-1">
                          <img src="assets/images/application_icon02.png" width="30" height="30">

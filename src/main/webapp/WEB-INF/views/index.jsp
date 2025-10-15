@@ -225,7 +225,7 @@
             <!-- Swiper (배경으로 사용) -->
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
+                    <div class="swiper-slide" data-swiper-slide-index="0">
                         <video autoplay muted loop playsinline>
                             <source src="assets/images/main-video.mp4" type="video/mp4">
                         </video>
@@ -233,7 +233,8 @@
                         	<!-- <h1>Synapse 3D</h1> -->
                             <h1 style="height:60px;margin-top: 1em;"><img src="/assets/images/synapse_W.png" height="100%"></h1>
                             <p class="subtitle m-lg-5">
-                                Synapse 3D는 후지필름 고유의 3D 재구성 기술을 기반으로 CT 및 MRI 등의<br>영상을 정밀하게 시각화하고 분석하는 고성능 의료 영상 소프트웨어입니다.
+                                <div class="d-none d-xxl-block">Synapse 3D는 후지필름 고유의 3D 재구성 기술을 기반으로 CT 및 MRI 등의<br>영상을 정밀하게 시각화하고 분석하는 고성능 의료 영상 소프트웨어입니다.</div>
+                                <div class="sub-title-01 d-block d-xxl-none">Synapse 3D는 후지필름 고유의 3D 재구성 기술을 기반으로<br>CT 및 MRI 등의 영상을 정밀하게 시각화하고 분석하는<br>고성능 의료 영상 소프트웨어입니다.</div>
                             </p>
                             <div class="button-group justify-content-center">
                                 <button class="btn-secondary" onclick="location.href='all-application'" style="padding: 0.5rem 1.25rem;">
@@ -242,7 +243,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide" data-swiper-slide-index="1">
                         <video autoplay muted loop playsinline>
                             <source src="assets/images/main-video2.mp4" type="video/mp4">
                         </video>
@@ -260,14 +261,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide" data-swiper-slide-index="2">
                         <video autoplay muted loop playsinline>
                             <source src="assets/images/main-video3.mp4" type="video/mp4">
                         </video>
                         <div class="main-title" style="margin: 0 auto;">
                             <h1>Visualize<br>the Invisible.</h1>
                             <p class="subtitle m-5 ms-0">
-                                보이지 않는 내부 구조의 정밀하게 시각화합니다.
+                                보이지 않는 구조를 정밀하게 시각화합니다.
                             </p>
                             <div class="button-group">
                                 <button class="btn-secondary" onclick="location.href='all-application'" style="padding: 0.5rem 1.25rem;">
@@ -298,7 +299,7 @@
                         <button class="nav-link active align-items-end d-flex justify-content-center" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">HBP</button>
                     </li>
                     <li class="nav-item lung" role="presentation">
-                        <button class="nav-link align-items-end d-flex justify-content-center" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">LUNG</button>
+                        <button class="nav-link align-items-end d-flex justify-content-center" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">THX</button>
                     </li>
                     <li class="nav-item cardiac" role="presentation">
                         <button class="nav-link align-items-end d-flex justify-content-center" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">CARDIAC</button>
@@ -315,7 +316,7 @@
                         <div class="carousel-content">
                             <div class="carousel-item active text-center">
                                 <div class="d-flex align-items-center flex-column flex-md-row flex-xl-row justify-content-between gap-lg-5">
-                                    <div class="carousel-txt align-items-center align-items-md-baseline align-items-lg-baseline d-flex flex-column gap-md-4 gap-xl-5 w-50" style="padding-left: 150px;">
+                                    <div class="carousel-txt align-items-center align-items-md-baseline align-items-lg-baseline d-flex flex-column gap-3 gap-md-4 gap-xl-5 w-50" style="padding-left: 150px;">
                                         <div class="txt-lg" style="font-size: 150px; -webkit-box-reflect: below -110px linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));">LIVER</div>
                                         <div class="txt-sub">
                                             <div>혈관 선택으로 간단하게 절단면 확인</div>
@@ -333,7 +334,7 @@
                             </div>
                             <div class="carousel-item active text-center pancreas-carousel">
                                 <div class="d-flex align-items-center flex-column flex-md-row flex-xl-row justify-content-between gap-lg-5">
-                                    <div class="carousel-txt align-items-center align-items-md-baseline align-items-lg-baseline d-flex flex-column gap-md-4 gap-xl-5 w-50" style="padding-left: 150px;">
+                                    <div class="carousel-txt align-items-center align-items-md-baseline align-items-lg-baseline d-flex flex-column  gap-3 gap-md-4 gap-xl-5 w-50" style="padding-left: 150px;">
                                         <div class="txt-lg" style="font-size: 150px;letter-spacing: -.1em; -webkit-box-reflect: below -110px linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));">PANCREAS</div>
                                         <div class="txt-sub">
                                             <div>췌장 주변 장기나 혈관의 자동추출. </div>
@@ -369,7 +370,7 @@
                         <div class="carousel-content">
                             <div class="carousel-item active text-center">
                                 <div class="d-flex align-items-center flex-column flex-md-row flex-xl-row justify-content-between gap-lg-5">
-                                    <div class="carousel-txt align-items-center align-items-md-baseline align-items-lg-baseline d-flex flex-column gap-md-4 gap-xl-5 w-50" style="padding-left: 150px;">
+                                    <div class="carousel-txt align-items-center align-items-md-baseline align-items-lg-baseline d-flex flex-column gap-3 gap-md-4 gap-xl-5 w-50" style="padding-left: 150px;">
                                         <div class="txt-lg" style="font-size: 150px; -webkit-box-reflect: below -110px linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));">LUNG</div>
                                         <div class="txt-sub">
                                             <div>폐동맥(PA), 폐정맥(PV), 기관지, </div>
@@ -396,7 +397,7 @@
                         <div class="carousel-content">
                             <div class="carousel-item active text-center">
                                 <div class="d-flex align-items-center flex-column flex-md-row flex-xl-row justify-content-between gap-lg-5">
-                                    <div class="carousel-txt align-items-center align-items-md-baseline align-items-lg-baseline d-flex flex-column gap-md-4 gap-xl-5 w-50" style="padding-left: 150px;">
+                                    <div class="carousel-txt align-items-center align-items-md-baseline align-items-lg-baseline d-flex flex-column gap-3 gap-md-4 gap-xl-5 w-50" style="padding-left: 150px;">
                                         <div class="txt-lg" style="font-size: 150px; -webkit-box-reflect: below -110px linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));">CARDIAC</div>
                                         <div class="txt-sub">
                                             <div>심방(Atrium), 심실(Ventricle), 심근(Myocardium), </div>
@@ -424,11 +425,15 @@
                         <div class="carousel-content">
                             <div class="carousel-item active text-center">
                                 <div class="d-flex align-items-center flex-column flex-md-row flex-xl-row justify-content-between gap-lg-5">
-                                    <div class="carousel-txt align-items-center align-items-md-baseline align-items-lg-baseline d-flex flex-column gap-md-4 gap-xl-5 w-50" style="padding-left: 150px;">
+                                    <div class="carousel-txt align-items-center align-items-md-baseline align-items-lg-baseline d-flex flex-column gap-3 gap-md-4 gap-xl-5 w-50" style="padding-left: 150px;">
                                         <div class="txt-lg" style="font-size: 150px; -webkit-box-reflect: below -110px linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));">KNEE</div>
-                                        <div class="txt-sub">
+                                        <div class="txt-sub d-none d-md-block">
                                             <div>무릎 연골(Cartilage)의 자동 추출. </div>
                                             <div>Thickness와 Volume,Loss area의 분석 및 정량적 평가.</div>
+                                        </div>
+                                        <div class="txt-sub d-block d-md-none">
+                                            <div>무릎 연골(Cartilage)의 자동 추출. </div>
+                                            <div>Thickness와 Volume,Loss area의<br>분석 및 정량적 평가.</div>
                                         </div>
                                         <div class="button-group justify-content-end"><button class="btn-secondary" onclick="location.href='knee'" style="padding: 0.5rem 1.25rem;">Learn more</button></div>
                                     </div>
@@ -1299,10 +1304,10 @@
             crossFade: true
         },
         spaceBetween: 0,
-       autoplay: {
+       /* autoplay: {
             delay: 10000,
             disableOnInteraction: false,
-        },
+        }, */
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
@@ -1456,7 +1461,7 @@
                     console.log('Pagination updated, realIndex:', this.realIndex); // 디버깅: 페이지네이션 업데이트
                     applyAnimationToActiveSlide(this);
                 },
-            },
+            }, 
         });
 
         // 페이지네이션 클릭 이벤트

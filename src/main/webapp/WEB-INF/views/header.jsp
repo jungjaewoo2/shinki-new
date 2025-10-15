@@ -41,7 +41,7 @@
                                 </button>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="application">HBP</a></li>
-                                    <li><a class="dropdown-item" href="lung">LUNG</a></li>
+                                    <li><a class="dropdown-item" href="lung">THX</a></li>
                                     <li><a class="dropdown-item" href="cardiac">CARDIAC</a></li>
                                     <li><a class="dropdown-item" href="knee">KNEE</a></li>
                                     <li><a class="dropdown-item" href="all-application">All Application</a></li>
@@ -146,7 +146,7 @@
                                 </button>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="application">- HBP</a></li>
-                                    <li><a class="dropdown-item" href="lung">- LUNG</a></li>
+                                    <li><a class="dropdown-item" href="lung">- THX</a></li>
                                     <li><a class="dropdown-item" href="cardiac">- CARDIAC</a></li>
                                     <li><a class="dropdown-item" href="knee">- KNEE</a></li>
                                     <li><a class="dropdown-item" href="all-application">- All Application</a></li>
