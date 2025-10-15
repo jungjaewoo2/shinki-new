@@ -184,7 +184,7 @@ body {
 
 @media (min-width: 1025px) {
 	.top-nav {
-		min-width: 1920px;
+		/* min-width: 1920px; */
 	}
 }
 
@@ -636,11 +636,10 @@ h1 {
     padding: 20px 0 0 10px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1440px) {
     #application .nav-item button {
         font-size: 16px;
     }
-
 }
 
 .offcanvas-body .nav-item {
@@ -776,7 +775,7 @@ h1 {
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1440px) {
     #application .carousel-content {
         aspect-ratio: auto;
     }
@@ -792,7 +791,7 @@ h1 {
 
     .carousel-next,
     .carousel-prev {
-        display: none !important;
+        /* display: none !important; */
     }
 
 }
@@ -899,7 +898,35 @@ h1 {
     text-align: left;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1665px) {
+	#application .carousel-item .txt-lg {
+		font-size: 100px !important;
+		-webkit-box-reflect: below -70px linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)) !important;
+	}
+	
+	.carousel-item .carousel-txt {
+		padding-left: 105px !important;
+	}
+	
+	.carousel-img img {
+		width: 100% !important;
+		height: auto;
+		padding-right: 0 !important;
+	}
+}
+
+
+@media (min-width: 1267px) and (max-width: 1440px) {
+	.carousel-img {
+		width: unset !important;
+	}
+	
+	#application .carousel-item .txt-sub {
+		font-size: 16px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1266px) {
     #application .nav-item {
         width: 100px;
     }
@@ -973,11 +1000,19 @@ h1 {
     .subtitle {
         font-size: 16px;
     }
+    
+    .carousel-content {
+    	height: auto;
+    }
 
     #application .carousel-item .txt-sub {
         font-size: 16px;
         margin: 0 auto;
         text-align: center;
+    }
+    
+    .carousel {
+    	height: auto ;
     }
 
     .carousel-item img {
@@ -1016,6 +1051,89 @@ h1 {
     }
 
 }
+
+/* pancreas 반응형 */
+
+@media (min-width: 1200px) and (max-width: 1880px) {
+	.pancreas-carousel .gap-xl-5 {
+		gap: 1.5rem !important;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+	.pancreas-carousel .gap-md-4 {
+		gap: 1rem !important;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 796px) {
+	#application .pancreas-carousel .txt-sub {
+		font-size: 15px !important;
+	}
+}
+
+/* cardiac 반응형 */
+
+@media (min-width: 1666px) and (max-width: 1880px) {
+	
+	#application .carousel-item .txt-lg {
+		font-size: 120px !important;
+		-webkit-box-reflect: below -80px linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)) !important;
+	}
+	
+	#application .cardiac-carousel .carousel-item .txt-sub {
+		font-size: 16px !important;
+	}
+	
+	#application .cardiac-carousel .carousel-img img {
+		width: 100% !important;
+	}
+}
+
+@media (min-width: 1193px) and (max-width: 1622px) {
+	#application .cardiac-carousel .carousel-item .txt-sub {
+		font-size: 16px !important;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1192px) {
+	#application .cardiac-carousel .carousel-item .txt-sub {
+		font-size: 11px !important;
+	}
+}
+
+/* knee 반응형 */
+
+@media (min-width: 1500px) and (max-width: 1880px) {
+	#application .knee-carousel .carousel-item .txt-sub {
+		font-size: 19px !important;
+	}
+}
+
+@media (min-width: 1362px) and (max-width: 1499px) {
+	#application .knee-carousel .carousel-item .txt-sub {
+		font-size: 15px !important;
+	}
+}
+
+@media (min-width: 1314px) and (max-width: 1361px) {
+	#application .knee-carousel .carousel-item .txt-sub {
+		font-size: 14px !important;
+	}
+}
+
+@media (min-width: 777px) and (max-width: 1313px) {
+	#application .knee-carousel .carousel-item .txt-sub {
+		font-size: 11px !important;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 776px) {
+	#application .knee-carousel .carousel-item .txt-sub {
+		font-size: 10px !important;
+	}
+}
+
 
 /* Forms */
 .form-grid {
@@ -1132,7 +1250,7 @@ h1 {
     }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1550px) {
     .business-box {
         width: 49% !important;
     }
@@ -1243,10 +1361,16 @@ h1 {
     }
 }
 
+@media (min-width: 992px) {
+    .modal-lg, .modal-xl {
+    	/* --bs-modal-width: 90%; */
+    }
+}
+
 @media (max-width: 767px) {
     .type-img img {
-        width: 100%;
-        height: unset;
+        width: -webkit-fill-available;
+        object-fit: contain;
     }
 
 }
@@ -1634,8 +1758,9 @@ footer {
     }
 }
 
-@media (max-width: 1024px) {
-    .nav-menu {
+@media (max-width: 1266px) {
+    .nav-menu,
+    .nav-r {
         display: none;
     }
 
@@ -1644,7 +1769,7 @@ footer {
     }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1266px) {
     .navbar-expand-lg .navbar-toggler {
         display: none;
     }
@@ -1676,4 +1801,8 @@ footer {
 
 .modal {
 	z-index: 2000000;
+}
+
+.modal-xl {
+	
 }

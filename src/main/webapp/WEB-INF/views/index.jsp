@@ -315,7 +315,7 @@
                         <div class="carousel-content">
                             <div class="carousel-item active text-center">
                                 <div class="d-flex align-items-center flex-column flex-md-row flex-xl-row justify-content-between gap-lg-5">
-                                    <div class="carousel-txt align-items-center align-items-md-baseline align-items-lg-baseline d-flex flex-column gap-lg-5 w-50" style="padding-left: 150px;">
+                                    <div class="carousel-txt align-items-center align-items-md-baseline align-items-lg-baseline d-flex flex-column gap-md-4 gap-xl-5 w-50" style="padding-left: 150px;">
                                         <div class="txt-lg" style="font-size: 150px; -webkit-box-reflect: below -110px linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));">LIVER</div>
                                         <div class="txt-sub">
                                             <div>혈관 선택으로 간단하게 절단면 확인</div>
@@ -331,9 +331,9 @@
                                 </div>
 
                             </div>
-                            <div class="carousel-item active text-center">
+                            <div class="carousel-item active text-center pancreas-carousel">
                                 <div class="d-flex align-items-center flex-column flex-md-row flex-xl-row justify-content-between gap-lg-5">
-                                    <div class="carousel-txt align-items-center align-items-md-baseline align-items-lg-baseline d-flex flex-column gap-lg-5 w-50" style="padding-left: 150px;">
+                                    <div class="carousel-txt align-items-center align-items-md-baseline align-items-lg-baseline d-flex flex-column gap-md-4 gap-xl-5 w-50" style="padding-left: 150px;">
                                         <div class="txt-lg" style="font-size: 150px;letter-spacing: -.1em; -webkit-box-reflect: below -110px linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));">PANCREAS</div>
                                         <div class="txt-sub">
                                             <div>췌장 주변 장기나 혈관의 자동추출. </div>
@@ -369,7 +369,7 @@
                         <div class="carousel-content">
                             <div class="carousel-item active text-center">
                                 <div class="d-flex align-items-center flex-column flex-md-row flex-xl-row justify-content-between gap-lg-5">
-                                    <div class="carousel-txt align-items-center align-items-md-baseline align-items-lg-baseline d-flex flex-column gap-lg-5 w-50" style="padding-left: 150px;">
+                                    <div class="carousel-txt align-items-center align-items-md-baseline align-items-lg-baseline d-flex flex-column gap-md-4 gap-xl-5 w-50" style="padding-left: 150px;">
                                         <div class="txt-lg" style="font-size: 150px; -webkit-box-reflect: below -110px linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));">LUNG</div>
                                         <div class="txt-sub">
                                             <div>폐동맥(PA), 폐정맥(PV), 기관지, </div>
@@ -392,11 +392,11 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-                    <div class="carousel">
+                    <div class="carousel cardiac-carousel">
                         <div class="carousel-content">
                             <div class="carousel-item active text-center">
                                 <div class="d-flex align-items-center flex-column flex-md-row flex-xl-row justify-content-between gap-lg-5">
-                                    <div class="carousel-txt align-items-center align-items-md-baseline align-items-lg-baseline d-flex flex-column gap-lg-5 w-50" style="padding-left: 150px;">
+                                    <div class="carousel-txt align-items-center align-items-md-baseline align-items-lg-baseline d-flex flex-column gap-md-4 gap-xl-5 w-50" style="padding-left: 150px;">
                                         <div class="txt-lg" style="font-size: 150px; -webkit-box-reflect: below -110px linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));">CARDIAC</div>
                                         <div class="txt-sub">
                                             <div>심방(Atrium), 심실(Ventricle), 심근(Myocardium), </div>
@@ -420,11 +420,11 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
-                    <div class="carousel">
+                    <div class="carousel knee-carousel">
                         <div class="carousel-content">
                             <div class="carousel-item active text-center">
                                 <div class="d-flex align-items-center flex-column flex-md-row flex-xl-row justify-content-between gap-lg-5">
-                                    <div class="carousel-txt align-items-center align-items-md-baseline align-items-lg-baseline d-flex flex-column gap-lg-5 w-50" style="padding-left: 150px;">
+                                    <div class="carousel-txt align-items-center align-items-md-baseline align-items-lg-baseline d-flex flex-column gap-md-4 gap-xl-5 w-50" style="padding-left: 150px;">
                                         <div class="txt-lg" style="font-size: 150px; -webkit-box-reflect: below -110px linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));">KNEE</div>
                                         <div class="txt-sub">
                                             <div>무릎 연골(Cartilage)의 자동 추출. </div>
@@ -1073,7 +1073,7 @@
                 <h1 class="modal-title fs-5 mt-0" id="exampleModalLabel">Server/Client Type</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="d-none d-lg-block modal-body align-items-center d-flex flex-column gap-2 bg-body-secondary p-5 rounded-bottom-5">
+            <div class="d-none d-xl-block modal-body align-items-center d-flex flex-column gap-2 bg-body-secondary p-5 rounded-bottom-5">
                 <div class="d-flex justify-content-between w-100">
                     <div class="d-flex flex-column gap-3">
                         <div class="align-items-center border d-flex flex-column p-3 rounded-4 bg-white shadow">
@@ -1125,9 +1125,9 @@
 
 
             </div>
-            <div class="d-block d-lg-none modal-body align-items-center d-flex flex-column gap-2 bg-body-secondary rounded-bottom-5">
+            <div class="d-block d-xl-none modal-body align-items-center d-flex flex-column gap-2 bg-body-secondary rounded-bottom-5">
                 <div class="d-flex flex-column justify-content-between w-100">
-                    <div class="d-flex justify-content-between p-2" style="border: 3px dashed #555;">
+                    <div class="d-flex justify-content-center gap-2 p-2" style="border: 3px dashed #555;">
                         <div class="align-items-center  border d-flex flex-column p-3 rounded-4 bg-white shadow ">
                             <img src="assets/images/type_img01.png" width="80">
                             <div>PACS</div>
@@ -1189,7 +1189,7 @@
                 <h1 class="modal-title fs-5 mt-0" id="exampleModalLabel">Stand-alone Type</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="d-none d-lg-block modal-body align-items-center d-flex flex-column gap-2 bg-body-secondary p-5 rounded-bottom-5">
+            <div class="d-none d-xl-block modal-body align-items-center d-flex flex-column gap-2 bg-body-secondary p-5 rounded-bottom-5">
                 <div class="d-flex align-items-center justify-content-between w-100">
                     <div class="d-flex flex-column gap-3">
                         <div class="align-items-center border d-flex flex-column p-3 rounded-4 bg-white shadow">
@@ -1234,9 +1234,9 @@
                     </div>
                 </div>
                 </div>
-				<div class="d-block d-lg-none modal-body align-items-center d-flex flex-column gap-2 bg-body-secondary rounded-bottom-5">
+				<div class="d-block d-xl-none modal-body align-items-center d-flex flex-column gap-2 bg-body-secondary rounded-bottom-5">
                 <div class="d-flex flex-column justify-content-between w-100">
-                    <div class="d-flex justify-content-between p-2" style="border: 3px dashed #555;">
+                    <div class="d-flex  justify-content-center gap-2 p-2" style="border: 3px dashed #555;">
                         <div class="align-items-center  border d-flex flex-column p-3 rounded-4 bg-white shadow ">
                             <img src="assets/images/type_img01.png" width="80">
                             <div>PACS</div>
@@ -1332,12 +1332,12 @@
                 /* Show 3 slides on screens >= 768px */
                 spaceBetween: 10,
             },
-            1024: {
+            1025: {
                 slidesPerView: 3,
                 /* Show 3 slides on screens >= 768px */
                 spaceBetween: 10,
             },
-            1025: {
+            1601: {
                 slidesPerView: 4,
                 /* Show 3 slides on screens >= 768px */
                 spaceBetween: 10,
