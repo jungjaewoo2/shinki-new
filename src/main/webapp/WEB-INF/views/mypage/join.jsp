@@ -173,13 +173,13 @@
 
 <div class="modal fade" id="termsBox_list1" tabindex="-1" aria-labelledby="termsBoxLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg justify-content-center">
-        <div class="modal-content p-3" style="height: 700px; overflow-y: scroll">
+        <div class="modal-content p-3" style="height: 700px;">
             <div class="border-bottom d-flex justify-content-between mb-10">
                 <h4>개인정보 수집·이용 동의서</h4>
                 <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="d-flex flex-column gap-3 justify-content-center">
-                <div class="contents"><br />
+            <div class="d-flex flex-column gap-3 justify-content-center overflow-hidden">
+                <div class="contents overflow-auto"><br />
                 	<div>본 동의서는 Synapse3D 서비스 이용을 위한 개인정보 및 민감정보 처리에 관한 ‘필수 동의’와 마케팅/이벤트 관련 ‘선택 동의’를 포함합니다.</div>
                 	<br />
                     <div class="fw-bold fs-6">[필수] 수집·이용 항목 및 목적</div>
@@ -255,13 +255,13 @@
 
 <div class="modal fade" id="termsBox_list2" tabindex="-1" aria-labelledby="termsBoxLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg justify-content-center">
-        <div class="modal-content p-3" style="height: 700px; overflow-y: scroll">
+        <div class="modal-content p-3" style="height: 700px;">
             <div class="border-bottom d-flex justify-content-between mb-10">
                 <h4>마케팅 및 이벤트 정보 수신 동의 약관</h4>
                 <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="d-flex flex-column gap-3 justify-content-center">
-                <div class="contents"><br />
+            <div class="d-flex flex-column gap-3 justify-content-center overflow-hidden">
+                <div class="contents overflow-auto"><br />
                     <div class="fw-bold fs-6">제1조 (목적)</div>
                     <br />
                     <div>

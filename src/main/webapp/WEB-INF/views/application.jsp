@@ -146,7 +146,7 @@
              </div>
          </h2>
 
-         <div class="row d-flex justify-content-between flex-lg-row gap-5 gap-lg-0">
+         <div class="row d-flex justify-content-between flex-column-reverse flex-lg-row gap-5 gap-lg-0">
              <div class="col-12 col-xl-5">
                  <div class="accordion" id="accordionExample">
                      <div class="accordion-item">
@@ -285,8 +285,8 @@
  </section>
 
  <!-- Modal -->
- <div class="modal fade" id="func_01" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+ <div class="modal fade Zoom-fc" id="func_01" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
          <div class="modal-content">
              <div class="modal-header">
                  <h1 class="modal-title fs-2 fw-bold mt-0" id="exampleModalLabel">Function.</h1>
@@ -344,8 +344,8 @@
  </div>
 
  <!-- Modal -->
- <div class="modal fade" id="func_02" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+ <div class="modal fade Zoom-fc" id="func_02" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
          <div class="modal-content">
              <div class="modal-header">
                  <h1 class="modal-title fs-2 fw-bold mt-0" id="exampleModalLabel">Function.</h1>
@@ -404,14 +404,14 @@
 
 
  <!-- Modal (기존 코드 유지) -->
- <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-     <div class="modal-dialog modal-lg">
+ <div class="modal fade Zoom" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+     <div class="modal-dialog">
          <div class="modal-content">
              <div class="modal-header">
                  <h1 class="modal-title fs-5 mt-0" id="imageModalLabel">확대 이미지</h1>
                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
              </div>
-             <div class="modal-body">
+             <div class="modal-body overflow-auto">
                  <img src="" width="100%" id="modalImage">
              </div>
              <div class="modal-footer">
@@ -422,7 +422,7 @@
  </div>
 
  <!-- Modal -->
- <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+ <!-- <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
      <div class="modal-dialog modal-lg">
          <div class="modal-content">
              <div class="modal-header">
@@ -437,7 +437,7 @@
              </div>
          </div>
      </div>
- </div>
+ </div> -->
 
  <!-- Swiper JS -->
  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

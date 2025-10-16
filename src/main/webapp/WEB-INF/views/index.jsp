@@ -83,7 +83,7 @@
 
     .swiper.mySwiper2 .swiper-slide {
         width: 100%;
-        height: 650px;
+        height: 600px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -542,28 +542,34 @@
     <section id="type" class="page-section transition-transform-bg">
         <div class="container-fluid">
             <h2 class="align-items-center d-flex flex-column justify-content-center gap-2 mb-4" style="font-size: 2.5rem; margin-top: 4rem;"><span class="pill">Type introduction</span> 타입 소개</h2>
-            <div class="d-flex flex-column flex-lg-row justify-content-between gap-3 gap-lg-2">
+            <div class="d-flex flex-column flex-md-row flex-lg-row justify-content-between gap-3 gap-lg-2">
                 <div class="type-box p-4 p-lg-5 rounded-5 cursor-pointer" data-bs-toggle="modal" data-bs-target="#type-1">
-                    <div class="d-flex gap-lg-3 gap-xl-5 align-items-center flex-column flex-lg-row justify-content-center">
+                    <div class="typeB-tag d-flex gap-3 gap-lg-3 gap-xl-5 align-items-center flex-lg-row justify-content-around justify-content-xxl-center">
                         <div># CCU 최대 10대</div>
                         <div># 고가용성(HA)</div>
                         <div># 중앙집중형 관리</div>
                     </div>
                     <div class="type-title">Server/Client Type</div>
-                    <div class="type-sub">Server H/W 및 S/W 안전성이 우수하고<br><span>다수 Client (CCU 최대 10대)에서 Synapse 구동이 가능.</span></div>
+                    <div class="type-sub">
+                    	<div class="type-sub-pc">Server H/W 및 S/W 안전성이 우수하고<br><span>다수 Client (CCU 최대 10대)에서 Synapse 구동이 가능.</span></div>
+                    	<div class="type-sub-mb">Server H/W 및 S/W 안전성이 우수하고<br><span>다수 Client (CCU 최대 10대)에서<br>Synapse 구동이 가능.</span></div>
+                    </div>
                     <div class="type-img"><img src="assets/images/type1-img01.png"></div>
-                    <div class="text-center"><button class="btn text-white rounded-5 btn-lg" style="background: linear-gradient(to right, #427290, #0d5e83, #106287);">Learn more</button></div>
+                    <div class="type-btn text-center"><button class="btn text-white rounded-5 btn-lg" style="background: linear-gradient(to right, #427290, #0d5e83, #106287);">Learn more</button></div>
                 </div>
                 <div class="type-box p-4 p-lg-5 rounded-5 cursor-pointer" data-bs-toggle="modal" data-bs-target="#type-2">
-                    <div class="d-flex gap-lg-3 gap-xl-5 align-items-center flex-column flex-lg-row justify-content-center">
+                    <div class="typeB-tag d-flex gap-lg-3 gap-xl-5 align-items-center flex-lg-row justify-content-around justify-content-xxl-center">
                         <div># 단일 PC</div>
                         <div># 네트워크 연동</div>
                         <div># 신속한 3D 가공</div>
                     </div>
                     <div class="type-title">Stand-alone Type</div>
-                    <div class="type-sub"><span>단일 PC</span>에서 네트워크 환경에 설치된 장비(CT, MR, PACS 등) 연동 통해<br>촬영 데이터 (Dicom file)를 송/수신하고 3D 영상 가공 작업이 진행.</div>
+                    <div class="type-sub type-sub-second">
+                    	<div class="type-sub-pc"><span>단일 PC</span>에서 네트워크 환경에 설치된 장비(CT, MR, PACS 등) 연동 통해<br>촬영 데이터 (Dicom file)를 송/수신하고 3D 영상 가공 작업이 진행.</div>
+                    	<div class="type-sub-mb"><span>단일 PC</span>에서 네트워크 환경에 설치된 장비<br>(CT, MR, PACS 등) 연동 통해촬영 데이터<br>(Dicom file)를 송/수신하고 3D 영상 가공 작업이 진행.</div>
+                    </div>
                     <div class="type-img"><img src="assets/images/type1-img02.png"></div>
-                    <div class="text-center"><button class="btn text-white rounded-5 btn-lg" style="background: linear-gradient(to right, #155796, #0e4173, #0f4376);">Learn more</button></div>
+                    <div class="type-btn text-center"><button class="btn text-white rounded-5 btn-lg" style="background: linear-gradient(to right, #155796, #0e4173, #0f4376);">Learn more</button></div>
                 </div>
             </div>
         </div>
@@ -1331,33 +1337,59 @@
 </script>
 
 <script>
-    var swiper2 = new Swiper(".mySwiper2", {
-        slidesPerView: 1,
-        /* Default to 1 slide per view on mobile */
-        spaceBetween: 10,
-        navigation: {
-            nextEl: ".swiper-button-next2",
-            prevEl: ".swiper-button-prev2",
+var swiper2 = new Swiper(".mySwiper2", {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    navigation: {
+        nextEl: ".swiper-button-next2",
+        prevEl: ".swiper-button-prev2",
+    },
+    breakpoints: {
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 10,
         },
-        breakpoints: {
-            768: {
-                slidesPerView: 2,
-                /* Show 3 slides on screens >= 768px */
-                spaceBetween: 10,
-            },
-            1025: {
-                slidesPerView: 3,
-                /* Show 3 slides on screens >= 768px */
-                spaceBetween: 10,
-            },
-            1601: {
-                slidesPerView: 4,
-                /* Show 3 slides on screens >= 768px */
-                spaceBetween: 10,
-            },
+        1025: {
+            slidesPerView: 3,
+            spaceBetween: 10,
         },
-        loop: true,
-    });
+        1601: {
+            slidesPerView: 4,
+            spaceBetween: 10,
+        },
+    },
+    loop: false, // 루프 모드 활성화
+    on: {
+        init: function () {
+            // 슬라이더 초기화 시: 처음에는 이전 버튼 숨김
+            updateNavigationButtons(this);
+        },
+        slideChange: function () {
+            // 슬라이드 변경 시: 버튼 상태 업데이트
+            updateNavigationButtons(this);
+        },
+    },
+});
+
+// 내비게이션 버튼의 표시 상태를 업데이트하는 함수
+function updateNavigationButtons(swiper) {
+    const prevButton = document.querySelector(".swiper-button-prev2");
+    const nextButton = document.querySelector(".swiper-button-next2");
+
+    // 루프 모드에서는 realIndex를 사용해 실제 슬라이드 위치 확인
+    const isFirstSlide = swiper.realIndex === 0;
+    const isLastSlide = swiper.realIndex === swiper.slides.length - swiper.params.slidesPerView;
+
+    // 루프 모드에서는 항상 버튼이 표시되도록 설정 (필요 시 조정 가능)
+    if (swiper.params.loop) {
+        prevButton.style.display = "block";
+        nextButton.style.display = "block";
+    } else {
+        // 루프 모드가 아닌 경우: 처음/마지막 슬라이드에 따라 버튼 표시 제어
+        prevButton.style.display = isFirstSlide ? "none" : "block";
+        nextButton.style.display = isLastSlide ? "none" : "block";
+    }
+}
 
 </script>
 

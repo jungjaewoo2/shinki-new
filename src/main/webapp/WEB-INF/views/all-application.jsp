@@ -63,10 +63,10 @@
                      <div class="d-flex align-items-center justify-content-between gap-1">
                          <div class="all-title">Craniotomy/ Tensor Analysis</div>
                          <div class="align-items-center d-flex gap-1">
-                             <div>Only FUJI</div>
-                             <img src="/assets/images/feature-icon.png" width="30">
+                             <div class="modality-fuji">Only FUJI</div>
+                             <div class="modality img-1"><img src="/assets/images/feature-icon.png" width="30"></div>
                              <div class="modality d-flex justify-content-end">
-                                 <img src="/assets/images/modality_icon03.png">
+                                 <img src="/assets/images/modality_icon04.png">
                              </div>
                          </div>
                      </div>
@@ -93,7 +93,7 @@
              </div>
              <div class="border-top col-12 mt-3 pt-2 pb-2">
                  <div class="modality d-flex align-items-center justify-content-end gap-2">
-                     <img  class="multi-btn" src="/assets/images/modality_icon03.png">
+                     <img  class="multi-btn" src="/assets/images/modality_icon04.png">
                      CT + MRI 둘다 가능
                  </div>
              </div>
@@ -108,7 +108,7 @@
                      <div class="d-flex align-items-center justify-content-between gap-1">
                          <div class="all-title">Coronary Analysis MR</div>
                          <div class="align-items-center d-flex gap-1">
-                             <div>Only FUJI</div>
+                             <div class="modality-fuji">Only FUJI</div>
                              <div class="modality d-flex justify-content-end">
                                  <img src="/assets/images/modality_icon01.png">
                              </div>
@@ -120,7 +120,7 @@
                      <div class="d-flex align-items-center justify-content-between gap-1">
                          <div class="all-title">Coronary Analysis CT</div>
                          <div class="align-items-center d-flex gap-1">
-                             <div>Only FUJI</div>
+                             <div class="modality-fuji">Only FUJI</div>
                              <div class="modality d-flex justify-content-end">
                                  <img src="/assets/images/modality_icon02.png">
                              </div>
@@ -141,8 +141,8 @@
                      <div class="d-flex align-items-center justify-content-between gap-1">
                          <div class="all-title">Cardiac Function CT</div>
                          <div class="align-items-center d-flex gap-1">
-                             <div>Only FUJI</div>
-                             <img src="/assets/images/feature-icon.png" width="30">
+                             <div class="modality-fuji">Only FUJI</div>
+                             <div class="modality img-1"><img src="/assets/images/feature-icon.png" width="30"></div>
                              <div class="modality d-flex justify-content-end">
                                  <img src="/assets/images/modality_icon02.png">
                              </div>
@@ -188,7 +188,7 @@
                          <div class="d-flex align-items-center justify-content-between gap-1">
                              <div class="all-title">Aortic Valve Analysis</div>
                              <div class="align-items-center d-flex gap-1">
-                                 <div>Only FUJI</div>
+                                 <div class="modality-fuji">Only FUJI</div>
                                  <img src="/assets/images/feature-icon.png" width="30">
                                  <div class="modality d-flex justify-content-end">
                                      <img src="/assets/images/modality_icon02.png">
@@ -201,7 +201,7 @@
                          <div class="d-flex align-items-center justify-content-between gap-1">
                              <div class="all-title">Cardiac Perfusion MR</div>
                              <div class="align-items-center d-flex gap-1">
-                                 <div>Only FUJI</div>
+                                 <div class="modality-fuji">Only FUJI</div>
                                  <img src="/assets/images/feature-icon.png" width="30">
                                  <div class="modality d-flex justify-content-end">
                                      <img src="/assets/images/modality_icon01.png">
@@ -223,7 +223,7 @@
                          <div class="d-flex align-items-center justify-content-between gap-1">
                              <div class="all-title">Cardiac Fusion</div>
                              <div class="modality d-flex justify-content-end">
-                                 <img src="/assets/images/modality_icon03.png">
+                                 <img src="/assets/images/modality_icon04.png">
                              </div>
                          </div>
                          <div>심장의 형태학적 특징과 기능적 정보를 결합한 융합 이미지를 관찰한다.</div>
@@ -232,8 +232,8 @@
                          <div class="d-flex align-items-center justify-content-between gap-1">
                              <div class="all-title">4-Chamber Analysis</div>
                              <div class="align-items-center d-flex gap-1">
-                                 <div>Only FUJI</div>
-                                 <img src="/assets/images/feature-icon.png" width="30">
+                                 <div class="modality-fuji">Only FUJI</div>
+                                 <div class="modality img-1"><img src="/assets/images/feature-icon.png" width="30"></div>
                                  <div class="modality d-flex justify-content-end">
                                      <img src="/assets/images/modality_icon02.png">
                                  </div>
@@ -245,8 +245,8 @@
                          <div class="d-flex align-items-center justify-content-between gap-1">
                              <div class="all-title">Cardiac Ablation Anaysis</div>
                              <div class="align-items-center d-flex gap-1">
-                                 <div>Only FUJI</div>
-                                 <img src="/assets/images/feature-icon.png" width="30">
+                                 <div class="modality-fuji">Only FUJI</div>
+                                 <div class="modality img-1"><img src="/assets/images/feature-icon.png" width="30"></div>
                                  <div class="modality d-flex justify-content-end">
                                      <img src="/assets/images/modality_icon02.png">
                                  </div>
@@ -258,8 +258,8 @@
                          <div class="d-flex align-items-center justify-content-between gap-1">
                              <div class="all-title">Mitral Valve Analysis</div>
                              <div class="align-items-center d-flex gap-1">
-                                 <div>Only FUJI</div>
-                                 <img src="/assets/images/feature-icon.png" width="30">
+                                 <div class="modality-fuji">Only FUJI</div>
+                                 <div class="modality img-1"><img src="/assets/images/feature-icon.png" width="30"></div>
                                  <div class="modality d-flex justify-content-end">
                                      <img src="/assets/images/modality_icon02.png">
                                  </div>
@@ -281,8 +281,8 @@
                      <div class="d-flex align-items-center justify-content-between gap-1">
                          <div class="all-title">Lung Analysis / Airway</div>
                          <div class="align-items-center d-flex gap-1">
-                             <div>Only FUJI</div>
-                             <img src="/assets/images/feature-icon.png" width="30">
+                             <div class="modality-fuji">Only FUJI</div>
+                             <div class="modality img-1"><img src="/assets/images/feature-icon.png" width="30"></div>
                              <div class="modality d-flex justify-content-end">
                                  <img src="/assets/images/modality_icon02.png">
                              </div>
@@ -294,8 +294,8 @@
                      <div class="d-flex align-items-center justify-content-between gap-1">
                          <div class="all-title">Lung Analysis Resection</div>
                          <div class="align-items-center d-flex gap-1">
-                             <div>Only FUJI</div>
-                             <img src="/assets/images/feature-icon.png" width="30">
+                             <div class="modality-fuji">Only FUJI</div>
+                             <div class="modality img-1"><img src="/assets/images/feature-icon.png" width="30"></div>
                              <div class="modality d-flex justify-content-end">
                                  <img src="/assets/images/modality_icon02.png">
                              </div>
@@ -307,7 +307,7 @@
                      <div class="d-flex align-items-center justify-content-between gap-1">
                          <div class="all-title">Lung Analysis Scope</div>
                          <div class="align-items-center d-flex gap-1">
-                             <img src="/assets/images/feature-icon.png" width="30">
+                             <div class="modality img-1"><img src="/assets/images/feature-icon.png" width="30"></div>
                              <div class="modality d-flex justify-content-end">
                                  <img src="/assets/images/modality_icon02.png">
                              </div>
@@ -323,7 +323,7 @@
                      <div class="d-flex align-items-center justify-content-between gap-1">
                          <div class="all-title">Rib Viewer</div>
                          <div class="align-items-center d-flex gap-1">
-                             <img src="/assets/images/feature-icon.png" width="30">
+                             <div class="modality img-1"><img src="/assets/images/feature-icon.png" width="30"></div>
                              <div class="modality d-flex justify-content-end">
                                  <img src="/assets/images/modality_icon02.png">
                              </div>
@@ -352,7 +352,7 @@
                      <div class="d-flex align-items-center justify-content-between gap-1">
                          <div class="all-title">Knee Joint Analysis</div>
                          <div class="align-items-center d-flex gap-1">
-                             <img src="/assets/images/feature-icon.png" width="30">
+                             <div class="modality img-1"><img src="/assets/images/feature-icon.png" width="30"></div>
                              <div class="modality d-flex justify-content-end">
                                  <img src="/assets/images/modality_icon01.png">
                              </div>
@@ -373,10 +373,10 @@
                      <div class="d-flex align-items-center justify-content-between gap-1">
                          <div class="all-title">Liver Analysis CT</div>
                          <div class="align-items-center d-flex gap-1">
-                             <div>Only FUJI</div>
-                             <img src="/assets/images/feature-icon.png" width="30">
+                             <div class="modality-fuji">Only FUJI</div>
+                             <div class="modality img-1"><img src="/assets/images/feature-icon.png" width="30"></div>
                              <div class="modality d-flex justify-content-end">
-                                 <img src="/assets/images/modality_icon03.png">
+                                 <img src="/assets/images/modality_icon04.png">
                              </div>
                          </div>
                      </div>
@@ -386,8 +386,8 @@
                      <div class="d-flex align-items-center justify-content-between gap-1">
                          <div class="all-title">Liver Analysis MRI</div>
                          <div class="align-items-center d-flex gap-1">
-                             <div>Only FUJI</div>
-                             <img src="/assets/images/feature-icon.png" width="30">
+                             <div class="modality-fuji">Only FUJI</div>
+                             <div class="modality img-1"><img src="/assets/images/feature-icon.png" width="30"></div>
                              <div class="modality d-flex justify-content-end">
                                  <img src="/assets/images/modality_icon01.png">
                              </div>
@@ -399,8 +399,8 @@
                      <div class="d-flex align-items-center justify-content-between gap-1">
                          <div class="all-title">Pancreas Analysis</div>
                          <div class="align-items-center d-flex gap-1">
-                             <div>Only FUJI</div>
-                             <img src="/assets/images/feature-icon.png" width="30">
+                             <div class="modality-fuji">Only FUJI</div>
+                             <div class="modality img-1"><img src="/assets/images/feature-icon.png" width="30"></div>
                              <div class="modality d-flex justify-content-end">
                                  <img src="/assets/images/modality_icon02.png">
                              </div>
@@ -412,9 +412,9 @@
                      <div class="d-flex align-items-center justify-content-between gap-1">
                          <div class="all-title">Kidney Volumetry</div>
                          <div class="align-items-center d-flex gap-1">
-                             <img src="/assets/images/feature-icon.png" width="30">
+                             <div class="modality img-1"><img src="/assets/images/feature-icon.png" width="30"></div>
                              <div class="modality d-flex justify-content-end">
-                                 <img src="/assets/images/modality_icon03.png">
+                                 <img src="/assets/images/modality_icon04.png">
                              </div>
                          </div>
                      </div>
@@ -424,8 +424,8 @@
                      <div class="d-flex align-items-center justify-content-between gap-1">
                          <div class="all-title">Kidney Analysis</div>
                          <div class="align-items-center d-flex gap-1">
-                             <div>Only FUJI</div>
-                             <img src="/assets/images/feature-icon.png" width="30">
+                             <div class="modality-fuji">Only FUJI</div>
+                             <div class="modality img-1"><img src="/assets/images/feature-icon.png" width="30"></div>
                              <div class="modality d-flex justify-content-end">
                                  <img src="/assets/images/modality_icon02.png">
                              </div>
@@ -463,8 +463,8 @@
                          <div class="d-flex align-items-center justify-content-between gap-1">
                              <div class="all-title">Colon Analysis</div>
                              <div class="align-items-center d-flex gap-1">
-                                 <div>Only FUJI</div>
-                                 <img src="/assets/images/feature-icon.png" width="30">
+                                 <div class="modality-fuji">Only FUJI</div>
+                                 <div class="modality img-1"><img src="/assets/images/feature-icon.png" width="30"></div>
                                  <div class="modality d-flex justify-content-end">
                                      <img src="/assets/images/modality_icon02.png">
                                  </div>
@@ -476,8 +476,8 @@
                          <div class="d-flex align-items-center justify-content-between gap-1">
                              <div class="all-title">3D Fat Analysis</div>
                              <div class="align-items-center d-flex gap-1">
-                                 <div>Only FUJI</div>
-                                 <img src="/assets/images/feature-icon.png" width="30">
+                                 <div class="modality-fuji">Only FUJI</div>
+                                 <div class="modality img-1"><img src="/assets/images/feature-icon.png" width="30"></div>
                                  <div class="modality d-flex justify-content-end">
                                      <img src="/assets/images/modality_icon02.png">
                                  </div>
@@ -489,8 +489,8 @@
                          <div class="d-flex align-items-center justify-content-between gap-1">
                              <div class="all-title">2D Fat Analysis</div>
                              <div class="align-items-center d-flex gap-1">
-                                 <div>Only FUJI</div>
-                                 <img src="/assets/images/feature-icon.png" width="30">
+                                 <div class="modality-fuji">Only FUJI</div>
+                                 <div class="modality img-1"><img src="/assets/images/feature-icon.png" width="30"></div>
                                  <div class="modality d-flex justify-content-end">
                                      <img src="/assets/images/modality_icon02.png">
                                  </div>
@@ -502,8 +502,8 @@
                          <div class="d-flex align-items-center justify-content-between gap-1">
                              <div class="all-title">Rectal Analysis</div>
                              <div class="align-items-center d-flex gap-1">
-                                 <div>Only FUJI</div>
-                                 <img src="/assets/images/feature-icon.png" width="30">
+                                 <div class="modality-fuji">Only FUJI</div>
+                                 <div class="modality img-1"><img src="/assets/images/feature-icon.png" width="30"></div>
                                  <div class="modality d-flex justify-content-end">
                                      <img src="/assets/images/modality_icon01.png">
                                  </div>
@@ -524,7 +524,7 @@
                      <div class="d-flex align-items-center justify-content-between gap-1">
                          <div class="all-title">Sector MPR</div>
                          <div class="modality d-flex justify-content-end">
-                             <img src="/assets/images/modality_icon03.png">
+                             <img src="/assets/images/modality_icon04.png">
                          </div>
                      </div>
                      <div>가상 초음파 이미지를 관찰할 수 있습니다.</div>
@@ -533,7 +533,7 @@
                      <div class="d-flex align-items-center justify-content-between gap-1">
                          <div class="all-title">Combination</div>
                          <div class="modality d-flex justify-content-end">
-                             <img src="/assets/images/modality_icon03.png">
+                             <img src="/assets/images/modality_icon04.png">
                          </div>
                      </div>
                      <div>여러 개의 이미지를 하나의 화면에 통합하여 볼 수 있습니다.</div>
@@ -542,7 +542,7 @@
                      <div class="d-flex align-items-center justify-content-between gap-1">
                          <div class="all-title">Nuclear Medicine Viewer</div>
                          <div class="modality d-flex justify-content-end">
-                             <img src="/assets/images/modality_icon03.png">
+                             <img src="/assets/images/modality_icon04.png">
                          </div>
                      </div>
                      <div>CT 이미지와 핵의학 이미지(SPECT 또는 PET)를 융합하고, 그 결과로 SUV(표준화된 섭취량)를 측정할 수 있다.</div>
@@ -569,7 +569,7 @@
                      <div class="d-flex align-items-center justify-content-between gap-1">
                          <div class="all-title">Oncology Viewer</div>
                          <div class="modality d-flex justify-content-end">
-                             <img src="/assets/images/modality_icon03.png">
+                             <img src="/assets/images/modality_icon04.png">
                          </div>
                      </div>
                      <div>고형암의 변화를 PERCIST, RECIST, 또는 기타 기준을 사용하여 시간에 따라 확인하고 추적할 수 있습니다.</div>
@@ -578,9 +578,9 @@
                      <div class="d-flex align-items-center justify-content-between gap-1">
                          <div class="all-title">Endoscope Simulator</div>
                          <div class="align-items-center d-flex gap-1">
-                             <img src="/assets/images/feature-icon.png" width="30">
+                             <div class="modality img-1"><img src="/assets/images/feature-icon.png" width="30"></div>
                              <div class="modality d-flex justify-content-end">
-                                 <img src="/assets/images/modality_icon03.png">
+                                 <img src="/assets/images/modality_icon04.png">
                              </div>
                          </div>
                      </div>
@@ -590,9 +590,9 @@
                      <div class="d-flex align-items-center justify-content-between gap-1">
                          <div class="all-title">Interventional Radiology Simulator</div>
                          <div class="align-items-center d-flex gap-1">
-                             <img src="/assets/images/feature-icon.png" width="30">
+                             <div class="modality img-1"><img src="/assets/images/feature-icon.png" width="30"></div>
                              <div class="modality d-flex justify-content-end">
-                                 <img src="/assets/images/modality_icon03.png">
+                                 <img src="/assets/images/modality_icon04.png">
                              </div>
                          </div>
                      </div>
@@ -629,7 +629,7 @@
                      <div class="d-flex align-items-center justify-content-between gap-1">
                          <div class="all-title">Surface Viewer</div>
                          <div class="modality d-flex justify-content-end">
-                             <img src="/assets/images/modality_icon03.png">
+                             <img src="/assets/images/modality_icon04.png">
                          </div>
                      </div>
                      <div>추출된 마스크 영역에서 표면 모델을 자동으로 생성하고 편집할 수 있습니다.</div>
@@ -653,7 +653,7 @@
                          <div class="d-flex align-items-center justify-content-between gap-1">
                              <div class="all-title">2D Viewer</div>
                              <div class="modality d-flex justify-content-end">
-                                 <img src="/assets/images/modality_icon03.png">
+                                 <img src="/assets/images/modality_icon04.png">
                              </div>
                          </div>
                          <div>CT, MRI 또는 기타 DICOM 이미지를 표시할 수 있습니다.</div>
@@ -662,9 +662,9 @@
                          <div class="d-flex align-items-center justify-content-between gap-1">
                              <div class="all-title">3D Viewer</div>
                              <div class="align-items-center d-flex gap-1">
-                                 <img src="/assets/images/feature-icon.png" width="30">
+                                 <div class="modality img-1"><img src="/assets/images/feature-icon.png" width="30"></div>
                                  <div class="modality d-flex justify-content-end">
-                                     <img src="/assets/images/modality_icon03.png">
+                                     <img src="/assets/images/modality_icon04.png">
                                  </div>
                              </div>
                          </div>
@@ -674,7 +674,7 @@
                          <div class="d-flex align-items-center justify-content-between gap-1">
                              <div class="all-title">4D Viewer</div>
                              <div class="modality d-flex justify-content-end">
-                                 <img src="/assets/images/modality_icon03.png">
+                                 <img src="/assets/images/modality_icon04.png">
                              </div>
                          </div>
                          <div>다중 위상 이미지를 로드하고 시간 정보를 기반으로 재생할 수 있습니다.</div>
@@ -683,7 +683,7 @@
                          <div class="d-flex align-items-center justify-content-between gap-1">
                              <div class="all-title">Dynamic Data Viewer</div>
                              <div class="modality d-flex justify-content-end">
-                                 <img src="/assets/images/modality_icon03.png">
+                                 <img src="/assets/images/modality_icon04.png">
                              </div>
                          </div>
                          <div>시간에 걸쳐 수집된 데이터를 기반으로 시간-강도 곡선(Time-Intensity Curves)을 관찰할 수 있습니다.</div>
@@ -692,7 +692,7 @@
                          <div class="d-flex align-items-center justify-content-between gap-1">
                              <div class="all-title">3D Compositor</div>
                              <div class="modality d-flex justify-content-end">
-                                 <img src="/assets/images/modality_icon03.png">
+                                 <img src="/assets/images/modality_icon04.png">
                              </div>
                          </div>
                          <div>여러 시리즈 이미지를 동일한 공간에 융합하여 3D 이미지를 표시할 수 있습니다.</div>
@@ -701,9 +701,9 @@
                          <div class="d-flex align-items-center justify-content-between gap-1">
                              <div class="all-title">3D Comparison</div>
                              <div class="align-items-center d-flex gap-1">
-                                 <img src="/assets/images/feature-icon.png" width="30">
+                                 <div class="modality img-1"><img src="/assets/images/feature-icon.png" width="30"></div>
                                  <div class="modality d-flex justify-content-end">
-                                     <img src="/assets/images/modality_icon03.png">
+                                     <img src="/assets/images/modality_icon04.png">
                                  </div>
                              </div>
                          </div>
@@ -713,7 +713,7 @@
                          <div class="d-flex align-items-center justify-content-between gap-1">
                              <div class="all-title">Slicer</div>
                              <div class="modality d-flex justify-content-end">
-                                 <img src="/assets/images/modality_icon03.png">
+                                 <img src="/assets/images/modality_icon04.png">
                              </div>
                          </div>
                          <div>주로 복잡한 척추 분석을 지원하기 위해 모든 횡단면을 관찰할 수 있습니다.</div>
@@ -722,7 +722,7 @@
                          <div class="d-flex align-items-center justify-content-between gap-1">
                              <div class="all-title">Fusion</div>
                              <div class="modality d-flex justify-content-end">
-                                 <img src="/assets/images/modality_icon03.png">
+                                 <img src="/assets/images/modality_icon04.png">
                              </div>
                          </div>
                          <div>다양한 모달리티에서 얻은 이미지를 융합하여 표시할 수 있습니다.</div>
@@ -731,7 +731,7 @@
                          <div class="d-flex align-items-center justify-content-between gap-1">
                              <div class="all-title">2D Fusion</div>
                              <div class="modality d-flex justify-content-end">
-                                 <img src="/assets/images/modality_icon03.png">
+                                 <img src="/assets/images/modality_icon04.png">
                              </div>
                          </div>
                          <div>두 개의 시리즈 이미지를 융합하여 저장할 수 있습니다</div>
@@ -740,9 +740,9 @@
                          <div class="d-flex align-items-center justify-content-between gap-1">
                              <div class="all-title">General CPR</div>
                              <div class="align-items-center d-flex gap-1">
-                                 <img src="/assets/images/feature-icon.png" width="30">
+                                 <div class="modality img-1"><img src="/assets/images/feature-icon.png" width="30"></div>
                                  <div class="modality d-flex justify-content-end">
-                                     <img src="/assets/images/modality_icon03.png">
+                                     <img src="/assets/images/modality_icon04.png">
                                  </div>
                              </div>
                          </div>
@@ -752,7 +752,7 @@
                          <div class="d-flex align-items-center justify-content-between gap-1">
                              <div class="all-title">MPR Reformat</div>
                              <div class="modality d-flex justify-content-end">
-                                 <img src="/assets/images/modality_icon03.png">
+                                 <img src="/assets/images/modality_icon04.png">
                              </div>
                          </div>
                          <div>모든 횡단면 이미지를 생성, 인쇄 및 저장할 수 있습니다.</div>

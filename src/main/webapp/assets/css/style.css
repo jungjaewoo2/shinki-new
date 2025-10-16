@@ -709,6 +709,8 @@ h1 {
     color: #fff !important;
 }
 
+
+
 .modality img {
     width: 35px;
     height: auto;
@@ -718,6 +720,10 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.modality.img-1 img {
+	width: 30px;
 }
 
 .modality span.multi-btn {
@@ -758,6 +764,15 @@ h1 {
         bottom: -30px !important;
     }
 
+	.modality img {
+		width: auto !important;
+		height: 30px;
+	}
+	
+	.modality-fuji {
+		font-size: 14px;
+		white-space: nowrap;
+	}
 
 }
 
@@ -848,6 +863,11 @@ h1 {
     width: 100%;
 }
 
+@media (max-width: 767px) {
+	#all-application .all-list {
+		height: auto;
+	}
+}
 
 
 /* main-title 초기 스타일 */
@@ -1232,6 +1252,13 @@ h1 {
     transform: translateY(-2px);
 }
 
+@media (max-width: 767px) {
+	.floating-btn {
+		width: 50px;
+        height: 50px;
+	}
+}
+
 /* business */
 
 #business {
@@ -1432,23 +1459,39 @@ h1 {
     box-shadow: 1px 1px 1px 1px #888;
 }
 
+@media (min-width: 1327px) {
+	.type-sub-pc {
+    	display: block !important;
+    }
+    
+    .type-sub-mb {
+    	display: none !important;
+    }
+}
 
+@media (max-width: 1326px) {
+	.type-sub-pc {
+    	display: none !important;
+    }
+    
+    .type-sub-mb {
+    	display: block !important;
+    }
+}
+
+@media (max-width: 1399px) {
+	.type-title {
+        font-size: 4.1vw;
+        text-align: center;
+    }
+}
 
 @media (max-width: 1024px) {
-    .type-box {
-        width: 100%;
-    }
-
-    .type-title {
-        font-size: 1.5em;
-        text-align: center;
-    }
-
-    .type-sub {
-        font-size: 16px;
-        text-align: center;
-    }
-
+    
+    .typeB-tag {
+		font-size: 1.5vw;
+	} 
+	
     .type-modal .modal-body {
         overflow-x: scroll;
     }
@@ -1459,17 +1502,67 @@ h1 {
     }
 }
 
+@media (min-width: 958px) and (max-width: 1060px) {
+	.type-sub-second .type-sub-mb {
+		letter-spacing: -0.05em;
+	} 
+}
+
 @media (min-width: 992px) {
     .modal-lg, .modal-xl {
     	/* --bs-modal-width: 90%; */
     }
 }
 
-@media (max-width: 767px) {
-    .type-img img {
+@media (max-width: 991px) {
+	
+	.typeB-tag {
+		font-size: 1.6vw;
+	} 
+	
+	.type-img img {
         width: -webkit-fill-available;
         object-fit: contain;
     }
+	
+    
+}
+
+@media (min-width: 768px) and (max-width: 957px) {
+	.type-sub-second .type-sub-mb {
+		letter-spacing: -0.14em;
+	} 
+}
+
+@media (max-width: 767px) {
+	
+	.type-box {
+        width: 100%;
+        padding-top: 6.5vh !important;
+    }
+	
+	.typeB-tag {
+		font-size: 3vw;
+	}
+	
+	.type-title {
+		font-size: 8.5vw;
+	}
+	
+	.type-sub {
+        font-size: 3vw;
+    }
+    
+    .type-img {
+    	height: auto;
+    }
+	
+    
+    
+    .type-btn button {
+    	font-size: 16px;
+    }
+    
 
 }
 
@@ -1626,6 +1719,7 @@ h1 {
     position: absolute;
     bottom: 5%;
     right: 5%;
+    display: none !important;
 }
 
 
@@ -1759,6 +1853,10 @@ button:focus:not(:focus-visible) {
     margin-bottom: 30px;
 }
 
+.function-box img {
+	height: 42px;
+}
+
 .function-box ul {
     padding: 10px 0 0;
 }
@@ -1785,6 +1883,13 @@ button:focus:not(:focus-visible) {
 
     .app-btn {
         padding-right: 0 !important;
+    }
+}
+
+@media (max-width:767px) {
+
+    .app-btn button {
+        font-size: 14px;
     }
 }
 
@@ -1901,6 +2006,15 @@ footer {
 	z-index: 2000000;
 }
 
-.modal-xl {
-	
+.modal.Zoom,
+.modal.Zoom-fc {
+	--bs-modal-width: 50%;
+}
+
+.Zoom .modal-content {
+	height: 90vh;
+}
+
+. Zoom-fc .modal-content {
+     height: unset;
 }
