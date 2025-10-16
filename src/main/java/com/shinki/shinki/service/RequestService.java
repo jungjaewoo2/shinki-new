@@ -187,6 +187,44 @@ public class RequestService {
         return requestRepository.findBySearchTerm(searchTerm, pageable);
     }
     
+    // 고급 검색 (의뢰항목, 의뢰상태, 주문일, 키워드)
+    @Transactional(readOnly = true)
+    public Page<Request> advancedSearchRequests(
+            String applicationType, 
+            String status, 
+            String startDateStr, 
+            String search, 
+            Pageable pageable) {
+        
+        // 날짜 문자열을 LocalDateTime으로 변환
+        LocalDateTime startDate = null;
+        LocalDateTime endDate = null;
+        
+        if (startDateStr != null && !startDateStr.trim().isEmpty()) {
+            try {
+                LocalDate date = LocalDate.parse(startDateStr, DateTimeFormatter.ISO_LOCAL_DATE);
+                startDate = date.atStartOfDay();
+                endDate = date.plusDays(1).atStartOfDay(); // 해당 날짜의 23:59:59까지 포함
+            } catch (Exception e) {
+                System.out.println("주문일 파싱 오류: " + e.getMessage());
+            }
+        }
+        
+        // 빈 문자열을 null로 변환
+        String finalApplicationType = (applicationType != null && !applicationType.trim().isEmpty()) ? applicationType.trim() : null;
+        String finalStatus = (status != null && !status.trim().isEmpty()) ? status.trim() : null;
+        String finalSearch = (search != null && !search.trim().isEmpty()) ? search.trim() : null;
+        
+        return requestRepository.findByAdvancedSearch(
+            finalApplicationType, 
+            finalStatus, 
+            startDate, 
+            endDate, 
+            finalSearch, 
+            pageable
+        );
+    }
+    
     // 통계 메서드들
     @Transactional(readOnly = true)
     public Long getTodayRequestCount() {

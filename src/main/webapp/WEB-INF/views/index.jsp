@@ -293,7 +293,7 @@
 
         <div class="container-fluid">
             <h2 class="align-items-center d-flex flex-column justify-content-center gap-2 mb-4" style="font-size: 2.5rem; margin-top: 0.75rem;"><span class="pill">Application</span> 애플리케이션</h2>
-            <div class="d-flex  justify-content-between  flex-column-reverse flex-md-row flex-lg-row gap-3 ps-1">
+            <div class="d-flex  justify-content-between flex-column flex-md-row flex-lg-row gap-2 gap-lg-3 ps-1">
                 <ul class="nav nav-tabs d-flex gap-lg-2 border-bottom-0 p-2" id="myTab" role="tablist" style="border-radius: 1.5rem;background: rgba(218, 218, 218, .2);padding: 1px;box-shadow: 1px 0px 4px 5px rgba(255, 255, 255, .3);">
                     <li class="nav-item hbp" role="presentation">
                         <button class="nav-link active align-items-end d-flex justify-content-center" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">HBP</button>
@@ -308,7 +308,11 @@
                         <button class="nav-link align-items-end d-flex justify-content-center" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">KNEE</button>
                     </li>
                 </ul>
+<<<<<<< HEAD
+                <div class="align-items-end d-flex justify-content-end"><button class="btn px-4 text-white rounded-5" style="background: linear-gradient(to right, #975cf8, #5d55fe);" onclick="checkLoginAndRedirect()">의뢰하기 <i class="bi bi-arrow-right"></i></button></div>
+=======
                 <div class="align-items-end d-flex justify-content-end"><button class="btn px-4 text-white rounded-5" style="background: linear-gradient(to right, #975cf8, #5d55fe);" onclick="location.href='./mypage/request'">의뢰하기 <i class="bi bi-arrow-right"></i></button></div>
+>>>>>>> 6585ce3d2dd67ba58f14524dc3e656e41df635ef
             </div>
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
@@ -468,8 +472,7 @@
                     <div><img src="assets/images/business-icon01.png" width="88"></div>
                     <div class="business-txt">
                         <div class="feature-title">One click Extraction</div>
-                        <div class="feature-content pc">Fujifilm의 혁신적인 AI 기반기술로 간편하고<br>높은 정확도를 가진 자동 추출 기능</div>
-                        <div class="feature-content mb">Fujifilm의 혁신적인 AI 기반기술로<br>간편하고 높은 정확도를 가진<br>자동 추출 기능</div>
+                        <div>Fujifilm의 혁신적인 AI 기반기술로 간편하고<br>높은 정확도를 가진 자동 추출 기능</div>
                     </div>
                 </div>
                 <div class="business-box rounded-5 d-flex align-items-lg-center gap-3 p-4">
@@ -1313,10 +1316,10 @@
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
         },
-        /* pagination: {
+        pagination: {
             el: ".swiper-pagination",
             clickable: true,
-        }, */
+        },
         speed: 1000,
         loop: true,
     });
@@ -1545,6 +1548,30 @@ document.addEventListener('DOMContentLoaded', () => {
 	    }
 	  });
 	});
+
+// 로그인 확인 후 리다이렉트 함수
+function checkLoginAndRedirect() {
+    console.log('[index.jsp] checkLoginAndRedirect 호출됨');
+    fetch('/mypage/check-login')
+        .then(response => {
+            console.log('[index.jsp] API 응답 상태:', response.status);
+            return response.json();
+        })
+        .then(data => {
+            console.log('[index.jsp] 로그인 상태:', data.loggedIn);
+            if (data.loggedIn) {
+                console.log('[index.jsp] 로그인 됨 - ./mypage/inquiry로 이동');
+                location.href = './mypage/inquiry';
+            } else {
+                console.log('[index.jsp] 로그인 안됨 - ./mypage/login?redirectUrl=/mypage/inquiry로 이동');
+                location.href = './mypage/login?redirectUrl=/mypage/inquiry';
+            }
+        })
+        .catch(error => {
+            console.error('[index.jsp] API 호출 오류:', error);
+            location.href = './mypage/login?redirectUrl=/mypage/inquiry';
+        });
+}
 </script>
 
 

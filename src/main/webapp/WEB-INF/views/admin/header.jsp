@@ -62,12 +62,12 @@
                                 </li>
                             </ul>
                         </div>
-                        <button class="nav-link" onclick="location.href='/mypage/request'">Request</button>
+                        <button class="nav-link" onclick="location.href='request-history'">Request</button>
                         <button class="nav-link navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation" onclick="location.href='/mypage/application'"><span class="navbar-toggler-icon"></span></button>
                         <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                             <ul class="navbar-nav">
                                 <li class="nav-item dropdown">
-                                    <button class="btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button class="btn" data-bs-toggle="dropdown" aria-expanded="false" onclick="location.href='consultation-request'">
                                         Q&A
                                     </button>
                                     <!-- <ul class="dropdown-menu">

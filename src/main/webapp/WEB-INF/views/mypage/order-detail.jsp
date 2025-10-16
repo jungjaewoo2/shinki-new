@@ -643,6 +643,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+// 날짜 만료 확인 함수
+function isDateExpired(dateString) {
+    // dateString 형식: YYYY.MM.DD
+    const dateParts = dateString.split('.');
+    if (dateParts.length !== 3) return false;
+    
+    const year = parseInt(dateParts[0]);
+    const month = parseInt(dateParts[1]) - 1; // JavaScript 월은 0부터 시작
+    const day = parseInt(dateParts[2]);
+    
+    const targetDate = new Date(year, month, day);
+    const currentDate = new Date();
+    
+    // 1달(30일) 차이 계산
+    const diffTime = currentDate - targetDate;
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    
+    console.log('날짜 확인 - 기준일: ' + dateString + ', 경과일: ' + diffDays + '일');
+    
+    return diffDays > 30;
+}
+
 // 관리자 파일 다운로드 함수 (전역 함수로 이동)
 function downloadAdminFile(fileName) {
     if (!fileName || fileName.trim() === '') {
@@ -656,6 +678,17 @@ function downloadAdminFile(fileName) {
         alert('요청 ID를 찾을 수 없습니다.');
         return;
     }
+    
+    // 의뢰 생성일 가져오기
+    <c:if test="${not empty request.createdAt}">
+    const createdDate = '${request.createdAt.year}.<fmt:formatNumber value="${request.createdAt.monthValue}" pattern="00"/>.<fmt:formatNumber value="${request.createdAt.dayOfMonth}" pattern="00"/>';
+    
+    // 날짜 만료 확인
+    if (isDateExpired(createdDate)) {
+        alert('다운로드 기간이 만료되었습니다.');
+        return;
+    }
+    </c:if>
     
     // 다운로드 URL 생성 (사용자용 엔드포인트 사용)
     const downloadUrl = '/mypage/download-admin-file/' + requestId + '?fileName=' + encodeURIComponent(fileName.trim());

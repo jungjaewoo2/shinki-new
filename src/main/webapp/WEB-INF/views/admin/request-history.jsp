@@ -11,15 +11,61 @@
      </div>
 
      <div class="card d-flex flex-column gap-0 gap-lg-3 flex-fill overflow-auto">
+<<<<<<< HEAD
+        <div class="card">
+            <form method="get" action="/admin/request-history" class="d-flex flex-column gap-3">
+                <div class="row g-2">
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <label class="form-label fw-bold">의뢰항목</label>
+                        <select class="form-select" name="applicationType">
+                            <option value="">전체</option>
+                            <option value="HBP" ${applicationType == 'HBP' ? 'selected' : ''}>HBP</option>
+                            <option value="LUNG" ${applicationType == 'LUNG' ? 'selected' : ''}>LUNG</option>
+                            <option value="CARDIAC" ${applicationType == 'CARDIAC' ? 'selected' : ''}>CARDIAC</option>
+                            <option value="KNEE" ${applicationType == 'KNEE' ? 'selected' : ''}>KNEE</option>
+                        </select>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <label class="form-label fw-bold">의뢰상태</label>
+                        <select class="form-select" name="status">
+                            <option value="">전체</option>
+                            <option value="의뢰 확인중" ${status == '의뢰 확인중' ? 'selected' : ''}>의뢰 확인중</option>
+                            <option value="견적중" ${status == '견적중' ? 'selected' : ''}>견적중</option>
+                            <option value="결제 진행" ${status == '결제 진행' ? 'selected' : ''}>결제 진행</option>
+                            <option value="작업중" ${status == '작업중' ? 'selected' : ''}>작업중</option>
+                            <option value="작업 완료" ${status == '작업 완료' ? 'selected' : ''}>작업 완료</option>
+                            <option value="취소 요청" ${status == '취소 요청' ? 'selected' : ''}>취소 요청</option>
+                            <option value="취소 진행중" ${status == '취소 진행중' ? 'selected' : ''}>취소 진행중</option>
+                            <option value="취소 완료" ${status == '취소 완료' ? 'selected' : ''}>취소 완료</option>
+                        </select>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <label class="form-label fw-bold">주문일</label>
+                        <input type="date" class="form-control" name="startDate" value="${startDate}">
+                    </div>
+                </div>
+                <div class="row g-2 align-items-end">
+                    <div class="col-12 col-lg-8">
+                        <label class="form-label fw-bold">키워드 검색</label>
+                        <div class="position-relative">
+                            <input class="form-control" type="text" name="search" placeholder="병원명, 이름, 제목, 의뢰내용으로 검색" value="${search}">
+                            <div class="end-0 position-absolute top-50 translate-middle"><i class="bi bi-search"></i></div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 d-flex gap-2 justify-content-end">
+                        <button type="submit" class="btn btn-primary flex-fill flex-lg-grow-0"><span class="fw-bold">검색</span></button>
+                        <button type="button" class="btn btn-outline-secondary flex-fill flex-lg-grow-0" onclick="resetSearch()"><span class="fw-bold">초기화</span></button>
+                        <button type="button" class="btn btn-secondary flex-fill flex-lg-grow-0" onclick="deleteSelectedRequests()"><span class="fw-bold">삭제</span></button>
+                    </div>
+=======
         <div class="card d-flex align-items-center flex-lg-row flex-column justify-content-end gap-2">
             <form method="get" action="/admin/request-history" class="d-flex gap-2">
                 <div class="position-relative">
                     <input class="form-control" type="text" name="search"  maxlength="23" aria-label="default input example" value="${search}" placeholder="의뢰항목, 병원명, 이름, 제목, 의뢰내용으로 검색" style="width: 400px;">
                     <div class="end-0 position-absolute top-50 translate-middle"><i class="bi bi-search"></i></div>
+>>>>>>> 6585ce3d2dd67ba58f14524dc3e656e41df635ef
                 </div>
-                <button type="submit" class="btn btn-primary"><span class="fw-bold">검색</span></button>
             </form>
-            <button type="button" class="btn btn-secondary" onclick="deleteSelectedRequests()"><span class="fw-bold">삭제</span></button>
         </div>
          <div class="card">
              <div class="fw-bold">총 ${totalElements}건</div>
@@ -91,11 +137,25 @@
          </div>
          
          <!-- 페이징 -->
+         <c:set var="params" value="" />
+         <c:if test="${not empty search}">
+             <c:set var="params" value="${params}&search=${search}" />
+         </c:if>
+         <c:if test="${not empty applicationType}">
+             <c:set var="params" value="${params}&applicationType=${applicationType}" />
+         </c:if>
+         <c:if test="${not empty status}">
+             <c:set var="params" value="${params}&status=${status}" />
+         </c:if>
+         <c:if test="${not empty startDate}">
+             <c:set var="params" value="${params}&startDate=${startDate}" />
+         </c:if>
+         
          <nav aria-label="Page navigation" class="mt-3">
              <ul class="pagination justify-content-center">
                 <c:if test="${currentPage > 0}">
                     <li class="page-item">
-                        <a class="page-link" href="/admin/request-history?page=${currentPage - 1}&size=${size}<c:if test='${not empty search}'>&search=${search}</c:if>">이전</a>
+                        <a class="page-link" href="/admin/request-history?page=${currentPage - 1}&size=${size}${params}">이전</a>
                     </li>
                 </c:if>
                  <c:if test="${totalPages > 0}">
@@ -108,7 +168,7 @@
                              </c:when>
                             <c:otherwise>
                                 <li class="page-item">
-                                    <a class="page-link" href="/admin/request-history?page=${i}&size=${size}<c:if test='${not empty search}'>&search=${search}</c:if>">${i + 1}</a>
+                                    <a class="page-link" href="/admin/request-history?page=${i}&size=${size}${params}">${i + 1}</a>
                                 </li>
                             </c:otherwise>
                          </c:choose>
@@ -116,7 +176,7 @@
                  </c:if>
                 <c:if test="${currentPage < totalPages - 1}">
                     <li class="page-item">
-                        <a class="page-link" href="/admin/request-history?page=${currentPage + 1}&size=${size}<c:if test='${not empty search}'>&search=${search}</c:if>">다음</a>
+                        <a class="page-link" href="/admin/request-history?page=${currentPage + 1}&size=${size}${params}">다음</a>
                     </li>
                 </c:if>
              </ul>
@@ -290,6 +350,10 @@ function deleteSelectedRequests() {
         document.getElementById('selectedRequestsInput').value = selectedValues.join(',');
         document.getElementById('deleteForm').submit();
     }
+}
+
+function resetSearch() {
+    window.location.href = '/admin/request-history';
 }
  </script>
 

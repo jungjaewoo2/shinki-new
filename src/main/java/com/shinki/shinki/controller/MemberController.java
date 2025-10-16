@@ -186,8 +186,18 @@ public class MemberController {
     }
     
     @GetMapping("/login")
-    public String loginPage() {
+    public String loginPage(@RequestParam(required = false) String redirectUrl, Model model) {
+        model.addAttribute("redirectUrl", redirectUrl);
         return "mypage/login";
+    }
+    
+    @GetMapping("/check-login")
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> checkLogin(HttpSession session) {
+        Map<String, Object> response = new HashMap<>();
+        String username = (String) session.getAttribute("username");
+        response.put("loggedIn", username != null);
+        return ResponseEntity.ok(response);
     }
     
     @GetMapping("/find-id")
@@ -208,6 +218,7 @@ public class MemberController {
     @PostMapping("/login")
     public String login(@RequestParam String username, 
                        @RequestParam String password,
+                       @RequestParam(required = false) String redirectUrl,
                        HttpSession session,
                        RedirectAttributes redirectAttributes) {
         try {
@@ -227,7 +238,13 @@ public class MemberController {
                 session.setAttribute("username", username);
                 session.setAttribute("memberId", member.getId());
                 redirectAttributes.addFlashAttribute("message", "로그인되었습니다.");
-                return "redirect:/mypage/profile";
+                
+                // redirectUrl이 있으면 해당 페이지로, 없으면 profile로 이동
+                if (redirectUrl != null && !redirectUrl.trim().isEmpty()) {
+                    return "redirect:" + redirectUrl;
+                } else {
+                    return "redirect:/mypage/profile";
+                }
             } else {
                 redirectAttributes.addFlashAttribute("error", "아이디 또는 비밀번호가 일치하지 않습니다.");
                 return "redirect:/mypage/login";
@@ -357,18 +374,14 @@ public class MemberController {
     }
     
     @GetMapping("/logout")
-    @ResponseBody
-    public ResponseEntity<Map<String, Object>> logout(HttpSession session) {
-        Map<String, Object> response = new HashMap<>();
+    public String logout(HttpSession session, RedirectAttributes redirectAttributes) {
         try {
             session.invalidate();
-            response.put("success", true);
-            response.put("message", "로그아웃 되었습니다");
-            return ResponseEntity.ok(response);
+            redirectAttributes.addFlashAttribute("message", "로그아웃 되었습니다");
+            return "redirect:/mypage/login";
         } catch (Exception e) {
-            response.put("success", false);
-            response.put("message", "로그아웃 중 오류가 발생했습니다");
-            return ResponseEntity.ok(response);
+            redirectAttributes.addFlashAttribute("error", "로그아웃 중 오류가 발생했습니다");
+            return "redirect:/mypage/login";
         }
     }
     

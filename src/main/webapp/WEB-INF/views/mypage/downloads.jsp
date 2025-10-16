@@ -21,18 +21,18 @@
                      <c:set var="datePart" value="${fn:substringBefore(groupKey, '_')}" />
                      <c:set var="appType" value="${fn:substringAfter(groupKey, '_')}" />
                      
-                     <div class="card" data-group-container="${groupKey}">
-                         <div class="align-items-center d-flex flex-column flex-lg-row gap-2 gap-lg-0 justify-content-between mb-3 mb-lg-0">
-                             <div class="title fw-bold">${datePart} <span class="text-danger fs-5">${appType}</span></div>
-                             <div>
-                                 <button type="button" class="btn btn-outline-secondary download-all" data-group="${groupKey}">
-                                     <i class="bi bi-download text-warning"></i> <span class="fw-bold">전체 다운로드</span>
-                                 </button>
-                                 <button type="button" class="btn btn-outline-secondary download-selected" data-group="${groupKey}">
-                                     <i class="bi bi-download text-warning"></i> <span class="fw-bold">선택 다운로드</span>
-                                 </button>
-                             </div>
-                         </div>
+                    <div class="card" data-group-container="${groupKey}" data-group-date="${datePart}">
+                        <div class="align-items-center d-flex flex-column flex-lg-row gap-2 gap-lg-0 justify-content-between mb-3 mb-lg-0">
+                            <div class="title fw-bold">${datePart} <span class="text-danger fs-5">${appType}</span></div>
+                            <div>
+                                <button type="button" class="btn btn-outline-secondary download-all" data-group="${groupKey}" data-date="${datePart}">
+                                    <i class="bi bi-download text-warning"></i> <span class="fw-bold">전체 다운로드</span>
+                                </button>
+                                <button type="button" class="btn btn-outline-secondary download-selected" data-group="${groupKey}" data-date="${datePart}">
+                                    <i class="bi bi-download text-warning"></i> <span class="fw-bold">선택 다운로드</span>
+                                </button>
+                            </div>
+                        </div>
                          <div class="d-none d-lg-block">
                              <table class="table table-bordered">
                                 <colgroup>
@@ -155,51 +155,87 @@
              });
          });
          
-         // 전체 다운로드 기능
-         document.querySelectorAll('.download-all').forEach(function(button) {
-             button.addEventListener('click', function() {
-                 const groupKey = this.dataset.group;
-                 
-                 // 같은 그룹 컨테이너 내의 모든 체크박스 찾기
-                 const groupContainer = document.querySelector('[data-group-container="' + groupKey + '"]');
-                 const requestCheckboxes = groupContainer ? 
-                     groupContainer.querySelectorAll('input.request-checkbox') : 
-                     document.querySelectorAll('input.request-checkbox[data-group="' + groupKey + '"]');
-                 
-                 const requestIds = Array.from(requestCheckboxes).map(checkbox => checkbox.value);
-                 
-                 console.log('그룹 ' + groupKey + ' 전체 다운로드 - 파일 수: ' + requestIds.length);
-                 
-                 if (requestIds.length > 0) {
-                     downloadFiles(requestIds);
-                 } else {
-                     alert('다운로드할 파일이 없습니다.');
-                 }
-             });
-         });
+        // 날짜 만료 확인 함수
+        function isDateExpired(dateString) {
+            // dateString 형식: YYYY.MM.DD
+            const dateParts = dateString.split('.');
+            if (dateParts.length !== 3) return false;
+            
+            const year = parseInt(dateParts[0]);
+            const month = parseInt(dateParts[1]) - 1; // JavaScript 월은 0부터 시작
+            const day = parseInt(dateParts[2]);
+            
+            const targetDate = new Date(year, month, day);
+            const currentDate = new Date();
+            
+            // 1달(30일) 차이 계산
+            const diffTime = currentDate - targetDate;
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            
+            console.log('날짜 확인 - 기준일: ' + dateString + ', 경과일: ' + diffDays + '일');
+            
+            return diffDays > 30;
+        }
+        
+        // 전체 다운로드 기능
+        document.querySelectorAll('.download-all').forEach(function(button) {
+            button.addEventListener('click', function() {
+                const groupKey = this.dataset.group;
+                const dateString = this.dataset.date;
+                
+                // 날짜 만료 확인
+                if (isDateExpired(dateString)) {
+                    alert('다운로드 기간이 만료되었습니다.');
+                    return;
+                }
+                
+                // 같은 그룹 컨테이너 내의 모든 체크박스 찾기
+                const groupContainer = document.querySelector('[data-group-container="' + groupKey + '"]');
+                const requestCheckboxes = groupContainer ? 
+                    groupContainer.querySelectorAll('input.request-checkbox') : 
+                    document.querySelectorAll('input.request-checkbox[data-group="' + groupKey + '"]');
+                
+                const requestIds = Array.from(requestCheckboxes).map(checkbox => checkbox.value);
+                
+                console.log('그룹 ' + groupKey + ' 전체 다운로드 - 파일 수: ' + requestIds.length);
+                
+                if (requestIds.length > 0) {
+                    downloadFiles(requestIds);
+                } else {
+                    alert('다운로드할 파일이 없습니다.');
+                }
+            });
+        });
          
-         // 선택 다운로드 기능
-         document.querySelectorAll('.download-selected').forEach(function(button) {
-             button.addEventListener('click', function() {
-                 const groupKey = this.dataset.group;
-                 
-                 // 같은 그룹 컨테이너 내의 선택된 체크박스만 찾기
-                 const groupContainer = document.querySelector('[data-group-container="' + groupKey + '"]');
-                 const checkedCheckboxes = groupContainer ? 
-                     groupContainer.querySelectorAll('input.request-checkbox:checked') : 
-                     document.querySelectorAll('input.request-checkbox[data-group="' + groupKey + '"]:checked');
-                 
-                 const requestIds = Array.from(checkedCheckboxes).map(checkbox => checkbox.value);
-                 
-                 console.log('그룹 ' + groupKey + ' 선택 다운로드 - 선택된 파일 수: ' + requestIds.length);
-                 
-                 if (requestIds.length > 0) {
-                     downloadFiles(requestIds);
-                 } else {
-                     alert('다운로드할 파일을 선택해주세요.');
-                 }
-             });
-         });
+        // 선택 다운로드 기능
+        document.querySelectorAll('.download-selected').forEach(function(button) {
+            button.addEventListener('click', function() {
+                const groupKey = this.dataset.group;
+                const dateString = this.dataset.date;
+                
+                // 날짜 만료 확인
+                if (isDateExpired(dateString)) {
+                    alert('다운로드 기간이 만료되었습니다.');
+                    return;
+                }
+                
+                // 같은 그룹 컨테이너 내의 선택된 체크박스만 찾기
+                const groupContainer = document.querySelector('[data-group-container="' + groupKey + '"]');
+                const checkedCheckboxes = groupContainer ? 
+                    groupContainer.querySelectorAll('input.request-checkbox:checked') : 
+                    document.querySelectorAll('input.request-checkbox[data-group="' + groupKey + '"]:checked');
+                
+                const requestIds = Array.from(checkedCheckboxes).map(checkbox => checkbox.value);
+                
+                console.log('그룹 ' + groupKey + ' 선택 다운로드 - 선택된 파일 수: ' + requestIds.length);
+                
+                if (requestIds.length > 0) {
+                    downloadFiles(requestIds);
+                } else {
+                    alert('다운로드할 파일을 선택해주세요.');
+                }
+            });
+        });
          
                    // 파일 다운로드 함수
           function downloadFiles(requestIds) {

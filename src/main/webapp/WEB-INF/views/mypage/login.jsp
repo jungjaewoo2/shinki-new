@@ -41,6 +41,9 @@
         <div class="row">
             <div class="col-12 col-lg-3 m-auto">
                 <form action="/mypage/login" method="post">
+                    <c:if test="${not empty redirectUrl}">
+                        <input type="hidden" name="redirectUrl" value="${redirectUrl}">
+                    </c:if>
                     <div class="form-group align-items-baseline flex-column">
                         <label class="form-label">아이디</label>
                         <input type="text" name="username" class="form-input" placeholder="아이디를 입력하세요" required>

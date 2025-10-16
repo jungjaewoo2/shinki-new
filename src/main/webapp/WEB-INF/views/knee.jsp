@@ -241,7 +241,7 @@
                          <img src="/assets/images/application_icon01.png" width="30" height="30">
                      </div>
                      <div class="d-flex flex-fill justify-content-end">
-                         <div class="align-items-end d-flex justify-content-end" style="padding-right: 110px;"><button class="btn px-4 text-white rounded-5" onclick="location.href='/mypage/request'" style="background: linear-gradient(to right, #975cf8, #5d55fe);">의뢰하기 <i class="bi bi-arrow-right"></i></button></div>
+                         <div class="align-items-end d-flex justify-content-end" style="padding-right: 110px;"><button class="btn px-4 text-white rounded-5" onclick="checkLoginAndRedirect()" style="background: linear-gradient(to right, #975cf8, #5d55fe);">의뢰하기 <i class="bi bi-arrow-right"></i></button></div>
                      </div>
                  </div>
              </div>
@@ -419,9 +419,25 @@
                  modalImg.setAttribute('src', imgSrc);
                  modalTitle.textContent = title; // 모달 제목 업데이트
              });
-         });
-     });
+        });
+    });
 
+    // 로그인 확인 후 리다이렉트 함수
+    function checkLoginAndRedirect() {
+        fetch('/mypage/check-login')
+            .then(response => response.json())
+            .then(data => {
+                if (data.loggedIn) {
+                    location.href = '/mypage/request';
+                } else {
+                    location.href = '/mypage/login?redirectUrl=/mypage/request';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                location.href = '/mypage/login?redirectUrl=/mypage/request';
+            });
+    }
  </script>
 
 <jsp:include page="footer.jsp" />

@@ -45,16 +45,16 @@
                                     <input class="form-check-input" type="checkbox" value="" id="selectAll">
                                 </div>
                             </th>
-                            <th>병원</th>
-                            <th>이름</th>
-                            <th>아이디</th>
-                            <th class="sortable" data-column="createdAt">가입일<span class="sort-icon"><i class="bi bi-caret-down-fill"></i></span></th>
-                            <th>이메일</th>
-                            <th>연락처</th>
-                            <th class="sortable" data-column="requestCount">의뢰건수<span class="sort-icon"><i class="bi bi-caret-down-fill"></i></span></th>
-                            <th class="sortable" data-column="totalPaymentAmount">총 주문금액<span class="sort-icon"><i class="bi bi-caret-down-fill"></i></span></th>
-                            <th>방문수</th>
-                            <th>관리</th>
+                           <th>병원</th>
+                           <th>이름</th>
+                           <th>아이디</th>
+                           <th class="sortable" data-column="createdAt">가입일<span class="sort-icon"><i class="bi bi-caret-down-fill"></i></span></th>
+                           <th>이메일</th>
+                           <th>연락처</th>
+                           <th class="sortable" data-column="requestCount">의뢰건수<span class="sort-icon"><i class="bi bi-caret-down-fill"></i></span></th>
+                           <th class="sortable" data-column="totalPaymentAmount">총 주문금액<span class="sort-icon"><i class="bi bi-caret-down-fill"></i></span></th>
+                           <th>추천코드</th>
+                           <th>관리</th>
                          </tr>
                      </thead>
                      <tbody class="">
@@ -65,16 +65,16 @@
                                         <input class="form-check-input" type="checkbox" value="${member.id}" name="selectedMembers">
                                     </div>
                                 </td>
-                                <td>${member.hospitalName}</td>
-                                <td>${member.name}</td>
-                                <td>${member.username}</td>
-                                <td>${member.createdAt.year}-${member.createdAt.monthValue < 10 ? '0' : ''}${member.createdAt.monthValue}-${member.createdAt.dayOfMonth < 10 ? '0' : ''}${member.createdAt.dayOfMonth}</td>
-                                <td>${member.email}</td>
-                                <td>${member.phone}</td>
-                                <td>${member.requestCount != null ? member.requestCount : 0}건</td>
-                                <td><fmt:formatNumber value="${member.totalPaymentAmount != null ? member.totalPaymentAmount : 0}" pattern="#,###" />원</td>
-                                <td>${member.visitNum}회</td>
-                                <td onclick="location.href='view-member-info?memberId=${member.id}'"><i class="bi bi-gear-fill text-info cursor-pointer"></i></td>
+                               <td>${member.hospitalName}</td>
+                               <td>${member.name}</td>
+                               <td>${member.username}</td>
+                               <td>${member.createdAt.year}-${member.createdAt.monthValue < 10 ? '0' : ''}${member.createdAt.monthValue}-${member.createdAt.dayOfMonth < 10 ? '0' : ''}${member.createdAt.dayOfMonth}</td>
+                               <td>${member.email}</td>
+                               <td>${member.phone}</td>
+                               <td>${member.requestCount != null ? member.requestCount : 0}건</td>
+                               <td><fmt:formatNumber value="${member.totalPaymentAmount != null ? member.totalPaymentAmount : 0}" pattern="#,###" />원</td>
+                               <td>${member.recommendCode != null ? member.recommendCode : '-'}</td>
+                               <td onclick="location.href='view-member-info?memberId=${member.id}'"><i class="bi bi-gear-fill text-info cursor-pointer"></i></td>
                              </tr>
                          </c:forEach>
                          <c:if test="${empty members}">

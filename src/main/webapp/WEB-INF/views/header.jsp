@@ -49,12 +49,12 @@
                             </li>
                         </ul>
                     </div>
-                    <button class="nav-link" onclick="location.href='/mypage/request'">Request</button>
+                    <button class="nav-link" onclick="checkLoginAndRedirect()">Request</button>
                     <button class="nav-link navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation" onclick="location.href='application'"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
-                                <button class="btn" data-bs-toggle="dropdown" aria-expanded="false" onclick="location.href='./mypage/inquiry'">
+                                <button class="btn" data-bs-toggle="dropdown" aria-expanded="false" onclick="checkLoginAndRedirectToInquiry()">
                                     Q&A
                                 </button>
                                 <!--<ul class="dropdown-menu">
@@ -154,11 +154,16 @@
                             </li>
                         </ul>
                     </div>
+<<<<<<< HEAD
+                    <button class="nav-link" onclick="checkLoginAndRedirect()">Request</button>
+                    <div class="collapse navbar-collapse show" id="navbarNavDarkDropdown">
+=======
                     <button class="nav-link" onclick="location.href='mypage/request'">Request</button>
                     <div class="collapse navbar-collapse show" id="navbarNavDarkDropdown" onclick="location.href='mypage/inquiry'">
+>>>>>>> 6585ce3d2dd67ba58f14524dc3e656e41df635ef
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
-                                <button class="btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class="btn" data-bs-toggle="dropdown" aria-expanded="false" onclick="checkLoginAndRedirectToInquiry()">
                                     Q&A
                                 </button>
                                 <!-- <ul class="dropdown-menu">
@@ -177,7 +182,7 @@
                             <!-- 로그인된 경우: 사용자명과 메뉴 -->
                             <div class=""><a href="#" class="pe-auto"><i class="bi bi-person-circle fs-5"></i> ${sessionScope.username}님</a></div>
                             <div class=""><a href="/mypage/profile" class="pe-auto"><i class="bi bi-person-circle fs-5"></i> 마이페이지</a></div>
-                            <div class=""><a href="#" class="pe-auto" onclick="logout()"><i class="bi bi-box-arrow-right fs-5"></i> 로그아웃</a></div>
+                            <div class=""><a href="#" class="pe-auto" onclick="simpleLogout()"><i class="bi bi-box-arrow-right fs-5"></i> 로그아웃</a></div>
                         </c:when>
                         <c:otherwise>
                             <!-- 로그인되지 않은 경우: 로그인 링크 -->
@@ -192,19 +197,122 @@
 <script>
 function logout() {
     if (confirm('로그아웃 하시겠습니까?')) {
-        fetch('/mypage/logout', {
-            method: 'GET'
-        })
-        .then(response => {
+        // 모바일 브라우저 호환성을 위한 로그아웃 처리
+        const logoutPromise = fetch('/mypage/logout', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        }).then(response => {
             if (response.ok) {
-                alert('로그아웃 되었습니다');
-                window.location.href = '/mypage/login';
+                return response.json();
+            } else {
+                throw new Error('Network response was not ok');
+            }
+        });
+        
+        // 타임아웃 설정 (5초)
+        const timeoutPromise = new Promise((_, reject) => {
+            setTimeout(() => reject(new Error('Timeout')), 5000);
+        });
+        
+        Promise.race([logoutPromise, timeoutPromise])
+        .then(data => {
+            if (data.success) {
+                alert(data.message || '로그아웃 되었습니다');
+                // 모바일 브라우저 호환성을 위한 강제 페이지 이동
+                redirectToLogin();
+            } else {
+                alert(data.message || '로그아웃 중 오류가 발생했습니다.');
+                redirectToLogin();
             }
         })
         .catch(error => {
-            console.error('Error:', error);
-            alert('로그아웃 중 오류가 발생했습니다.');
+            console.error('Logout error:', error);
+            // 모바일에서 fetch 실패 시 직접 페이지 이동으로 처리
+            alert('로그아웃 되었습니다');
+            redirectToLogin();
         });
     }
+}
+
+// 모바일 브라우저 호환성을 위한 강제 페이지 이동 함수
+function redirectToLogin() {
+    try {
+        // 여러 방법으로 페이지 이동 시도
+        if (window.location.replace) {
+            window.location.replace('/mypage/login');
+        } else if (window.location.href) {
+            window.location.href = '/mypage/login';
+        } else if (window.location.assign) {
+            window.location.assign('/mypage/login');
+        } else {
+            // 마지막 수단으로 document.location 사용
+            document.location = '/mypage/login';
+        }
+    } catch (error) {
+        console.error('Redirect error:', error);
+        // 모든 방법이 실패하면 새 창으로 열기
+        window.open('/mypage/login', '_self');
+    }
+}
+
+// 간단한 로그아웃 함수 (모바일 호환성)
+function simpleLogout() {
+    if (confirm('로그아웃 하시겠습니까?')) {
+        // 간단한 방법: 직접 페이지 이동
+        window.location.href = '/mypage/logout';
+    }
+}
+
+// 로그인 확인 후 리다이렉트 함수 (Request용)
+function checkLoginAndRedirect() {
+    console.log('checkLoginAndRedirect 호출됨');
+    fetch('/mypage/check-login')
+        .then(response => {
+            console.log('API 응답 상태:', response.status);
+            return response.json();
+        })
+        .then(data => {
+            console.log('로그인 상태:', data.loggedIn);
+            if (data.loggedIn) {
+                console.log('로그인 됨 - /mypage/request로 이동');
+                location.href = '/mypage/request';
+            } else {
+                console.log('로그인 안됨 - /mypage/login?redirectUrl=/mypage/request로 이동');
+                location.href = '/mypage/login?redirectUrl=/mypage/request';
+            }
+        })
+        .catch(error => {
+            console.error('API 호출 오류:', error);
+            console.log('오류 발생 - /mypage/login?redirectUrl=/mypage/request로 이동');
+            location.href = '/mypage/login?redirectUrl=/mypage/request';
+        });
+}
+
+// 로그인 확인 후 리다이렉트 함수 (Inquiry용)
+function checkLoginAndRedirectToInquiry() {
+    console.log('checkLoginAndRedirectToInquiry 호출됨');
+    fetch('/mypage/check-login')
+        .then(response => {
+            console.log('API 응답 상태:', response.status);
+            return response.json();
+        })
+        .then(data => {
+            console.log('로그인 상태:', data.loggedIn);
+            if (data.loggedIn) {
+                console.log('로그인 됨 - /mypage/inquiry로 이동');
+                location.href = '/mypage/inquiry';
+            } else {
+                console.log('로그인 안됨 - /mypage/login?redirectUrl=/mypage/inquiry로 이동');
+                location.href = '/mypage/login?redirectUrl=/mypage/inquiry';
+            }
+        })
+        .catch(error => {
+            console.error('API 호출 오류:', error);
+            console.log('오류 발생 - /mypage/login?redirectUrl=/mypage/inquiry로 이동');
+            location.href = '/mypage/login?redirectUrl=/mypage/inquiry';
+        });
 }
 </script>

@@ -118,31 +118,49 @@
 									<input class="form-check-input" type="checkbox" id="terms-checkbox">
 								</div>
 								<div>
-									모두 동의합니다.
+									<strong>모두 동의합니다.</strong>
 								</div>
 							</div>
 							<div class="d-flex align-items-center gap-2">
 								<div>
-									<input class="form-check-input" type="checkbox" id="agree1">
+									<input class="form-check-input agree-item" type="checkbox" id="agree1" required>
 								</div>
 								<div>
 									(필수)만 14세입니다.
 								</div>
 							</div>
+
 							<div class="d-flex align-items-center gap-2">
 								<div>
-									<input class="form-check-input" type="checkbox" id="agree2">
+									<input class="form-check-input agree-item" type="checkbox" id="agree2" required>
 								</div>
 								<div class="">
+<<<<<<< HEAD
+									(필수) 이용 약관에 동의합니다. <span class="btn-secondary h-auto rounded-1" style="cursor: pointer;padding: 4px 8px;" data-bs-toggle="modal" data-bs-target="#termsBox_list2">더보기</span>
+								</div>
+							</div>
+
+                            <div class="d-flex align-items-center gap-2">
+								<div>
+									<input class="form-check-input agree-item" type="checkbox" id="agree3" required>
+								</div>
+								<div class="">
+									(필수) 개인정보 수집 및 이용에 대해 동의합니다.<span class="btn-secondary h-auto rounded-1" style="cursor: pointer;padding: 4px 8px;" data-bs-toggle="modal" data-bs-target="#termsBox_list2">더보기</span>
+=======
 									(필수)개인정보 수집 및 이용에 대한 동의합니다. <span class="h-auto rounded-1" style="cursor: pointer;padding: 4px 8px;" data-bs-toggle="modal" data-bs-target="#termsBox_list1">(약관보기)</span>
+>>>>>>> 6585ce3d2dd67ba58f14524dc3e656e41df635ef
 								</div>
 							</div>
 							<div class="d-flex align-items-center gap-2">
 								<div>
-									<input class="form-check-input" type="checkbox" id="agree4" name="termYn" value="Y">
+									<input class="form-check-input agree-item" type="checkbox" id="agree4" name="termYn" value="Y">
 								</div>
 								<div>
+<<<<<<< HEAD
+									(선택) 마케팅 및 이벤트 정보 수신에 동의합니다(문자/이메일).
+=======
 									(선택)마케팅 및 이벤트 정보 수신에 동의합니다(문자/이메일).<span class="h-auto rounded-1" style="cursor: pointer;padding: 4px 8px;" data-bs-toggle="modal" data-bs-target="#termsBox_list2">(약관보기)</span>
+>>>>>>> 6585ce3d2dd67ba58f14524dc3e656e41df635ef
 								</div>
 							</div>
 						</div>
@@ -424,6 +442,29 @@ function validateForm() {
         return false;
     }
     
+    // 필수 동의 사항 체크 확인
+    const agree1 = document.getElementById('agree1');
+    const agree2 = document.getElementById('agree2');
+    const agree3 = document.getElementById('agree3');
+    
+    if (!agree1.checked) {
+        alert('만 14세 이상 동의는 필수입니다.');
+        agree1.focus();
+        return false;
+    }
+    
+    if (!agree2.checked) {
+        alert('이용 약관 동의는 필수입니다.');
+        agree2.focus();
+        return false;
+    }
+    
+    if (!agree3.checked) {
+        alert('개인정보 수집 및 이용 동의는 필수입니다.');
+        agree3.focus();
+        return false;
+    }
+    
     return true;
 }
 
@@ -533,6 +574,31 @@ document.addEventListener('DOMContentLoaded', function() {
             formatPhoneNumber(this);
         });
     }
+    
+    // 전체 동의 체크박스 기능
+    const termsCheckbox = document.getElementById('terms-checkbox');
+    const agreeItems = document.querySelectorAll('.agree-item');
+    
+    // "모두 동의합니다" 체크 시 하위 항목들 모두 체크
+    if (termsCheckbox) {
+        termsCheckbox.addEventListener('change', function() {
+            agreeItems.forEach(function(item) {
+                item.checked = termsCheckbox.checked;
+            });
+        });
+    }
+    
+    // 하위 항목 체크 상태 변경 시 "모두 동의합니다" 체크박스 상태 업데이트
+    agreeItems.forEach(function(item) {
+        item.addEventListener('change', function() {
+            const allChecked = Array.from(agreeItems).every(function(checkbox) {
+                return checkbox.checked;
+            });
+            if (termsCheckbox) {
+                termsCheckbox.checked = allChecked;
+            }
+        });
+    });
 });
 </script>
 

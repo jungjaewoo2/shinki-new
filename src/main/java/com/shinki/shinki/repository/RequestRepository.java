@@ -55,6 +55,27 @@ public interface RequestRepository extends JpaRepository<Request, Long> {
            "ORDER BY r.id DESC")
     Page<Request> findBySearchTerm(@Param("searchTerm") String searchTerm, Pageable pageable);
     
+    // 고급 검색 (의뢰항목, 의뢰상태, 주문일, 키워드)
+    @Query("SELECT r FROM Request r LEFT JOIN FETCH r.member WHERE " +
+           "(:applicationType IS NULL OR r.applicationType = :applicationType) AND " +
+           "(:status IS NULL OR r.status = :status) AND " +
+           "(:startDate IS NULL OR r.createdAt >= :startDate) AND " +
+           "(:endDate IS NULL OR r.createdAt < :endDate) AND " +
+           "(:search IS NULL OR " +
+           "LOWER(r.member.hospitalName) LIKE LOWER(CONCAT('%', :search, '%')) OR " +
+           "LOWER(r.member.name) LIKE LOWER(CONCAT('%', :search, '%')) OR " +
+           "LOWER(r.title) LIKE LOWER(CONCAT('%', :search, '%')) OR " +
+           "LOWER(r.content) LIKE LOWER(CONCAT('%', :search, '%'))) " +
+           "ORDER BY r.id DESC")
+    Page<Request> findByAdvancedSearch(
+        @Param("applicationType") String applicationType,
+        @Param("status") String status,
+        @Param("startDate") java.time.LocalDateTime startDate,
+        @Param("endDate") java.time.LocalDateTime endDate,
+        @Param("search") String search,
+        Pageable pageable
+    );
+    
     // 일일 의뢰 건수
     @Query("SELECT COUNT(r) FROM Request r WHERE DATE(r.createdAt) = CURRENT_DATE")
     Long countTodayRequests();

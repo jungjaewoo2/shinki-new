@@ -772,13 +772,26 @@ public class AdminController {
     public String requestHistory(@RequestParam(defaultValue = "0") int page, 
                                 @RequestParam(defaultValue = "10") int size,
                                 @RequestParam(value = "search", required = false) String search,
+                                @RequestParam(value = "applicationType", required = false) String applicationType,
+                                @RequestParam(value = "status", required = false) String status,
+                                @RequestParam(value = "startDate", required = false) String startDate,
                                 Model model) {
         Pageable pageable = PageRequest.of(page, size, Sort.by("id").descending());
         Page<Request> requestPage;
         
-        if (search != null && !search.trim().isEmpty()) {
-            requestPage = requestService.searchRequests(search.trim(), pageable);
+        // 고급 검색 조건이 하나라도 있는지 확인
+        boolean hasAdvancedSearch = (applicationType != null && !applicationType.trim().isEmpty()) ||
+                                   (status != null && !status.trim().isEmpty()) ||
+                                   (startDate != null && !startDate.trim().isEmpty()) ||
+                                   (search != null && !search.trim().isEmpty());
+        
+        if (hasAdvancedSearch) {
+            // 고급 검색 실행
+            requestPage = requestService.advancedSearchRequests(
+                applicationType, status, startDate, search, pageable
+            );
         } else {
+            // 검색 조건이 없으면 전체 조회
             requestPage = requestService.getAllRequests(pageable);
         }
         
@@ -788,6 +801,9 @@ public class AdminController {
         model.addAttribute("totalElements", requestPage.getTotalElements());
         model.addAttribute("size", size);
         model.addAttribute("search", search);
+        model.addAttribute("applicationType", applicationType);
+        model.addAttribute("status", status);
+        model.addAttribute("startDate", startDate);
         
         return "admin/request-history";
     }
