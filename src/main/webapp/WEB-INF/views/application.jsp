@@ -461,7 +461,7 @@
                 spaceBetween: 0,
             },
         },
-        loop: true,
+        loop: false,
     });
 
     var swiperPancreas = new Swiper(".mySwiperPancreas", {
@@ -481,7 +481,7 @@
                 spaceBetween: 0,
             },
         },
-        loop: true,
+        loop: false,
     });
 
     // 아코디언 이벤트 리스너

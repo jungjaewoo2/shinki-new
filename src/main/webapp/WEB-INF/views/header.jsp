@@ -154,13 +154,8 @@
                             </li>
                         </ul>
                     </div>
-<<<<<<< HEAD
                     <button class="nav-link" onclick="checkLoginAndRedirect()">Request</button>
                     <div class="collapse navbar-collapse show" id="navbarNavDarkDropdown">
-=======
-                    <button class="nav-link" onclick="location.href='mypage/request'">Request</button>
-                    <div class="collapse navbar-collapse show" id="navbarNavDarkDropdown" onclick="location.href='mypage/inquiry'">
->>>>>>> 6585ce3d2dd67ba58f14524dc3e656e41df635ef
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
                                 <button class="btn" data-bs-toggle="dropdown" aria-expanded="false" onclick="checkLoginAndRedirectToInquiry()">

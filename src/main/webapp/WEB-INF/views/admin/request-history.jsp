@@ -11,7 +11,6 @@
      </div>
 
      <div class="card d-flex flex-column gap-0 gap-lg-3 flex-fill overflow-auto">
-<<<<<<< HEAD
         <div class="card">
             <form method="get" action="/admin/request-history" class="d-flex flex-column gap-3">
                 <div class="row g-2">
@@ -57,13 +56,6 @@
                         <button type="button" class="btn btn-outline-secondary flex-fill flex-lg-grow-0" onclick="resetSearch()"><span class="fw-bold">초기화</span></button>
                         <button type="button" class="btn btn-secondary flex-fill flex-lg-grow-0" onclick="deleteSelectedRequests()"><span class="fw-bold">삭제</span></button>
                     </div>
-=======
-        <div class="card d-flex align-items-center flex-lg-row flex-column justify-content-end gap-2">
-            <form method="get" action="/admin/request-history" class="d-flex gap-2">
-                <div class="position-relative">
-                    <input class="form-control" type="text" name="search"  maxlength="23" aria-label="default input example" value="${search}" placeholder="의뢰항목, 병원명, 이름, 제목, 의뢰내용으로 검색" style="width: 400px;">
-                    <div class="end-0 position-absolute top-50 translate-middle"><i class="bi bi-search"></i></div>
->>>>>>> 6585ce3d2dd67ba58f14524dc3e656e41df635ef
                 </div>
             </form>
         </div>

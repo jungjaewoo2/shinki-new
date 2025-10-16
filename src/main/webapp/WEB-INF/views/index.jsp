@@ -293,7 +293,7 @@
 
         <div class="container-fluid">
             <h2 class="align-items-center d-flex flex-column justify-content-center gap-2 mb-4" style="font-size: 2.5rem; margin-top: 0.75rem;"><span class="pill">Application</span> 애플리케이션</h2>
-            <div class="d-flex  justify-content-between flex-column flex-md-row flex-lg-row gap-2 gap-lg-3 ps-1">
+            <div class="d-flex  justify-content-between flex-column flex-column-reverse flex-md-row flex-lg-row gap-3 ps-1">
                 <ul class="nav nav-tabs d-flex gap-lg-2 border-bottom-0 p-2" id="myTab" role="tablist" style="border-radius: 1.5rem;background: rgba(218, 218, 218, .2);padding: 1px;box-shadow: 1px 0px 4px 5px rgba(255, 255, 255, .3);">
                     <li class="nav-item hbp" role="presentation">
                         <button class="nav-link active align-items-end d-flex justify-content-center" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">HBP</button>
@@ -308,11 +308,7 @@
                         <button class="nav-link align-items-end d-flex justify-content-center" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">KNEE</button>
                     </li>
                 </ul>
-<<<<<<< HEAD
                 <div class="align-items-end d-flex justify-content-end"><button class="btn px-4 text-white rounded-5" style="background: linear-gradient(to right, #975cf8, #5d55fe);" onclick="checkLoginAndRedirect()">의뢰하기 <i class="bi bi-arrow-right"></i></button></div>
-=======
-                <div class="align-items-end d-flex justify-content-end"><button class="btn px-4 text-white rounded-5" style="background: linear-gradient(to right, #975cf8, #5d55fe);" onclick="location.href='./mypage/request'">의뢰하기 <i class="bi bi-arrow-right"></i></button></div>
->>>>>>> 6585ce3d2dd67ba58f14524dc3e656e41df635ef
             </div>
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
@@ -472,63 +468,71 @@
                     <div><img src="assets/images/business-icon01.png" width="88"></div>
                     <div class="business-txt">
                         <div class="feature-title">One click Extraction</div>
-                        <div>Fujifilm의 혁신적인 AI 기반기술로 간편하고<br>높은 정확도를 가진 자동 추출 기능</div>
+                        <div class="feature-content pc">Fujifilm의 혁신적인 AI 기반기술로 간편하고<br>높은 정확도를 가진 자동 추출 기능</div>
+                        <div class="feature-content mb">Fujifilm의 혁신적인 AI 기반기술로<br> 간편하고 높은 정확도를 가진<br>자동 추출 기능</div>
                     </div>
                 </div>
                 <div class="business-box rounded-5 d-flex align-items-lg-center gap-3 p-4">
                     <div><img src="assets/images/business-icon02.png" width="88"></div>
                     <div class="business-txt">
                         <div class="feature-title">Accurate Volumetry</div>
-                        <div>특정 장기나 분할된 영역의 부피를 자동으로 정확하게 측정</div>
+                        <div class="feature-content pc">특정 장기나 분할된 영역의 부피를 자동으로 정확하게 측정</div>
+                        <div class="feature-content mb">특정 장기나 분할된 영역의 부피를<br>자동으로 정확하게 측정</div>
                     </div>
                 </div>
                 <div class="business-box rounded-5 d-flex align-items-lg-center gap-3 p-4">
                     <div><img src="assets/images/business-icon03.png" width="88"></div>
                     <div class="business-txt">
                         <div class="feature-title">Segmentation of territory</div>
-                        <div>One click으로 기능적 영역의 자동적 분할</div>
+                        <div class="feature-content pc">One click으로 기능적 영역의 자동적 분할</div>
+                        <div class="feature-content mb">One click으로 기능적 영역의<br>자동적 분할</div>
                     </div>
                 </div>
                 <div class="business-box rounded-5 d-flex align-items-lg-center gap-3 p-4">
                     <div><img src="assets/images/business-icon04.png" width="88"></div>
                     <div class="business-txt">
                         <div class="feature-title">Pre-operative Simulation</div>
-                        <div>수술 전 Region Division이나 Virtual Endoscopy를<br>통한 수술 계획 설정</div>
+                        <div class="feature-content pc">수술 전 Region Division이나 Virtual Endoscopy를<br>통한 수술 계획 설정</div>
+                        <div class="feature-content mb">수술 전 Region Division이나<br>Virtual Endoscopy를 통한<br>수술 계획 설정</div>
                     </div>
                 </div>
                 <div class="business-box rounded-5 d-flex align-items-lg-center gap-3 p-4">
                     <div><img src="assets/images/business-icon05.png" width="88"></div>
                     <div class="business-txt">
                         <div class="feature-title">3D Reconstruction</div>
-                        <div>정확하고 간편한 해부학적 구조의 시각화를 통한 직관적인 관찰</div>
+                        <div class="feature-content pc">정확하고 간편한 해부학적 구조의 시각화를 통한 직관적인 관찰</div>
+                        <div class="feature-content mb">정확하고 간편한 해부학적 구조의<br>시각화를 통한 직관적인 관찰</div>
                     </div>
                 </div>
                 <div class="business-box rounded-5 d-flex align-items-lg-center gap-3 p-4">
                     <div><img src="assets/images/business-icon06.png" width="88"></div>
                     <div class="business-txt">
                         <div class="feature-title">Various Visualization Tool</div>
-                        <div>다양한 시각화 도구를 통한 영상 분석 및 시각화</div>
+                        <div class="feature-content pc">다양한 시각화 도구를 통한 영상 분석 및 시각화</div>
+                        <div class="feature-content mb">다양한 시각화 도구를 통한<br>영상 분석 및 시각화</div>
                     </div>
                 </div>
                 <div class="business-box rounded-5 d-flex align-items-lg-center gap-3 p-4">
                     <div><img src="assets/images/business-icon07.png" width="88"></div>
                     <div class="business-txt">
                         <div class="feature-title">Fast Data Processing</div>
-                        <div>대용량 의료 정보를 고속으로 처리</div>
+                        <div class="feature-content">대용량 의료 정보를 고속으로 처리</div>
                     </div>
                 </div>
                 <div class="business-box rounded-5 d-flex align-items-lg-center gap-3 p-4">
                     <div><img src="assets/images/business-icon08.png" width="88"></div>
                     <div class="business-txt">
                         <div class="feature-title">Intuitive Interface</div>
-                        <div>직관적인 인터페이스를 통한 쉽고 효과적인 사용</div>
+                        <div class="feature-content pc">직관적인 인터페이스를 통한 쉽고 효과적인 사용</div>
+                        <div class="feature-content mb">직관적인 인터페이스를 통한<br>쉽고 효과적인 사용</div>
                     </div>
                 </div>
                 <div class="business-box rounded-5 d-flex align-items-lg-center gap-3 p-4">
                     <div><img src="assets/images/business-icon09.png" width="88"></div>
-                    <div class="business-txt">
+                    <div class="business-txt business-txt-last">
                         <div class="feature-title">Support for Various Data Formats</div>
-                        <div>DCM format 외 3D PDF, Offline VR,STL<br>file 등 다양한 파일 포맷 지원</div>
+                        <div class="feature-content pc">DCM format 외 3D PDF, Offline VR,STL<br>file 등 다양한 파일 포맷 지원</div>
+                        <div class="feature-content mb">DCM format 외 3D PDF, Offline VR,<br>STLfile 등 다양한 파일 포맷 지원</div>
                     </div>
                 </div>
             </div>

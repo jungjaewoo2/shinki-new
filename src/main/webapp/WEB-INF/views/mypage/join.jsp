@@ -135,7 +135,6 @@
 									<input class="form-check-input agree-item" type="checkbox" id="agree2" required>
 								</div>
 								<div class="">
-<<<<<<< HEAD
 									(필수) 이용 약관에 동의합니다. <span class="btn-secondary h-auto rounded-1" style="cursor: pointer;padding: 4px 8px;" data-bs-toggle="modal" data-bs-target="#termsBox_list2">더보기</span>
 								</div>
 							</div>
@@ -146,9 +145,6 @@
 								</div>
 								<div class="">
 									(필수) 개인정보 수집 및 이용에 대해 동의합니다.<span class="btn-secondary h-auto rounded-1" style="cursor: pointer;padding: 4px 8px;" data-bs-toggle="modal" data-bs-target="#termsBox_list2">더보기</span>
-=======
-									(필수)개인정보 수집 및 이용에 대한 동의합니다. <span class="h-auto rounded-1" style="cursor: pointer;padding: 4px 8px;" data-bs-toggle="modal" data-bs-target="#termsBox_list1">(약관보기)</span>
->>>>>>> 6585ce3d2dd67ba58f14524dc3e656e41df635ef
 								</div>
 							</div>
 							<div class="d-flex align-items-center gap-2">
@@ -156,11 +152,7 @@
 									<input class="form-check-input agree-item" type="checkbox" id="agree4" name="termYn" value="Y">
 								</div>
 								<div>
-<<<<<<< HEAD
 									(선택) 마케팅 및 이벤트 정보 수신에 동의합니다(문자/이메일).
-=======
-									(선택)마케팅 및 이벤트 정보 수신에 동의합니다(문자/이메일).<span class="h-auto rounded-1" style="cursor: pointer;padding: 4px 8px;" data-bs-toggle="modal" data-bs-target="#termsBox_list2">(약관보기)</span>
->>>>>>> 6585ce3d2dd67ba58f14524dc3e656e41df635ef
 								</div>
 							</div>
 						</div>
