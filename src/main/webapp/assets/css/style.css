@@ -1263,6 +1263,17 @@ h1 {
     gap: .5em;
 }
 
+@media (min-width: 1551px) {
+
+    .business-box {
+        height: auto;
+    }
+
+    .business-txt {
+        height: auto;
+    }
+}
+
 @media (max-width: 1024px) {
 
     .business-box {
@@ -1287,6 +1298,21 @@ h1 {
 
     .feature-title {
         font-size: 16px;
+    }
+}
+
+@media (max-width: 412px) {
+    
+    .business-txt .feature-content.pc {
+    	display: none	
+    }
+    
+    .business-txt .feature-content.mb {
+    	display: block
+    }
+    
+    .business-txt {
+        font-size: 11px;
     }
 }
 
