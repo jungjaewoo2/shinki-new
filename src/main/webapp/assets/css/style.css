@@ -2099,3 +2099,10 @@ footer {
 . Zoom-fc .modal-content {
      height: unset;
 }
+
+@media (max-width: 767px) {
+	.more-btn {
+	font-size: 11px;
+}
+	
+}

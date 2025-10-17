@@ -43,7 +43,7 @@
                     </div>
                     <div class="d-flex align-items-center gap-1">
                         <div><input class="form-check-input" type="checkbox" value="" id="privacyAgreement" required></div>
-                        <div>(필수) 개인정보 수집 및 이용동의 <span class="text-black-50 ps-1" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#termsBox_list2">더보기 ></span></div>
+                        <div>(필수) 개인정보 수집 및 이용동의 <span class="text-black-50 ps-1 more-btn" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#termsBox_list2">더보기 ></span></div>
                     </div>
                     <div class="d-flex align-items-center gap-1">
                         <div><input class="form-check-input" type="checkbox" value="" id="callAgreement" required></div>
