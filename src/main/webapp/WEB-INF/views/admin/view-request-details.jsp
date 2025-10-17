@@ -178,7 +178,7 @@
                                         <c:when test="${not empty request.filePath}">
                                      <div class="d-flex align-items-center gap-5 w-100">
                                          <div class="d-flex flex-column flex-fill gap-1">
-                                             <div class="d-flex align-items-end gap-3">
+                                             <div class="d-flex flex-column flex-lg-row gap-3">
                                                  <div class="d-flex gap-3">
                                                      <span>1. </span>
                                                      <a href="/admin/download-request-file?filePath=${request.filePath}" class="text-decoration-none">
@@ -195,7 +195,6 @@
                                                                 </c:otherwise>
                                                             </c:choose>
                                                         </div>
-                                                 <div class="btn p-0"><i class="bi bi-trash3"></i></div>
                                              </div>
                                          </div>
                                      </div>

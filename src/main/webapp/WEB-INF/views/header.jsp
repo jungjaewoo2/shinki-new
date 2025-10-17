@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="nav-menu">
-                    <button class="nav-link" onclick="location.href='./'">HOME</button>
+                    <button class="btn nav-link" onclick="location.href='./'">HOME</button>
                     <button class="nav-link navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation" onclick="location.href='application'"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                         <ul class="navbar-nav">
@@ -49,7 +49,7 @@
                             </li>
                         </ul>
                     </div>
-                    <button class="nav-link" onclick="checkLoginAndRedirect()">Request</button>
+                    <button class="btn nav-link" onclick="checkLoginAndRedirect()">Request</button>
                     <button class="nav-link navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation" onclick="location.href='application'"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                         <ul class="navbar-nav">

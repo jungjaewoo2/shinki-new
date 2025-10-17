@@ -14,12 +14,18 @@ body {
     overflow: hidden;
 }
 
+button, input, optgroup, select, textarea {
+	font-family: none !important;
+}
+
+
 body {
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Segoe UI' !important;
     line-height: 1.6;
     color: #333;
     background-color: #fff;
 }
+
 
 a {
     text-decoration: none;
@@ -42,7 +48,7 @@ a {
    background: url('/assets/images/calendar-icon.svg') no-repeat right 10px center; /* 배경 아이콘, 위치, 반복 설정 */
    padding-right: 40px !important; /* 아이콘 공간 확보 */
    height: 40px;
-   /* min-width: 130px; */
+   min-width: 140px;
 }
 
 /* 스피너(화살표) 제거 - 모든 브라우저 */
@@ -189,7 +195,7 @@ a {
     color: rgba(0, 0, 0, 0.7);
     font-size: 18px;
     padding: 0.5rem 0.75rem;
-    font-family: 'Segoe UI' !important;
+    /* font-family: 'Segoe UI' !important; */
 }
 
 .nav-title {
