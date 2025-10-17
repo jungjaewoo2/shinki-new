@@ -32,7 +32,7 @@
 
              </div>
              <div class="d-flex justify-content-between align-items-lg-center flex-column flex-lg-row gap-3">
-                 <div class="order-type text-center bg-body-secondary rounded" style="color: #666;">
+                 <div class="order-type text-center bg-body-secondary rounded p-2" style="color: #666;">
                      <div class="">
                          <c:choose>
                              <c:when test="${not empty request and request.applicationType == 'HBP'}">

@@ -31,6 +31,10 @@ a {
     min-height: 100vh;
 }
 
+.bg-beige {
+	background-color: #c7a987;
+}
+
 /* 모바일 헤더 */
 .mobile-header {
     display: none;
@@ -332,13 +336,17 @@ a {
     padding: 10px 0;
 }
 
+.order-type {
+	min-height: 104px;
+}
+
 .order-type div {
     width: 100px;
 }
 
 .order-type div img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: auto;
 }
 
 .progress-steps {
@@ -928,6 +936,16 @@ tr {
     .progress-count {
         width: 100%;
     }
+    
+    #orders-page .card > div > div {
+    	word-break: break-all;
+        font-size: 14px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+    }
 
     .order-detail {
         font-size: 14px;
@@ -989,5 +1007,10 @@ tr {
 
     .card {
         padding: 10px;
+    }
+    
+    .status-badge,
+    .status-outline-badge {
+        font-size: 12px;
     }
 }

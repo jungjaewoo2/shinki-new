@@ -130,7 +130,12 @@
 
             <div class="form-group align-items-baseline flex-column gap-3">
                 <label class="form-label">Image 파일 업로드</label>
-                <p class="m-0 text-danger" style="font-size: 14px">첨부파일을 Zip 압축파일로 올려주시기 바랍니다.</p>
+                <div class="d-flex flex-column flex-lg-row justify-content-between w-100" style="font-size: 14px">
+                	<span class="m-0 text-danger">(필수) 첨부파일은 Zip 형식만 첨부 가능하며, 환자 정보는 익명으로 변환 후 첨부 바랍니다.</span>
+                	<label class="checkbox-item">
+                    	<input type="radio" name="" value="true" required> 확인했습니다.
+                	</label>
+                </div>
                 <div id="dropArea" class="file-upload-area w-100 d-flex flex-column align-items-center justify-content-center p-4 border rounded border-dashed" style="height: 150px; cursor: pointer;">
                     <i class="bi bi-cloud-arrow-up-fill fs-3 text-muted"></i>
                     <p id="dropAreaText" class="text-muted">첨부하실 파일을 마우스로 끌어서 넣어주세요.</p>

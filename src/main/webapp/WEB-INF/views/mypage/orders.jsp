@@ -77,7 +77,7 @@
                  <c:forEach var="request" items="${requests}">
              <div class="card">
                  <div class="card-header">
-                     <div class="d-flex flex-fill flex-column flex-lg-row justify-content-between">
+                     <div class="d-flex flex-fill justify-content-between">
                          <div>
                              <div style="font-weight: bold;">
                                  <c:if test="${not empty request.createdAt}">
@@ -90,8 +90,8 @@
                          </div>
                      </div>
                  </div>
-                 <div class="d-flex justify-content-between align-items-lg-center flex-column flex-lg-row gap-3">
-                     <div class="order-type text-center bg-body-secondary rounded" style="color: #666;">
+                 <div class="d-flex justify-content-between align-items-center gap-3">
+                     <div class="order-type d-flex flex-column justify-content-center text-center bg-body-secondary rounded p-2 h-100" style="color: #666;">
                          <div class="">
                              <c:choose>
                                  <c:when test="${request.applicationType == 'HBP'}">
@@ -110,7 +110,7 @@
                          </div>
                          <div>${request.applicationType}</div>
                      </div>
-                     <div class="flex-fill align-items-center d-flex">${request.title}</div>
+                     <div class="flex-fill align-items-center d-xl-flex text-break">${request.title}</div>
                     
                     <div class="d-flex flex-column gap-1">
                      <c:choose>
