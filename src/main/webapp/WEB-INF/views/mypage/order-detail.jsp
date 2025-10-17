@@ -31,8 +31,8 @@
                  </div>
 
              </div>
-             <div class="d-flex justify-content-between align-items-lg-center flex-column flex-lg-row gap-3">
-                 <div class="order-type text-center bg-body-secondary rounded p-2" style="color: #666;">
+             <div class="d-flex justify-content-between align-items-center gap-3">
+                 <div class="order-type d-flex flex-column justify-content-center text-center bg-body-secondary rounded p-2" style="color: #666;">
                      <div class="">
                          <c:choose>
                              <c:when test="${not empty request and request.applicationType == 'HBP'}">
@@ -54,7 +54,7 @@
                      </div>
                      <div>${not empty request ? request.applicationType : 'HBP'}</div>
                  </div>
-                 <div class="flex-fill align-items-center d-flex">${not empty request ? request.title : '제목 없음'}</div>
+                 <div class="order-title flex-fill align-items-center d-xl-flex text-break">${not empty request ? request.title : '제목 없음'}</div>
                  <div class="status-badge status-progress align-items-center d-flex">
                      <span class="">
                         <c:out value="${not empty request ? request.status : '상태 없음'}"/>

@@ -35,6 +35,46 @@ a {
 	background-color: #c7a987;
 }
 
+/* input date 설정 */
+
+.date-input {
+   position: relative;
+   background: url('/assets/images/calendar-icon.svg') no-repeat right 10px center; /* 배경 아이콘, 위치, 반복 설정 */
+   padding-right: 40px !important; /* 아이콘 공간 확보 */
+   height: 40px;
+   /* min-width: 130px; */
+}
+
+/* 스피너(화살표) 제거 - 모든 브라우저 */
+.form-input[type="date"]::-webkit-inner-spin-button,
+.form-input[type="date"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox용 스피너 제거 */
+.form-input[type="date"] {
+    -moz-appearance: textfield;
+}
+
+/* 기본 달력 아이콘 숨기기 (Webkit) */
+.form-input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    color: transparent;
+    cursor: pointer;
+    opacity: 0; /* 완전히 숨김 */
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 20px; /* 아이콘 공간 확보 */
+}
+
+.form-input[type="date"]::-webkit-datetime-edit {
+    color: #000000; /* 텍스트 색상 복원 */
+    opacity: 1; /* 숨겨진 경우 복원 */
+}
+
 /* 모바일 헤더 */
 .mobile-header {
     display: none;
@@ -533,14 +573,15 @@ tr {
     color: #1d4ed8;
 }
 
-.status-completed {
+rgb(255, 255, 255).status-completed {
     background: #d1fae5;
     color: #065f46;
 }
 
 .status-cancelled {
-    background: #fee2e2;
-    color: #dc2626;
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #dc3545 !important;
 }
 
 /* 체크박스 그룹 */
@@ -937,14 +978,14 @@ tr {
         width: 100%;
     }
     
-    #orders-page .card > div > div {
+    #orders-page .card .order-title {
     	word-break: break-all;
         font-size: 14px;
         text-overflow: ellipsis;
         overflow: hidden;
         display: -webkit-box;
         -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
+        -webkit-line-clamp: 2;
     }
 
     .order-detail {
@@ -988,9 +1029,14 @@ tr {
 }
 
 @media (max-width: 768px) {
+	
+	body {
+		overflow: auto;
+	}
 
     .main-content {
         margin-top: 83px;
+        height: unset;
     }
 
     .top-nav {

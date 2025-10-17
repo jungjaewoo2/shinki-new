@@ -12,19 +12,19 @@
 
      <div class="card d-flex flex-fill flex-column gap-3 overflow-auto">
          <div class="align-items-center d-flex justify-content-between flex-column flex-lg-row gap-3 gap-lg-0 mb-3">
-             <div class="flex-column flex-xl-row form-group flex-fill flex-row m-0">
+             <div class="flex-column flex-xl-row form-group flex-fill flex-row m-0 pb-3 pb-lg-0">
                  <label class="form-label">의뢰일자</label>
-                 <form method="GET" action="/mypage/orders" class="d-flex flex-column flex-md-row gap-1">
+                 <form method="GET" action="/mypage/orders" class="d-flex gap-1">
                      <!-- 기간 검색 -->
                      <div class="d-flex align-items-center gap-0 gap-xl-2">
                      	<span style="font-size: 14px;"></span>
-	                     <input type="date" name="startDate" class="form-input" style="max-width: 150px;" value="${param.startDate}">
+	                     <input type="date" name="startDate" class="form-input date-input" placeholder="년도-월-일" style="max-width: 150px;" value="${param.startDate}">
 	                     <span style="font-size: 14px;">~</span>
-	                     <input type="date" name="endDate" class="form-input" style="max-width: 150px;" value="${param.endDate}">
+	                     <input type="date" name="endDate" class="form-input date-input" placeholder="년도-월-일" style="max-width: 150px;" value="${param.endDate}">
                      </div>
                      <div class="d-flex gap-1">
-                     	<button type="submit" class="btn btn-primary">검색</button>
-                     <a href="/mypage/orders" class="btn btn-secondary" style="min-width: 100px;">전체보기</a>
+                     	<button type="submit" class="btn bg-info-subtle">검색</button>
+                     <a href="/mypage/orders" class="btn btn-outline-secondary d-md-block d-none" style="min-width: 100px;">전체보기</a>
                      </div>
                  </form>
              </div>
@@ -110,7 +110,7 @@
                          </div>
                          <div>${request.applicationType}</div>
                      </div>
-                     <div class="flex-fill align-items-center d-xl-flex text-break">${request.title}</div>
+                     <div class="order-title flex-fill align-items-center d-xl-flex text-break">${request.title}</div>
                     
                     <div class="d-flex flex-column gap-1">
                      <c:choose>
@@ -139,7 +139,7 @@
                      <c:if test="${request.status == '의뢰 확인중' || request.status == '견적중' || request.status == '결제 진행' || request.status == '작업중'}">
                          <div class="status-outline-badge">
                              <a href="/mypage/cancel-request/${request.id}" class="text-decoration-none">
-                                 <span class="">취소 요청</span>
+                                 <span class="text-danger">취소 요청</span>
                              </a>
                          </div>
                      </c:if>
