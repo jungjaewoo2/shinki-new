@@ -233,8 +233,8 @@
                         	<!-- <h1>Synapse 3D</h1> -->
                             <h1 style="height:60px;margin-top: 1em;"><img src="/assets/images/synapse_W.png" height="100%"></h1>
                             <p class="subtitle m-lg-5">
-                                <div class="d-none d-xxl-block">Synapse 3D는 후지필름 고유의 3D 재구성 기술을 기반으로 CT 및 MRI 등의<br>영상을 정밀하게 시각화하고 분석하는 고성능 의료 영상 소프트웨어입니다.</div>
-                                <div class="sub-title-01 d-block d-xxl-none">Synapse 3D는 후지필름 고유의 3D 재구성 기술을 기반으로<br>CT 및 MRI 등의 영상을 정밀하게 시각화하고 분석하는<br>고성능 의료 영상 소프트웨어입니다.</div>
+                                <div class="sub-title-01 pc">Synapse 3D는 후지필름 고유의 3D 재구성 기술을 기반으로 CT 및 MRI 등의<br>영상을 정밀하게 시각화하고 분석하는 고성능 의료 영상 소프트웨어입니다.</div>
+                                <div class="sub-title-01 mb">Synapse 3D는 후지필름 고유의 3D 재구성 기술을 기반으로<br>CT 및 MRI 등의 영상을 정밀하게 시각화하고 분석하는<br>고성능 의료 영상 소프트웨어입니다.</div>
                             </p>
                             <div class="button-group justify-content-center">
                                 <button class="btn-secondary" onclick="location.href='all-application'" style="padding: 0.5rem 1.25rem;">
@@ -1318,17 +1318,9 @@
             crossFade: true
         },
         spaceBetween: 0,
-       /* autoplay: {
-            delay: 10000,
-            disableOnInteraction: false,
-        }, */
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
         },
         speed: 1000,
         loop: true,

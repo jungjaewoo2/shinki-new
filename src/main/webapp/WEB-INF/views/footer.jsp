@@ -867,13 +867,13 @@
 <!-- footer 개인정보처리방침 약관 -->
 <div class="modal fade" id="termsBox_list1" tabindex="-1" aria-labelledby="termsBox1Label" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg justify-content-center">
-        <div class="modal-content p-3" style="height: 700px; overflow-y: scroll">
+        <div class="modal-content p-3" style="height: 700px;">
             <div class="border-bottom d-flex justify-content-between mb-10">
                 <h4>개인정보처리방침</h4>
                 <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="d-flex flex-column gap-3 justify-content-center">
-                <div class="contents">
+            <div class="d-flex flex-column gap-3 justify-content-center overflow-hidden">
+                <div class="contents overflow-auto">
                 <br>
 				<div class="fw-bold fs-6">제1조 (적용범위 및 역할 구분)</div><br>
 				<div class="term-p1">
@@ -1059,13 +1059,13 @@
 <!-- footer 이용 약관 -->
 <div class="modal fade" id="termsBox_list3" tabindex="-1" aria-labelledby="termsBoxLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg justify-content-center">
-        <div class="modal-content p-3" style="height: 700px; overflow-y: scroll">
+        <div class="modal-content p-3" style="height: 700px;">
             <div class="border-bottom d-flex justify-content-between mb-10">
                 <h4>이용 약관</h4>
                 <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="d-flex flex-column gap-3 justify-content-center">
-                <div class="contents">
+            <div class="d-flex flex-column gap-3 justify-content-center overflow-hidden">
+                <div class="contents overflow-auto">
                 <br>
 				<div class="fw-bold fs-6">제1조 (목적)</div><br>
 				본 약관은 ㈜신기사(이하 “회사”)가 제공하는 Synapse3D 기반 의료영상 분석·시뮬레이션 서비스(이하 “서비스”)의 이용과 관련하여, 회사와 회원 간의 권리·의무 및 책임사항, 절차 기타 필요한 사항을 정함을 목적으로 합니다.
