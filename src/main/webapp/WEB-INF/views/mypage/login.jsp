@@ -55,7 +55,7 @@
                     </div>
 
                     <div class="button-group">
-                        <button type="submit" class="btn btn-light-green" style="flex: 1;">로그인</button>
+                        <button type="submit" class="btn text-white" style="flex: 1;background-color: #2c5282;">로그인</button>
                     </div>
                 </form>
 

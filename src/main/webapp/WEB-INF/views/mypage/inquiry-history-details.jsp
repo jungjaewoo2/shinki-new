@@ -29,6 +29,8 @@
          <c:if test="${not empty inquiry}">
              <div class="">
                  <div class="bg-white pt-lg-3 p-0">
+                     <%-- 
+                     <!-- 기존 table 코드 start-->
                      <table class="table table-bordered m-0">
                          <colgroup>
                              <col width="20%">
@@ -41,7 +43,7 @@
                          <tbody class="">
                              <tr>
                                  <th>문의유형</th>
-                                 <td colspan="4" class="text-start">${inquiry.inquiryType}</td>
+                                 <td colspan="5" class="text-start">${inquiry.inquiryType}</td>
                              </tr>
                              <tr>
                                  <th>작성일</th>
@@ -78,7 +80,119 @@
                                  </td>
                              </tr>
                          </tbody>
-                     </table>
+                     </table> --%>
+                     <!-- 기존 table 코드 end-->
+                     
+                     <!-- pc,모바일 table 코드 분리 start -->
+                     <!-- pc table start -->
+                     <div class="d-none d-lg-block">
+                     	<table class="table table-bordered m-0">
+	                         <colgroup>
+	                             <col width="20%">
+	                             <col width="20%">
+	                             <col width="20%">
+	                             <col width="20%">
+	                             <col width="10%">
+	                             <col width="10%">
+	                         </colgroup>
+	                         <tbody class="">
+	                             <tr>
+	                                 <th>문의유형</th>
+	                                 <td colspan="5" class="text-start">${inquiry.inquiryType}</td>
+	                             </tr>
+	                             <tr>
+	                                 <th>작성일</th>
+	                                 <td class="text-start">
+	                                     <fmt:formatDate value="${inquiry.createdAt}" pattern="yyyy-MM-dd"/>
+	                                 </td>
+	                                 <th>상담상태</th>
+	                                 <td class="text-start">
+	                                     <span class="badge ${inquiry.status eq '진행중' ? 'bg-warning' : inquiry.status eq '완료' ? 'bg-success' : 'bg-secondary'}">
+	                                         ${inquiry.status}
+	                                     </span>
+	                                 </td>
+	                                 <th>첨부파일</th>
+	                                 <td class="text-start">
+	                                     <c:choose>
+	                                         <c:when test="${not empty inquiry.filePath}">
+	                                            <a href="/mypage/download-inquiry-file?filePath=${fn:escapeXml(inquiry.filePath)}" class="btn btn-sm btn-outline-primary h-auto" style="font-size: 0.8rem;">
+	                                                <i class="bi bi-download"></i> 
+	                                                <c:set var="fileName" value="${fn:substringAfter(inquiry.filePath, '_')}" />
+	                                                <c:choose>
+	                                                    <c:when test="${not empty fileName}">
+	                                                        ${fn:escapeXml(fileName)}
+	                                                    </c:when>
+	                                                    <c:otherwise>
+	                                                        파일 다운로드
+	                                                    </c:otherwise>
+	                                                </c:choose>
+	                                            </a>
+	                                         </c:when>
+	                                         <c:otherwise>
+	                                             <span class="text-muted">없음</span>
+	                                         </c:otherwise>
+	                                     </c:choose>
+	                                 </td>
+	                             </tr>
+	                         </tbody>
+                     	</table>
+                     </div>
+                     <!-- pc table end -->
+                     
+                     <!-- 모바일 table start -->
+                     <div class="d-block d-lg-none">
+                     	<table class="table table-bordered m-0">
+	                         <colgroup>
+	                         </colgroup>
+	                         <tbody class="">
+	                             <tr>
+	                                 <th>문의유형</th>
+	                                 <td colspan="5" class="text-start">${inquiry.inquiryType}</td>
+	                             </tr>
+	                             <tr>
+	                                 <th>작성일</th>
+	                                 <td class="text-start">
+	                                     <fmt:formatDate value="${inquiry.createdAt}" pattern="yyyy-MM-dd"/>
+	                                 </td>
+	                                </tr>
+	                             <tr>
+	                                 <th>상담상태</th>
+	                                 <td class="text-start">
+	                                     <span class="badge ${inquiry.status eq '진행중' ? 'bg-warning' : inquiry.status eq '완료' ? 'bg-success' : 'bg-secondary'}">
+	                                         ${inquiry.status}
+	                                     </span>
+	                                 </td>
+	                                </tr>
+	                             <tr>
+	                                 <th>첨부파일</th>
+	                                 <td class="text-start">
+	                                     <c:choose>
+	                                         <c:when test="${not empty inquiry.filePath}">
+	                                            <a href="/mypage/download-inquiry-file?filePath=${fn:escapeXml(inquiry.filePath)}" class="btn btn-sm btn-outline-primary h-auto" style="font-size: 0.8rem;">
+	                                                <i class="bi bi-download"></i> 
+	                                                <c:set var="fileName" value="${fn:substringAfter(inquiry.filePath, '_')}" />
+	                                                <c:choose>
+	                                                    <c:when test="${not empty fileName}">
+	                                                        ${fn:escapeXml(fileName)}
+	                                                    </c:when>
+	                                                    <c:otherwise>
+	                                                        파일 다운로드
+	                                                    </c:otherwise>
+	                                                </c:choose>
+	                                            </a>
+	                                         </c:when>
+	                                         <c:otherwise>
+	                                             <span class="text-muted">없음</span>
+	                                         </c:otherwise>
+	                                     </c:choose>
+	                                 </td>
+	                             </tr>
+	                         </tbody>
+                     	</table>
+                     </div>
+                     <!-- 모바일 table end -->
+                     <!-- pc,모바일 table 코드 분리 end -->
+                     
                  <div class="form-group flex-column align-items-baseline gap-1 mt-4 border-top">
                      <div class="bg-body-tertiary p-3 w-100 text-black-50 d-flex flex-column gap-3">
                          <!-- 문의내용 -->
@@ -122,7 +236,7 @@
                                  <div class="fw-bold">댓글</div>
                                  <textarea name="content" class="form-control" rows="3" placeholder="내용을 입력하세요" required></textarea>
                                  <div class="text-end">
-                                     <button type="submit" class="btn btn-primary btn-sm">등록</button>
+                                     <button type="submit" class="btn btn-primary btn-sm h-auto">등록</button>
                                  </div>
                              </div>
                          </form>
@@ -191,8 +305,8 @@
 
              </div>-->
          </div>
-             <div class="button-group justify-content-end mt-3">
-                 <button class="btn btn-secondary me-2" onclick="location.href='/mypage/inquiry-history'">목록</button>
+             <div class="d-flex flex-row gap-1 button-group justify-content-end mt-3">
+                 <button class="btn btn-secondary" onclick="location.href='/mypage/inquiry-history'">목록</button>
                  <button class="btn btn-danger" onclick="deleteInquiry(${inquiry.id})">삭제</button>
              </div>
          </c:if>

@@ -11317,3 +11317,2669 @@
 2025-10-17 14:15:24 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8]
 2025-10-17 14:15:24 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:15:24.959402200}
 2025-10-17 14:15:24 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:17:21 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.RedirectView - View name [redirect:], model {}
+2025-10-17 14:17:21 [http-nio-8080-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:17:21 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/login], model {message=로그아웃 되었습니다, redirectUrl=null}
+2025-10-17 14:17:21 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/login.jsp]
+2025-10-17 14:17:21 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:17:21 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:17:21.470944100}
+2025-10-17 14:17:21 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:18:32 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:18:32 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/login], model {redirectUrl=null}
+2025-10-17 14:18:32 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/login.jsp]
+2025-10-17 14:18:32 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:18:32 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:18:32.898265200}
+2025-10-17 14:18:32 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:18:36 [http-nio-8080-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:18:36 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {message=Hello from Spring Boot JSP!}
+2025-10-17 14:18:36 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/index.jsp]
+2025-10-17 14:18:36 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:18:36 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:18:36.654361100}
+2025-10-17 14:18:36 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:18:37 [http-nio-8080-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:18:37 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:18:37.079691100}
+2025-10-17 14:18:37 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:18:40 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:18:40 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/login], model {redirectUrl=null}
+2025-10-17 14:18:40 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/login.jsp]
+2025-10-17 14:18:40 [http-nio-8080-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:18:40 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:18:40.110015600}
+2025-10-17 14:18:40 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:19:46 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:19:46 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {message=Hello from Spring Boot JSP!}
+2025-10-17 14:19:46 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/index.jsp]
+2025-10-17 14:19:46 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:19:46 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:19:46.056446700}
+2025-10-17 14:19:46 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:19:46 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:19:46 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:19:46.261896300}
+2025-10-17 14:19:46 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:19:49 [http-nio-8080-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:19:49 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/login], model {redirectUrl=null}
+2025-10-17 14:19:49 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/login.jsp]
+2025-10-17 14:19:49 [http-nio-8080-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:19:49 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:19:49.443752400}
+2025-10-17 14:19:49 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:19:55 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:19:55 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    update
+        member 
+    set
+        address=?,
+        address_etc=?,
+        created_at=?,
+        department=?,
+        email=?,
+        hospital_name=?,
+        memo=?,
+        name=?,
+        password=?,
+        phone=?,
+        recommend_code=?,
+        recommended_employee=?,
+        status=?,
+        updated_at=?,
+        username=?,
+        visit_num=? 
+    where
+        id=?
+2025-10-17 14:19:55 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.RedirectView - View name [redirect:], model {}
+2025-10-17 14:19:55 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:19:55 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:19:55 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/profile], model {message=로그인되었습니다., member=com.shinki.shinki.entity.Member@157dcc38, org.springframework.validation.BindingResult.member=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+2025-10-17 14:19:55 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/profile.jsp]
+2025-10-17 14:19:56 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:19:56 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:19:56.431336700}
+2025-10-17 14:19:56 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:19:59 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:19:59 [http-nio-8080-exec-2] INFO  c.s.shinki.service.InquiryService - getInquiriesByMemberId 호출 - memberId: 954
+2025-10-17 14:19:59 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.id,
+        i1_0.admin_no,
+        i1_0.admin_reply,
+        i1_0.admin_reply_file_path,
+        i1_0.content,
+        i1_0.created_at,
+        i1_0.file_path,
+        i1_0.inquiry_type,
+        i1_0.member_id,
+        i1_0.reply_date,
+        i1_0.status,
+        i1_0.updated_at 
+    from
+        inquiry i1_0 
+    left join
+        member m1_0 
+            on m1_0.id=i1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        i1_0.created_at desc
+2025-10-17 14:19:59 [http-nio-8080-exec-2] INFO  c.s.shinki.service.InquiryService - 문의 조회 완료 - memberId: 954, 문의 수: 3
+2025-10-17 14:19:59 [http-nio-8080-exec-2] INFO  c.s.s.controller.InquiryController - 문의 내역 조회 성공 - 사용자: sh1, 문의 수: 3
+2025-10-17 14:19:59 [http-nio-8080-exec-2] INFO  c.s.s.controller.InquiryController - Inquiry ID: 107, Type: 기능문의, Content: test, CreatedAt: 2025-09-30 13:17:40.0, Status: 미확인
+2025-10-17 14:19:59 [http-nio-8080-exec-2] INFO  c.s.s.controller.InquiryController - Inquiry ID: 104, Type: 기능문의, Content: 111, CreatedAt: 2025-09-29 14:52:22.0, Status: 미확인
+2025-10-17 14:19:59 [http-nio-8080-exec-2] INFO  c.s.s.controller.InquiryController - Inquiry ID: 103, Type: 기능문의, Content: test, CreatedAt: 2025-09-29 14:35:03.0, Status: 답변완료
+2025-10-17 14:19:59 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:19:59 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history], model {inquiries=[com.shinki.shinki.entity.Inquiry@1ae6d370, com.shinki.shinki.entity.Inquiry@30099d0e, com.shinki.shinki.entity.Inquiry@3fe1b30b]}
+2025-10-17 14:19:59 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history.jsp]
+2025-10-17 14:19:59 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:19:59 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:19:59.761117200}
+2025-10-17 14:19:59 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:20:17 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:20:17 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.id,
+        i1_0.admin_no,
+        i1_0.admin_reply,
+        i1_0.admin_reply_file_path,
+        i1_0.content,
+        i1_0.created_at,
+        i1_0.file_path,
+        i1_0.inquiry_type,
+        i1_0.member_id,
+        i1_0.reply_date,
+        i1_0.status,
+        i1_0.updated_at 
+    from
+        inquiry i1_0 
+    where
+        i1_0.id=?
+2025-10-17 14:20:17 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        ri1_0.id,
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at,
+        ri1_0.admin_content,
+        ri1_0.admin_created_at,
+        ri1_0.admin_no,
+        ri1_0.created_at,
+        ri1_0.inquiry_id,
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num,
+        ri1_0.member_id,
+        ri1_0.updated_at,
+        ri1_0.user_content,
+        ri1_0.user_created_at 
+    from
+        reply_inquiry ri1_0 
+    left join
+        member m1_0 
+            on m1_0.id=ri1_0.member_id 
+    left join
+        admin a1_0 
+            on a1_0.admin_no=ri1_0.admin_no 
+    where
+        ri1_0.inquiry_id=? 
+    order by
+        ri1_0.created_at desc
+2025-10-17 14:20:17 [http-nio-8080-exec-5] INFO  c.s.s.controller.InquiryController - 문의 상세 조회 성공 - Inquiry ID: 107, Replies Count: 0
+2025-10-17 14:20:17 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:20:17 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history-details], model {inquiry=com.shinki.shinki.entity.Inquiry@23aae931, replies=[], memberId=954, org.springframework.validation.BindingResult.inquiry=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+2025-10-17 14:20:17 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history-details.jsp]
+2025-10-17 14:20:17 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:20:17 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:20:17.994823500}
+2025-10-17 14:20:17 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:22:19 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:22:19 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.id,
+        i1_0.admin_no,
+        i1_0.admin_reply,
+        i1_0.admin_reply_file_path,
+        i1_0.content,
+        i1_0.created_at,
+        i1_0.file_path,
+        i1_0.inquiry_type,
+        i1_0.member_id,
+        i1_0.reply_date,
+        i1_0.status,
+        i1_0.updated_at 
+    from
+        inquiry i1_0 
+    where
+        i1_0.id=?
+2025-10-17 14:22:19 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        ri1_0.id,
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at,
+        ri1_0.admin_content,
+        ri1_0.admin_created_at,
+        ri1_0.admin_no,
+        ri1_0.created_at,
+        ri1_0.inquiry_id,
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num,
+        ri1_0.member_id,
+        ri1_0.updated_at,
+        ri1_0.user_content,
+        ri1_0.user_created_at 
+    from
+        reply_inquiry ri1_0 
+    left join
+        member m1_0 
+            on m1_0.id=ri1_0.member_id 
+    left join
+        admin a1_0 
+            on a1_0.admin_no=ri1_0.admin_no 
+    where
+        ri1_0.inquiry_id=? 
+    order by
+        ri1_0.created_at desc
+2025-10-17 14:22:19 [http-nio-8080-exec-10] INFO  c.s.s.controller.InquiryController - 문의 상세 조회 성공 - Inquiry ID: 107, Replies Count: 0
+2025-10-17 14:22:19 [http-nio-8080-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:22:19 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history-details], model {inquiry=com.shinki.shinki.entity.Inquiry@60919a93, replies=[], memberId=954, org.springframework.validation.BindingResult.inquiry=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+2025-10-17 14:22:19 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history-details.jsp]
+2025-10-17 14:22:19 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:22:19 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:22:19.326401100}
+2025-10-17 14:22:19 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:24:17 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:24:17 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.id,
+        i1_0.admin_no,
+        i1_0.admin_reply,
+        i1_0.admin_reply_file_path,
+        i1_0.content,
+        i1_0.created_at,
+        i1_0.file_path,
+        i1_0.inquiry_type,
+        i1_0.member_id,
+        i1_0.reply_date,
+        i1_0.status,
+        i1_0.updated_at 
+    from
+        inquiry i1_0 
+    where
+        i1_0.id=?
+2025-10-17 14:24:17 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        ri1_0.id,
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at,
+        ri1_0.admin_content,
+        ri1_0.admin_created_at,
+        ri1_0.admin_no,
+        ri1_0.created_at,
+        ri1_0.inquiry_id,
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num,
+        ri1_0.member_id,
+        ri1_0.updated_at,
+        ri1_0.user_content,
+        ri1_0.user_created_at 
+    from
+        reply_inquiry ri1_0 
+    left join
+        member m1_0 
+            on m1_0.id=ri1_0.member_id 
+    left join
+        admin a1_0 
+            on a1_0.admin_no=ri1_0.admin_no 
+    where
+        ri1_0.inquiry_id=? 
+    order by
+        ri1_0.created_at desc
+2025-10-17 14:24:17 [http-nio-8080-exec-6] INFO  c.s.s.controller.InquiryController - 문의 상세 조회 성공 - Inquiry ID: 107, Replies Count: 0
+2025-10-17 14:24:17 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:24:17 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history-details], model {inquiry=com.shinki.shinki.entity.Inquiry@17904c2c, replies=[], memberId=954, org.springframework.validation.BindingResult.inquiry=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+2025-10-17 14:24:17 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history-details.jsp]
+2025-10-17 14:24:17 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:24:17 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:24:17.943232300}
+2025-10-17 14:24:17 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:24:26 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:24:27 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.id,
+        i1_0.admin_no,
+        i1_0.admin_reply,
+        i1_0.admin_reply_file_path,
+        i1_0.content,
+        i1_0.created_at,
+        i1_0.file_path,
+        i1_0.inquiry_type,
+        i1_0.member_id,
+        i1_0.reply_date,
+        i1_0.status,
+        i1_0.updated_at 
+    from
+        inquiry i1_0 
+    where
+        i1_0.id=?
+2025-10-17 14:24:27 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        ri1_0.id,
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at,
+        ri1_0.admin_content,
+        ri1_0.admin_created_at,
+        ri1_0.admin_no,
+        ri1_0.created_at,
+        ri1_0.inquiry_id,
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num,
+        ri1_0.member_id,
+        ri1_0.updated_at,
+        ri1_0.user_content,
+        ri1_0.user_created_at 
+    from
+        reply_inquiry ri1_0 
+    left join
+        member m1_0 
+            on m1_0.id=ri1_0.member_id 
+    left join
+        admin a1_0 
+            on a1_0.admin_no=ri1_0.admin_no 
+    where
+        ri1_0.inquiry_id=? 
+    order by
+        ri1_0.created_at desc
+2025-10-17 14:24:27 [http-nio-8080-exec-7] INFO  c.s.s.controller.InquiryController - 문의 상세 조회 성공 - Inquiry ID: 107, Replies Count: 0
+2025-10-17 14:24:27 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:24:27 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history-details], model {inquiry=com.shinki.shinki.entity.Inquiry@61f05b0a, replies=[], memberId=954, org.springframework.validation.BindingResult.inquiry=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+2025-10-17 14:24:27 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history-details.jsp]
+2025-10-17 14:24:27 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:24:27 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:24:27.145253800}
+2025-10-17 14:24:27 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:24:29 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:24:29 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.id,
+        i1_0.admin_no,
+        i1_0.admin_reply,
+        i1_0.admin_reply_file_path,
+        i1_0.content,
+        i1_0.created_at,
+        i1_0.file_path,
+        i1_0.inquiry_type,
+        i1_0.member_id,
+        i1_0.reply_date,
+        i1_0.status,
+        i1_0.updated_at 
+    from
+        inquiry i1_0 
+    where
+        i1_0.id=?
+2025-10-17 14:24:29 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        ri1_0.id,
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at,
+        ri1_0.admin_content,
+        ri1_0.admin_created_at,
+        ri1_0.admin_no,
+        ri1_0.created_at,
+        ri1_0.inquiry_id,
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num,
+        ri1_0.member_id,
+        ri1_0.updated_at,
+        ri1_0.user_content,
+        ri1_0.user_created_at 
+    from
+        reply_inquiry ri1_0 
+    left join
+        member m1_0 
+            on m1_0.id=ri1_0.member_id 
+    left join
+        admin a1_0 
+            on a1_0.admin_no=ri1_0.admin_no 
+    where
+        ri1_0.inquiry_id=? 
+    order by
+        ri1_0.created_at desc
+2025-10-17 14:24:29 [http-nio-8080-exec-9] INFO  c.s.s.controller.InquiryController - 문의 상세 조회 성공 - Inquiry ID: 107, Replies Count: 0
+2025-10-17 14:24:29 [http-nio-8080-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:24:29 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history-details], model {inquiry=com.shinki.shinki.entity.Inquiry@7462fb3c, replies=[], memberId=954, org.springframework.validation.BindingResult.inquiry=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+2025-10-17 14:24:29 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history-details.jsp]
+2025-10-17 14:24:29 [http-nio-8080-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:24:29 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:24:29.601376400}
+2025-10-17 14:24:29 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:24:46 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:24:46 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.id,
+        i1_0.admin_no,
+        i1_0.admin_reply,
+        i1_0.admin_reply_file_path,
+        i1_0.content,
+        i1_0.created_at,
+        i1_0.file_path,
+        i1_0.inquiry_type,
+        i1_0.member_id,
+        i1_0.reply_date,
+        i1_0.status,
+        i1_0.updated_at 
+    from
+        inquiry i1_0 
+    where
+        i1_0.id=?
+2025-10-17 14:24:46 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        ri1_0.id,
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at,
+        ri1_0.admin_content,
+        ri1_0.admin_created_at,
+        ri1_0.admin_no,
+        ri1_0.created_at,
+        ri1_0.inquiry_id,
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num,
+        ri1_0.member_id,
+        ri1_0.updated_at,
+        ri1_0.user_content,
+        ri1_0.user_created_at 
+    from
+        reply_inquiry ri1_0 
+    left join
+        member m1_0 
+            on m1_0.id=ri1_0.member_id 
+    left join
+        admin a1_0 
+            on a1_0.admin_no=ri1_0.admin_no 
+    where
+        ri1_0.inquiry_id=? 
+    order by
+        ri1_0.created_at desc
+2025-10-17 14:24:46 [http-nio-8080-exec-3] INFO  c.s.s.controller.InquiryController - 문의 상세 조회 성공 - Inquiry ID: 107, Replies Count: 0
+2025-10-17 14:24:46 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:24:46 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history-details], model {inquiry=com.shinki.shinki.entity.Inquiry@1d92bce6, replies=[], memberId=954, org.springframework.validation.BindingResult.inquiry=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+2025-10-17 14:24:46 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history-details.jsp]
+2025-10-17 14:24:46 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:24:46 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:24:46.351504500}
+2025-10-17 14:24:46 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:28:01 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:28:01 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.id,
+        i1_0.admin_no,
+        i1_0.admin_reply,
+        i1_0.admin_reply_file_path,
+        i1_0.content,
+        i1_0.created_at,
+        i1_0.file_path,
+        i1_0.inquiry_type,
+        i1_0.member_id,
+        i1_0.reply_date,
+        i1_0.status,
+        i1_0.updated_at 
+    from
+        inquiry i1_0 
+    where
+        i1_0.id=?
+2025-10-17 14:28:01 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        ri1_0.id,
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at,
+        ri1_0.admin_content,
+        ri1_0.admin_created_at,
+        ri1_0.admin_no,
+        ri1_0.created_at,
+        ri1_0.inquiry_id,
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num,
+        ri1_0.member_id,
+        ri1_0.updated_at,
+        ri1_0.user_content,
+        ri1_0.user_created_at 
+    from
+        reply_inquiry ri1_0 
+    left join
+        member m1_0 
+            on m1_0.id=ri1_0.member_id 
+    left join
+        admin a1_0 
+            on a1_0.admin_no=ri1_0.admin_no 
+    where
+        ri1_0.inquiry_id=? 
+    order by
+        ri1_0.created_at desc
+2025-10-17 14:28:01 [http-nio-8080-exec-6] INFO  c.s.s.controller.InquiryController - 문의 상세 조회 성공 - Inquiry ID: 107, Replies Count: 0
+2025-10-17 14:28:01 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:28:01 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history-details], model {inquiry=com.shinki.shinki.entity.Inquiry@2c0ed517, replies=[], memberId=954, org.springframework.validation.BindingResult.inquiry=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+2025-10-17 14:28:01 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history-details.jsp]
+2025-10-17 14:28:01 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:28:01 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:28:01.200297300}
+2025-10-17 14:28:01 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:31:21 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:31:21 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.id,
+        i1_0.admin_no,
+        i1_0.admin_reply,
+        i1_0.admin_reply_file_path,
+        i1_0.content,
+        i1_0.created_at,
+        i1_0.file_path,
+        i1_0.inquiry_type,
+        i1_0.member_id,
+        i1_0.reply_date,
+        i1_0.status,
+        i1_0.updated_at 
+    from
+        inquiry i1_0 
+    where
+        i1_0.id=?
+2025-10-17 14:31:21 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        ri1_0.id,
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at,
+        ri1_0.admin_content,
+        ri1_0.admin_created_at,
+        ri1_0.admin_no,
+        ri1_0.created_at,
+        ri1_0.inquiry_id,
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num,
+        ri1_0.member_id,
+        ri1_0.updated_at,
+        ri1_0.user_content,
+        ri1_0.user_created_at 
+    from
+        reply_inquiry ri1_0 
+    left join
+        member m1_0 
+            on m1_0.id=ri1_0.member_id 
+    left join
+        admin a1_0 
+            on a1_0.admin_no=ri1_0.admin_no 
+    where
+        ri1_0.inquiry_id=? 
+    order by
+        ri1_0.created_at desc
+2025-10-17 14:31:21 [http-nio-8080-exec-8] INFO  c.s.s.controller.InquiryController - 문의 상세 조회 성공 - Inquiry ID: 107, Replies Count: 0
+2025-10-17 14:31:21 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:31:21 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history-details], model {inquiry=com.shinki.shinki.entity.Inquiry@61f8706e, replies=[], memberId=954, org.springframework.validation.BindingResult.inquiry=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+2025-10-17 14:31:21 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history-details.jsp]
+2025-10-17 14:31:21 [http-nio-8080-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:31:21 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:31:21.780434300}
+2025-10-17 14:31:21 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:32:39 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:32:39 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:32:39.842552800}
+2025-10-17 14:32:39 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:33:22 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:33:22 [http-nio-8080-exec-2] INFO  c.s.shinki.service.InquiryService - getInquiriesByMemberId 호출 - memberId: 954
+2025-10-17 14:33:22 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.id,
+        i1_0.admin_no,
+        i1_0.admin_reply,
+        i1_0.admin_reply_file_path,
+        i1_0.content,
+        i1_0.created_at,
+        i1_0.file_path,
+        i1_0.inquiry_type,
+        i1_0.member_id,
+        i1_0.reply_date,
+        i1_0.status,
+        i1_0.updated_at 
+    from
+        inquiry i1_0 
+    left join
+        member m1_0 
+            on m1_0.id=i1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        i1_0.created_at desc
+2025-10-17 14:33:22 [http-nio-8080-exec-2] INFO  c.s.shinki.service.InquiryService - 문의 조회 완료 - memberId: 954, 문의 수: 3
+2025-10-17 14:33:22 [http-nio-8080-exec-2] INFO  c.s.s.controller.InquiryController - 문의 내역 조회 성공 - 사용자: sh1, 문의 수: 3
+2025-10-17 14:33:22 [http-nio-8080-exec-2] INFO  c.s.s.controller.InquiryController - Inquiry ID: 107, Type: 기능문의, Content: test, CreatedAt: 2025-09-30 13:17:40.0, Status: 미확인
+2025-10-17 14:33:22 [http-nio-8080-exec-2] INFO  c.s.s.controller.InquiryController - Inquiry ID: 104, Type: 기능문의, Content: 111, CreatedAt: 2025-09-29 14:52:22.0, Status: 미확인
+2025-10-17 14:33:22 [http-nio-8080-exec-2] INFO  c.s.s.controller.InquiryController - Inquiry ID: 103, Type: 기능문의, Content: test, CreatedAt: 2025-09-29 14:35:03.0, Status: 답변완료
+2025-10-17 14:33:22 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:33:22 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history], model {inquiries=[com.shinki.shinki.entity.Inquiry@72805012, com.shinki.shinki.entity.Inquiry@f80db0a, com.shinki.shinki.entity.Inquiry@5a7f71bd]}
+2025-10-17 14:33:22 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history.jsp]
+2025-10-17 14:33:22 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:33:22 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:33:22.409496200}
+2025-10-17 14:33:22 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:33:23 [http-nio-8080-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'id' for method parameter type Long is not present]
+2025-10-17 14:33:23 [http-nio-8080-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:33:23 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=Unknown, timestamp=2025-10-17T14:33:23.160488900}
+2025-10-17 14:33:23 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:33:23 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:33:23 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:33:23.286152300}
+2025-10-17 14:33:23 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:33:23 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8]
+2025-10-17 14:33:23 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:33:23.334023200}
+2025-10-17 14:33:23 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:34:01 [http-nio-8080-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:34:01 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:34:01.066951300}
+2025-10-17 14:34:01 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:34:01 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:34:01 [http-nio-8080-exec-10] INFO  c.s.shinki.service.InquiryService - getInquiriesByMemberId 호출 - memberId: 954
+2025-10-17 14:34:01 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.id,
+        i1_0.admin_no,
+        i1_0.admin_reply,
+        i1_0.admin_reply_file_path,
+        i1_0.content,
+        i1_0.created_at,
+        i1_0.file_path,
+        i1_0.inquiry_type,
+        i1_0.member_id,
+        i1_0.reply_date,
+        i1_0.status,
+        i1_0.updated_at 
+    from
+        inquiry i1_0 
+    left join
+        member m1_0 
+            on m1_0.id=i1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        i1_0.created_at desc
+2025-10-17 14:34:01 [http-nio-8080-exec-10] INFO  c.s.shinki.service.InquiryService - 문의 조회 완료 - memberId: 954, 문의 수: 3
+2025-10-17 14:34:01 [http-nio-8080-exec-10] INFO  c.s.s.controller.InquiryController - 문의 내역 조회 성공 - 사용자: sh1, 문의 수: 3
+2025-10-17 14:34:01 [http-nio-8080-exec-10] INFO  c.s.s.controller.InquiryController - Inquiry ID: 107, Type: 기능문의, Content: test, CreatedAt: 2025-09-30 13:17:40.0, Status: 미확인
+2025-10-17 14:34:01 [http-nio-8080-exec-10] INFO  c.s.s.controller.InquiryController - Inquiry ID: 104, Type: 기능문의, Content: 111, CreatedAt: 2025-09-29 14:52:22.0, Status: 미확인
+2025-10-17 14:34:01 [http-nio-8080-exec-10] INFO  c.s.s.controller.InquiryController - Inquiry ID: 103, Type: 기능문의, Content: test, CreatedAt: 2025-09-29 14:35:03.0, Status: 답변완료
+2025-10-17 14:34:01 [http-nio-8080-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:34:01 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history], model {inquiries=[com.shinki.shinki.entity.Inquiry@3e25cf39, com.shinki.shinki.entity.Inquiry@22a5ffc8, com.shinki.shinki.entity.Inquiry@64c2eb71]}
+2025-10-17 14:34:01 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history.jsp]
+2025-10-17 14:34:01 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:34:01 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:34:01.999652100}
+2025-10-17 14:34:01 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:34:02 [http-nio-8080-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'id' for method parameter type Long is present but converted to null]
+2025-10-17 14:34:02 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:34:02 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=Unknown, timestamp=2025-10-17T14:34:02.595428800}
+2025-10-17 14:34:02 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:34:02 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:34:02 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:34:02.622356500}
+2025-10-17 14:34:02 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:34:04 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:34:04 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:34:04.725125400}
+2025-10-17 14:34:04 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:34:13 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:34:13 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:34:13.890233500}
+2025-10-17 14:34:13 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:34:15 [http-nio-8080-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:34:15 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:34:15.240225400}
+2025-10-17 14:34:15 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:34:16 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:34:16 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:34:16.033106700}
+2025-10-17 14:34:16 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:34:19 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:34:19 [http-nio-8080-exec-8] INFO  c.s.shinki.service.InquiryService - getInquiriesByMemberId 호출 - memberId: 954
+2025-10-17 14:34:19 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.id,
+        i1_0.admin_no,
+        i1_0.admin_reply,
+        i1_0.admin_reply_file_path,
+        i1_0.content,
+        i1_0.created_at,
+        i1_0.file_path,
+        i1_0.inquiry_type,
+        i1_0.member_id,
+        i1_0.reply_date,
+        i1_0.status,
+        i1_0.updated_at 
+    from
+        inquiry i1_0 
+    left join
+        member m1_0 
+            on m1_0.id=i1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        i1_0.created_at desc
+2025-10-17 14:34:19 [http-nio-8080-exec-8] INFO  c.s.shinki.service.InquiryService - 문의 조회 완료 - memberId: 954, 문의 수: 3
+2025-10-17 14:34:19 [http-nio-8080-exec-8] INFO  c.s.s.controller.InquiryController - 문의 내역 조회 성공 - 사용자: sh1, 문의 수: 3
+2025-10-17 14:34:19 [http-nio-8080-exec-8] INFO  c.s.s.controller.InquiryController - Inquiry ID: 107, Type: 기능문의, Content: test, CreatedAt: 2025-09-30 13:17:40.0, Status: 미확인
+2025-10-17 14:34:19 [http-nio-8080-exec-8] INFO  c.s.s.controller.InquiryController - Inquiry ID: 104, Type: 기능문의, Content: 111, CreatedAt: 2025-09-29 14:52:22.0, Status: 미확인
+2025-10-17 14:34:19 [http-nio-8080-exec-8] INFO  c.s.s.controller.InquiryController - Inquiry ID: 103, Type: 기능문의, Content: test, CreatedAt: 2025-09-29 14:35:03.0, Status: 답변완료
+2025-10-17 14:34:19 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:34:19 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history], model {inquiries=[com.shinki.shinki.entity.Inquiry@23aac208, com.shinki.shinki.entity.Inquiry@e5476c5, com.shinki.shinki.entity.Inquiry@78f31093]}
+2025-10-17 14:34:19 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history.jsp]
+2025-10-17 14:34:19 [http-nio-8080-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:34:19 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:34:19.376834900}
+2025-10-17 14:34:19 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:34:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:34:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.id,
+        i1_0.admin_no,
+        i1_0.admin_reply,
+        i1_0.admin_reply_file_path,
+        i1_0.content,
+        i1_0.created_at,
+        i1_0.file_path,
+        i1_0.inquiry_type,
+        i1_0.member_id,
+        i1_0.reply_date,
+        i1_0.status,
+        i1_0.updated_at 
+    from
+        inquiry i1_0 
+    where
+        i1_0.id=?
+2025-10-17 14:34:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        ri1_0.id,
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at,
+        ri1_0.admin_content,
+        ri1_0.admin_created_at,
+        ri1_0.admin_no,
+        ri1_0.created_at,
+        ri1_0.inquiry_id,
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num,
+        ri1_0.member_id,
+        ri1_0.updated_at,
+        ri1_0.user_content,
+        ri1_0.user_created_at 
+    from
+        reply_inquiry ri1_0 
+    left join
+        member m1_0 
+            on m1_0.id=ri1_0.member_id 
+    left join
+        admin a1_0 
+            on a1_0.admin_no=ri1_0.admin_no 
+    where
+        ri1_0.inquiry_id=? 
+    order by
+        ri1_0.created_at desc
+2025-10-17 14:34:25 [http-nio-8080-exec-10] INFO  c.s.s.controller.InquiryController - 문의 상세 조회 성공 - Inquiry ID: 107, Replies Count: 0
+2025-10-17 14:34:25 [http-nio-8080-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:34:25 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history-details], model {inquiry=com.shinki.shinki.entity.Inquiry@7e15f20d, replies=[], memberId=954, org.springframework.validation.BindingResult.inquiry=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+2025-10-17 14:34:25 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history-details.jsp]
+2025-10-17 14:34:25 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:34:25 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:34:25.159635300}
+2025-10-17 14:34:25 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:34:46 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:34:46 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.id,
+        i1_0.admin_no,
+        i1_0.admin_reply,
+        i1_0.admin_reply_file_path,
+        i1_0.content,
+        i1_0.created_at,
+        i1_0.file_path,
+        i1_0.inquiry_type,
+        i1_0.member_id,
+        i1_0.reply_date,
+        i1_0.status,
+        i1_0.updated_at 
+    from
+        inquiry i1_0 
+    where
+        i1_0.id=?
+2025-10-17 14:34:46 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        ri1_0.id,
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at,
+        ri1_0.admin_content,
+        ri1_0.admin_created_at,
+        ri1_0.admin_no,
+        ri1_0.created_at,
+        ri1_0.inquiry_id,
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num,
+        ri1_0.member_id,
+        ri1_0.updated_at,
+        ri1_0.user_content,
+        ri1_0.user_created_at 
+    from
+        reply_inquiry ri1_0 
+    left join
+        member m1_0 
+            on m1_0.id=ri1_0.member_id 
+    left join
+        admin a1_0 
+            on a1_0.admin_no=ri1_0.admin_no 
+    where
+        ri1_0.inquiry_id=? 
+    order by
+        ri1_0.created_at desc
+2025-10-17 14:34:46 [http-nio-8080-exec-1] INFO  c.s.s.controller.InquiryController - 문의 상세 조회 성공 - Inquiry ID: 107, Replies Count: 0
+2025-10-17 14:34:46 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:34:46 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history-details], model {inquiry=com.shinki.shinki.entity.Inquiry@459f1e84, replies=[], memberId=954, org.springframework.validation.BindingResult.inquiry=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+2025-10-17 14:34:46 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history-details.jsp]
+2025-10-17 14:34:46 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:34:46 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:34:46.342283700}
+2025-10-17 14:34:46 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:35:41 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:35:41 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.id,
+        i1_0.admin_no,
+        i1_0.admin_reply,
+        i1_0.admin_reply_file_path,
+        i1_0.content,
+        i1_0.created_at,
+        i1_0.file_path,
+        i1_0.inquiry_type,
+        i1_0.member_id,
+        i1_0.reply_date,
+        i1_0.status,
+        i1_0.updated_at 
+    from
+        inquiry i1_0 
+    where
+        i1_0.id=?
+2025-10-17 14:35:41 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        ri1_0.id,
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at,
+        ri1_0.admin_content,
+        ri1_0.admin_created_at,
+        ri1_0.admin_no,
+        ri1_0.created_at,
+        ri1_0.inquiry_id,
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num,
+        ri1_0.member_id,
+        ri1_0.updated_at,
+        ri1_0.user_content,
+        ri1_0.user_created_at 
+    from
+        reply_inquiry ri1_0 
+    left join
+        member m1_0 
+            on m1_0.id=ri1_0.member_id 
+    left join
+        admin a1_0 
+            on a1_0.admin_no=ri1_0.admin_no 
+    where
+        ri1_0.inquiry_id=? 
+    order by
+        ri1_0.created_at desc
+2025-10-17 14:35:41 [http-nio-8080-exec-6] INFO  c.s.s.controller.InquiryController - 문의 상세 조회 성공 - Inquiry ID: 107, Replies Count: 0
+2025-10-17 14:35:41 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:35:41 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history-details], model {inquiry=com.shinki.shinki.entity.Inquiry@7c0e9cbf, replies=[], memberId=954, org.springframework.validation.BindingResult.inquiry=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+2025-10-17 14:35:41 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history-details.jsp]
+2025-10-17 14:35:41 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:35:41 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:35:41.484751600}
+2025-10-17 14:35:41 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:35:44 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:35:44 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.id,
+        i1_0.admin_no,
+        i1_0.admin_reply,
+        i1_0.admin_reply_file_path,
+        i1_0.content,
+        i1_0.created_at,
+        i1_0.file_path,
+        i1_0.inquiry_type,
+        i1_0.member_id,
+        i1_0.reply_date,
+        i1_0.status,
+        i1_0.updated_at 
+    from
+        inquiry i1_0 
+    where
+        i1_0.id=?
+2025-10-17 14:35:44 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        ri1_0.id,
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at,
+        ri1_0.admin_content,
+        ri1_0.admin_created_at,
+        ri1_0.admin_no,
+        ri1_0.created_at,
+        ri1_0.inquiry_id,
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num,
+        ri1_0.member_id,
+        ri1_0.updated_at,
+        ri1_0.user_content,
+        ri1_0.user_created_at 
+    from
+        reply_inquiry ri1_0 
+    left join
+        member m1_0 
+            on m1_0.id=ri1_0.member_id 
+    left join
+        admin a1_0 
+            on a1_0.admin_no=ri1_0.admin_no 
+    where
+        ri1_0.inquiry_id=? 
+    order by
+        ri1_0.created_at desc
+2025-10-17 14:35:44 [http-nio-8080-exec-7] INFO  c.s.s.controller.InquiryController - 문의 상세 조회 성공 - Inquiry ID: 107, Replies Count: 0
+2025-10-17 14:35:44 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:35:44 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history-details], model {inquiry=com.shinki.shinki.entity.Inquiry@5484b25f, replies=[], memberId=954, org.springframework.validation.BindingResult.inquiry=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+2025-10-17 14:35:44 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history-details.jsp]
+2025-10-17 14:35:44 [http-nio-8080-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:35:44 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:35:44.325145100}
+2025-10-17 14:35:44 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:36:09 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:36:09 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.id,
+        i1_0.admin_no,
+        i1_0.admin_reply,
+        i1_0.admin_reply_file_path,
+        i1_0.content,
+        i1_0.created_at,
+        i1_0.file_path,
+        i1_0.inquiry_type,
+        i1_0.member_id,
+        i1_0.reply_date,
+        i1_0.status,
+        i1_0.updated_at 
+    from
+        inquiry i1_0 
+    where
+        i1_0.id=?
+2025-10-17 14:36:09 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        ri1_0.id,
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at,
+        ri1_0.admin_content,
+        ri1_0.admin_created_at,
+        ri1_0.admin_no,
+        ri1_0.created_at,
+        ri1_0.inquiry_id,
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num,
+        ri1_0.member_id,
+        ri1_0.updated_at,
+        ri1_0.user_content,
+        ri1_0.user_created_at 
+    from
+        reply_inquiry ri1_0 
+    left join
+        member m1_0 
+            on m1_0.id=ri1_0.member_id 
+    left join
+        admin a1_0 
+            on a1_0.admin_no=ri1_0.admin_no 
+    where
+        ri1_0.inquiry_id=? 
+    order by
+        ri1_0.created_at desc
+2025-10-17 14:36:09 [http-nio-8080-exec-5] INFO  c.s.s.controller.InquiryController - 문의 상세 조회 성공 - Inquiry ID: 107, Replies Count: 0
+2025-10-17 14:36:09 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:36:09 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history-details], model {inquiry=com.shinki.shinki.entity.Inquiry@62fa63b2, replies=[], memberId=954, org.springframework.validation.BindingResult.inquiry=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+2025-10-17 14:36:09 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history-details.jsp]
+2025-10-17 14:36:09 [http-nio-8080-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:36:09 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:36:09.517641700}
+2025-10-17 14:36:09 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:36:11 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:36:11 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.id,
+        i1_0.admin_no,
+        i1_0.admin_reply,
+        i1_0.admin_reply_file_path,
+        i1_0.content,
+        i1_0.created_at,
+        i1_0.file_path,
+        i1_0.inquiry_type,
+        i1_0.member_id,
+        i1_0.reply_date,
+        i1_0.status,
+        i1_0.updated_at 
+    from
+        inquiry i1_0 
+    where
+        i1_0.id=?
+2025-10-17 14:36:11 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        ri1_0.id,
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at,
+        ri1_0.admin_content,
+        ri1_0.admin_created_at,
+        ri1_0.admin_no,
+        ri1_0.created_at,
+        ri1_0.inquiry_id,
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num,
+        ri1_0.member_id,
+        ri1_0.updated_at,
+        ri1_0.user_content,
+        ri1_0.user_created_at 
+    from
+        reply_inquiry ri1_0 
+    left join
+        member m1_0 
+            on m1_0.id=ri1_0.member_id 
+    left join
+        admin a1_0 
+            on a1_0.admin_no=ri1_0.admin_no 
+    where
+        ri1_0.inquiry_id=? 
+    order by
+        ri1_0.created_at desc
+2025-10-17 14:36:11 [http-nio-8080-exec-7] INFO  c.s.s.controller.InquiryController - 문의 상세 조회 성공 - Inquiry ID: 107, Replies Count: 0
+2025-10-17 14:36:11 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:36:11 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history-details], model {inquiry=com.shinki.shinki.entity.Inquiry@6e1fae3c, replies=[], memberId=954, org.springframework.validation.BindingResult.inquiry=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+2025-10-17 14:36:11 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history-details.jsp]
+2025-10-17 14:36:11 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:36:11 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:36:11.146388100}
+2025-10-17 14:36:11 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:36:38 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:36:38 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.id,
+        i1_0.admin_no,
+        i1_0.admin_reply,
+        i1_0.admin_reply_file_path,
+        i1_0.content,
+        i1_0.created_at,
+        i1_0.file_path,
+        i1_0.inquiry_type,
+        i1_0.member_id,
+        i1_0.reply_date,
+        i1_0.status,
+        i1_0.updated_at 
+    from
+        inquiry i1_0 
+    where
+        i1_0.id=?
+2025-10-17 14:36:38 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        ri1_0.id,
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at,
+        ri1_0.admin_content,
+        ri1_0.admin_created_at,
+        ri1_0.admin_no,
+        ri1_0.created_at,
+        ri1_0.inquiry_id,
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num,
+        ri1_0.member_id,
+        ri1_0.updated_at,
+        ri1_0.user_content,
+        ri1_0.user_created_at 
+    from
+        reply_inquiry ri1_0 
+    left join
+        member m1_0 
+            on m1_0.id=ri1_0.member_id 
+    left join
+        admin a1_0 
+            on a1_0.admin_no=ri1_0.admin_no 
+    where
+        ri1_0.inquiry_id=? 
+    order by
+        ri1_0.created_at desc
+2025-10-17 14:36:38 [http-nio-8080-exec-5] INFO  c.s.s.controller.InquiryController - 문의 상세 조회 성공 - Inquiry ID: 107, Replies Count: 0
+2025-10-17 14:36:38 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:36:38 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history-details], model {inquiry=com.shinki.shinki.entity.Inquiry@71c0d398, replies=[], memberId=954, org.springframework.validation.BindingResult.inquiry=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+2025-10-17 14:36:38 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history-details.jsp]
+2025-10-17 14:36:38 [http-nio-8080-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:36:38 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:36:38.880667400}
+2025-10-17 14:36:38 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:37:09 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:37:09 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.id,
+        i1_0.admin_no,
+        i1_0.admin_reply,
+        i1_0.admin_reply_file_path,
+        i1_0.content,
+        i1_0.created_at,
+        i1_0.file_path,
+        i1_0.inquiry_type,
+        i1_0.member_id,
+        i1_0.reply_date,
+        i1_0.status,
+        i1_0.updated_at 
+    from
+        inquiry i1_0 
+    where
+        i1_0.id=?
+2025-10-17 14:37:10 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        ri1_0.id,
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at,
+        ri1_0.admin_content,
+        ri1_0.admin_created_at,
+        ri1_0.admin_no,
+        ri1_0.created_at,
+        ri1_0.inquiry_id,
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num,
+        ri1_0.member_id,
+        ri1_0.updated_at,
+        ri1_0.user_content,
+        ri1_0.user_created_at 
+    from
+        reply_inquiry ri1_0 
+    left join
+        member m1_0 
+            on m1_0.id=ri1_0.member_id 
+    left join
+        admin a1_0 
+            on a1_0.admin_no=ri1_0.admin_no 
+    where
+        ri1_0.inquiry_id=? 
+    order by
+        ri1_0.created_at desc
+2025-10-17 14:37:10 [http-nio-8080-exec-7] INFO  c.s.s.controller.InquiryController - 문의 상세 조회 성공 - Inquiry ID: 107, Replies Count: 0
+2025-10-17 14:37:10 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:37:10 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history-details], model {inquiry=com.shinki.shinki.entity.Inquiry@4f1ebc10, replies=[], memberId=954, org.springframework.validation.BindingResult.inquiry=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+2025-10-17 14:37:10 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history-details.jsp]
+2025-10-17 14:37:10 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:37:10 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:37:10.157989700}
+2025-10-17 14:37:10 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:37:14 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:37:14 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.id,
+        i1_0.admin_no,
+        i1_0.admin_reply,
+        i1_0.admin_reply_file_path,
+        i1_0.content,
+        i1_0.created_at,
+        i1_0.file_path,
+        i1_0.inquiry_type,
+        i1_0.member_id,
+        i1_0.reply_date,
+        i1_0.status,
+        i1_0.updated_at 
+    from
+        inquiry i1_0 
+    where
+        i1_0.id=?
+2025-10-17 14:37:14 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        ri1_0.id,
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at,
+        ri1_0.admin_content,
+        ri1_0.admin_created_at,
+        ri1_0.admin_no,
+        ri1_0.created_at,
+        ri1_0.inquiry_id,
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num,
+        ri1_0.member_id,
+        ri1_0.updated_at,
+        ri1_0.user_content,
+        ri1_0.user_created_at 
+    from
+        reply_inquiry ri1_0 
+    left join
+        member m1_0 
+            on m1_0.id=ri1_0.member_id 
+    left join
+        admin a1_0 
+            on a1_0.admin_no=ri1_0.admin_no 
+    where
+        ri1_0.inquiry_id=? 
+    order by
+        ri1_0.created_at desc
+2025-10-17 14:37:14 [http-nio-8080-exec-2] INFO  c.s.s.controller.InquiryController - 문의 상세 조회 성공 - Inquiry ID: 107, Replies Count: 0
+2025-10-17 14:37:14 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:37:14 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history-details], model {inquiry=com.shinki.shinki.entity.Inquiry@66a4e09c, replies=[], memberId=954, org.springframework.validation.BindingResult.inquiry=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+2025-10-17 14:37:14 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history-details.jsp]
+2025-10-17 14:37:14 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:37:14 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:37:14.338516100}
+2025-10-17 14:37:14 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:37:15 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:37:15 [http-nio-8080-exec-5] INFO  c.s.shinki.service.InquiryService - getInquiriesByMemberId 호출 - memberId: 954
+2025-10-17 14:37:15 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.id,
+        i1_0.admin_no,
+        i1_0.admin_reply,
+        i1_0.admin_reply_file_path,
+        i1_0.content,
+        i1_0.created_at,
+        i1_0.file_path,
+        i1_0.inquiry_type,
+        i1_0.member_id,
+        i1_0.reply_date,
+        i1_0.status,
+        i1_0.updated_at 
+    from
+        inquiry i1_0 
+    left join
+        member m1_0 
+            on m1_0.id=i1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        i1_0.created_at desc
+2025-10-17 14:37:15 [http-nio-8080-exec-5] INFO  c.s.shinki.service.InquiryService - 문의 조회 완료 - memberId: 954, 문의 수: 3
+2025-10-17 14:37:15 [http-nio-8080-exec-5] INFO  c.s.s.controller.InquiryController - 문의 내역 조회 성공 - 사용자: sh1, 문의 수: 3
+2025-10-17 14:37:15 [http-nio-8080-exec-5] INFO  c.s.s.controller.InquiryController - Inquiry ID: 107, Type: 기능문의, Content: test, CreatedAt: 2025-09-30 13:17:40.0, Status: 미확인
+2025-10-17 14:37:15 [http-nio-8080-exec-5] INFO  c.s.s.controller.InquiryController - Inquiry ID: 104, Type: 기능문의, Content: 111, CreatedAt: 2025-09-29 14:52:22.0, Status: 미확인
+2025-10-17 14:37:15 [http-nio-8080-exec-5] INFO  c.s.s.controller.InquiryController - Inquiry ID: 103, Type: 기능문의, Content: test, CreatedAt: 2025-09-29 14:35:03.0, Status: 답변완료
+2025-10-17 14:37:15 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:37:15 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history], model {inquiries=[com.shinki.shinki.entity.Inquiry@5901ee15, com.shinki.shinki.entity.Inquiry@7b17282c, com.shinki.shinki.entity.Inquiry@35f9b11e]}
+2025-10-17 14:37:15 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history.jsp]
+2025-10-17 14:37:15 [http-nio-8080-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:37:15 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:37:15.611202200}
+2025-10-17 14:37:15 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:37:17 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:37:17 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.id,
+        i1_0.admin_no,
+        i1_0.admin_reply,
+        i1_0.admin_reply_file_path,
+        i1_0.content,
+        i1_0.created_at,
+        i1_0.file_path,
+        i1_0.inquiry_type,
+        i1_0.member_id,
+        i1_0.reply_date,
+        i1_0.status,
+        i1_0.updated_at 
+    from
+        inquiry i1_0 
+    where
+        i1_0.id=?
+2025-10-17 14:37:17 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        ri1_0.id,
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at,
+        ri1_0.admin_content,
+        ri1_0.admin_created_at,
+        ri1_0.admin_no,
+        ri1_0.created_at,
+        ri1_0.inquiry_id,
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num,
+        ri1_0.member_id,
+        ri1_0.updated_at,
+        ri1_0.user_content,
+        ri1_0.user_created_at 
+    from
+        reply_inquiry ri1_0 
+    left join
+        member m1_0 
+            on m1_0.id=ri1_0.member_id 
+    left join
+        admin a1_0 
+            on a1_0.admin_no=ri1_0.admin_no 
+    where
+        ri1_0.inquiry_id=? 
+    order by
+        ri1_0.created_at desc
+2025-10-17 14:37:17 [http-nio-8080-exec-7] INFO  c.s.s.controller.InquiryController - 문의 상세 조회 성공 - Inquiry ID: 107, Replies Count: 0
+2025-10-17 14:37:17 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:37:17 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history-details], model {inquiry=com.shinki.shinki.entity.Inquiry@26e1d79c, replies=[], memberId=954, org.springframework.validation.BindingResult.inquiry=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+2025-10-17 14:37:17 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history-details.jsp]
+2025-10-17 14:37:17 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:37:17 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:37:17.213135500}
+2025-10-17 14:37:17 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:37:21 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:37:21 [http-nio-8080-exec-10] INFO  c.s.shinki.service.InquiryService - getInquiriesByMemberId 호출 - memberId: 954
+2025-10-17 14:37:21 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.id,
+        i1_0.admin_no,
+        i1_0.admin_reply,
+        i1_0.admin_reply_file_path,
+        i1_0.content,
+        i1_0.created_at,
+        i1_0.file_path,
+        i1_0.inquiry_type,
+        i1_0.member_id,
+        i1_0.reply_date,
+        i1_0.status,
+        i1_0.updated_at 
+    from
+        inquiry i1_0 
+    left join
+        member m1_0 
+            on m1_0.id=i1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        i1_0.created_at desc
+2025-10-17 14:37:21 [http-nio-8080-exec-10] INFO  c.s.shinki.service.InquiryService - 문의 조회 완료 - memberId: 954, 문의 수: 3
+2025-10-17 14:37:21 [http-nio-8080-exec-10] INFO  c.s.s.controller.InquiryController - 문의 내역 조회 성공 - 사용자: sh1, 문의 수: 3
+2025-10-17 14:37:21 [http-nio-8080-exec-10] INFO  c.s.s.controller.InquiryController - Inquiry ID: 107, Type: 기능문의, Content: test, CreatedAt: 2025-09-30 13:17:40.0, Status: 미확인
+2025-10-17 14:37:21 [http-nio-8080-exec-10] INFO  c.s.s.controller.InquiryController - Inquiry ID: 104, Type: 기능문의, Content: 111, CreatedAt: 2025-09-29 14:52:22.0, Status: 미확인
+2025-10-17 14:37:21 [http-nio-8080-exec-10] INFO  c.s.s.controller.InquiryController - Inquiry ID: 103, Type: 기능문의, Content: test, CreatedAt: 2025-09-29 14:35:03.0, Status: 답변완료
+2025-10-17 14:37:21 [http-nio-8080-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:37:21 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history], model {inquiries=[com.shinki.shinki.entity.Inquiry@35fe6418, com.shinki.shinki.entity.Inquiry@713bfed3, com.shinki.shinki.entity.Inquiry@c4ea48f]}
+2025-10-17 14:37:21 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history.jsp]
+2025-10-17 14:37:21 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:37:21 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:37:21.448183500}
+2025-10-17 14:37:21 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:37:24 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:37:24 [http-nio-8080-exec-9] INFO  c.s.shinki.service.InquiryService - getInquiriesByMemberId 호출 - memberId: 954
+2025-10-17 14:37:24 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.id,
+        i1_0.admin_no,
+        i1_0.admin_reply,
+        i1_0.admin_reply_file_path,
+        i1_0.content,
+        i1_0.created_at,
+        i1_0.file_path,
+        i1_0.inquiry_type,
+        i1_0.member_id,
+        i1_0.reply_date,
+        i1_0.status,
+        i1_0.updated_at 
+    from
+        inquiry i1_0 
+    left join
+        member m1_0 
+            on m1_0.id=i1_0.member_id 
+    where
+        m1_0.id=? 
+    order by
+        i1_0.created_at desc
+2025-10-17 14:37:24 [http-nio-8080-exec-9] INFO  c.s.shinki.service.InquiryService - 문의 조회 완료 - memberId: 954, 문의 수: 3
+2025-10-17 14:37:24 [http-nio-8080-exec-9] INFO  c.s.s.controller.InquiryController - 문의 내역 조회 성공 - 사용자: sh1, 문의 수: 3
+2025-10-17 14:37:24 [http-nio-8080-exec-9] INFO  c.s.s.controller.InquiryController - Inquiry ID: 107, Type: 기능문의, Content: test, CreatedAt: 2025-09-30 13:17:40.0, Status: 미확인
+2025-10-17 14:37:24 [http-nio-8080-exec-9] INFO  c.s.s.controller.InquiryController - Inquiry ID: 104, Type: 기능문의, Content: 111, CreatedAt: 2025-09-29 14:52:22.0, Status: 미확인
+2025-10-17 14:37:24 [http-nio-8080-exec-9] INFO  c.s.s.controller.InquiryController - Inquiry ID: 103, Type: 기능문의, Content: test, CreatedAt: 2025-09-29 14:35:03.0, Status: 답변완료
+2025-10-17 14:37:24 [http-nio-8080-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:37:24 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history], model {inquiries=[com.shinki.shinki.entity.Inquiry@3dccb1d, com.shinki.shinki.entity.Inquiry@671092bd, com.shinki.shinki.entity.Inquiry@71adffc3]}
+2025-10-17 14:37:24 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history.jsp]
+2025-10-17 14:37:24 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:37:24 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:37:24.332543400}
+2025-10-17 14:37:24 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:37:35 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:37:35 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.id,
+        i1_0.admin_no,
+        i1_0.admin_reply,
+        i1_0.admin_reply_file_path,
+        i1_0.content,
+        i1_0.created_at,
+        i1_0.file_path,
+        i1_0.inquiry_type,
+        i1_0.member_id,
+        i1_0.reply_date,
+        i1_0.status,
+        i1_0.updated_at 
+    from
+        inquiry i1_0 
+    where
+        i1_0.id=?
+2025-10-17 14:37:35 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        ri1_0.id,
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at,
+        ri1_0.admin_content,
+        ri1_0.admin_created_at,
+        ri1_0.admin_no,
+        ri1_0.created_at,
+        ri1_0.inquiry_id,
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num,
+        ri1_0.member_id,
+        ri1_0.updated_at,
+        ri1_0.user_content,
+        ri1_0.user_created_at 
+    from
+        reply_inquiry ri1_0 
+    left join
+        member m1_0 
+            on m1_0.id=ri1_0.member_id 
+    left join
+        admin a1_0 
+            on a1_0.admin_no=ri1_0.admin_no 
+    where
+        ri1_0.inquiry_id=? 
+    order by
+        ri1_0.created_at desc
+2025-10-17 14:37:35 [http-nio-8080-exec-2] INFO  c.s.s.controller.InquiryController - 문의 상세 조회 성공 - Inquiry ID: 107, Replies Count: 0
+2025-10-17 14:37:35 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:37:35 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history-details], model {inquiry=com.shinki.shinki.entity.Inquiry@156bfb48, replies=[], memberId=954, org.springframework.validation.BindingResult.inquiry=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+2025-10-17 14:37:35 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history-details.jsp]
+2025-10-17 14:37:35 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:37:35 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:37:35.655493700}
+2025-10-17 14:37:35 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:38:24 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num 
+    from
+        member m1_0 
+    where
+        m1_0.username=?
+2025-10-17 14:38:24 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:38:24 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry], model {memberId=954}
+2025-10-17 14:38:24 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry.jsp]
+2025-10-17 14:38:24 [http-nio-8080-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:38:24 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:38:24.702239900}
+2025-10-17 14:38:24 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:44:16 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:44:16 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [admin/login], model {}
+2025-10-17 14:44:16 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/login.jsp]
+2025-10-17 14:44:17 [http-nio-8080-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:44:17 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:44:17.046795600}
+2025-10-17 14:44:17 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:44:17 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8]
+2025-10-17 14:44:17 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:44:17.212351900}
+2025-10-17 14:44:17 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:44:22 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at 
+    from
+        admin a1_0 
+    where
+        a1_0.admin_id=? 
+        and a1_0.password=?
+2025-10-17 14:44:22 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:44:22 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [admin/login], model {error=아이디 또는 비밀번호가 올바르지 않습니다.}
+2025-10-17 14:44:22 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/login.jsp]
+2025-10-17 14:44:22 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:44:22 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:44:22.627413900}
+2025-10-17 14:44:22 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:44:30 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at 
+    from
+        admin a1_0 
+    where
+        a1_0.admin_id=? 
+        and a1_0.password=?
+2025-10-17 14:44:30 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:44:30 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [admin/login], model {error=아이디 또는 비밀번호가 올바르지 않습니다.}
+2025-10-17 14:44:30 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/login.jsp]
+2025-10-17 14:44:30 [http-nio-8080-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:44:30 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:44:30.118563400}
+2025-10-17 14:44:30 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:44:35 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at 
+    from
+        admin a1_0 
+    where
+        a1_0.admin_id=? 
+        and a1_0.password=?
+2025-10-17 14:44:35 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:44:35 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - View name [admin/login], model {error=아이디 또는 비밀번호가 올바르지 않습니다.}
+2025-10-17 14:44:35 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/login.jsp]
+2025-10-17 14:44:35 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:44:35 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:44:35.607929500}
+2025-10-17 14:44:35 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:44:37 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at 
+    from
+        admin a1_0 
+    where
+        a1_0.admin_id=? 
+        and a1_0.password=?
+2025-10-17 14:44:37 [http-nio-8080-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:44:37 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [admin/login], model {error=아이디 또는 비밀번호가 올바르지 않습니다.}
+2025-10-17 14:44:37 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/login.jsp]
+2025-10-17 14:44:37 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:44:37 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:44:37.172889300}
+2025-10-17 14:44:37 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:44:37 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at 
+    from
+        admin a1_0 
+    where
+        a1_0.admin_id=? 
+        and a1_0.password=?
+2025-10-17 14:44:37 [http-nio-8080-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:44:37 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [admin/login], model {error=아이디 또는 비밀번호가 올바르지 않습니다.}
+2025-10-17 14:44:37 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/login.jsp]
+2025-10-17 14:44:37 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:44:37 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:44:37.379334900}
+2025-10-17 14:44:37 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-10-17 14:44:40 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at 
+    from
+        admin a1_0 
+    where
+        a1_0.admin_id=? 
+        and a1_0.password=?
+2025-10-17 14:44:40 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-10-17 14:44:40 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [admin/login], model {error=아이디 또는 비밀번호가 올바르지 않습니다.}
+2025-10-17 14:44:40 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/login.jsp]
+2025-10-17 14:44:40 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-10-17 14:44:40 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-10-17T14:44:40.521910700}
+2025-10-17 14:44:40 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
