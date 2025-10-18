@@ -611,4 +611,51 @@ public class MemberController {
             return "redirect:/mypage/cancelled-orders";
         }
     }
+
+    @GetMapping("/cancelled-order-detail/{requestId}")
+    public String cancelledOrderDetailPage(@PathVariable Long requestId, HttpSession session, Model model) {
+        System.out.println("=== cancelled-order-detail 매핑 호출됨 ===");
+        System.out.println("requestId: " + requestId);
+        
+        String username = (String) session.getAttribute("username");
+        if (username == null) {
+            System.out.println("사용자 로그인 정보 없음");
+            return "redirect:/mypage/login";
+        }
+
+        try {
+            Member member = memberService.findByUsername(username);
+            Request request = requestService.getRequestById(requestId);
+            
+            System.out.println("member: " + member);
+            System.out.println("request: " + request);
+            
+            // 요청이 존재하고, 해당 사용자의 요청이며, 취소된 상태인지 확인
+            if (request == null || !request.getMember().getId().equals(member.getId()) || 
+                (!"취소 요청".equals(request.getStatus()) && !"취소 진행중".equals(request.getStatus()) && !"취소 완료".equals(request.getStatus()))) {
+                System.out.println("요청 조건 불만족 - request: " + request + ", status: " + (request != null ? request.getStatus() : "null"));
+                return "redirect:/mypage/cancelled-orders";
+            }
+            
+            // 댓글/답글 정보 가져오기 (기존 order-detail과 동일한 로직)
+            List<ReplyRequest> userComments = replyRequestService.getUserCommentsByRequestId(requestId);
+            
+            // 각 사용자 댓글의 답글들을 조회하여 설정
+            for (ReplyRequest comment : userComments) {
+                List<ReplyRequest> replies = replyRequestService.getRepliesByParentId(comment.getId());
+                comment.setReplies(replies);
+            }
+            
+            model.addAttribute("member", member);
+            model.addAttribute("request", request);
+            model.addAttribute("userComments", userComments);
+            
+            System.out.println("=== cancelled-detail 페이지로 이동 ===");
+            return "mypage/cancelled-detail";
+        } catch (Exception e) {
+            System.out.println("오류 발생: " + e.getMessage());
+            e.printStackTrace();
+            return "redirect:/mypage/cancelled-orders";
+        }
+    }
 }

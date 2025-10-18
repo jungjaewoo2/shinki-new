@@ -65,6 +65,18 @@ public class InquiryService {
         }
     }
     
+    public Page<Inquiry> getInquiriesByMemberIdWithPaging(Long memberId, Pageable pageable) {
+        logger.info("getInquiriesByMemberIdWithPaging 호출 - memberId: {}, page: {}", memberId, pageable.getPageNumber());
+        try {
+            Page<Inquiry> inquiries = inquiryRepository.findByMemberIdOrderByCreatedAtDesc(memberId, pageable);
+            logger.info("페이징 문의 조회 완료 - memberId: {}, 문의 수: {}", memberId, inquiries.getContent().size());
+            return inquiries;
+        } catch (Exception e) {
+            logger.error("페이징 문의 조회 중 오류 발생 - memberId: {}", memberId, e);
+            throw new RuntimeException("문의 내역을 조회하는 중 오류가 발생했습니다.", e);
+        }
+    }
+    
     public List<Inquiry> getAllInquiries() {
         return inquiryRepository.findAllByOrderByCreatedAtDesc();
     }

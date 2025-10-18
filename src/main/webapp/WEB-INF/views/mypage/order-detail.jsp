@@ -379,7 +379,7 @@
                          <c:choose>
                              <c:when test="${not empty request and request.status == '작업 완료'}">작업 완료</c:when>
                              <c:when test="${not empty request and request.status == '작업중'}">작업중</c:when>
-                             <c:otherwise>대기중</c:otherwise>
+                             <c:otherwise>작업중</c:otherwise>
                          </c:choose>
                      </div>
                  </div>
@@ -462,7 +462,13 @@
                                  </div>
                                  <div class="order-contents">${request.content}</div>
                                  <div class="align-items-center d-flex justify-content-end">
-                                     <div class="order-date">작업 완료</div>
+                                     <div class="order-date">
+                                         <c:choose>
+                                             <c:when test="${not empty request and request.status == '작업 완료'}">작업 완료</c:when>
+                                             <c:when test="${not empty request and request.status == '작업중'}">작업중</c:when>
+                                             <c:otherwise>작업중</c:otherwise>
+                                         </c:choose>
+                                     </div>
                                  </div>
                              </div>
                          </c:when>
@@ -582,13 +588,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
    // 클릭 가능한 단계인지 확인
    function isStepClickable(stepIndex) {
+       // 작업 완료 상태에서는 모든 단계 클릭 불가
+       if (currentStatus === '작업 완료') {
+           return false;
+       }
+       // 결제 진행 상태에서는 현재 단계까지만 클릭 가능
+       if (currentStatus === '결제 진행') {
+           return stepIndex <= allowedStepIndex;
+       }
+       // 기타 상태에서는 기존 로직 적용
        return stepIndex <= allowedStepIndex;
    }
 
    // 단계별 클릭 이벤트 처리
    function handleStepClick(clickedIndex) {
        if (!isStepClickable(clickedIndex)) {
-           alert('현재 단계에서는 해당 단계에 접근할 수 없습니다.');
+           if (currentStatus === '작업 완료') {
+               alert('작업이 완료되어 다른 단계로 이동할 수 없습니다.');
+           } else if (currentStatus === '결제 진행') {
+               alert('결제 진행 중에는 다른 단계로 이동할 수 없습니다.');
+           } else {
+               alert('현재 단계에서는 해당 단계에 접근할 수 없습니다.');
+           }
            return;
        }
 
@@ -640,6 +661,15 @@ document.addEventListener('DOMContentLoaded', function () {
            step.style.opacity = '1';
        }
    });
+
+   // 작업 완료 또는 결제 진행 상태에서 모든 단계 비활성화
+   if (currentStatus === '작업 완료' || currentStatus === '결제 진행') {
+       progressSteps.forEach(step => {
+           step.style.cursor = 'not-allowed';
+           step.style.opacity = '0.5';
+           step.style.pointerEvents = 'none';
+       });
+   }
 
 });
 

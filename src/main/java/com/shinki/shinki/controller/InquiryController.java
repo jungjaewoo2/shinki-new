@@ -17,6 +17,10 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import jakarta.validation.Valid;
 import jakarta.servlet.http.HttpSession;
 import java.util.List;
@@ -143,7 +147,10 @@ public class InquiryController {
     }
     
     @GetMapping("/inquiry-history")
-    public String inquiryHistoryPage(HttpSession session, Model model) {
+    public String inquiryHistoryPage(@RequestParam(defaultValue = "0") int page,
+                                     @RequestParam(defaultValue = "10") int size,
+                                     HttpSession session, 
+                                     Model model) {
         String username = (String) session.getAttribute("username");
         if (username == null) {
             return "redirect:/mypage/login";
@@ -151,24 +158,25 @@ public class InquiryController {
 
         try {
             Member member = memberService.findByUsername(username);
-            List<Inquiry> inquiries = inquiryService.getInquiriesByMemberId(member.getId());
+            Pageable pageable = PageRequest.of(page, size, Sort.by("createdAt").descending());
+            Page<Inquiry> inquiryPage = inquiryService.getInquiriesByMemberIdWithPaging(member.getId(), pageable);
             
-            model.addAttribute("inquiries", inquiries != null ? inquiries : new java.util.ArrayList<>());
+            model.addAttribute("inquiries", inquiryPage.getContent());
+            model.addAttribute("currentPage", page);
+            model.addAttribute("totalPages", inquiryPage.getTotalPages());
+            model.addAttribute("totalElements", inquiryPage.getTotalElements());
+            model.addAttribute("size", size);
             
-            logger.info("문의 내역 조회 성공 - 사용자: {}, 문의 수: {}", 
-                       username, inquiries != null ? inquiries.size() : 0);
-            
-            if (inquiries != null) {
-                for (Inquiry inquiry : inquiries) {
-                    logger.info("Inquiry ID: {}, Type: {}, Content: {}, CreatedAt: {}, Status: {}",
-                                inquiry.getId(), inquiry.getInquiryType(), inquiry.getContent(),
-                                inquiry.getCreatedAt(), inquiry.getStatus());
-                }
-            }
+            logger.info("문의 내역 조회 성공 - 사용자: {}, 현재 페이지: {}, 총 페이지: {}, 문의 수: {}", 
+                       username, page, inquiryPage.getTotalPages(), inquiryPage.getContent().size());
 
         } catch (Exception e) {
             logger.error("inquiryHistoryPage - 오류 발생", e);
             model.addAttribute("inquiries", new java.util.ArrayList<>());
+            model.addAttribute("currentPage", 0);
+            model.addAttribute("totalPages", 0);
+            model.addAttribute("totalElements", 0);
+            model.addAttribute("size", size);
             model.addAttribute("error", "문의 내역을 불러오는 중 오류가 발생했습니다.");
         }
         return "mypage/inquiry-history";

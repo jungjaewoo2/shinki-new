@@ -498,6 +498,36 @@ public class RequestController {
     }
     
     /**
+     * 취소된 의뢰에 댓글 작성
+     */
+    @PostMapping("/cancelled-order-detail/{requestId}/reply")
+    public String addCancelledReply(@PathVariable Long requestId, 
+                                  @RequestParam String content,
+                                  HttpSession session,
+                                  RedirectAttributes redirectAttributes) {
+        String username = (String) session.getAttribute("username");
+        if (username == null) {
+            return "redirect:/mypage/login";
+        }
+        
+        try {
+            Member member = memberService.findByUsername(username);
+            if (member == null) {
+                redirectAttributes.addFlashAttribute("error", "회원 정보를 찾을 수 없습니다.");
+                return "redirect:/mypage/cancelled-order-detail/" + requestId;
+            }
+            
+            replyRequestService.createUserReply(requestId, member.getId(), content);
+            redirectAttributes.addFlashAttribute("message", "댓글이 성공적으로 등록되었습니다.");
+            
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("error", "댓글 등록 중 오류가 발생했습니다: " + e.getMessage());
+        }
+        
+        return "redirect:/mypage/cancelled-order-detail/" + requestId;
+    }
+    
+    /**
      * 의뢰 댓글 삭제
      */
     @PostMapping("/order-detail/{requestId}/reply/{replyId}/delete")

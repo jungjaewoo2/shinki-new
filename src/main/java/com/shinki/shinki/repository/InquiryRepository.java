@@ -19,6 +19,10 @@ public interface InquiryRepository extends JpaRepository<Inquiry, Long> {
     @Query("SELECT i FROM Inquiry i LEFT JOIN FETCH i.member ORDER BY i.id DESC")
     Page<Inquiry> findAllWithMemberOrderByIdDesc(Pageable pageable);
     
+    // 멤버별 페이징 조회
+    @Query("SELECT i FROM Inquiry i WHERE i.member.id = :memberId ORDER BY i.createdAt DESC")
+    Page<Inquiry> findByMemberIdOrderByCreatedAtDesc(@Param("memberId") Long memberId, Pageable pageable);
+    
     // 검색 기능을 위한 메서드 - content 필드에서 검색
     @Query("SELECT i FROM Inquiry i LEFT JOIN FETCH i.member WHERE i.content LIKE %:keyword% ORDER BY i.id DESC")
     Page<Inquiry> findByContentContainingWithMember(@Param("keyword") String keyword, Pageable pageable);

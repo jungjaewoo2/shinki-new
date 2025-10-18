@@ -138,7 +138,7 @@
                      
                      <c:if test="${request.status == '의뢰 확인중' || request.status == '견적중' || request.status == '결제 진행' || request.status == '작업중'}">
                          <div class="status-outline-badge">
-                             <a href="/mypage/cancel-request/${request.id}" class="text-decoration-none">
+                             <a href="#" class="text-decoration-none" onclick="confirmCancel('${request.id}', event)">
                                  <span class="text-danger">취소 요청</span>
                              </a>
                          </div>
@@ -153,7 +153,19 @@
              </c:otherwise>
          </c:choose>
 
-     </div>
- </div>
+    </div>
+</div>
 
- <jsp:include page="footer.jsp" />
+<script>
+function confirmCancel(requestId, event) {
+    event.preventDefault(); // 기본 링크 동작 방지
+    
+    if (confirm('취소 하시겠습니까?')) {
+        // 확인 시 취소 요청 페이지로 이동
+        window.location.href = '/mypage/cancel-request/' + requestId;
+    }
+    // 취소 시 아무 동작 안함
+}
+</script>
+
+<jsp:include page="footer.jsp" />

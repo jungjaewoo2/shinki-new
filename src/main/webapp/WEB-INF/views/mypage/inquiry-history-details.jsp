@@ -107,9 +107,28 @@
 	                                 </td>
 	                                 <th>상담상태</th>
 	                                 <td class="text-start">
-	                                     <span class="badge ${inquiry.status eq '진행중' ? 'bg-warning' : inquiry.status eq '완료' ? 'bg-success' : 'bg-secondary'}">
-	                                         ${inquiry.status}
-	                                     </span>
+	                                     <c:choose>
+	                                         <c:when test="${inquiry.status eq '미확인'}">
+	                                             <span class="badge" style="background-color: #c7a987 !important; color: white !important;">
+	                                                 ${inquiry.status}
+	                                             </span>
+	                                         </c:when>
+	                                         <c:when test="${inquiry.status eq '답변진행중'}">
+	                                             <span class="badge" style="background-color: #186623 !important; color: white !important;">
+	                                                 ${inquiry.status}
+	                                             </span>
+	                                         </c:when>
+	                                         <c:when test="${inquiry.status eq '완료'}">
+	                                             <span class="badge bg-success">
+	                                                 ${inquiry.status}
+	                                             </span>
+	                                         </c:when>
+	                                         <c:otherwise>
+	                                             <span class="badge bg-secondary">
+	                                                 ${inquiry.status}
+	                                             </span>
+	                                         </c:otherwise>
+	                                     </c:choose>
 	                                 </td>
 	                                 <th>첨부파일</th>
 	                                 <td class="text-start">
@@ -158,9 +177,28 @@
 	                             <tr>
 	                                 <th>상담상태</th>
 	                                 <td class="text-start">
-	                                     <span class="badge ${inquiry.status eq '진행중' ? 'bg-warning' : inquiry.status eq '완료' ? 'bg-success' : 'bg-secondary'}">
-	                                         ${inquiry.status}
-	                                     </span>
+	                                     <c:choose>
+	                                         <c:when test="${inquiry.status eq '미확인'}">
+	                                             <span class="badge" style="background-color: #c7a987 !important; color: white !important;">
+	                                                 ${inquiry.status}
+	                                             </span>
+	                                         </c:when>
+	                                         <c:when test="${inquiry.status eq '답변진행중'}">
+	                                             <span class="badge" style="background-color: #186623 !important; color: white !important;">
+	                                                 ${inquiry.status}
+	                                             </span>
+	                                         </c:when>
+	                                         <c:when test="${inquiry.status eq '완료'}">
+	                                             <span class="badge bg-success">
+	                                                 ${inquiry.status}
+	                                             </span>
+	                                         </c:when>
+	                                         <c:otherwise>
+	                                             <span class="badge bg-secondary">
+	                                                 ${inquiry.status}
+	                                             </span>
+	                                         </c:otherwise>
+	                                     </c:choose>
 	                                 </td>
 	                                </tr>
 	                             <tr>
