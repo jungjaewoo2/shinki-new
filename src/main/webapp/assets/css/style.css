@@ -943,13 +943,17 @@ h1 {
 	}
 	
 	.carousel-item .carousel-txt {
-		padding-left: 80px !important;
+		padding-left: 70px !important;
 	}
 	
 	.carousel-img img {
 		width: 100% !important;
 		height: auto;
 		padding-right: 0 !important;
+	}
+	
+	#application .nav-item button {
+		font-size: 22px;
 	}
 }
 
@@ -978,7 +982,7 @@ h1 {
     }
 
     #application .carousel-item .txt-lg {
-        font-size: 50px !important;
+        font-size: 70px !important;
         -webkit-box-reflect: below -35px linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)) !important;
     }
 
@@ -1003,6 +1007,10 @@ h1 {
         padding-right: 0 !important;
         width: 100%;
         height: auto;
+    }
+    
+    .main-title {
+    	max-width: 90%
     }
 
 }
@@ -1183,12 +1191,36 @@ h1 {
 	}
 }
 
-@media (min-width:768px) and (max-width: 1024px) {
-	.sub-title-01 {
-		font-size: 2.1vw !important;
-	}
+/* iPad Air 4세대 - 가로 모드 (Landscape) */
+@media (min-width: 768px) and (max-width: 1180px) and (orientation: landscape) {
+	
+  .main-title h1 {
+  	margin-top: .5em!important;
+  	font-size: 80px;
+  }	
+	
+  .sub-title-01 {
+    font-size: 1vw !important; /* 가로 모드에서 원래 스타일 유지 */
+  }
+  
+  .subtitle {
+  	
+  }
 }
 
+/* iPad Air 4세대 - 세로 모드 (Portrait) */
+@media (min-width: 768px) and (max-width: 820px) and (orientation: portrait) {
+  
+  .main-title h1 {
+  	margin-top: .5em!important;
+  	font-size: 80px;
+  }
+  
+  .sub-title-01 {
+    font-size: 2.1vw !important; /* 세로 모드에서 다른 폰트 크기 적용 */
+  }
+  
+}
 
 /* pancreas 반응형 */
 

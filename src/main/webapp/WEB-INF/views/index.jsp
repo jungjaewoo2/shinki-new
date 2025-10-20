@@ -232,7 +232,7 @@
                         <div class="main-title main-f text-center" style="margin: 0 auto;">
                         	<!-- <h1>Synapse 3D</h1> -->
                             <h1 style="height: 6.6vh;margin-top: 1em;"><img src="/assets/images/synapse_W.png" height="100%"></h1>
-                            <p class="subtitle m-lg-5">
+                            <p class="subtitle m-xxl-5">
                                 <div class="sub-title-01 pc d-none d-md-block d-lg-block" style="font-family: 'NotoSansKR-Regular' !important;">Synapse 3D는 후지필름 고유의 3D 재구성 기술을 기반으로 CT 및 MRI 등의<br>영상을 정밀하게 시각화하고 분석하는 고성능 의료 영상 소프트웨어입니다.</div>
                                 <div class="sub-title-01 mb d-block d-md-none d-lg-none" style="font-family: 'NotoSansKR-Regular' !important;">Synapse 3D는 후지필름 고유의 3D 재구성 기술을 기반으로<br>CT 및 MRI 등의 영상을 정밀하게 시각화하고 분석하는<br>고성능 의료 영상 소프트웨어입니다.</div>
                             </p>
@@ -1468,10 +1468,10 @@ function updateNavigationButtons(swiper) {
     try {
         const swiper = new Swiper('.mySwiper', {
             loop: true,
-            autoplay: {
+            /* autoplay: {
                 delay: 10000,
                 disableOnInteraction: false,
-            },
+            }, */
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
