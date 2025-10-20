@@ -315,7 +315,7 @@
                     <div class="carousel">
                         <div class="carousel-content">
                             <div class="carousel-item active text-center">
-                                <div class="d-flex align-items-center flex-column flex-md-row flex-xl-row justify-content-between gap-lg-5">
+                                <div class="d-flex align-items-center flex-column flex-md-row flex-xl-row justify-content-between gap-xl-5">
                                     <div class="carousel-txt align-items-center align-items-md-baseline align-items-lg-baseline d-flex flex-column gap-3 gap-md-4 gap-xl-5 w-50" style="padding-left: 150px;">
                                         <div class="txt-lg" style="font-size: 150px; -webkit-box-reflect: below -110px linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));">LIVER</div>
                                         <div class="txt-sub">
@@ -333,7 +333,7 @@
 
                             </div>
                             <div class="carousel-item active text-center pancreas-carousel">
-                                <div class="d-flex align-items-center flex-column flex-md-row flex-xl-row justify-content-between gap-lg-5">
+                                <div class="d-flex align-items-center flex-column flex-md-row flex-xl-row justify-content-between gap-xl-5">
                                     <div class="carousel-txt align-items-center align-items-md-baseline align-items-lg-baseline d-flex flex-column  gap-3 gap-md-4 gap-xl-5 w-50" style="padding-left: 150px;">
                                         <div class="txt-lg" style="font-size: 150px;letter-spacing: -.1em; -webkit-box-reflect: below -110px linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));">PANCREAS</div>
                                         <div class="txt-sub">
@@ -369,7 +369,7 @@
                     <div class="carousel">
                         <div class="carousel-content">
                             <div class="carousel-item active text-center">
-                                <div class="d-flex align-items-center flex-column flex-md-row flex-xl-row justify-content-between gap-lg-5">
+                                <div class="d-flex align-items-center flex-column flex-md-row flex-xl-row justify-content-between gap-xl-5">
                                     <div class="carousel-txt align-items-center align-items-md-baseline align-items-lg-baseline d-flex flex-column gap-3 gap-md-4 gap-xl-5 w-50" style="padding-left: 150px;">
                                         <div class="txt-lg" style="font-size: 150px; -webkit-box-reflect: below -110px linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));">LUNG</div>
                                         <div class="txt-sub">
@@ -396,7 +396,7 @@
                     <div class="carousel cardiac-carousel">
                         <div class="carousel-content">
                             <div class="carousel-item active text-center">
-                                <div class="d-flex align-items-center flex-column flex-md-row flex-xl-row justify-content-between gap-lg-5">
+                                <div class="d-flex align-items-center flex-column flex-md-row flex-xl-row justify-content-between gap-xl-5">
                                     <div class="carousel-txt align-items-center align-items-md-baseline align-items-lg-baseline d-flex flex-column gap-3 gap-md-4 gap-xl-5 w-50" style="padding-left: 150px;">
                                         <div class="txt-lg" style="font-size: 150px; -webkit-box-reflect: below -110px linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));">CARDIAC</div>
                                         <div class="txt-sub">
@@ -424,7 +424,7 @@
                     <div class="carousel knee-carousel">
                         <div class="carousel-content">
                             <div class="carousel-item active text-center">
-                                <div class="d-flex align-items-center flex-column flex-md-row flex-xl-row justify-content-between gap-lg-5">
+                                <div class="d-flex align-items-center flex-column flex-md-row flex-xl-row justify-content-between gap-xl-5">
                                     <div class="carousel-txt align-items-center align-items-md-baseline align-items-lg-baseline d-flex flex-column gap-3 gap-md-4 gap-xl-5 w-50" style="padding-left: 150px;">
                                         <div class="txt-lg" style="font-size: 150px; -webkit-box-reflect: below -110px linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));">KNEE</div>
                                         <div class="txt-sub d-none d-md-block">

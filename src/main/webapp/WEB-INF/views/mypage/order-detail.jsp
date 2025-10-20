@@ -307,7 +307,7 @@
                               </c:when>
                               <c:otherwise>
                                   <a href="/mypage/edit-request/${request.id}" class="btn btn-danger" style="flex: 1;">수정하기</a>
-                                  <button type="button" class="btn btn-secondary" style="flex: 1;" onclick="cancelRequest('${request.id}', event)" data-status="<c:out value="${request.status}"/>">취소하기</button>
+                                  <button type="button" class="btn btn-secondary" style="flex: 1;" onclick="location.href='/mypage/orders'" data-status="<c:out value="${request.status}"/>">취소하기</button>
                               </c:otherwise>
                           </c:choose>
                        </div>
