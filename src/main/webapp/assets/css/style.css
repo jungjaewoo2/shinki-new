@@ -943,7 +943,7 @@ h1 {
 	}
 	
 	.carousel-item .carousel-txt {
-		padding-left: 105px !important;
+		padding-left: 80px !important;
 	}
 	
 	.carousel-img img {
@@ -974,7 +974,7 @@ h1 {
     }
 
     #application .carousel-content {
-        padding: 2em;
+        /* padding: 2em; */
     }
 
     #application .carousel-item .txt-lg {
@@ -988,7 +988,7 @@ h1 {
     }
 
     .carousel {
-        height: fit-content;
+        height: 380px;
     }
 
     .carousel-img {
@@ -1040,7 +1040,7 @@ h1 {
     }
     
     .carousel-content {
-    	height: auto;
+    	height: 560px;
     }
 
     #application .carousel-item .txt-sub {
@@ -1090,7 +1090,7 @@ h1 {
 
 }
 
-@media (max-width: 1155px) {
+/* @media (max-width: 1155px) {
 
 	.sub-title-01 {
     	font-size: 13px;
@@ -1173,9 +1173,21 @@ h1 {
 	.sub-title-01.mb {
 		display: block !important;
 	}
+} */
+
+/* 메인 동영상 반응형 */
+
+@media (max-width: 468px) {
+	.sub-title-01.mb {
+		font-size: 12px;
+	}
 }
 
-
+@media (min-width:768px) and (max-width: 1024px) {
+	.sub-title-01 {
+		font-size: 2.1vw !important;
+	}
+}
 
 
 /* pancreas 반응형 */

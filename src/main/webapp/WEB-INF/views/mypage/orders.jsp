@@ -23,7 +23,7 @@
 	                     <input type="date" name="endDate" class="form-input date-input" placeholder="년도-월-일" style="max-width: 150px;" value="${param.endDate}">
                      </div>
                      <div class="d-flex gap-1">
-                     	<button type="submit" class="btn bg-info-subtle">검색</button>
+                     	<button type="submit" class="btn" style="background: #dceaf7;color: #1d374f;">검색</button>
                      <a href="/mypage/orders" class="btn btn-outline-secondary d-md-block d-none" style="min-width: 100px;">전체보기</a>
                      </div>
                  </form>

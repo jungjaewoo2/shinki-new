@@ -398,10 +398,11 @@ a {
 
 .order-type div {
     width: 100px;
+    font-size: 20px;
 }
 
 .order-type div img {
-    width: 40px;
+    width: 60px;
     height: auto;
 }
 
@@ -585,8 +586,8 @@ tr {
 }
 
 .status-progress {
-    background: #dbeafe;
-    color: #1d4ed8;
+    background: #dceaf7;
+    color: #1d374f;
 }
 
 rgb(255, 255, 255).status-completed {
