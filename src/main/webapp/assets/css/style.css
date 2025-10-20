@@ -11,6 +11,7 @@
 @font-face {
     font-family: 'Segoe UI';
     src: url('../fonts/Segoe UI.woff2') format('woff2');
+    src: url('../fonts/Segoe UI.woff') format('woff');
 }
 
 * {
@@ -24,12 +25,12 @@ a {
     color: unset;
 }
 
-button, input, optgroup, select, textarea {
-	font-family: none !important;
-}
+/* button, input, optgroup, select, textarea {
+	font-family: none;
+} */
 
 body {
-    font-family: 'Segoe UI' !important;
+    /* font-family: 'Segoe UI' !important; */
     background: #070b1a;
     color: white;
     min-height: 100vh;

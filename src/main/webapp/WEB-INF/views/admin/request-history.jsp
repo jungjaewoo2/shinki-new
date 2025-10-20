@@ -15,7 +15,7 @@
             <form method="get" action="/admin/request-history" class="d-flex flex-column gap-3">
                 <div class="row g-2">
                     <div class="col-12 col-md-6 col-lg-3">
-                        <label class="form-label fw-bold">의뢰항목</label>
+                        <label class="form-label fw-bold w-100">의뢰항목</label>
                         <select class="form-select" name="applicationType">
                             <option value="">전체</option>
                             <option value="HBP" ${applicationType == 'HBP' ? 'selected' : ''}>HBP</option>
@@ -25,7 +25,7 @@
                         </select>
                     </div>
                     <div class="col-12 col-md-6 col-lg-3">
-                        <label class="form-label fw-bold">의뢰상태</label>
+                        <label class="form-label fw-bold w-100">의뢰상태</label>
                         <select class="form-select" name="status">
                             <option value="">전체</option>
                             <option value="의뢰 확인중" ${status == '의뢰 확인중' ? 'selected' : ''}>의뢰 확인중</option>
@@ -39,7 +39,7 @@
                         </select>
                     </div>
                     <div class="col-12 col-md-6 col-lg-3">
-                        <label class="form-label fw-bold">주문일</label>
+                        <label class="form-label fw-bold w-100">주문일</label>
                         <input type="date" class="form-control" name="startDate" value="${startDate}">
                     </div>
                 </div>

@@ -14,15 +14,15 @@ body {
     overflow: hidden;
 }
 
+button, input, optgroup, select, textarea {
+	font-family: none;
+}
+
 body {
-    font-family: 'Segoe UI' !important;
+    /* font-family: 'Segoe UI' !important; */
     line-height: 1.6;
     color: #333;
     background-color: #fff;
-}
-
-button, input, optgroup, select, textarea {
-	font-family: none !important;
 }
 
 a {
@@ -148,14 +148,14 @@ body::-webkit-scrollbar-button {
 }
 
 .navbar-collapse {
-	font-family: 'Segoe UI' !important;
+	/* font-family: 'Segoe UI' !important; */
 }
 
 .nav-link {
     color: rgba(0, 0, 0, 0.7);
     font-size: 18px;
     padding: 0.5rem 0.75rem;
-    font-family: 'Segoe UI' !important;
+    /* font-family: 'Segoe UI' !important; */
 }
 
 .nav-title {

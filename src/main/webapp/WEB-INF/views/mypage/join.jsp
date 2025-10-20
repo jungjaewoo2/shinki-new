@@ -135,7 +135,7 @@
 									<input class="form-check-input agree-item" type="checkbox" id="agree2" required>
 								</div>
 								<div class="">
-									(필수) 이용 약관에 동의합니다. <span class="btn-secondary h-auto rounded-1" style="cursor: pointer;padding: 4px 8px;" data-bs-toggle="modal" data-bs-target="#termsBox_list2">더보기</span>
+									(필수) 이용 약관에 동의합니다. <span class="btn-secondary h-auto rounded-1" style="cursor: pointer;padding: 4px 8px;" data-bs-toggle="modal" data-bs-target="#termsBox_list3">더보기</span>
 								</div>
 							</div>
 
@@ -144,7 +144,7 @@
 									<input class="form-check-input agree-item" type="checkbox" id="agree3" required>
 								</div>
 								<div class="">
-									(필수) 개인정보 수집 및 이용에 대해 동의합니다.<span class="btn-secondary h-auto rounded-1" style="cursor: pointer;padding: 4px 8px;" data-bs-toggle="modal" data-bs-target="#termsBox_list2">더보기</span>
+									(필수) 개인정보 수집 및 이용에 대해 동의합니다.<span class="btn-secondary h-auto rounded-1" style="cursor: pointer;padding: 4px 8px;" data-bs-toggle="modal" data-bs-target="#termsBox_list1">더보기</span>
 								</div>
 							</div>
 							<div class="d-flex align-items-center gap-2">
@@ -152,7 +152,7 @@
 									<input class="form-check-input agree-item" type="checkbox" id="agree4" name="termYn" value="Y">
 								</div>
 								<div>
-									(선택) 마케팅 및 이벤트 정보 수신에 동의합니다(문자/이메일).
+									(선택) 마케팅 및 이벤트 정보 수신에 동의합니다(문자/이메일).<span class="btn-secondary h-auto rounded-1" style="cursor: pointer;padding: 4px 8px;" data-bs-toggle="modal" data-bs-target="#termsBox_list2">더보기</span>
 								</div>
 							</div>
 						</div>
@@ -318,6 +318,71 @@
 					<br><br>
 					
                 </div>
+                <div class="text-end">
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
+                        확인
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="termsBox_list3" tabindex="-1" aria-labelledby="termsBoxLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg justify-content-center">
+        <div class="modal-content p-3" style="height: 700px;">
+            <div class="border-bottom d-flex justify-content-between mb-10">
+                <h4>이용 약관</h4>
+                <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="d-flex flex-column gap-3 justify-content-center overflow-hidden">
+                <div class="contents overflow-auto">
+                <br>
+				<div class="fw-bold fs-6">제1조 (목적)</div><br>
+				본 약관은 ㈜신기사(이하 “회사”)가 제공하는 Synapse3D 기반 의료영상 분석·시뮬레이션 서비스(이하 “서비스”)의 이용과 관련하여, 회사와 회원 간의 권리·의무 및 책임사항, 절차 기타 필요한 사항을 정함을 목적으로 합니다.
+ 				<br><br>
+				<div class="fw-bold fs-6">제2조 (정의)</div><br>
+				<div>1. “서비스”란 의료영상(DICOM 등)을 업로드하여 3D/시뮬레이션/분석 결과를 생성·전송하는 일련의 기능을 의미합니다.</div><br>
+				<div>2. “산출물”이란 서비스 수행 결과로 생성되는 3D 모델, 파라미터, 측정값, PDF/이미지 리포트 등을 말합니다.</div><br>
+				<div>3. “회원”이란 본 약관에 동의하고 서비스를 이용하는 자(의료기관, 의료인, 합법적 권한을 가진 사용자)를 말합니다.</div>
+				<br><br>
+				<div class="fw-bold fs-6">제3조 (약관의 효력 및 변경)</div><br>
+				<div>1. 본 약관은 서비스 초기화면/설정화면에 게시하거나 기타 방법으로 공지함으로써 효력이 발생합니다.</div><br>
+				<div>2. 회사는 관련 법령을 위반하지 않는 범위에서 본 약관을 변경할 수 있으며, 변경 시 시행일 최소 7일 전에 공지합니다. 중대한 변경의 경우 30일 전 공지할 수 있습니다.</div><br>
+				<div class="fw-bold fs-6">제4조 (서비스의 내용 및 범위)</div><br>
+				<div>1. 의료영상 업로드(웹/전용 채널), 전처리 및 분석/시뮬레이션, 산출물 제공(3D/PDF 등).</div><br>
+				<div>2. 계정 관리, 기술지원, 품질관리 및 오류 대응.</div><br>
+				<div>3. 상세 기능은 서비스 안내/매뉴얼에 따릅니다.</div><br>
+				<div class="fw-bold fs-6">제5조 (이용계약의 성립 및 이용요금)</div><br>
+				<div>1. 이용계약은 회원의 약관 동의 및 회사의 승낙으로 성립합니다.</div><br>
+				<div>2. 오픈 시점에는 무료로 제공되며, 향후 유료 전환 시 요금제·결제조건·환불정책을 사전 고지합니다.</div><br>
+				<div class="fw-bold fs-6">제6조 (결제 및 환불)</div><br>
+				<div>1. 유료 전환 이후, 결제는 결제대행사(PG)를 통해 이루어지며, 정기결제는 매 결제 주기에 자동 청구될 수 있습니다.</div><br>
+				<div>2. 산출물 생성(서버 처리 개시 포함) 이후에는 환불이 제한될 수 있습니다. 서비스 미개시 상태에서는 고지된 환불정책에 따릅니다.</div><br>
+				<div>3. 유료 전환 전까지는 결제/환불 내역이 존재하지 않습니다.</div><br>
+				<div class="fw-bold fs-6">제7조 (서비스 제공·중단)</div><br>
+				<div>1. 회사는 안정적 제공을 위해 노력하되, 정기점검·시스템 개선·천재지변·전력/네트워크 장애 등 불가피한 사유 시 서비스 제공을 일시 중단할 수 있습니다.</div><br>
+				<div>2. 중단 시 사전 또는 사후에 공지합니다.</div><br>
+				<div class="fw-bold fs-6">제8조 (회원의 의무 및 금지행위)</div><br>
+				<div>1. 회원은 계정정보를 안전하게 관리해야 하며, 제3자에게 양도·대여할 수 없습니다.</div><br>
+				<div>2. 법령/계약/동의 없이 타인의 개인정보·민감정보를 업로드하거나 부정 사용해서는 안 됩니다.</div><br>
+				<div>3. 리버스 엔지니어링, 비인가 스캐닝, 서비스 장애 유발 행위를 금지합니다.</div><br>
+				<div class="fw-bold fs-6">제9조 (지식재산권 및 산출물의 권리)</div><br>
+				<div>1. 회원이 제공한 의료영상 등 입력 데이터에 대한 권리는 의뢰자 또는 정당한 권리자에게 귀속됩니다.</div><br>
+				<div>2. Synapse3D 소프트웨어 및 알고리즘에 대한 권리는 회사에 귀속됩니다.</div><br>
+				<div>3. 산출물의 소유·사용권은 별도 계약 또는 서비스 안내 기준에 따르며, 임상적 판단 책임은 회원에게 있습니다.</div><br>
+				<div class="fw-bold fs-6">제10조 (의료책임의 한계 및 면책)</div><br>
+				<div>1. 서비스 및 산출물은 참고자료이며, 의료 자문·진단·처방이 아닙니다.</div><br>
+				<div>2. 최종 임상적 판단과 책임은 전적으로 회원(의사/의료기관)에게 있습니다.</div><br>
+				<div>3. 회사는 산출물의 의학적 적합성/효과성/적시성에 대한 보증을 하지 않습니다.</div><br>
+				<div class="fw-bold fs-6">제11조 (개인정보 보호)</div><br>
+				<div>개인정보의 처리에 관한 사항은 회사의 개인정보처리방침에 따릅니다.</div><br>
+				<div class="fw-bold fs-6">제12조 (손해배상 및 책임의 제한)</div><br>
+				<div>1. 회사의 고의·중과실이 없는 한, 간접손해·특별손해에 대한 책임을 지지 않습니다.</div><br>
+				<div>2. 회사의 총 배상책임은 해당 사유 발생 직전 6개월간 회원이 회사에 지급한 금액의 합계를 한도로 합니다(고의·중과실 제외).</div><br>
+				<div class="fw-bold fs-6">제13조 (준거법 및 관할)</div><br>
+				<div>본 약관은 대한민국 법률에 따르며, 분쟁은 서울중앙지방법원을 제1심 전속관할로 합니다.</div><br>
+				</div>
                 <div class="text-end">
                     <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
                         확인
