@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'SegoeUI';
+    src: url('../fonts/SegoeUI.woff2') format('woff2');
+    src: url('../fonts/SegoeUI.woff') format('woff');
+}
+
 /* Navigation */
 .top-nav {
     position: sticky;

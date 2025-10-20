@@ -9,9 +9,9 @@
 }
 
 @font-face {
-    font-family: 'Segoe UI';
-    src: url('../fonts/Segoe UI.woff2') format('woff2');
-    src: url('../fonts/Segoe UI.woff') format('woff');
+    font-family: 'SegoeUI';
+    src: url('../fonts/SegoeUI.woff2') format('woff2');
+    src: url('../fonts/SegoeUI.woff') format('woff');
 }
 
 * {
@@ -30,7 +30,7 @@ a {
 } */
 
 body {
-    /* font-family: 'Segoe UI' !important; */
+    font-family: 'SegoeUI' !important;
     background: #070b1a;
     color: white;
     min-height: 100vh;

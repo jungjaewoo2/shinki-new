@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'SegoeUI';
+    src: url('../fonts/SegoeUI.woff2') format('woff2');
+    src: url('../fonts/SegoeUI.woff') format('woff');
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -20,7 +26,7 @@ body {
 
 
 body {
-    /* font-family: 'Segoe UI' !important; */
+    font-family: 'SegoeUI' !important;
     line-height: 1.6;
     color: #333;
     background-color: #fff;
