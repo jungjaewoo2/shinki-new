@@ -135,7 +135,7 @@
 									<input class="form-check-input agree-item" type="checkbox" id="agree2" required>
 								</div>
 								<div class="">
-									(필수) 이용 약관에 동의합니다. <span class="btn-secondary h-auto rounded-1" style="cursor: pointer;padding: 4px 8px;" data-bs-toggle="modal" data-bs-target="#termsBox_list3">더보기</span>
+									(필수) 이용 약관에 동의합니다. <span class="h-auto text-black-50 ps-1" style="cursor: pointer;padding: 4px 8px;" data-bs-toggle="modal" data-bs-target="#termsBox_list3">이용약관/개인정보처리방침 약관보기 ></span>
 								</div>
 							</div>
 
@@ -144,7 +144,7 @@
 									<input class="form-check-input agree-item" type="checkbox" id="agree3" required>
 								</div>
 								<div class="">
-									(필수) 개인정보 수집 및 이용에 대해 동의합니다.<span class="btn-secondary h-auto rounded-1" style="cursor: pointer;padding: 4px 8px;" data-bs-toggle="modal" data-bs-target="#termsBox_list1">더보기</span>
+									(필수) 개인정보 수집 및 이용에 대해 동의합니다.<span class="h-auto text-black-50 ps-1" style="cursor: pointer;padding: 4px 8px;" data-bs-toggle="modal" data-bs-target="#termsBox_list1">더보기 ></span>
 								</div>
 							</div>
 							<div class="d-flex align-items-center gap-2">
@@ -152,7 +152,7 @@
 									<input class="form-check-input agree-item" type="checkbox" id="agree4" name="termYn" value="Y">
 								</div>
 								<div>
-									(선택) 마케팅 및 이벤트 정보 수신에 동의합니다(문자/이메일).<span class="btn-secondary h-auto rounded-1" style="cursor: pointer;padding: 4px 8px;" data-bs-toggle="modal" data-bs-target="#termsBox_list2">더보기</span>
+									(선택) 마케팅 및 이벤트 정보 수신에 동의합니다(문자/이메일).<span class="h-auto text-black-50 ps-1" style="cursor: pointer;padding: 4px 8px;" data-bs-toggle="modal" data-bs-target="#termsBox_list2">더보기 ></span>
 								</div>
 							</div>
 						</div>
@@ -336,7 +336,7 @@
                 <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="d-flex flex-column gap-3 justify-content-center overflow-hidden">
-                <div class="contents overflow-auto">
+                <div class="contents overflow-auto bg-body-tertiary p-2">
                 <br>
 				<div class="fw-bold fs-6">제1조 (목적)</div><br>
 				본 약관은 ㈜신기사(이하 “회사”)가 제공하는 Synapse3D 기반 의료영상 분석·시뮬레이션 서비스(이하 “서비스”)의 이용과 관련하여, 회사와 회원 간의 권리·의무 및 책임사항, 절차 기타 필요한 사항을 정함을 목적으로 합니다.
@@ -383,12 +383,192 @@
 				<div class="fw-bold fs-6">제13조 (준거법 및 관할)</div><br>
 				<div>본 약관은 대한민국 법률에 따르며, 분쟁은 서울중앙지방법원을 제1심 전속관할로 합니다.</div><br>
 				</div>
+            </div>
+            <div class="border-bottom d-flex justify-content-between mb-10">
+                <h4 class="pt-4">개인정보처리방침</h4>
+            </div>
+            <div class="d-flex flex-column gap-3 justify-content-center overflow-hidden">
+                <div class="contents overflow-auto bg-body-tertiary p-2">
+                <br>
+				<div class="fw-bold fs-6">제1조 (적용범위 및 역할 구분)</div><br>
+				<div class="term-p1">
+				<div>1. 본 방침은 웹사이트/앱 및 Synapse3D 서비스에 적용됩니다.</div><br>
+				<div>2. 회사는 원칙적으로 의료기관·의사(의뢰자)의 위탁을 받아 환자정보(민감정보)를 처리하는 수탁자(처리자)로서 업무를 수행합니다.</div><br>
+				<div>3. 회사가 환자 또는 이용자와 직접 계약하는 경우에는 컨트롤러가 될 수 있습니다.</div><br>
+				</div>
+				<br><br>
+				<div class="fw-bold fs-6">제2조 (처리 목적·항목·수집방법·보유기간)</div><br>
+				<div class="term-p1">
+				<div>1) 처리 목적: 서비스 제공(업로드·분석·산출물 전송), 계약·정산·고객지원, 보안/감사, (선택)마케팅</div><br>
+				<div>2) 처리 항목: 의뢰자 정보(성명, 직함/소속, 연락처, 계정), 환자/검사 정보(의료영상·메타데이터·결과물), 시스템·보안(접속 IP/로그 등)</div><br>
+				<div>※ 회사는 주민등록번호를 수집·이용하지 않습니다.</div><br>
+				<div>3) 수집 방법: 계정 생성·의뢰서 제출·업로드, 고객센터, 시스템 자동수집</div><br>
+				<div>4) 보유기간: 환자 의료영상·결과물은 처리 목적 달성 후 30일 이내 자동 파기(백업 포함 동기 삭제). 기타 항목은 관련 법령에 따름.</div><br>
+				</div>
+				<br>
+				<table class="table table-bordered">
+					<colgroup>
+						<col width="25%">
+						<col width="25%">
+						<col width="25%">
+						<col width="25%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th class="bg-body-tertiary text-center">구분</th>
+							<th class="bg-body-tertiary text-center">보존 근거</th>
+							<th class="bg-body-tertiary text-center">보존 항목</th>
+							<th class="bg-body-tertiary text-center">보존 기간</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>환자 의료 영상·결과물</td>
+							<td>의뢰 목적 달성</td>
+							<td>DICOM, 3D, PDF 등</td>
+							<td>30일(백업 포함)</td>
+						</tr>
+						<tr>
+							<td>대금결제/재화 공급</td>
+							<td>전자상거래법</td>
+							<td>결제·정산 기록</td>
+							<td>유료화 이후 5년</td>
+						</tr>
+						<tr>
+							<td>계약/청약철회 등</td>
+							<td>전자상거래법</td>
+							<td>계약 관련 서류</td>
+							<td>5년</td>
+						</tr>
+						<tr>
+							<td>소비자 불만/분쟁</td>
+							<td>전자상거래법</td>
+							<td>민원처리 기록</td>
+							<td>3년</td>
+						</tr>
+						<tr>
+							<td>접속기록</td>
+							<td>통신비밀보호법</td>
+							<td>IP/접속로그</td>
+							<td>3개월</td>
+						</tr>
+						<tr>
+							<td>부정이용 방지</td>
+							<td>회사 방침</td>
+							<td>계정·접속이력</td>
+							<td>1년</td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<br>
+				<div class="fw-bold fs-6">제3조 (민감정보 처리 동의)</div><br>
+				<div class="term-p1">
+					<div>1. 회사는 건강정보 등 민감정보를 필수 목적 범위 내 최소한으로 처리하며, 일반 동의와 분리된 별도 동의를 받습니다.</div><br>
+					<div>2. 의뢰자(의료기관/의사)가 컨트롤러인 경우, 적법한 동의 또는 다른 적법한 근거 확보를 전제로 처리합니다.</div><br>
+					<div>3. 전송·저장 시 암호화, 권한분리, 접속기록 보관 등 강화된 보호조치를 적용합니다.</div><br>
+				</div>
+				<br><br>
+				<div class="fw-bold fs-6">제3조의2 (비식별 데이터의 내부 활용 및 식별정보 제거)</div><br>
+				<div class="term-p1">
+					<div>1. 의뢰자가 데이터를 업로드하여 의뢰함으로써, 회사는 개인을 식별할 수 없도록 비가역적 비식별 처리를 거친 데이터 또는 통계 정보를 샘플 제작, 품질검증(QA), 알고리즘 성능 개선, 서비스 연구·개선의 내부 목적에 한하여 보관·활용할 수 있습니다.</div><br>
+					<div>2. 회사는 환자 식별정보(이름, 환자ID, 주민등록번호, 연락처, 주소, 병원명, 얼굴영상 등)에 대하여 DICOM 헤더 제거, 메타데이터 가명처리, 픽셀 상 텍스트 마스킹 등 재식별 위험 최소화 조치를 적용합니다.</div><br>
+					<div>3. 원본(식별 가능) 데이터 및 산출물은 30일을 초과하여 보관하지 않습니다.</div><br>
+					<div>4. 의뢰 데이터에 환자 식별정보가 포함된 경우, 회사는 업무 수행을 위해 필요한 범위에서 해당 정보를 임의로 삭제·비식별화할 수 있으며, 이로 인한 데이터 형식·메타데이터 변경에 대해서는 책임을 지지 않습니다.</div><br>
+				</div>
+				<br><br>
+				<div class="fw-bold fs-6">제4조 (제3자 제공)</div><br>
+				<div>법령 또는 동의가 있는 경우에 한하여 제공하며, 의뢰자에게 산출물을 제공하는 행위는 의뢰 목적 범위 내 제공입니다.</div>
+				<br><br>
+				<div class="fw-bold fs-6">제5조 (처리의 위탁)</div><br>
+				<div>수탁자(예: 클라우드/호스팅, 문자/메일 발송, 고객지원 등)에게 위탁할 수 있으며, 업체명·업무·보유기간을 웹 공지로 최신화합니다.</div><br>
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th class="bg-body-tertiary text-center align-middle">수탁자</th>
+							<th class="bg-body-tertiary text-center align-middle">위탁업무 내용</th>
+							<th class="bg-body-tertiary text-center align-middle">보유·이용기간</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>카페24</td>
+							<td>클라우드 서버 및 웹 인프라 운영·보안 관리</td>
+							<td>목적 달성 시 지체 없이 파기</td>
+						</tr>
+					</tbody>
+				</table>
+				<br><br>
+				<div class="fw-bold fs-6">제6조 (국외 이전)</div><br>
+				<div>현재 국외 이전은 하지 않습니다. 해외 리전/SaaS 도구 사용이 필요한 경우, 수신자·국가·항목·목적·방법·보유기간·연락처를 사전 고지하고 동의를 받습니다.</div>
+				<br><br>
+				<div class="fw-bold fs-6">제7조 (서버 위치 및 파기 절차)</div><br>
+				<div class="term-p1">
+					<div>1. 서버 물리적 위치: 서울특별시 서초구 강남대로34길 33</div><br>
+					<div>2. 전자파일: 복구불가 방식(전용 삭제/다중 덮어쓰기), 문서: 분쇄/소각, 백업본: 정책 주기에 따라 영구 삭제(삭제 로그 보관)</div><br>
+				</div>
+				<br><br>
+				<div class="fw-bold fs-6">제8조 (정보주체 권리)</div><br>
+				<div>열람·정정·삭제·처리정지·동의철회(회원탈퇴) 요청 가능, 법정 보존 예외 및 보안상 제한 가능, 결과 지체 없이 통지</div>
+				<br><br>
+				<div class="fw-bold fs-6">제9조 (자동 수집 장치)</div><br>
+				<div>쿠키/접속환경 정보 등을 맞춤 서비스·통계·보안 목적으로 사용하며, 거부 시 일부 기능 제한 가능</div>
+				<br><br>
+				<div class="fw-bold fs-6">제10조 (안전성 확보조치)</div><br>
+				<div class="term-p1">
+					<div>1. 기술적: 전송/저장 암호화, 키관리, 접근통제, MFA, 침입차단/탐지, 취약점 점검, 악성코드 방지, 접속기록 1년↑ 보관</div><br>
+					<div>2. 관리적: 내부관리계획, 정기 교육, 수탁자 관리·점검, 침해사고 대응/모의훈련</div><br>
+					<div>3. 물리적: 전산실/자료실 출입통제, CCTV, 잠금장치 보관</div><br>
+					<div>4. 침해사고 통지: 유출·오남용 발생 시 지체 없이 통지·신고</div><br>
+				</div>
+				<br><br>
+				<div class="fw-bold fs-6">제11조 (개인정보 보호책임자 및 담당부서)</div><br>
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th class="bg-body-tertiary text-center align-middle">구분</th>
+							<th class="bg-body-tertiary text-center align-middle">정보</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>개인정보보호책임자</td>
+							<td>이준규 (대표자)</td>
+						</tr>
+						<tr>
+							<td>연락처</td>
+							<td>1544-8368</td>
+						</tr>
+						<tr>
+							<td>이메일</td>
+							<td>master@shinkisa.co.kr</td>
+						</tr>
+						<tr>
+							<td>담당부서</td>
+							<td>[기술서비스부 또는 보안·컴플라이언스팀]</td>
+						</tr>
+					</tbody>
+				</table>
+				<br><br>
+				<div class="fw-bold fs-6">제12조 (아동의 개인정보)</div><br>
+				<div>만 14세 미만 아동은 법정대리인 동의 하에서만 처리합니다.</div>
+				<br><br>
+				<div class="fw-bold fs-6">제13조 (자동화된 의사결정)</div><br>
+				<div>회사는 개인정보에 기초한 자동화된 의사결정을 수행하지 않습니다. 수행 시 사전 고지합니다.</div>
+				<br><br>
+				<div class="fw-bold fs-6">제14조 (고지 및 개정)</div><br>
+				<div>시행 7일 전 공지, 중대한 변경은 30일 전 공지. 시행일/공고일: 2025년 10월 14일.</div>
+				<br><br>
+				
+            </div>
                 <div class="text-end">
                     <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
                         확인
                     </button>
                 </div>
             </div>
+            
+            
         </div>
     </div>
 </div>
