@@ -14,6 +14,13 @@
     src: url('../fonts/SegoeUI.woff') format('woff');
 }
 
+@font-face {
+    font-family: 'NotoSansKR-Regular';
+    src: url('../fonts/NotoSansKR-Regular.woff2') format('woff2');
+    src: url('../fonts/NotoSansKR-Regular.woff') format('woff');
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -635,6 +642,7 @@ h1 {
     font-weight: bold;
     /*text-shadow: 3px 3px 10px teal;*/
     -webkit-box-reflect: below -90px linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    font-family: 'NotoSansKR-Regular' !important;
 }
 
 #application .carousel-item .txt-sub {
