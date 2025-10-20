@@ -129,4 +129,21 @@ public class InquiryService {
         java.time.LocalDateTime monthAgo = now.minusMonths(1);
         return inquiryRepository.countMonthlyInquiries(monthAgo, now);
     }
+    
+    /**
+     * 특정 관리자의 답변 삭제 (관리자 삭제 시 사용)
+     * 관리자가 작성한 답변 내용과 관계만 제거하고, 문의 자체는 유지
+     */
+    public void deleteAdminRepliesByAdminNo(Long adminNo) {
+        List<Inquiry> inquiries = inquiryRepository.findByAdminNo(adminNo);
+        
+        for (Inquiry inquiry : inquiries) {
+            // 관리자 답변 정보만 삭제 (null로 설정)
+            inquiry.setAdmin(null);
+            inquiry.setAdminReply(null);
+            inquiry.setReplyDate(null);
+            inquiry.setAdminReplyFilePath(null);
+            inquiryRepository.save(inquiry);
+        }
+    }
 }

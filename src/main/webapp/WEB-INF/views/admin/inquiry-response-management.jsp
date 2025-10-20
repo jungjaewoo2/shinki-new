@@ -85,19 +85,19 @@
                      <div>
                          <div class="d-flex gap-4">
                              <div class="form-check d-flex align-items-center gap-2">
-                                 <input class="form-check-input" type="radio" name="status" id="radioDefault1" value="미확인" ${inquiry.status == '미확인' ? 'checked' : ''} ${!canModify ? 'disabled' : ''}>
-                                 <label class="form-check-label" for="radioDefault1">
-                                     미확인
-                                 </label>
-                             </div>
-                             <div class="form-check d-flex align-items-center gap-2">
-                                 <input class="form-check-input" type="radio" name="status" id="radioDefault2" value="답변진행중" ${inquiry.status == '답변진행중' ? 'checked' : ''} ${!canModify ? 'disabled' : ''}>
-                                 <label class="form-check-label" for="radioDefault2">
-                                     답변진행중
-                                 </label>
-                             </div>
-                             <div class="form-check d-flex align-items-center gap-2">
-                                 <input class="form-check-input" type="radio" name="status" id="radioDefault3" value="답변완료" ${inquiry.status == '답변완료' ? 'checked' : ''} ${!canModify ? 'disabled' : ''}>
+                                <input class="form-check-input" type="radio" name="status" id="radioDefault1" value="미확인" ${inquiry.status == '미확인' ? 'checked' : ''} ${canReply || canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>
+                                <label class="form-check-label" for="radioDefault1">
+                                    미확인
+                                </label>
+                            </div>
+                            <div class="form-check d-flex align-items-center gap-2">
+                                <input class="form-check-input" type="radio" name="status" id="radioDefault2" value="답변진행중" ${inquiry.status == '답변진행중' ? 'checked' : ''} ${canReply || canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>
+                                <label class="form-check-label" for="radioDefault2">
+                                    답변진행중
+                                </label>
+                            </div>
+                            <div class="form-check d-flex align-items-center gap-2">
+                                <input class="form-check-input" type="radio" name="status" id="radioDefault3" value="답변완료" ${inquiry.status == '답변완료' ? 'checked' : ''} ${canReply || canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>
                                  <label class="form-check-label" for="radioDefault3">
                                      답변완료
                                  </label>
@@ -105,18 +105,28 @@
                          </div>
                      </div>
                  </div>
-                 <c:if test="${canReply}">
-                     <div class="d-flex align-items-center gap-3 mb-3">
-                         <div class="fw-bold">답변직원</div>
-                         <div>
-                             <select name="adminId" class="form-select" aria-label="Default select example">
-                                 <c:forEach var="admin" items="${admins}">
-                                     <option value="${admin.adminNo}" ${inquiry.admin != null && inquiry.admin.adminNo == admin.adminNo ? 'selected' : ''}>${admin.name}</option>
-                                 </c:forEach>
-                             </select>
-                         </div>
-                     </div>
-                 </c:if>
+                <c:if test="${canReply}">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="fw-bold">답변직원</div>
+                        <div>
+                            <c:choose>
+                                <c:when test="${adminAuthority == '모든권한'}">
+                                    <!-- 모든권한: 모든 관리자 선택 가능 -->
+                                    <select name="adminId" class="form-select" aria-label="Default select example">
+                                        <c:forEach var="admin" items="${admins}">
+                                            <option value="${admin.adminNo}" ${inquiry.admin != null && inquiry.admin.adminNo == admin.adminNo ? 'selected' : (loggedInAdminId == admin.adminNo ? 'selected' : '')}>${admin.name}</option>
+                                        </c:forEach>
+                                    </select>
+                                </c:when>
+                                <c:otherwise>
+                                    <!-- 답변쓰기 권한: 로그인한 관리자만 표시 (읽기 전용) -->
+                                    <input type="text" class="form-control" value="${loggedInAdminName}" readonly>
+                                    <input type="hidden" name="adminId" value="${loggedInAdminId}">
+                                </c:otherwise>
+                            </c:choose>
+                        </div>
+                    </div>
+                </c:if>
                  <c:if test="${canReply}">
                      <div class="process-content bg-body-tertiary p-3 border-top border-dark">
                      <div class="">
@@ -160,7 +170,7 @@
          
          <div class="d-flex gap-1 justify-content-center mt-3">
              <c:if test="${canReply}">
-                 <button type="submit" class="btn btn-lg btn-outline-secondary">답변하기</button>
+                 <button type="submit" class="btn btn-lg btn-outline-secondary" ${canReply || adminAuthority == '모든권한' ? '' : 'disabled'}>답변하기</button>
              </c:if>
              <button type="button" class="btn btn-lg btn-secondary" onclick="location.href='/admin/inquiry-history'">목록</button>
          </div>
@@ -211,23 +221,33 @@
                                              <form method="post" action="/admin/inquiry-response-management/reply" class="mt-3">
                                                  <input type="hidden" name="replyId" value="${reply.id}">
                                                  <input type="hidden" name="inquiryId" value="${inquiry.id}">
-                                                 <div class="row">
-                                                     <div class="col-md-8">
-                                                         <textarea name="adminContent" class="form-control" rows="2" 
-                                                                   placeholder="관리자 답변을 입력하세요..." required></textarea>
-                                                     </div>
-                                                     <div class="col-md-3">
-                                                         <select name="adminId" class="form-select" required>
-                                                             <option value="">답변 담당자 선택</option>
-                                                             <c:forEach var="admin" items="${admins}">
-                                                                 <option value="${admin.adminNo}">${admin.name}</option>
-                                                             </c:forEach>
-                                                         </select>
-                                                     </div>
-                                                     <div class="col-md-1 d-flex align-items-baseline">
-                                                         <button type="submit" class="btn btn-success btn-sm">답변</button>
-                                                     </div>
-                                                 </div>
+                                                <div class="row">
+                                                    <div class="col-md-8">
+                                                        <textarea name="adminContent" class="form-control" rows="2" 
+                                                                  placeholder="관리자 답변을 입력하세요..." required></textarea>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <c:choose>
+                                                            <c:when test="${adminAuthority == '모든권한'}">
+                                                                <!-- 모든권한: 모든 관리자 선택 가능 -->
+                                                                <select name="adminId" class="form-select" required>
+                                                                    <option value="">답변 담당자 선택</option>
+                                                                    <c:forEach var="admin" items="${admins}">
+                                                                        <option value="${admin.adminNo}" ${loggedInAdminId == admin.adminNo ? 'selected' : ''}>${admin.name}</option>
+                                                                    </c:forEach>
+                                                                </select>
+                                                            </c:when>
+                                                            <c:otherwise>
+                                                                <!-- 답변쓰기 권한: 로그인한 관리자만 표시 -->
+                                                                <input type="text" class="form-control" value="${loggedInAdminName}" readonly>
+                                                                <input type="hidden" name="adminId" value="${loggedInAdminId}">
+                                                            </c:otherwise>
+                                                        </c:choose>
+                                                    </div>
+                                                    <div class="col-md-1 d-flex align-items-baseline">
+                                                        <button type="submit" class="btn btn-success btn-sm" ${canReply || adminAuthority == '모든권한' ? '' : 'disabled'}>답변</button>
+                                                    </div>
+                                                </div>
                                              </form>
                                          </c:if>
                                      </c:otherwise>

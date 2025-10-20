@@ -98,21 +98,40 @@ public class AdminController {
     @Value("${file.upload.path}")
     private String uploadPath;
     
-    // 권한 체크 헬퍼 메서드
+    // 권한 체크 헬퍼 메서드 (정책 반영)
     private boolean hasAuthority(HttpSession session, String requiredAuthority) {
         String adminAuthority = (String) session.getAttribute("adminAuthority");
         if (adminAuthority == null) return false;
-        
+
         // 모든권한은 모든 기능 접근 가능
         if ("모든권한".equals(adminAuthority)) return true;
-        
-        // 수정 권한 체크
-        if ("수정".equals(requiredAuthority) && "수정".equals(adminAuthority)) return true;
-        
-        // 답변쓰기 권한 체크
-        if ("답변쓰기".equals(requiredAuthority) && "답변쓰기".equals(adminAuthority)) return true;
-        
+
+        // 읽기 권한: 관리자 메뉴 제외한 모든 메뉴 열람 가능
+        if ("읽기".equals(requiredAuthority)) {
+            return "읽기".equals(adminAuthority) || "답변쓰기".equals(adminAuthority) || "수정".equals(adminAuthority);
+        }
+
+        // 답변쓰기 권한: 읽기 + 답변 작성/상태 변경 가능(의뢰, 1:1문의)
+        if ("답변쓰기".equals(requiredAuthority)) {
+            return "답변쓰기".equals(adminAuthority) || "수정".equals(adminAuthority);
+        }
+
+        // 수정 권한: 읽기 + 답변쓰기 + 회원정보 수정 가능
+        if ("수정".equals(requiredAuthority)) {
+            return "수정".equals(adminAuthority);
+        }
+
         return false;
+    }
+
+    // 공통 모델 바인딩: 모든 admin 뷰에서 권한 사용 가능하도록
+    @ModelAttribute
+    public void addCommonAuthorities(Model model, HttpSession session) {
+        String adminAuthority = (String) session.getAttribute("adminAuthority");
+        model.addAttribute("adminAuthority", adminAuthority);
+        model.addAttribute("canRead", hasAuthority(session, "읽기"));
+        model.addAttribute("canReply", hasAuthority(session, "답변쓰기"));
+        model.addAttribute("canModify", hasAuthority(session, "수정"));
     }
     
     @GetMapping("/login")
@@ -128,11 +147,19 @@ public class AdminController {
         if (admin.isPresent()) {
             // 세션에 관리자 정보와 권한 저장
             session.setAttribute("adminId", admin.get().getAdminNo());
+            session.setAttribute("adminNo", admin.get().getAdminNo());
             session.setAttribute("adminName", admin.get().getName());
             session.setAttribute("adminAuthority", admin.get().getAuthority());
             session.setAttribute("isAdminLoggedIn", true);
             
-            return "redirect:/admin/admin-account";
+            // 권한에 따라 다른 페이지로 리다이렉트
+            String authority = admin.get().getAuthority();
+            if ("모든권한".equals(authority)) {
+                return "redirect:/admin/admin-account";
+            } else {
+                // 읽기, 답변쓰기, 수정 권한은 회원관리 페이지로 이동
+                return "redirect:/admin/membership-management";
+            }
         } else {
             model.addAttribute("error", "아이디 또는 비밀번호가 올바르지 않습니다.");
             return "admin/login";
@@ -229,7 +256,15 @@ public class AdminController {
     // 관리자 삭제 처리 (체크박스 선택)
     @PostMapping("/admin-account/delete")
     public String deleteSelectedAdmins(@RequestParam(value = "selectedAdmins", required = false) String selectedAdmins, 
+                                     HttpSession session,
                                      RedirectAttributes redirectAttributes) {
+        // 권한 체크: 모든권한 또는 답변쓰기 권한만 삭제 가능
+        String adminAuthority = (String) session.getAttribute("adminAuthority");
+        if (!"모든권한".equals(adminAuthority) && !"답변쓰기".equals(adminAuthority)) {
+            redirectAttributes.addFlashAttribute("error", "관리자를 삭제할 권한이 없습니다.");
+            return "redirect:/admin/admin-account";
+        }
+        
         if (selectedAdmins == null || selectedAdmins.trim().isEmpty()) {
             redirectAttributes.addFlashAttribute("error", "삭제할 관리자를 선택해주세요.");
             return "redirect:/admin/admin-account";
@@ -239,9 +274,17 @@ public class AdminController {
             String[] adminNos = selectedAdmins.split(",");
             for (String adminNoStr : adminNos) {
                 Long adminNo = Long.parseLong(adminNoStr.trim());
+                
+                // 1. 해당 관리자가 작성한 Inquiry 답변 삭제
+                inquiryService.deleteAdminRepliesByAdminNo(adminNo);
+                
+                // 2. 해당 관리자가 작성한 ReplyInquiry 답변 삭제
+                replyInquiryService.deleteAdminRepliesByAdminNo(adminNo);
+                
+                // 3. 관리자 계정 삭제
                 adminService.deleteAdmin(adminNo);
             }
-            redirectAttributes.addFlashAttribute("success", "삭제가 완료되었습니다.");
+            redirectAttributes.addFlashAttribute("success", "관리자와 해당 관리자의 답변이 삭제되었습니다.");
         } catch (RuntimeException e) {
             redirectAttributes.addFlashAttribute("error", e.getMessage());
         }
@@ -250,10 +293,14 @@ public class AdminController {
     
     // 관리자 상세 정보 조회
     @GetMapping("/admin-account-details")
-    public String adminAccountDetails(@RequestParam("adminNo") Long adminNo, Model model) {
+    public String adminAccountDetails(@RequestParam("adminNo") Long adminNo, Model model, HttpSession session) {
         Optional<Admin> adminOptional = adminService.getAdminByNo(adminNo);
         if (adminOptional.isPresent()) {
             model.addAttribute("admin", adminOptional.get());
+            
+            // 권한 정보 추가
+            model.addAttribute("canModify", hasAuthority(session, "수정"));
+            model.addAttribute("adminAuthority", session.getAttribute("adminAuthority"));
         } else {
             // 관리자를 찾을 수 없을 경우 처리
             return "redirect:/admin/admin-account"; 
@@ -263,7 +310,14 @@ public class AdminController {
 
     // 관리자 정보 업데이트 처리
     @PostMapping("/admin-account-details/update")
-    public String updateAdminDetails(@ModelAttribute Admin admin, RedirectAttributes redirectAttributes) {
+    public String updateAdminDetails(@ModelAttribute Admin admin, HttpSession session, RedirectAttributes redirectAttributes) {
+        // 권한 체크: 모든권한만 관리자 정보 수정 가능
+        String adminAuthority = (String) session.getAttribute("adminAuthority");
+        if (!"모든권한".equals(adminAuthority)) {
+            redirectAttributes.addFlashAttribute("error", "관리자 정보를 수정할 권한이 없습니다.");
+            return "redirect:/admin/admin-account";
+        }
+        
         try {
             // 기존 관리자 정보 조회
             Optional<Admin> existingAdminOptional = adminService.getAdminByNo(admin.getAdminNo());
@@ -394,6 +448,34 @@ public class AdminController {
         return "admin/inquiry-history";
     }
     
+    @PostMapping("/inquiry-delete")
+    public String deleteSelectedInquiries(@RequestParam("inquiryIds") List<Long> inquiryIds,
+                                        RedirectAttributes redirectAttributes) {
+        try {
+            int deletedCount = 0;
+            for (Long inquiryId : inquiryIds) {
+                // 관련 댓글들 먼저 삭제
+                List<ReplyInquiry> replies = replyInquiryService.getRepliesByInquiryId(inquiryId);
+                for (ReplyInquiry reply : replies) {
+                    replyInquiryService.deleteReply(reply.getId());
+                }
+                
+                // 문의 삭제
+                inquiryService.deleteInquiry(inquiryId);
+                deletedCount++;
+            }
+            
+            redirectAttributes.addFlashAttribute("message", deletedCount + "개의 문의가 성공적으로 삭제되었습니다.");
+            logger.info("관리자 문의 일괄 삭제 성공 - 삭제된 문의 수: {}", deletedCount);
+            
+        } catch (Exception e) {
+            logger.error("관리자 문의 일괄 삭제 실패", e);
+            redirectAttributes.addFlashAttribute("error", "문의 삭제 중 오류가 발생했습니다.");
+        }
+        
+        return "redirect:/admin/inquiry-history";
+    }
+    
     @GetMapping("/inquiry-response-management")
     public String inquiryResponseManagement(@RequestParam(value = "id", required = false) Long inquiryId, Model model, HttpSession session) {
         try {
@@ -405,6 +487,12 @@ public class AdminController {
                 // 관리자 목록 조회 (답변직원 선택용)
                 List<Admin> admins = adminService.getAllAdmins();
                 model.addAttribute("admins", admins);
+                
+                // 로그인한 관리자 정보 추가
+                Long loggedInAdminId = (Long) session.getAttribute("adminNo");
+                String loggedInAdminName = (String) session.getAttribute("adminName");
+                model.addAttribute("loggedInAdminId", loggedInAdminId);
+                model.addAttribute("loggedInAdminName", loggedInAdminName);
                 
                 // 해당 문의의 댓글 목록 조회
                 List<ReplyInquiry> replies = replyInquiryService.getRepliesByInquiryId(inquiryId);

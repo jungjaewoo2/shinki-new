@@ -403,6 +403,7 @@
                                   <th>No.</th>
                                   <th>파일명</th>
                                   <th>첨부파일</th>
+                                  <th>다운로드 기간</th>
                               </tr>
                           </thead>
                           <tbody class="">
@@ -430,13 +431,14 @@
                                                       <img src="/assets/images/download-icon.png">
                                                   </button>
                                           </td>
+                                         <td class="download-deadline-cell"></td>
                                       </tr>
                                           </c:if>
                                       </c:forEach>
                                   </c:when>
                                   <c:otherwise>
                                       <tr>
-                                          <td colspan="3" class="text-center text-muted">작업이 완료되면 결과물을 확인할 수 있습니다.</td>
+                                          <td colspan="4" class="text-center text-muted">작업이 완료되면 결과물을 확인할 수 있습니다.</td>
                                       </tr>
                                   </c:otherwise>
                               </c:choose>
@@ -532,8 +534,26 @@ document.addEventListener('DOMContentLoaded', function () {
 <script>
     // JSP에서 JavaScript로 상태 전달
     const requestStatus = '${not empty request ? request.status : ""}';
-    
+
     document.addEventListener('DOMContentLoaded', function() {
+   // 다운로드 마감일 계산 및 표시
+   <c:if test="${not empty request.createdAt}">
+   const createdDate = new Date(${request.createdAt.year}, ${request.createdAt.monthValue - 1}, ${request.createdAt.dayOfMonth});
+   const deadlineDate = new Date(createdDate);
+   deadlineDate.setDate(deadlineDate.getDate() + 30);
+
+   const year = String(deadlineDate.getFullYear()).slice(-2);
+   const month = String(deadlineDate.getMonth() + 1).padStart(2, '0');
+   const day = String(deadlineDate.getDate()).padStart(2, '0');
+   const deadlineText = year + '.' + month + '.' + day + ' 까지';
+
+   // 모든 다운로드 마감일 셀에 텍스트 삽입
+   const deadlineCells = document.querySelectorAll('.download-deadline-cell');
+   deadlineCells.forEach(cell => {
+       cell.textContent = deadlineText;
+   });
+   </c:if>
+
    // 모든 .progress-step과 .prog-pane 요소를 선택
    const progressSteps = document.querySelectorAll('.progress-step');
    const progPanes = document.querySelectorAll('.prog-pane');

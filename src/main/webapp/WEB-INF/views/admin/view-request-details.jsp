@@ -239,6 +239,7 @@
                                              <div>
                                                  <button type="button" class="btn btn-sm btn-outline-danger" 
                                                          onclick="deleteAdminFile('${fn:trim(adminFile)}')" 
+                                                         ${canModify || adminAuthority == '모든권한' ? '' : 'disabled'}
                                                          title="파일 삭제">
                                                      <i class="bi bi-trash3"></i>
                                                  </button>
@@ -259,7 +260,7 @@
                      <!-- 전체 다운로드 버튼 (관리자 파일이 있는 경우만) -->
                      <c:if test="${request.status == '작업 완료' && not empty request.adminFilePath}">
                          <div class="all-download-btn">
-                             <button class="btn btn-outline-secondary download" onclick="downloadAllFiles()">
+                             <button class="btn btn-outline-secondary download" onclick="downloadAllFiles()" ${canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>
                                  <i class="bi bi-download text-warning"></i> 
                                  <span class="fw-bold">전체 다운로드</span>
                              </button>
@@ -302,7 +303,7 @@
                                              <textarea name="adminContent" class="form-control" rows="2" placeholder="답글을 입력하세요"></textarea>
                                          </div>
                                          <div class="text-end">
-                                             <button type="submit" class="btn btn-primary btn-sm">답글 등록</button>
+                                             <button type="submit" class="btn btn-primary btn-sm" ${canReply || adminAuthority == '모든권한' ? '' : 'disabled'}>답글 등록</button>
                                          </div>
                                      </form>
                                  </div>
@@ -354,38 +355,38 @@
                         <input type="hidden" name="requestId" value="${request.id}">
                      <div class="d-flex gap-4">
                          <div class="form-check d-flex align-items-center gap-2">
-                                <input class="form-check-input" type="radio" name="status" id="radioDefault1" value="의뢰 확인중" ${request.status == '의뢰 확인중' ? 'checked' : ''} ${!canModify && adminAuthority != '모든권한' ? 'disabled' : ''}>
-                             <label class="form-check-label" for="radioDefault1">
-                                 의뢰 확인중
-                             </label>
-                         </div>
-                         <div class="form-check d-flex align-items-center gap-2">
-                                <input class="form-check-input" type="radio" name="status" id="radioDefault2" value="견적중" ${request.status == '견적중' ? 'checked' : ''} ${!canModify && adminAuthority != '모든권한' ? 'disabled' : ''}>
-                             <label class="form-check-label" for="radioDefault2">
-                                 견적중
-                             </label>
-                         </div>
-                         <div class="form-check d-flex align-items-center gap-2">
-                                <input class="form-check-input" type="radio" name="status" id="radioDefault3" value="결제 진행" ${request.status == '결제 진행' ? 'checked' : ''} ${!canModify && adminAuthority != '모든권한' ? 'disabled' : ''}>
-                             <label class="form-check-label" for="radioDefault3">
-                                 결제 진행
-                             </label>
-                         </div>
-                         <div class="form-check d-flex align-items-center gap-2">
-                                <input class="form-check-input" type="radio" name="status" id="radioDefault4" value="작업중" ${request.status == '작업중' ? 'checked' : ''} ${!canModify && adminAuthority != '모든권한' ? 'disabled' : ''}>
-                             <label class="form-check-label" for="radioDefault4">
-                                 작업중
-                             </label>
-                         </div>
-                         <div class="form-check d-flex align-items-center gap-2">
-                                <input class="form-check-input" type="radio" name="status" id="radioDefault5" value="작업 완료" ${request.status == '작업 완료' ? 'checked' : ''} ${!canModify && adminAuthority != '모든권한' ? 'disabled' : ''}>
+                               <input class="form-check-input" type="radio" name="status" id="radioDefault1" value="의뢰 확인중" ${request.status == '의뢰 확인중' ? 'checked' : ''} ${canReply || canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>
+                            <label class="form-check-label" for="radioDefault1">
+                                의뢰 확인중
+                            </label>
+                        </div>
+                        <div class="form-check d-flex align-items-center gap-2">
+                               <input class="form-check-input" type="radio" name="status" id="radioDefault2" value="견적중" ${request.status == '견적중' ? 'checked' : ''} ${canReply || canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>
+                            <label class="form-check-label" for="radioDefault2">
+                                견적중
+                            </label>
+                        </div>
+                        <div class="form-check d-flex align-items-center gap-2">
+                               <input class="form-check-input" type="radio" name="status" id="radioDefault3" value="결제 진행" ${request.status == '결제 진행' ? 'checked' : ''} ${canReply || canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>
+                            <label class="form-check-label" for="radioDefault3">
+                                결제 진행
+                            </label>
+                        </div>
+                        <div class="form-check d-flex align-items-center gap-2">
+                               <input class="form-check-input" type="radio" name="status" id="radioDefault4" value="작업중" ${request.status == '작업중' ? 'checked' : ''} ${canReply || canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>
+                            <label class="form-check-label" for="radioDefault4">
+                                작업중
+                            </label>
+                        </div>
+                        <div class="form-check d-flex align-items-center gap-2">
+                               <input class="form-check-input" type="radio" name="status" id="radioDefault5" value="작업 완료" ${request.status == '작업 완료' ? 'checked' : ''} ${canReply || canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>
                              <label class="form-check-label" for="radioDefault5">
                                  작업 완료
                              </label>
                          </div>
                      </div>
                         <div class="mt-3">
-                            <button type="submit" class="btn btn-primary" ${!canModify && adminAuthority != '모든권한' ? 'disabled' : ''}>상태 변경</button>
+                            <button type="submit" class="btn btn-primary" ${canReply || canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>상태 변경</button>
                         </div>
                     </form>
                  </div>
@@ -399,26 +400,26 @@
                         <input type="hidden" name="requestId" value="${request.id}">
                  <div class="d-flex gap-4">
                      <div class="form-check d-flex align-items-center gap-2">
-                            <input class="form-check-input" type="radio" name="statusCancel" id="cancelRadio6" value="취소 요청" ${request.status == '취소 요청' ? 'checked' : ''} ${!canModify && adminAuthority != '모든권한' ? 'disabled' : ''}>
-                         <label class="form-check-label" for="cancelRadio6">
-                             취소 요청
-                         </label>
-                     </div>
-                     <div class="form-check d-flex align-items-center gap-2">
-                            <input class="form-check-input" type="radio" name="statusCancel" id="cancelRadio7" value="취소 진행중" ${request.status == '취소 진행중' ? 'checked' : ''} ${!canModify && adminAuthority != '모든권한' ? 'disabled' : ''}>
-                         <label class="form-check-label" for="cancelRadio7">
-                             취소 진행중
-                         </label>
-                     </div>
-                     <div class="form-check d-flex align-items-center gap-2">
-                            <input class="form-check-input" type="radio" name="statusCancel" id="cancelRadio8" value="취소 완료" ${request.status == '취소 완료' ? 'checked' : ''} ${!canModify && adminAuthority != '모든권한' ? 'disabled' : ''}>
+                           <input class="form-check-input" type="radio" name="statusCancel" id="cancelRadio6" value="취소 요청" ${request.status == '취소 요청' ? 'checked' : ''} ${canReply || canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>
+                        <label class="form-check-label" for="cancelRadio6">
+                            취소 요청
+                        </label>
+                    </div>
+                    <div class="form-check d-flex align-items-center gap-2">
+                           <input class="form-check-input" type="radio" name="statusCancel" id="cancelRadio7" value="취소 진행중" ${request.status == '취소 진행중' ? 'checked' : ''} ${canReply || canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>
+                        <label class="form-check-label" for="cancelRadio7">
+                            취소 진행중
+                        </label>
+                    </div>
+                    <div class="form-check d-flex align-items-center gap-2">
+                           <input class="form-check-input" type="radio" name="statusCancel" id="cancelRadio8" value="취소 완료" ${request.status == '취소 완료' ? 'checked' : ''} ${canReply || canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>
                          <label class="form-check-label" for="cancelRadio8">
                              취소 완료
                          </label>
                      </div>
                  </div>
                     <div class="mt-3">
-                        <button type="submit" class="btn btn-warning" ${!canModify && adminAuthority != '모든권한' ? 'disabled' : ''}>상태 변경</button>
+                        <button type="submit" class="btn btn-warning" ${canReply || canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>상태 변경</button>
                     </div>
                     </form>
                  </div>
@@ -437,7 +438,7 @@
                                             style="width: 200px;" value="${request.paymentAmount != null ? request.paymentAmount : ''}" 
                                             placeholder="금액을 입력하세요">
                                  </div>
-                                 <button type="submit" class="btn btn-success">결제정보 저장</button>
+                                 <button type="submit" class="btn btn-success" ${canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>결제정보 저장</button>
                              </div>
                          </form>
                      </div>
@@ -497,7 +498,7 @@
 
                          <div class="mb-3">
                              <input class="form-control" type="file" id="fileInput" multiple style="display: none;" accept="*/*">
-                             <button type="button" class="btn btn-outline-primary" onclick="document.getElementById('fileInput').click()">
+                             <button type="button" class="btn btn-outline-primary" onclick="document.getElementById('fileInput').click()" ${canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>
                                  <i class="bi bi-plus-circle"></i> 파일 선택
                              </button>
                          </div>
@@ -514,10 +515,10 @@
                      </div>
                      
                      <div class="button-group flex-row justify-content-end gap-2 w-100 mt-3">
-                         <button type="button" class="btn btn-danger" id="deleteBtn" onclick="deleteSelectedFiles()" disabled>
+                         <button type="button" class="btn btn-danger" id="deleteBtn" onclick="deleteSelectedFiles()" disabled ${canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>
                              <i class="bi bi-trash"></i> 선택 삭제
                          </button>
-                         <button type="button" class="btn btn-primary" id="uploadBtn" onclick="uploadFiles()" disabled>
+                         <button type="button" class="btn btn-primary" id="uploadBtn" onclick="uploadFiles()" disabled ${canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>
                              <i class="bi bi-upload"></i> 업로드
                          </button>
                      </div>
@@ -798,11 +799,15 @@
     }
 
     function deleteSelectedFiles() {
+        <c:if test="${canModify || adminAuthority == '모든권한'}">
         if (fileUploadSystem) fileUploadSystem.deleteSelectedFiles();
+        </c:if>
     }
 
     function uploadFiles() {
+        <c:if test="${canModify || adminAuthority == '모든권한'}">
         if (fileUploadSystem) fileUploadSystem.uploadFiles();
+        </c:if>
     }
 
     // 전체 다운로드 함수

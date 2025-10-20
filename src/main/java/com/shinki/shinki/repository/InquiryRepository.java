@@ -38,4 +38,8 @@ public interface InquiryRepository extends JpaRepository<Inquiry, Long> {
     // 한달 문의 건수
     @Query("SELECT COUNT(i) FROM Inquiry i WHERE i.createdAt >= :startDate AND i.createdAt < :endDate")
     Long countMonthlyInquiries(@Param("startDate") java.time.LocalDateTime startDate, @Param("endDate") java.time.LocalDateTime endDate);
+    
+    // 특정 관리자가 답변한 문의 조회
+    @Query("SELECT i FROM Inquiry i WHERE i.admin.adminNo = :adminNo")
+    List<Inquiry> findByAdminNo(@Param("adminNo") Long adminNo);
 }

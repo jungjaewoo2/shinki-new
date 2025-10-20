@@ -4,7 +4,7 @@
         <h1>관리자 페이지</h1>
     </div>
     <nav class="sidebar-nav">
-        <div class="nav-section">
+        <div class="nav-section" ${adminAuthority != '모든권한' ? 'style="display:none"' : ''}>
             <div class="nav-title">
                 관리자
                 <span><i class="bi bi-caret-down-fill"></i></span>
@@ -16,7 +16,7 @@
             </div>
         </div>
 
-        <div class="nav-section">
+        <div class="nav-section" ${canRead || adminAuthority == '모든권한' ? '' : 'style="display:none"'}>
             <div class="nav-title">
                 회원관리
                 <span><i class="bi bi-caret-down-fill"></i></span>
@@ -27,7 +27,7 @@
             </div>
         </div>
 
-        <div class="nav-section">
+        <div class="nav-section" ${canRead || adminAuthority == '모든권한' ? '' : 'style="display:none"'}>
             <div class="nav-title">
                 의뢰관리
                 <span><i class="bi bi-caret-down-fill"></i></span>
@@ -37,7 +37,7 @@
             </div>
         </div>
 
-        <div class="nav-section">
+        <div class="nav-section" ${canRead || adminAuthority == '모든권한' ? '' : 'style="display:none"'}>
             <div class="nav-title">
                 1:1문의관리
                 <span><i class="bi bi-caret-down-fill"></i></span>
@@ -47,7 +47,7 @@
             </div>
         </div>
 
-        <div class="nav-section">
+        <div class="nav-section" ${canRead || adminAuthority == '모든권한' ? '' : 'style="display:none"'}>
             <div class="nav-title">
                 통계
                 <span><i class="bi bi-caret-down-fill"></i></span>
@@ -57,7 +57,7 @@
             </div>
         </div>
         
-        <div class="nav-section">
+        <div class="nav-section" ${canRead || adminAuthority == '모든권한' ? '' : 'style="display:none"'}>
             <div class="nav-title">
                 상담신청
                 <span><i class="bi bi-caret-down-fill"></i></span>

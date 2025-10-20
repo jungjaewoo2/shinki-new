@@ -54,7 +54,7 @@
                     <div class="col-12 col-lg-4 d-flex gap-2 justify-content-end">
                         <button type="submit" class="btn btn-primary flex-fill flex-lg-grow-0"><span class="fw-bold">검색</span></button>
                         <button type="button" class="btn btn-outline-secondary flex-fill flex-lg-grow-0" onclick="resetSearch()"><span class="fw-bold">초기화</span></button>
-                        <button type="button" class="btn btn-secondary flex-fill flex-lg-grow-0" onclick="deleteSelectedRequests()"><span class="fw-bold">삭제</span></button>
+                        <button type="button" class="btn btn-secondary flex-fill flex-lg-grow-0" onclick="deleteSelectedRequests()" ${canModify || adminAuthority == '모든권한' ? '' : 'disabled'}><span class="fw-bold">삭제</span></button>
                     </div>
                 </div>
             </form>
@@ -94,7 +94,7 @@
                              <tr onclick="location.href='/admin/view-request-details?id=${request.id}'">
                                 <td>
                                     <div class="form-check d-flex justify-content-center">
-                                        <input class="form-check-input" type="checkbox" value="${request.id}" name="selectedRequests" onclick="event.stopPropagation();">
+                                        <input class="form-check-input" type="checkbox" value="${request.id}" name="selectedRequests" onclick="event.stopPropagation();" ${canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>
                                     </div>
                                 </td>
                                  <td>${totalElements - (currentPage * size) - status.index}</td>
@@ -332,6 +332,7 @@ function getCellValue(row, column) {
 }
 
 function deleteSelectedRequests() {
+    <c:if test="${canModify || adminAuthority == '모든권한'}">
     const checkedBoxes = document.querySelectorAll('tbody input[type="checkbox"][name="selectedRequests"]:checked');
     if (checkedBoxes.length === 0) {
         alert('삭제할 의뢰를 선택해주세요.');
@@ -342,6 +343,7 @@ function deleteSelectedRequests() {
         document.getElementById('selectedRequestsInput').value = selectedValues.join(',');
         document.getElementById('deleteForm').submit();
     }
+    </c:if>
 }
 
 function resetSearch() {

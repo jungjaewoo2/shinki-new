@@ -56,15 +56,15 @@
                              <div class="d-flex">
                                  <input type="text" class="form-control" name="adminId" value="${admin.adminId}" readonly style="background-color: #f8f9fa;" />
                              </div>
-                             <div class="d-flex">
-                                 <input type="password" class="form-control" name="password" value="${admin.password}" required />
-                             </div>
-                             <div class="d-flex">
-                                 <input type="text" class="form-control" name="phone" value="${admin.phone}" placeholder="연락처를 입력하세요" />
-                             </div>
-                             <div class="d-flex">
-                                 <input type="email" class="form-control" name="email" value="${admin.email}" placeholder="이메일을 입력하세요" />
-                             </div>
+                            <div class="d-flex">
+                                <input type="password" class="form-control" name="password" value="${admin.password}" ${adminAuthority == '모든권한' ? '' : 'readonly style="background-color: #f8f9fa;"'} required />
+                            </div>
+                            <div class="d-flex">
+                                <input type="text" class="form-control" name="phone" value="${admin.phone}" placeholder="연락처를 입력하세요" ${adminAuthority == '모든권한' ? '' : 'readonly style="background-color: #f8f9fa;"'} />
+                            </div>
+                            <div class="d-flex">
+                                <input type="email" class="form-control" name="email" value="${admin.email}" placeholder="이메일을 입력하세요" ${adminAuthority == '모든권한' ? '' : 'readonly style="background-color: #f8f9fa;"'} />
+                            </div>
                          </div>
                      </div>
                  </div>
@@ -76,46 +76,53 @@
                          <div class="w-auto flex-fill" style="max-width: 400px;">
                              <div class="fs-5 fw-bold pb-3">조직정보</div>
                              <div class="d-flex flex-column gap-2 text-body-tertiary bg-body-tertiary p-2">
-                                 <div class="d-flex gap-1 align-items-center">
-                                     <span class="fw-bold" style="min-width: 70px;">[ 부서명 ]</span>
-                                     <input type="text" class="form-control" name="department" value="${admin.department}" style="max-width: 200px;" />
-                                 </div>
-                                 <div class="d-flex gap-1 align-items-center">
-                                     <span class="fw-bold" style="min-width: 70px;">[ 지위 ]</span>
-                                     <input type="text" class="form-control" name="position" value="${admin.position}" style="max-width: 200px;" />
-                                 </div>
-                                 <div class="d-flex gap-1 align-items-center">
-                                     <span class="fw-bold" style="min-width: 70px;">[ 직책 ]</span>
-                                     <input type="text" class="form-control" name="rank" value="${admin.rank}" style="max-width: 200px;" />
-                                 </div>
+                                <div class="d-flex gap-1 align-items-center">
+                                    <span class="fw-bold" style="min-width: 70px;">[ 부서명 ]</span>
+                                    <input type="text" class="form-control" name="department" value="${admin.department}" style="max-width: 200px;" ${adminAuthority == '모든권한' ? '' : 'readonly style="background-color: #f8f9fa; max-width: 200px;"'} />
+                                </div>
+                                <div class="d-flex gap-1 align-items-center">
+                                    <span class="fw-bold" style="min-width: 70px;">[ 지위 ]</span>
+                                    <input type="text" class="form-control" name="position" value="${admin.position}" style="max-width: 200px;" ${adminAuthority == '모든권한' ? '' : 'readonly style="background-color: #f8f9fa; max-width: 200px;"'} />
+                                </div>
+                                <div class="d-flex gap-1 align-items-center">
+                                    <span class="fw-bold" style="min-width: 70px;">[ 직책 ]</span>
+                                    <input type="text" class="form-control" name="rank" value="${admin.rank}" style="max-width: 200px;" ${adminAuthority == '모든권한' ? '' : 'readonly style="background-color: #f8f9fa; max-width: 200px;"'} />
+                                </div>
                              </div>
                          </div>
                          <div class="w-auto flex-fill">
                              <div class="fs-5 fw-bold pb-3">권한부여</div>
                              <div class="d-flex flex-column gap-2 text-body-tertiary bg-body-tertiary p-2">
-                                 <div class="d-flex align-items-center gap-1">
-                                     <div class="d-flex"><input class="form-check-input" type="radio" name="authority" value="모든권한" id="authorityAll" <c:if test="${admin.authority eq '모든권한'}">checked</c:if>></div>
-                                     <label for="authorityAll">모든권한</label>
-                                 </div>
-                                 <div class="d-flex align-items-center gap-1">
-                                     <div class="d-flex"><input class="form-check-input" type="radio" name="authority" value="수정" id="authorityEdit" <c:if test="${admin.authority eq '수정'}">checked</c:if>></div>
-                                     <label for="authorityEdit">수정</label>
-                                 </div>
-                                 <div class="d-flex align-items-center gap-1">
-                                     <div class="d-flex"><input class="form-check-input" type="radio" name="authority" value="답변쓰기" id="authorityReply" <c:if test="${admin.authority eq '답변쓰기'}">checked</c:if>></div>
-                                     <label for="authorityReply">답변쓰기</label>
-                                 </div>
-                                 <div class="d-flex align-items-center gap-1">
-                                     <div class="d-flex"><input class="form-check-input" type="radio" name="authority" value="읽기" id="authorityRead" <c:if test="${admin.authority eq '읽기'}">checked</c:if>></div>
-                                     <label for="authorityRead">읽기</label>
-                                 </div>
+                                <div class="d-flex align-items-center gap-1">
+                                    <div class="d-flex"><input class="form-check-input" type="radio" name="authority" value="모든권한" id="authorityAll" <c:if test="${admin.authority eq '모든권한'}">checked</c:if> ${adminAuthority == '모든권한' ? '' : 'disabled'}></div>
+                                    <label for="authorityAll">모든권한</label>
+                                </div>
+                                <div class="d-flex align-items-center gap-1">
+                                    <div class="d-flex"><input class="form-check-input" type="radio" name="authority" value="수정" id="authorityEdit" <c:if test="${admin.authority eq '수정'}">checked</c:if> ${adminAuthority == '모든권한' ? '' : 'disabled'}></div>
+                                    <label for="authorityEdit">수정</label>
+                                </div>
+                                <div class="d-flex align-items-center gap-1">
+                                    <div class="d-flex"><input class="form-check-input" type="radio" name="authority" value="답변쓰기" id="authorityReply" <c:if test="${admin.authority eq '답변쓰기'}">checked</c:if> ${adminAuthority == '모든권한' ? '' : 'disabled'}></div>
+                                    <label for="authorityReply">답변쓰기</label>
+                                </div>
+                                <div class="d-flex align-items-center gap-1">
+                                    <div class="d-flex"><input class="form-check-input" type="radio" name="authority" value="읽기" id="authorityRead" <c:if test="${admin.authority eq '읽기'}">checked</c:if> ${adminAuthority == '모든권한' ? '' : 'disabled'}></div>
+                                    <label for="authorityRead">읽기</label>
+                                </div>
                              </div>
                          </div>
                      </div>
-                     <div class="d-flex gap-1 justify-content-center mt-3">
-                         <button type="submit" class="btn btn-lg btn-outline-primary">저장</button>
-                         <button type="button" class="btn btn-lg btn-secondary" onclick="history.back()">취소</button>
-                     </div>
+                    <div class="d-flex gap-1 justify-content-center mt-3">
+                        <c:if test="${adminAuthority == '모든권한'}">
+                            <button type="submit" class="btn btn-lg btn-outline-primary">저장</button>
+                        </c:if>
+                        <button type="button" class="btn btn-lg btn-secondary" onclick="history.back()">
+                            <c:choose>
+                                <c:when test="${adminAuthority == '모든권한'}">취소</c:when>
+                                <c:otherwise>목록</c:otherwise>
+                            </c:choose>
+                        </button>
+                    </div>
                  </div>
              </div>
          </form>

@@ -122,7 +122,7 @@
                                                  <textarea name="memo" class="form-control" rows="3" placeholder="메모를 입력하세요...">${member.memo}</textarea>
                                              </div>
                                              <div>
-                                                 <button type="submit" class="btn btn-info btn-sm text-white">저장</button>
+                                                 <button type="submit" class="btn btn-info btn-sm text-white" ${canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>저장</button>
                                              </div>
                                          </div>
                                      </form>
@@ -250,7 +250,7 @@
              </div>
          </div>
          <div class="d-flex gap-1 justify-content-center">
-             <button class="btn btn-lg btn-info text-white">수정하기</button>
+             <button class="btn btn-lg btn-info text-white" ${canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>수정하기</button>
              <button class="btn btn-lg btn-secondary" onclick="location.href='membership-management'">목록</button>
          </div>
      </div>

@@ -19,7 +19,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary"><span class="fw-bold">검색</span></button>
             </form>
-            <button type="button" class="btn btn-outline-secondary download" onclick="downloadExcel()"><i class="bi bi-download text-warning"></i> <span class="fw-bold">회원목록 엑셀 다운로드</span></button>
+            <button type="button" class="btn btn-outline-secondary download" onclick="downloadExcel()" ${canModify || adminAuthority == '모든권한' ? '' : 'disabled'}><i class="bi bi-download text-warning"></i> <span class="fw-bold">회원목록 엑셀 다운로드</span></button>
         </div>
          <div class="card">
              <div class="fw-bold">총 ${totalElements}명</div>
@@ -42,7 +42,7 @@
                          <tr>
                             <th>
                                 <div class="form-check d-flex align-items-center justify-content-center">
-                                    <input class="form-check-input" type="checkbox" value="" id="selectAll">
+                                    <input class="form-check-input" type="checkbox" value="" id="selectAll" ${canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>
                                 </div>
                             </th>
                            <th>병원</th>
@@ -62,7 +62,7 @@
                              <tr>
                                 <td>
                                     <div class="form-check d-flex justify-content-center">
-                                        <input class="form-check-input" type="checkbox" value="${member.id}" name="selectedMembers">
+                                        <input class="form-check-input" type="checkbox" value="${member.id}" name="selectedMembers" ${canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>
                                     </div>
                                 </td>
                                <td>${member.hospitalName}</td>
@@ -74,7 +74,7 @@
                                <td>${member.requestCount != null ? member.requestCount : 0}건</td>
                                <td><fmt:formatNumber value="${member.totalPaymentAmount != null ? member.totalPaymentAmount : 0}" pattern="#,###" />원</td>
                                <td>${member.recommendCode != null ? member.recommendCode : '-'}</td>
-                               <td onclick="location.href='view-member-info?memberId=${member.id}'"><i class="bi bi-gear-fill text-info cursor-pointer"></i></td>
+                               <td onclick="<c:if test='${canModify || adminAuthority == "모든권한"}'>location.href='view-member-info?memberId=${member.id}'</c:if>" style="${canModify || adminAuthority == '모든권한' ? 'cursor: pointer;' : 'cursor: default; opacity: 0.5;'}"><i class="bi bi-gear-fill text-info ${canModify || adminAuthority == '모든권한' ? 'cursor-pointer' : ''}"></i></td>
                              </tr>
                          </c:forEach>
                          <c:if test="${empty members}">
@@ -140,8 +140,8 @@
          </form>
          
          <div class="d-flex gap-1 justify-content-center">
-             <button class="btn btn-lg btn-outline-secondary" onclick="withdrawSelectedMembers()">선택 탈퇴</button>
-             <button class="btn btn-lg btn-secondary" onclick="deleteSelectedMembers()">선택 삭제</button>
+             <button class="btn btn-lg btn-outline-secondary" onclick="withdrawSelectedMembers()" ${canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>선택 탈퇴</button>
+             <button class="btn btn-lg btn-secondary" onclick="deleteSelectedMembers()" ${canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>선택 삭제</button>
          </div>
      </div>
  </div>
@@ -290,6 +290,7 @@ function getCellValue(row, column) {
 }
 
 function withdrawSelectedMembers() {
+    <c:if test="${canModify || adminAuthority == '모든권한'}">
     const checkedBoxes = document.querySelectorAll('tbody input[type="checkbox"]:checked');
     if (checkedBoxes.length === 0) {
         alert('탈퇴할 회원을 선택해주세요.');
@@ -300,9 +301,11 @@ function withdrawSelectedMembers() {
         document.getElementById('selectedMembersInput').value = selectedValues.join(',');
         document.getElementById('withdrawForm').submit();
     }
+    </c:if>
 }
 
 function deleteSelectedMembers() {
+    <c:if test="${canModify || adminAuthority == '모든권한'}">
     const checkedBoxes = document.querySelectorAll('tbody input[type="checkbox"]:checked');
     if (checkedBoxes.length === 0) {
         alert('삭제할 회원을 선택해주세요.');
@@ -313,11 +316,14 @@ function deleteSelectedMembers() {
         document.getElementById('selectedMembersDeleteInput').value = selectedValues.join(',');
         document.getElementById('deleteForm').submit();
     }
+    </c:if>
 }
 
 function downloadExcel() {
+    <c:if test="${canModify || adminAuthority == '모든권한'}">
     // 엑셀 다운로드 링크로 이동
     window.location.href = '/admin/membership-management/excel';
+    </c:if>
 }
 </script>
 

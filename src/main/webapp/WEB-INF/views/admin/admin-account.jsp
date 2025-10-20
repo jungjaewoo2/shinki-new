@@ -28,8 +28,12 @@
         <div class="card">
             <div class="d-none d-lg-block">
                 <div class="d-flex justify-content-end gap-1">
-                    <div class="text-end" data-bs-toggle="modal" data-bs-target="#add"><button type="button" class="btn btn-dark"><i class="bi bi-person-add fs-5"></i> 관리자 추가</button></div>
-                    <div class="text-end"><button type="button" class="btn btn-danger" onclick="deleteSelectedAdmins()"><i class="bi bi-person-x fs-5"></i> 관리자 삭제</button></div>
+                    <c:if test="${adminAuthority == '모든권한'}">
+                        <div class="text-end" data-bs-toggle="modal" data-bs-target="#add"><button type="button" class="btn btn-dark"><i class="bi bi-person-add fs-5"></i> 관리자 추가</button></div>
+                    </c:if>
+                    <c:if test="${adminAuthority == '모든권한' || adminAuthority == '답변쓰기'}">
+                        <div class="text-end"><button type="button" class="btn btn-danger" onclick="deleteSelectedAdmins()"><i class="bi bi-person-x fs-5"></i> 관리자 삭제</button></div>
+                    </c:if>
                 </div>
                 <table class="table table-bordered">
                     <colgroup>
@@ -52,7 +56,7 @@
                             <tr>
                                 <td>
                                     <div class="form-check d-flex justify-content-center">
-                                        <input class="form-check-input" type="checkbox" value="${admin.adminNo}" name="selectedAdmins">
+                                        <input class="form-check-input" type="checkbox" value="${admin.adminNo}" name="selectedAdmins" ${adminAuthority == '모든권한' || adminAuthority == '답변쓰기' ? '' : 'disabled'}>
                                     </div>
                                 </td>
                                 <td>${admin.name}</td>
@@ -115,7 +119,7 @@
                 <c:forEach var="admin" items="${admins}" varStatus="status">
                     <div class="d-flex flex-column gap-1 border-top border-bottom pb-1 pt-1">
                         <div class="order-numb align-items-center d-flex gap-1">
-                            <input class="form-check-input" type="checkbox" value="${admin.adminNo}" name="selectedAdmins">
+                            <input class="form-check-input" type="checkbox" value="${admin.adminNo}" name="selectedAdmins" ${adminAuthority == '모든권한' || adminAuthority == '답변쓰기' ? '' : 'disabled'}>
                             <div class="d-flex gap-1">
                                 <div>${admin.name}</div>
                                 <div class="text-muted">(${admin.adminId})</div>
@@ -256,6 +260,7 @@
 
     // 선택된 관리자 삭제 함수
     function deleteSelectedAdmins() {
+        <c:if test="${adminAuthority == '모든권한' || adminAuthority == '답변쓰기'}">
         const checkedBoxes = document.querySelectorAll('tbody input[type="checkbox"]:checked');
 
         if (checkedBoxes.length === 0) {
@@ -263,11 +268,12 @@
             return;
         }
 
-        if (confirm('선택된 관리자를 삭제하시겠습니까?')) {
+        if (confirm('선택된 관리자와 해당 관리자가 작성한 모든 답변을 삭제하시겠습니까?\n이 작업은 되돌릴 수 없습니다.')) {
             const selectedValues = Array.from(checkedBoxes).map(checkbox => checkbox.value);
             document.getElementById('selectedAdminsInput').value = selectedValues.join(',');
             document.getElementById('deleteForm').submit();
         }
+        </c:if>
     }
 </script>
 

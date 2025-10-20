@@ -22,7 +22,7 @@
             </div>
         </c:if>
         
-        <form id="requestForm" action="/mypage/request" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+        <form id="requestForm" action="/mypage/request" method="post" enctype="multipart/form-data">
             <input type="hidden" name="memberId" value="${memberId}">
             <input type="hidden" name="privacyAgreement" value="서비스 의뢰 동의서에 동의합니다.">
             
@@ -129,11 +129,11 @@
             </div>
 
             <div class="form-group align-items-baseline flex-column gap-3">
-                <label class="form-label">Image 파일 업로드</label>
+                <label class="form-label required">Image 파일 업로드</label>
                 <div class="d-flex flex-column flex-lg-row justify-content-between w-100" style="font-size: 14px">
                 	<span class="m-0 text-danger">(필수) 첨부파일은 Zip 형식만 첨부 가능하며, 환자 정보는 익명으로 변환 후 첨부 바랍니다.</span>
                 	<label class="checkbox-item">
-                    	<input type="radio" name="" value="true" required> 확인했습니다.
+                    	<input type="radio" name="fileConfirmed" value="true" required> 확인했습니다.
                 	</label>
                 </div>
                 <div id="dropArea" class="file-upload-area w-100 d-flex flex-column align-items-center justify-content-center p-4 border rounded border-dashed" style="height: 150px; cursor: pointer;">
@@ -179,6 +179,8 @@ function clearFile() {
 
 // 폼 유효성 검사
 function validateForm() {
+    console.log('validateForm 호출됨');
+    
     const privacyAgreed = document.querySelector('input[name="privacyAgreed"]:checked');
     if (!privacyAgreed) {
         alert('서비스 의뢰 동의서에 동의해주세요.');
@@ -208,15 +210,32 @@ function validateForm() {
         return false;
     }
     
-    const fileInput = document.getElementById('formFile');
-    if (fileInput.files.length > 0) {
-        const fileName = fileInput.files[0].name;
-        if (!fileName.toLowerCase().endsWith('.zip')) {
-            alert('ZIP 파일만 업로드 가능합니다.');
-            return false;
-        }
+    // 파일 확인 체크박스 검증
+    const fileConfirmed = document.querySelector('input[name="fileConfirmed"]:checked');
+    if (!fileConfirmed) {
+        alert('첨부파일 관련 안내사항을 확인해주세요.');
+        return false;
     }
     
+    // 파일 필수 검증
+    const fileInput = document.getElementById('formFile');
+    console.log('파일 개수:', fileInput.files.length);
+    
+    if (!fileInput.files || fileInput.files.length === 0) {
+        alert('ZIP 파일을 첨부해주세요.\n파일 확장자는 ZIP 파일만 가능합니다.');
+        return false;
+    }
+    
+    // ZIP 파일 형식 검증
+    const fileName = fileInput.files[0].name;
+    console.log('파일명:', fileName);
+    
+    if (!fileName.toLowerCase().endsWith('.zip')) {
+        alert('파일 확장자는 ZIP 파일만 가능합니다.\nZIP 파일을 첨부해주세요.');
+        return false;
+    }
+    
+    console.log('검증 통과');
     return true;
 }
 
@@ -225,6 +244,18 @@ window.onload = function() {
     var dropArea = document.getElementById('dropArea');
     var formFile = document.getElementById('formFile');
     var fileList = document.getElementById('fileList');
+    
+    // 폼 제출 이벤트 리스너 추가 (이중 보호)
+    var requestForm = document.getElementById('requestForm');
+    if (requestForm) {
+        requestForm.addEventListener('submit', function(e) {
+            if (!validateForm()) {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            }
+        });
+    }
 
     // 드래그 기본 동작 방지 헬퍼 함수
     function preventDefaults(e) {
@@ -250,7 +281,7 @@ window.onload = function() {
         if (files.length > 0) {
             var file = files[0];
             if (!file.name.toLowerCase().endsWith('.zip')) {
-                alert('ZIP 파일만 업로드 가능합니다.');
+                alert('파일 확장자는 ZIP 파일만 가능합니다.\nZIP 파일을 첨부해주세요.');
                 return;
             }
             formFile.files = files;
@@ -284,6 +315,15 @@ window.onload = function() {
 
     if (formFile) {
         formFile.addEventListener('change', function() {
+            if (this.files.length > 0) {
+                const file = this.files[0];
+                if (!file.name.toLowerCase().endsWith('.zip')) {
+                    alert('파일 확장자는 ZIP 파일만 가능합니다.\nZIP 파일을 첨부해주세요.');
+                    this.value = ''; // 파일 선택 초기화
+                    displayFiles([]);
+                    return;
+                }
+            }
             displayFiles(this.files);
         });
     }

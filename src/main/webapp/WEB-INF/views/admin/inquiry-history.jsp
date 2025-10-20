@@ -12,21 +12,22 @@
      </div>
 
      <div class="card d-flex flex-column gap-0 gap-lg-3 flex-fill overflow-auto">
-         <div class="card d-flex align-items-center flex-lg-row flex-column justify-content-end gap-2">
-             <form method="get" action="/admin/inquiry-history" class="d-flex gap-2">
-                 <div class="position-relative">
-                     <input class="form-control" type="text" name="search" placeholder="문의내용 검색" 
-                            value="${search}" aria-label="검색">
-                     <div class="end-0 position-absolute top-50 translate-middle"><i class="bi bi-search"></i></div>
-                 </div>
-                 <button type="submit" class="btn btn-primary"><span class="fw-bold">검색</span></button>
-             </form>
-             <button type="button" class="btn btn-secondary"><span class="fw-bold">삭제</span></button>
-         </div>
+        <div class="card d-flex align-items-center flex-lg-row flex-column justify-content-end gap-2">
+            <form method="get" action="/admin/inquiry-history" class="d-flex gap-2">
+                <div class="position-relative">
+                    <input class="form-control" type="text" name="search" placeholder="문의내용 검색" 
+                           value="${search}" aria-label="검색">
+                    <div class="end-0 position-absolute top-50 translate-middle"><i class="bi bi-search"></i></div>
+                </div>
+                <button type="submit" class="btn btn-primary"><span class="fw-bold">검색</span></button>
+            </form>
+            <button type="button" class="btn btn-secondary" id="deleteBtn" onclick="deleteSelectedInquiries()" ${canModify || adminAuthority == '모든권한' ? '' : 'disabled'}><span class="fw-bold">삭제</span></button>
+        </div>
          <div class="card">
              <div class="fw-bold">총 ${totalElements}건</div>
-             <div class="">
-                 <table class="table table-striped table-hover table-bordered  cursor-pointer">
+             <form id="inquiryForm" method="post" action="/admin/inquiry-delete">
+                 <div class="">
+                     <table class="table table-striped table-hover table-bordered  cursor-pointer">
                      <colgroup>
                          <col width="5%">
                          <col width="5%">
@@ -39,11 +40,11 @@
                      </colgroup>
                      <thead>
                          <tr>
-                             <th>
-                                 <div class="form-check d-flex align-items-center justify-content-center">
-                                     <input class="form-check-input" type="checkbox" value="" id="checkChecked">
-                                 </div>
-                             </th>
+                            <th>
+                                <div class="form-check d-flex align-items-center justify-content-center">
+                                    <input class="form-check-input" type="checkbox" value="" id="checkChecked" onclick="event.stopPropagation();" ${canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>
+                                </div>
+                            </th>
                              <th>NO</th>
                              <th class="sortable" data-column="inquiryType">문의항목<span class="sort-icon"><i class="bi bi-caret-down-fill"></i></span></th>
                              <th>소속</th>
@@ -56,11 +57,11 @@
                      <tbody class="">
                          <c:forEach var="inquiry" items="${inquiries}" varStatus="status">
                          <tr style="cursor: pointer;" onclick="location.href='/admin/inquiry-response-management?id=${inquiry.id}'">
-                             <td>
-                                 <div class="form-check d-flex justify-content-center">
-                                     <input class="form-check-input" type="checkbox" value="${inquiry.id}" name="inquiryIds">
-                                 </div>
-                             </td>
+                            <td>
+                                <div class="form-check d-flex justify-content-center">
+                                    <input class="form-check-input" type="checkbox" value="${inquiry.id}" name="inquiryIds" onclick="event.stopPropagation();" ${canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>
+                                </div>
+                            </td>
                              <td><c:out value="${fn:length(inquiries) - status.index}"/></td>
                              <td><c:out value="${inquiry.inquiryType}"/></td>
                              <td><c:out value="${inquiry.member != null ? inquiry.member.hospitalName : '-'}"/></td>
@@ -108,7 +109,8 @@
                          </c:forEach>
                      </tbody>
                  </table>
-             </div>
+                 </div>
+             </form>
              
              <c:if test="${empty inquiries}">
                  <div class="alert alert-info text-center mt-3" role="alert">
@@ -295,6 +297,22 @@ function getCellValue(row, column) {
     
     const cell = row.children[cellIndex + 1]; // +1 because first column is checkbox
     return cell ? cell.textContent.trim() : '';
+}
+
+// 삭제 기능
+function deleteSelectedInquiries() {
+    <c:if test="${canModify || adminAuthority == '모든권한'}">
+    const checkedBoxes = document.querySelectorAll('tbody input[type="checkbox"][name="inquiryIds"]:checked');
+    
+    if (checkedBoxes.length === 0) {
+        alert('삭제할 문의를 선택해주세요.');
+        return;
+    }
+    
+    if (confirm('선택한 ' + checkedBoxes.length + '개의 문의를 삭제하시겠습니까?')) {
+        document.getElementById('inquiryForm').submit();
+    }
+    </c:if>
 }
 </script>
 

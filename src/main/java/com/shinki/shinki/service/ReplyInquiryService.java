@@ -105,4 +105,20 @@ public class ReplyInquiryService {
     public List<ReplyInquiry> getRepliesByAdminNo(Long adminNo) {
         return replyInquiryRepository.findByAdminNoOrderByAdminCreatedAtDesc(adminNo);
     }
+    
+    /**
+     * 특정 관리자의 답변 삭제 (관리자 삭제 시 사용)
+     * 관리자가 작성한 답변 내용만 삭제하고, 사용자 댓글은 유지
+     */
+    public void deleteAdminRepliesByAdminNo(Long adminNo) {
+        List<ReplyInquiry> replies = replyInquiryRepository.findByAdminNoOrderByAdminCreatedAtDesc(adminNo);
+        
+        for (ReplyInquiry reply : replies) {
+            // 관리자 답변 내용만 삭제 (null로 설정)
+            reply.setAdminNo(null);
+            reply.setAdminContent(null);
+            reply.setAdminCreatedAt(null);
+            replyInquiryRepository.save(reply);
+        }
+    }
 }
