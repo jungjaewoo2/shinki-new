@@ -324,9 +324,9 @@
                                         </div>
                                         <div class="start-0 button-group justify-content-center justify-content-lg-end"><button class="btn-secondary" onclick="location.href='application'" style="padding: 0.5rem 1.25rem;">Learn more</button></div>
                                     </div>
-                                    <div class="d-flex flex-column flex-fill h-100 justify-content-center gap-3 w-50 carousel-img">
+                                    <div class="w-50 carousel-img">
                                         <div class="">
-                                            <img src="assets/images/tab1-cont-img01.png" width="800" height="516" style="padding-right: 100px;">
+                                            <img src="assets/images/tab1-cont-img01.png" width="" height="" style="padding-right: 100px;">
                                         </div>
                                     </div>
                                 </div>
@@ -341,14 +341,10 @@
                                             <div>그 관계성을 3D Simulation을 통해 관찰.</div>
                                         </div>
                                         <div class="button-group justify-content-center justify-content-lg-end"><button class="btn-secondary" onclick="location.href='application?section=pancreas'" style="padding: 0.5rem 1.25rem;">Learn more</button></div>
-                                        <div class="txt-sub">
-                                            <div></div>
-                                            <div></div>
-                                        </div>
                                     </div>
-                                    <div class="d-flex flex-column flex-fill h-100 justify-content-center gap-3 w-50 carousel-img">
+                                    <div class="w-50 carousel-img">
                                         <div class="">
-                                            <img src="assets/images/tab1-cont-img01-2.jpg" width="800" height="516" style="padding-right: 50px;">
+                                            <img src="assets/images/tab1-cont-img01-2.jpg" width="" height="" style="padding-right: 50px;">
                                         </div>
 
                                     </div>
@@ -378,9 +374,9 @@
                                         </div>
                                         <div class="button-group justify-content-center justify-content-lg-end"><button class="btn-secondary" onclick="location.href='lung'" style="padding: 0.5rem 1.25rem;">Learn more</button></div>
                                     </div>
-                                    <div class="d-flex flex-column flex-fill h-100 justify-content-center gap-3 w-50 carousel-img">
+                                    <div class="w-50 carousel-img">
                                         <div class="">
-                                            <img src="assets/images/tab1-cont-img02.png" width="" height="516" style="padding-right: 50px;">
+                                            <img src="assets/images/tab1-cont-img02.png" width="" height="" style="padding-right: 50px;">
                                         </div>
 
                                     </div>
@@ -406,9 +402,9 @@
                                         </div>
                                         <div class="button-group justify-content-end"><button class="btn-secondary" onclick="location.href='cardiac'" style="padding: 0.5rem 1.25rem;">Learn more</button></div>
                                     </div>
-                                    <div class="d-flex flex-column flex-fill h-100 justify-content-center gap-3 w-50 carousel-img">
+                                    <div class="w-50 carousel-img">
                                         <div class="">
-                                            <img src="assets/images/tab1-cont-img03.png" width="800" height="516" style="padding-right: 50px;">
+                                            <img src="assets/images/tab1-cont-img03.png" width="" height="" style="padding-right: 50px;">
                                         </div>
 
                                     </div>
@@ -437,9 +433,9 @@
                                         </div>
                                         <div class="button-group justify-content-end"><button class="btn-secondary" onclick="location.href='knee'" style="padding: 0.5rem 1.25rem;">Learn more</button></div>
                                     </div>
-                                    <div class="d-flex flex-column flex-fill h-100 justify-content-center gap-3 w-50 carousel-img">
+                                    <div class="w-50 carousel-img">
                                         <div class="">
-                                            <img src="assets/images/tab4-knee-img.png" width="" height="516" style="padding-right: 50px;">
+                                            <img src="assets/images/tab4-knee-img.png" width="" height="" style="padding-right: 50px;">
                                         </div>
 
                                     </div>

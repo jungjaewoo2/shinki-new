@@ -34,8 +34,8 @@
                      </div>
                  </div>
              </div>
-             <div class="d-flex justify-content-between align-items-lg-center flex-column flex-lg-row gap-3">
-                 <div class="order-type text-center bg-body-secondary rounded" style="color: #666;">
+             <div class="d-flex justify-content-between align-items-center gap-3">
+                 <div class="order-type text-center bg-body-secondary rounded p-2" style="color: #666;">
                      <div class="">
                          <c:choose>
                              <c:when test="${not empty request and request.applicationType == 'HBP'}">
@@ -57,11 +57,13 @@
                      </div>
                      <div>${not empty request ? request.applicationType : 'HBP'}</div>
                  </div>
-                 <div class="flex-fill align-items-center d-flex">${not empty request ? request.title : '제목 없음'}</div>
-                 <div class="status-badge status-cancelled align-items-center d-flex">
+                 <div class="order-title flex-fill align-items-center d-xl-flex text-break">${not empty request ? request.title : '제목 없음'}</div>
+                 <div class="d-flex flex-column gap-1">
+                 	<div class="status-badge status-cancelled align-items-center d-flex">
                      <span class="">
                         <c:out value="${not empty request ? request.status : '상태 없음'}"/>
                      </span>
+                 </div>
                  </div>
              </div>
          </div>
@@ -73,10 +75,10 @@
              </div>
              <div class="card-body">
                  <div class="row">
-                     <div class="col-md-6">
+                     <div class="col-6">
                          <div class="form-group mb-3">
-                             <label class="form-label fw-bold">의뢰일</label>
-                             <div class="form-control-plaintext">
+                             <label class="col-lg-6 col-xl-2 fw-bold">의뢰일</label>
+                             <div class="form-control-plaintext px-lg-1">
                                  <c:choose>
                                      <c:when test="${not empty request.createdAt}">
                                          ${request.createdAt.year}년 <fmt:formatNumber value="${request.createdAt.monthValue}" pattern="00"/>월 <fmt:formatNumber value="${request.createdAt.dayOfMonth}" pattern="00"/>일
@@ -88,10 +90,10 @@
                              </div>
                          </div>
                      </div>
-                     <div class="col-md-6">
+                     <div class="col-6">
                          <div class="form-group mb-3">
-                             <label class="form-label fw-bold">취소일</label>
-                             <div class="form-control-plaintext">
+                             <label class="col-lg-6 col-xl-2 fw-bold">취소일</label>
+                             <div class="form-control-plaintext px-lg-1">
                                  <c:choose>
                                      <c:when test="${not empty request.updatedAt}">
                                          ${request.updatedAt.year}년 <fmt:formatNumber value="${request.updatedAt.monthValue}" pattern="00"/>월 <fmt:formatNumber value="${request.updatedAt.dayOfMonth}" pattern="00"/>일
@@ -105,16 +107,18 @@
                      </div>
                  </div>
                  
-                 <div class="form-group mb-3">
-                     <label class="form-label fw-bold">의뢰 제목</label>
+                 <div class="col-12">
+                 	<div class="form-group mb-3">
+                     <label class="col-lg-3 col-xl-1 fw-bold">의뢰 제목</label>
                      <div class="form-control-plaintext">${not empty request ? request.title : '제목 없음'}</div>
                  </div>
-                 
-                 <div class="form-group mb-3">
-                     <label class="form-label fw-bold">의뢰 내용</label>
-                     <div class="form-control-plaintext border rounded p-3 bg-light" style="min-height: 100px; white-space: pre-wrap;">${not empty request ? request.content : '내용 없음'}</div>
                  </div>
-                 
+                 <div class="col-12">
+	                 <div class="form-group mb-3">
+	                     <label class="col-lg-3 col-xl-1 fw-bold">의뢰 내용</label>
+	                     <div class="form-control-plaintext border rounded p-3 bg-light" style="min-height: 100px; white-space: pre-wrap;">${not empty request ? request.content : '내용 없음'}</div>
+	                 </div>
+                 </div>
                  <c:if test="${not empty request.paymentAmount and request.paymentAmount > 0}">
                      <div class="form-group mb-3">
                          <label class="form-label fw-bold">결제 예정 금액</label>

@@ -12,11 +12,11 @@
 
      <div class="card d-flex flex-fill flex-column gap-3 overflow-auto">
          <div class="align-items-center d-flex justify-content-between flex-column flex-lg-row gap-3 gap-lg-0 mb-3">
-             <div class="flex-column flex-lg-row form-group flex-fill flex-row m-0 pb-3 pb-lg-0">
+             <div class="flex-column align-items-baseline form-group flex-fill m-0 pb-3 pb-lg-0">
                  <label class="form-label">의뢰일자</label>
                  <form method="GET" action="/mypage/orders" class="d-flex gap-1">
                      <!-- 기간 검색 -->
-                     <div class="d-flex align-items-center gap-0 gap-xl-2">
+                     <div class="d-flex align-items-center gap-0">
                      	<span style="font-size: 14px;"></span>
 	                     <input type="date" name="startDate" class="form-input date-input" placeholder="년도-월-일" style="max-width: 150px;" value="${param.startDate}">
 	                     <span style="font-size: 14px;">~</span>

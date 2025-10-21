@@ -276,6 +276,17 @@ a {
     right: 0;
 }
 
+@media (min-width: 768px) and (max-width: 1366px) {
+	
+	.nav-menu {
+		gap: 2rem;
+	}
+	
+	.top-nav .nav-item {
+		width: unset;
+	}
+}
+
 /* 메인 컨텐츠 */
 .main-content {
     flex: 1;
@@ -991,11 +1002,13 @@ rgb(255, 255, 255).status-completed {
     }
 
     #orders-page .card > div > div,
+    #cancelled-detail-page .card > div > div,
     .progress-count {
         width: 100%;
     }
     
-    #orders-page .card .order-title {
+    #orders-page .card .order-title,
+    #cancelled-detail-page .card .order-title {
     	word-break: break-all;
         font-size: 14px;
         text-overflow: ellipsis;
@@ -1076,4 +1089,22 @@ rgb(255, 255, 255).status-completed {
     .status-outline-badge {
         font-size: 12px;
     }
+}
+
+/* iPad Air 4세대 - 가로 모드 (Landscape) */
+@media (min-width: 768px) and (max-width: 1366px) and (orientation: landscape) {
+	
+	.progress-count {
+		width: 50%;
+	}
+  
+}
+
+/* iPad Air 4세대 - 세로 모드 (Portrait) */
+@media (min-width: 768px) and (max-width: 1366px) and (orientation: portrait) {
+  
+  .progress-count {
+		width: 50%;
+	}
+  
 }

@@ -26,7 +26,7 @@
              <div class="bg-body-tertiary p-3">
                  <div class="form-group mb-3">
                      <label class="form-label required">문의유형</label>
-                     <div class="d-flex align-items-baseline align-items-lg-center flex-column flex-lg-row gap-3 w-100">
+                     <div class="d-flex align-items-baseline flex-column flex-xl-row gap-3 w-100">
                      	<div class="select-buttons" style="margin: 0;">
 	                         <button type="button" class="select-btn" data-type="기능문의">기능문의</button>
 	                         <button type="button" class="select-btn" data-type="의뢰절차 문의">의뢰절차 문의</button>
