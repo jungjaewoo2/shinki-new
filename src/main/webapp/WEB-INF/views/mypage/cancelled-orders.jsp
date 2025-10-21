@@ -25,7 +25,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <a href="/mypage/cancelled-order-detail/${request.id}" class="btn btn-primary" onclick="console.log('링크 클릭됨: /mypage/cancelled-order-detail/${request.id}'); return true;">취소 상세보기 <i class="bi bi-arrow-right-square"></i></a>
+                                    <a href="/mypage/cancelled-order-detail/${request.id}" class="btn-link" onclick="console.log('링크 클릭됨: /mypage/cancelled-order-detail/${request.id}'); return true;">취소 상세보기 <i class="bi bi-arrow-right-square"></i></a>
                                 </div>
                             </div>
                         </div>

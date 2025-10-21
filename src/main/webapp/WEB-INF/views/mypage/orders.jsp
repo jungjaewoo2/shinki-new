@@ -12,7 +12,7 @@
 
      <div class="card d-flex flex-fill flex-column gap-3 overflow-auto">
          <div class="align-items-center d-flex justify-content-between flex-column flex-lg-row gap-3 gap-lg-0 mb-3">
-             <div class="flex-column flex-xl-row form-group flex-fill flex-row m-0 pb-3 pb-lg-0">
+             <div class="flex-column flex-lg-row form-group flex-fill flex-row m-0 pb-3 pb-lg-0">
                  <label class="form-label">의뢰일자</label>
                  <form method="GET" action="/mypage/orders" class="d-flex gap-1">
                      <!-- 기간 검색 -->
@@ -23,7 +23,7 @@
 	                     <input type="date" name="endDate" class="form-input date-input" placeholder="년도-월-일" style="max-width: 150px;" value="${param.endDate}">
                      </div>
                      <div class="d-flex gap-1">
-                     	<button type="submit" class="btn" style="background: #dceaf7;color: #1d374f;">검색</button>
+                     	<button type="submit" class="btn d-grid col-lg-5" style="background: #dceaf7;color: #1d374f;">검색</button>
                      <a href="/mypage/orders" class="btn btn-outline-secondary d-md-block d-none" style="min-width: 100px;">전체보기</a>
                      </div>
                  </form>
