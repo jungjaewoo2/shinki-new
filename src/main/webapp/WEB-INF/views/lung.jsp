@@ -133,6 +133,12 @@
 	position: absolute;
 	bottom: 30px !important;
 }
+
+@media (min-width: 768px) and (max-width: 1366px) {
+	.app-btn {
+		padding-right:0 !important;
+	}
+}
 </style>
 
  <!-- Application Page -->
@@ -158,7 +164,7 @@
              </div>
          </h2>
 
-         <div class="row d-flex justify-content-between flex-column-reverse flex-lg-row gap-5 gap-lg-0">
+         <div class="row d-flex justify-content-between flex-column-reverse flex-xl-row gap-5 gap-lg-0">
              <div class="col-12 col-xl-5">
                  <div class="accordion" id="accordionExample">
                      <div class="accordion-item">

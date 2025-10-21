@@ -119,6 +119,12 @@
          position: absolute;
          bottom: 30px !important;
      }
+     
+     @media (min-width: 768px) and (max-width: 1366px) {
+		.app-btn {
+			padding-right:0 !important;
+		}
+	}
 
  </style>
 
@@ -132,7 +138,7 @@
          <h2 class="align-items-baseline d-flex flex-column gap-2 mb-4" style="font-size: 3rem; margin-top: 0.75rem;">
              <span class="pill">HBP</span>
              <!--<span class="fw-bold" style="font-size: 3rem;">HBP</span>-->
-             <div class="d-flex flex-column flex-lg-row gap-4 w-100">
+             <div class="d-flex flex-column flex-xl-row gap-4 w-100">
                  <div class="fw-bold">Hepato-Biliary-Pancreatic</div>
                  <div class="d-flex flex-fill justify-content-between">
                      <div class="d-flex align-items-center gap-1">
@@ -146,7 +152,7 @@
              </div>
          </h2>
 
-         <div class="row d-flex justify-content-between flex-column-reverse flex-lg-row gap-5 gap-lg-0">
+         <div class="row d-flex justify-content-between flex-column-reverse flex-xl-row gap-5 gap-lg-0">
              <div class="col-12 col-xl-5">
                  <div class="accordion" id="accordionExample">
                      <div class="accordion-item">

@@ -219,6 +219,12 @@
          position: absolute;
          bottom: 30px !important;
      }
+     
+     @media (min-width: 768px) and (max-width: 1366px) {
+		.app-btn {
+			padding-right:0 !important;
+		}
+	}
 
 
  </style>
@@ -247,7 +253,7 @@
              </div>
          </h2>
 
-         <div class="row d-flex justify-content-between flex-column-reverse flex-lg-row gap-5 gap-lg-0">
+         <div class="row d-flex justify-content-between flex-column-reverse flex-xl-row gap-5 gap-lg-0">
              <div class="col-12 col-xl-5">
                  <div class="accordion" id="accordionExample">
                      <div class="accordion-item">
@@ -273,7 +279,7 @@
                      <div class="swiper-wrapper">
                          <div class="swiper-slide slide01">
                              
-                             <img src="/assets/images/tab1-cont-img03.png" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
+                             <img src="/assets/images/cardiac-swiper01.png" width="" data-bs-toggle="modal" data-bs-target="#imageModal">
                              <div class="slide-title fs-4">이미지 타이틀</div>
                          </div>
                          <div class="swiper-slide slide02">

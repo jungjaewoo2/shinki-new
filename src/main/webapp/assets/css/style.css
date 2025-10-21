@@ -2168,3 +2168,7 @@ footer {
 }
 	
 }
+
+.offcanvas {
+	z-index: 10000000;
+}
