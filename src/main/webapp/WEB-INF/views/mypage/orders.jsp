@@ -91,7 +91,7 @@
                      </div>
                  </div>
                  <div class="d-flex justify-content-between align-items-center gap-3">
-                     <div class="order-type d-flex flex-column justify-content-center text-center bg-body-secondary rounded p-2 h-100" style="color: #666;">
+                     <div class="order-type d-flex flex-column justify-content-end text-center bg-body-secondary rounded p-2 h-100" style="color: #666;">
                          <div class="">
                              <c:choose>
                                  <c:when test="${request.applicationType == 'HBP'}">

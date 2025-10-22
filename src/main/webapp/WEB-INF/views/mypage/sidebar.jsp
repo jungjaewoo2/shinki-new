@@ -46,7 +46,7 @@
 
         <div class="nav-section">
             <div class="nav-title">
-                1:1 문의
+                Q&A
                 <span><i class="bi bi-caret-down-fill"></i></span>
             </div>
             <div class="nav-items">

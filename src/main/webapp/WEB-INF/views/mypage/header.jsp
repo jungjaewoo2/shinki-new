@@ -62,7 +62,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <button class="btn nav-link" onclick="location.href='inquiry-history'">Request</button>
+                        <button class="btn nav-link" onclick="location.href='request'">Request</button>
                         <button class="nav-link navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation" onclick="location.href='application.jsp'"><span class="navbar-toggler-icon"></span></button>
                         <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                             <ul class="navbar-nav">

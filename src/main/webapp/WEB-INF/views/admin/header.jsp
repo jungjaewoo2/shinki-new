@@ -67,7 +67,7 @@
                         <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                             <ul class="navbar-nav">
                                 <li class="nav-item dropdown">
-                                    <button class="btn" data-bs-toggle="dropdown" aria-expanded="false" onclick="location.href='consultation-request'">
+                                    <button class="btn" data-bs-toggle="dropdown" aria-expanded="false" onclick="location.href='inquiry-history'">
                                         Q&A
                                     </button>
                                     <!-- <ul class="dropdown-menu">

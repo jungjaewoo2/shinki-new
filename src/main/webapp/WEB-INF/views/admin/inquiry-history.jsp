@@ -8,7 +8,7 @@
  <div id="" class="page d-flex flex-column h-100">
      <div class="align-items-center d-flex flex-column flex-lg-row justify-content-between page-header">
          <div class="page-title">문의내역조회</div>
-         <div class="breadcrumb">관리자페이지 > 1:1문의관리 > 문의내역조회</div>
+         <div class="breadcrumb">관리자페이지 > Q&A관리 > 문의내역조회</div>
      </div>
 
      <div class="card d-flex flex-column gap-0 gap-lg-3 flex-fill overflow-auto">

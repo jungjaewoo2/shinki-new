@@ -1434,7 +1434,7 @@ h1 {
 @media (min-width: 1551px) {
 
     .business-box {
-        height: auto;
+        /* height: auto; */
     }
 
     .business-txt {

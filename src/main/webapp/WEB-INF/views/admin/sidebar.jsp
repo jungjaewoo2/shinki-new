@@ -39,7 +39,7 @@
 
         <div class="nav-section" ${canRead || adminAuthority == '모든권한' ? '' : 'style="display:none"'}>
             <div class="nav-title">
-                1:1문의관리
+                Q&A관리
                 <span><i class="bi bi-caret-down-fill"></i></span>
             </div>
             <div class="nav-items">

@@ -5,8 +5,8 @@
  <!-- 문의하기 페이지 -->
  <div id="inquiry-page" class="page d-flex flex-column h-100">
      <div class="align-items-center d-flex flex-column flex-lg-row justify-content-between page-header">
-         <div class="page-title">1:1 문의</div>
-         <div class="breadcrumb">마이페이지 > 1:1 문의 > 문의하기</div>
+         <div class="page-title">Q&A</div>
+         <div class="breadcrumb">마이페이지 > Q&A > 문의하기</div>
      </div>
 
      <div class="card flex-fill overflow-auto">
