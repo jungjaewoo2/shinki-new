@@ -127,4 +127,9 @@ public class MemberService {
     public Page<Member> searchWithdrawnMembers(String searchTerm, Pageable pageable) {
         return memberRepository.findWithdrawnMembersBySearchTerm(searchTerm, pageable);
     }
+    
+    // ID 목록으로 회원 조회
+    public List<Member> getMembersByIds(List<Long> memberIds) {
+        return memberRepository.findAllById(memberIds);
+    }
 }

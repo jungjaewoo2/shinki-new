@@ -321,8 +321,21 @@ function deleteSelectedMembers() {
 
 function downloadExcel() {
     <c:if test="${canModify || adminAuthority == '모든권한'}">
-    // 엑셀 다운로드 링크로 이동
-    window.location.href = '/admin/membership-management/excel';
+    // 체크된 회원들 확인
+    const checkedBoxes = document.querySelectorAll('tbody input[type="checkbox"]:checked');
+    
+    if (checkedBoxes.length > 0) {
+        // 선택된 회원들만 다운로드
+        if (confirm('선택된 ' + checkedBoxes.length + '명의 회원 정보를 다운로드하시겠습니까?')) {
+            const selectedValues = Array.from(checkedBoxes).map(checkbox => checkbox.value);
+            window.location.href = '/admin/membership-management/excel?memberIds=' + selectedValues.join(',');
+        }
+    } else {
+        // 전체 회원 다운로드
+        if (confirm('전체 회원 정보를 다운로드하시겠습니까?')) {
+            window.location.href = '/admin/membership-management/excel';
+        }
+    }
     </c:if>
 }
 </script>

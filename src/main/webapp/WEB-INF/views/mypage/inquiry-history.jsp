@@ -46,7 +46,7 @@
                                 <td class="text-start">
                                     <c:choose>
                                         <c:when test="${fn:length(inquiry.content) > 45}">
-                                            <c:out value="${fn:substring(inquiry.content, 0, 45)}..."/>
+                                            <c:out value="${fn:substring(inquiry.content, 0, 80)}..."/>
                                         </c:when>
                                         <c:otherwise>
                                             <c:out value="${inquiry.content}"/>
@@ -188,7 +188,7 @@
                             <div class="order-contents">
                                 <c:choose>
                                     <c:when test="${fn:length(inquiry.content) > 45}">
-                                        <c:out value="${fn:substring(inquiry.content, 0, 45)}..."/>
+                                        <c:out value="${fn:substring(inquiry.content, 0, 80)}..."/>
                                     </c:when>
                                     <c:otherwise>
                                         <c:out value="${inquiry.content}"/>

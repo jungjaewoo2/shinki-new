@@ -238,7 +238,7 @@
                              <div class="d-flex flex-column gap-3">
                                  <div>
                                      <div class="fw-bold">문의내용</div>
-                                     <div class="border p-3" style="white-space: pre-wrap;">${inquiry.content}</div>
+                                     <div class="border p-3" style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">${inquiry.content}</div>
                                  </div>
                              </div>
                          </div>
@@ -248,8 +248,31 @@
                              <div>
                                  <div class="d-flex flex-column gap-3">
                                      <div>
-                                         <div class="fw-bold">답변</div>
-                                         <div class="bg-white p-3" style="white-space: pre-wrap;">${inquiry.adminReply}</div>
+                                         <div class="d-flex justify-content-between align-items-center mb-2">
+                                             <div class="fw-bold">답변</div>
+                                             <div class="d-flex gap-2">
+                                                 <button type="button" class="btn btn-sm btn-outline-primary" onclick="editAdminReply(${inquiry.id})" title="수정">
+                                                     <i class="bi bi-pencil"></i>
+                                                 </button>
+                                                 <button type="button" class="btn btn-sm btn-outline-danger" onclick="deleteAdminReply(${inquiry.id})" title="삭제">
+                                                     <i class="bi bi-trash"></i>
+                                                 </button>
+                                             </div>
+                                         </div>
+                                         <div class="admin-reply-content bg-white p-3" id="admin-reply-content-${inquiry.id}" style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">
+                                             ${inquiry.adminReply}
+                                             <!-- 디버깅 정보 -->
+                                             <div class="small text-muted mt-2">
+                                                 Debug: inquiryId=${inquiry.id}, adminReply=${inquiry.adminReply != null ? '있음' : '없음'}
+                                             </div>
+                                         </div>
+                                         <div class="admin-reply-edit-form" id="admin-reply-edit-form-${inquiry.id}" style="display: none;">
+                                             <textarea class="form-control mb-2" id="admin-reply-edit-textarea-${inquiry.id}" rows="3">${inquiry.adminReply}</textarea>
+                                             <div class="d-flex gap-2">
+                                                 <button type="button" class="btn btn-sm btn-success" onclick="saveAdminReply(${inquiry.id})">저장</button>
+                                                 <button type="button" class="btn btn-sm btn-secondary" onclick="cancelEditAdminReply(${inquiry.id})">취소</button>
+                                             </div>
+                                         </div>
                                          <c:if test="${not empty inquiry.replyDate}">
                                              <div class="text-muted small mt-2">
                                                  <fmt:formatDate value="${inquiry.replyDate}" pattern="yyyy-MM-dd HH:mm"/>
@@ -287,9 +310,9 @@
                                          <fmt:formatDate value="${reply.userCreatedAt}" pattern="yyyy. MM. dd"/>
                                      </div>
                                  </div>
-                                 <div style="white-space: pre-wrap;">${reply.userContent}</div>
+                                 <div style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">${reply.userContent}</div>
                                  <c:if test="${not empty reply.adminContent}">
-                                     <div style="white-space: pre-wrap;"><i class="bi bi-arrow-return-right"></i> ${reply.adminContent}</div>
+                                     <div style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><i class="bi bi-arrow-return-right"></i> ${reply.adminContent}</div>
                                  </c:if>
                              </div>
                          </c:forEach>
@@ -357,24 +380,168 @@
      </div>
  </div>
 
- <script>
- function deleteInquiry(inquiryId) {
-     if (confirm('정말로 이 문의를 삭제하시겠습니까?\n\n삭제 시 다음 내용이 모두 삭제됩니다:\n- 문의 내용\n- 관리자 답변\n- 모든 댓글 및 답변\n\n이 작업은 되돌릴 수 없습니다.')) {
-         // 폼을 동적으로 생성하여 POST 요청 전송
-         const form = document.createElement('form');
-         form.method = 'POST';
-         form.action = '/mypage/inquiry-history-details/delete';
-         
-         const input = document.createElement('input');
-         input.type = 'hidden';
-         input.name = 'inquiryId';
-         input.value = inquiryId;
-         
-         form.appendChild(input);
-         document.body.appendChild(form);
-         form.submit();
-     }
- }
- </script>
+<script>
+function deleteInquiry(inquiryId) {
+    if (confirm('정말로 이 문의를 삭제하시겠습니까?\n\n삭제 시 다음 내용이 모두 삭제됩니다:\n- 문의 내용\n- 관리자 답변\n- 모든 댓글 및 답변\n\n이 작업은 되돌릴 수 없습니다.')) {
+        // 폼을 동적으로 생성하여 POST 요청 전송
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = '/mypage/inquiry-history-details/delete';
+        
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'inquiryId';
+        input.value = inquiryId;
+        
+        form.appendChild(input);
+        document.body.appendChild(form);
+        form.submit();
+    }
+}
+
+// 관리자 답변 수정 함수
+function editAdminReply(inquiryId) {
+    alert('수정 버튼 클릭됨! inquiryId: ' + inquiryId);
+    console.log('=== editAdminReply 시작 ===');
+    console.log('inquiryId:', inquiryId);
+    console.log('inquiryId 타입:', typeof inquiryId);
+    
+    const contentDiv = document.getElementById('admin-reply-content-' + inquiryId);
+    const editForm = document.getElementById('admin-reply-edit-form-' + inquiryId);
+    const textarea = document.getElementById('admin-reply-edit-textarea-' + inquiryId);
+    
+    console.log('contentDiv:', contentDiv);
+    console.log('editForm:', editForm);
+    console.log('textarea:', textarea);
+    
+    if (!contentDiv) {
+        console.error('contentDiv를 찾을 수 없습니다. ID:', 'admin-reply-content-' + inquiryId);
+        alert('답변 내용을 찾을 수 없습니다.');
+        return;
+    }
+    
+    if (!editForm) {
+        console.error('editForm을 찾을 수 없습니다. ID:', 'admin-reply-edit-form-' + inquiryId);
+        alert('수정 폼을 찾을 수 없습니다.');
+        return;
+    }
+    
+    if (!textarea) {
+        console.error('textarea를 찾을 수 없습니다. ID:', 'admin-reply-edit-textarea-' + inquiryId);
+        alert('수정 입력창을 찾을 수 없습니다.');
+        return;
+    }
+    
+    try {
+        // 원래 내용을 textarea에 설정
+        const originalContent = contentDiv.textContent.trim();
+        console.log('원래 내용:', originalContent);
+        
+        textarea.value = originalContent;
+        contentDiv.style.display = 'none';
+        editForm.style.display = 'block';
+        textarea.focus();
+        textarea.select();
+        console.log('수정 모드로 전환 완료');
+    } catch (error) {
+        console.error('수정 모드 전환 중 오류:', error);
+        alert('수정 모드 전환 중 오류가 발생했습니다: ' + error.message);
+    }
+}
+
+// 관리자 답변 수정 취소 함수
+function cancelEditAdminReply(inquiryId) {
+    const contentDiv = document.getElementById('admin-reply-content-' + inquiryId);
+    const editForm = document.getElementById('admin-reply-edit-form-' + inquiryId);
+    const textarea = document.getElementById('admin-reply-edit-textarea-' + inquiryId);
+    
+    if (contentDiv && editForm && textarea) {
+        // 원래 내용으로 되돌리기
+        textarea.value = contentDiv.textContent.trim();
+        contentDiv.style.display = 'block';
+        editForm.style.display = 'none';
+    }
+}
+
+// 관리자 답변 저장 함수
+function saveAdminReply(inquiryId) {
+    const textarea = document.getElementById('admin-reply-edit-textarea-' + inquiryId);
+    const newContent = textarea.value.trim();
+    
+    if (!newContent) {
+        alert('답변 내용을 입력해주세요.');
+        return;
+    }
+    
+    if (confirm('답변을 수정하시겠습니까?')) {
+        // 폼을 동적으로 생성하여 POST 요청 전송
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = '/mypage/inquiry-history-details/update-admin-reply';
+        
+        const inquiryIdInput = document.createElement('input');
+        inquiryIdInput.type = 'hidden';
+        inquiryIdInput.name = 'inquiryId';
+        inquiryIdInput.value = inquiryId;
+        
+        const contentInput = document.createElement('input');
+        contentInput.type = 'hidden';
+        contentInput.name = 'adminReply';
+        contentInput.value = newContent;
+        
+        form.appendChild(inquiryIdInput);
+        form.appendChild(contentInput);
+        document.body.appendChild(form);
+        form.submit();
+    }
+}
+
+// 관리자 답변 삭제 함수
+function deleteAdminReply(inquiryId) {
+    alert('삭제 버튼 클릭됨! inquiryId: ' + inquiryId);
+    console.log('=== deleteAdminReply 시작 ===');
+    console.log('inquiryId:', inquiryId);
+    console.log('inquiryId 타입:', typeof inquiryId);
+    
+    if (!inquiryId) {
+        console.error('inquiryId가 없습니다');
+        alert('문의 ID를 찾을 수 없습니다.');
+        return;
+    }
+    
+    if (confirm('정말로 이 답변을 삭제하시겠습니까?\n\n이 작업은 되돌릴 수 없습니다.')) {
+        console.log('사용자가 삭제를 확인함');
+        
+        try {
+            // 폼을 동적으로 생성하여 POST 요청 전송
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = '/mypage/inquiry-history-details/delete-admin-reply';
+            
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = 'inquiryId';
+            input.value = inquiryId;
+            
+            form.appendChild(input);
+            document.body.appendChild(form);
+            
+            console.log('폼 생성 완료');
+            console.log('폼 action:', form.action);
+            console.log('폼 method:', form.method);
+            console.log('input name:', input.name);
+            console.log('input value:', input.value);
+            
+            console.log('폼 전송 시작');
+            form.submit();
+        } catch (error) {
+            console.error('폼 생성/전송 중 오류:', error);
+            alert('삭제 요청 전송 중 오류가 발생했습니다: ' + error.message);
+        }
+    } else {
+        console.log('사용자가 삭제를 취소함');
+    }
+}
+</script>
 
  <jsp:include page="footer.jsp" />

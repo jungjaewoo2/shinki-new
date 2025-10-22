@@ -69,7 +69,7 @@
                              <td class="text-start">
                                  <c:choose>
                                      <c:when test="${fn:length(inquiry.content) > 30}">
-                                         <c:out value="${fn:substring(inquiry.content, 0, 30)}..."/>
+                                         <c:out value="${fn:substring(inquiry.content, 0, 80)}..."/>
                                      </c:when>
                                      <c:otherwise>
                                          <c:out value="${inquiry.content}"/>

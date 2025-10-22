@@ -15,6 +15,8 @@ import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import java.util.List;
 import java.util.Optional;
+import java.util.Map;
+import java.util.HashMap;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.beans.factory.annotation.Value;
 import java.io.File;
@@ -270,13 +272,39 @@ public class RequestController {
             if (username == null) {
                 return "redirect:/mypage/login";
             }
-            
+
+            // 기존 의뢰 정보 가져오기 (member 정보 유지를 위해)
+            Request existingRequest = requestService.getRequestById(request.getId());
+            if (existingRequest == null) {
+                redirectAttributes.addFlashAttribute("error", "의뢰를 찾을 수 없습니다.");
+                return "redirect:/mypage/orders";
+            }
+
+            // Member 객체 확인
+            Member member = memberService.findByUsername(username);
+            if (member == null || !existingRequest.getMember().getId().equals(member.getId())) {
+                redirectAttributes.addFlashAttribute("error", "수정 권한이 없습니다.");
+                return "redirect:/mypage/orders";
+            }
+
+            // 기존 정보 유지 (수정하면 안되는 필드들)
+            request.setMember(existingRequest.getMember());
+            request.setStatus(existingRequest.getStatus()); // 상태 유지
+            request.setCreatedAt(existingRequest.getCreatedAt()); // 등록일 유지
+            request.setStatusCancel(existingRequest.getStatusCancel()); // 취소 상태 유지
+            request.setPaymentAmount(existingRequest.getPaymentAmount()); // 결제 금액 유지
+            request.setPaymentMethod(existingRequest.getPaymentMethod()); // 결제 방법 유지
+            request.setPaymentStatus(existingRequest.getPaymentStatus()); // 결제 상태 유지
+            request.setAdminFilePath(existingRequest.getAdminFilePath()); // 관리자 파일 유지
+            request.setRegCondition(existingRequest.getRegCondition()); // 등록 조건 유지
+            request.setMoney(existingRequest.getMoney()); // 금액 유지
+
             // 기존 파일 삭제 플래그 확인
             boolean shouldRemoveExistingFile = "true".equals(removeExistingFileFlag);
-            
+
             // 파일 업로드 서비스 호출
             requestService.updateRequest(request, file, existingFilePath, shouldRemoveExistingFile);
-            
+
             redirectAttributes.addFlashAttribute("message", "의뢰가 성공적으로 수정되었습니다.");
             return "redirect:/mypage/order-detail/" + request.getId();
         } catch (Exception e) {
@@ -539,32 +567,134 @@ public class RequestController {
         if (username == null) {
             return "redirect:/mypage/login";
         }
-        
+
         try {
             // 댓글 작성자인지 확인
             ReplyRequest reply = replyRequestService.getRepliesByRequestId(requestId).stream()
                     .filter(r -> r.getId().equals(replyId))
                     .findFirst()
                     .orElse(null);
-            
+
             if (reply == null) {
                 redirectAttributes.addFlashAttribute("error", "댓글을 찾을 수 없습니다.");
                 return "redirect:/mypage/order-detail/" + requestId;
             }
-            
+
             Member member = memberService.findByUsername(username);
             if (member == null || !reply.getMemberId().equals(member.getId())) {
                 redirectAttributes.addFlashAttribute("error", "댓글을 삭제할 권한이 없습니다.");
                 return "redirect:/mypage/order-detail/" + requestId;
             }
-            
+
             replyRequestService.deleteReply(replyId);
             redirectAttributes.addFlashAttribute("message", "댓글이 성공적으로 삭제되었습니다.");
-            
+
         } catch (Exception e) {
             redirectAttributes.addFlashAttribute("error", "댓글 삭제 중 오류가 발생했습니다: " + e.getMessage());
         }
-        
+
         return "redirect:/mypage/order-detail/" + requestId;
+    }
+
+    /**
+     * 사용자 댓글 수정 (JSON API)
+     */
+    @PostMapping("/update-comment")
+    @ResponseBody
+    public Map<String, Object> updateComment(@RequestBody Map<String, Object> requestData,
+                                            HttpSession session) {
+        Map<String, Object> response = new HashMap<>();
+
+        String username = (String) session.getAttribute("username");
+        if (username == null) {
+            response.put("success", false);
+            response.put("message", "로그인이 필요합니다.");
+            return response;
+        }
+
+        try {
+            Long commentId = Long.valueOf(requestData.get("commentId").toString());
+            String userContent = (String) requestData.get("userContent");
+            Long requestId = Long.valueOf(requestData.get("requestId").toString());
+
+            // 댓글 조회
+            ReplyRequest reply = replyRequestService.getReplyById(commentId);
+            if (reply == null) {
+                response.put("success", false);
+                response.put("message", "댓글을 찾을 수 없습니다.");
+                return response;
+            }
+
+            // 작성자 확인
+            Member member = memberService.findByUsername(username);
+            if (member == null || !reply.getMemberId().equals(member.getId())) {
+                response.put("success", false);
+                response.put("message", "댓글을 수정할 권한이 없습니다.");
+                return response;
+            }
+
+            // 댓글 수정
+            reply.setUserContent(userContent);
+            replyRequestService.updateReply(reply);
+
+            response.put("success", true);
+            response.put("message", "댓글이 수정되었습니다.");
+
+        } catch (Exception e) {
+            response.put("success", false);
+            response.put("message", "댓글 수정 중 오류가 발생했습니다: " + e.getMessage());
+        }
+
+        return response;
+    }
+
+    /**
+     * 사용자 댓글 삭제 (JSON API)
+     */
+    @PostMapping("/delete-comment")
+    @ResponseBody
+    public Map<String, Object> deleteComment(@RequestBody Map<String, Object> requestData,
+                                            HttpSession session) {
+        Map<String, Object> response = new HashMap<>();
+
+        String username = (String) session.getAttribute("username");
+        if (username == null) {
+            response.put("success", false);
+            response.put("message", "로그인이 필요합니다.");
+            return response;
+        }
+
+        try {
+            Long commentId = Long.valueOf(requestData.get("commentId").toString());
+            Long requestId = Long.valueOf(requestData.get("requestId").toString());
+
+            // 댓글 조회
+            ReplyRequest reply = replyRequestService.getReplyById(commentId);
+            if (reply == null) {
+                response.put("success", false);
+                response.put("message", "댓글을 찾을 수 없습니다.");
+                return response;
+            }
+
+            // 작성자 확인
+            Member member = memberService.findByUsername(username);
+            if (member == null || !reply.getMemberId().equals(member.getId())) {
+                response.put("success", false);
+                response.put("message", "댓글을 삭제할 권한이 없습니다.");
+                return response;
+            }
+
+            // 댓글 삭제
+            replyRequestService.deleteReply(commentId);
+
+            response.put("success", true);
+            response.put("message", "댓글이 삭제되었습니다.");
+
+        } catch (Exception e) {
+            response.put("success", false);
+            response.put("message", "댓글 삭제 중 오류가 발생했습니다: " + e.getMessage());
+        }
+
+        return response;
     }
 }

@@ -52,7 +52,7 @@
                                  <button class="select-btn active p-0 px-2">${inquiry.inquiryType}</button>
                              </div>
                          </div>
-                         <div style="white-space: pre-wrap;">${inquiry.content}</div>
+                         <div style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">${inquiry.content}</div>
                      </div>
                      <c:if test="${not empty inquiry.filePath}">
                      <div class="d-flex gap-3">
@@ -196,7 +196,7 @@
                                          </span>
                                      </div>
                                  </div>
-                                 <div class="bg-light p-3 rounded mb-3" style="white-space: pre-wrap;">${reply.userContent}</div>
+                                 <div class="bg-light p-3 rounded mb-3" style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">${reply.userContent}</div>
                                  
                                  <!-- 관리자 답변 -->
                                  <c:choose>
@@ -213,7 +213,7 @@
                                                  </span>
                                              </div>
                                          </div>
-                                         <div class="bg-success bg-opacity-10 p-3 rounded" style="white-space: pre-wrap;">${reply.adminContent}</div>
+                                         <div class="bg-success bg-opacity-10 p-3 rounded" style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">${reply.adminContent}</div>
                                      </c:when>
                                      <c:otherwise>
                                          <!-- 관리자 답변 폼 -->

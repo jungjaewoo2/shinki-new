@@ -250,12 +250,106 @@
              </div>
          </div>
          <div class="d-flex gap-1 justify-content-center">
-             <button class="btn btn-lg btn-info text-white" ${canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>수정하기</button>
+             <button class="btn btn-lg btn-info text-white" onclick="openEditModal()" ${canModify || adminAuthority == '모든권한' ? '' : 'disabled'}>수정하기</button>
              <button class="btn btn-lg btn-secondary" onclick="location.href='membership-management'">목록</button>
          </div>
      </div>
  </div>
 
+
+<!-- 회원 정보 수정 Modal -->
+<div class="modal fade" id="editMemberModal" tabindex="-1" aria-labelledby="editMemberModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="editMemberModalLabel">회원 정보 수정</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="editMemberForm" method="POST" action="/admin/view-member-info/update">
+            <input type="hidden" name="memberId" value="${member.id}" />
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="hospitalName" class="form-label">병원명</label>
+                        <input type="text" class="form-control" id="hospitalName" name="hospitalName" value="${member.hospitalName}" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="department" class="form-label">진료과</label>
+                        <input type="text" class="form-control" id="department" name="department" value="${member.department}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">이름</label>
+                        <input type="text" class="form-control" id="name" name="name" value="${member.name}" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">아이디</label>
+                        <input type="text" class="form-control" id="username" name="username" value="${member.username}" readonly>
+                        <div class="form-text">아이디는 변경할 수 없습니다.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="password" class="form-label">비밀번호</label>
+                        <input type="password" class="form-control" id="password" name="password" value="${member.password}" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="recommendedEmployee" class="form-label">추천직원</label>
+                        <input type="text" class="form-control" id="recommendedEmployee" name="recommendedEmployee" value="${member.recommendedEmployee}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">연락처</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" value="${member.phone}" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="recommendCode" class="form-label">추천코드</label>
+                        <input type="text" class="form-control" id="recommendCode" name="recommendCode" value="${member.recommendCode}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">이메일</label>
+                        <input type="email" class="form-control" id="email" name="email" value="${member.email}" required>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">주소</label>
+                <input type="text" class="form-control" id="address" name="address" value="${member.address}">
+            </div>
+            <div class="mb-3">
+                <label for="addressEtc" class="form-label">상세주소</label>
+                <input type="text" class="form-control" id="addressEtc" name="addressEtc" value="${member.addressEtc}">
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+        <button type="button" class="btn btn-primary" onclick="updateMember()">수정하기</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="order-history" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -357,6 +451,46 @@ function showPaymentHistory() {
             alert('해당 내역이 없습니다.');
         </c:otherwise>
     </c:choose>
+}
+
+function openEditModal() {
+    const modal = new bootstrap.Modal(document.getElementById('editMemberModal'));
+    modal.show();
+}
+
+function updateMember() {
+    // 폼 유효성 검사
+    const form = document.getElementById('editMemberForm');
+    const requiredFields = form.querySelectorAll('[required]');
+    let isValid = true;
+    
+    requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+            field.classList.add('is-invalid');
+            isValid = false;
+        } else {
+            field.classList.remove('is-invalid');
+        }
+    });
+    
+    // 이메일 형식 검사
+    const emailField = document.getElementById('email');
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (emailField.value && !emailPattern.test(emailField.value)) {
+        emailField.classList.add('is-invalid');
+        isValid = false;
+    } else {
+        emailField.classList.remove('is-invalid');
+    }
+    
+    if (!isValid) {
+        alert('필수 항목을 모두 입력해주세요.');
+        return;
+    }
+    
+    if (confirm('회원 정보를 수정하시겠습니까?')) {
+        form.submit();
+    }
 }
 </script>
 

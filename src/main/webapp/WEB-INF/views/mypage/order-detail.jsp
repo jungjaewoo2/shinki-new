@@ -229,19 +229,44 @@
                                         
                                         <!-- 댓글 목록 -->
                                         <c:forEach var="comment" items="${userComments}">
-                                            <div class="comment-item border-bottom pb-3 mb-3">
+                                            <div class="comment-item border-bottom pb-3 mb-3" id="comment-${comment.id}">
                                                 <!-- 사용자 댓글 -->
                                                 <div class="user-comment p-3 bg-white rounded mb-2">
-                                                    <div class="d-flex justify-content-between align-items-start mb-2">
-                                                        <div class="fw-bold text-primary">사용자 댓글</div>
-                                                        <small class="text-muted">
-                                                            <fmt:formatDate value="${comment.userCreatedAt}" pattern="yyyy.MM.dd" />
-                                                            <c:if test="${not empty comment.member}">
-                                                                (${comment.member.name})
-                                                            </c:if>
-                                                        </small>
+                                                    <!-- 보기 모드 -->
+                                                    <div id="comment-view-${comment.id}">
+                                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                                            <div class="fw-bold text-primary">사용자 댓글</div>
+                                                            <div class="d-flex gap-2 align-items-center">
+                                                                <small class="text-muted">
+                                                                    <fmt:formatDate value="${comment.userCreatedAt}" pattern="yyyy.MM.dd HH:mm" />
+
+                                                                </small>
+                                                                <button type="button" class="btn btn-sm btn-outline-primary" onclick="editComment(${comment.id})" title="수정">
+                                                                    <i class="bi bi-pencil"></i>
+                                                                </button>
+                                                                <button type="button" class="btn btn-sm btn-outline-danger" onclick="deleteComment(${comment.id})" title="삭제">
+                                                                    <i class="bi bi-trash"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="comment-content mb-3" id="comment-content-${comment.id}" style="white-space: pre-wrap;">${comment.userContent}</div>
                                                     </div>
-                                                    <div class="comment-content mb-3" style="white-space: pre-wrap;">${comment.userContent}</div>
+
+                                                    <!-- 수정 모드 -->
+                                                    <div id="comment-edit-${comment.id}" style="display: none;">
+                                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                                            <div class="fw-bold text-primary">사용자 댓글 수정</div>
+                                                        </div>
+                                                        <textarea class="form-control mb-2" id="comment-edit-textarea-${comment.id}" rows="4" style="white-space: pre-wrap;">${comment.userContent}</textarea>
+                                                        <div class="d-flex gap-2 justify-content-end">
+                                                            <button type="button" class="btn btn-sm btn-success" onclick="saveComment(${comment.id})">
+                                                                <i class="bi bi-check-circle"></i> 저장
+                                                            </button>
+                                                            <button type="button" class="btn btn-sm btn-secondary" onclick="cancelEditComment(${comment.id})">
+                                                                <i class="bi bi-x-circle"></i> 취소
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 
                                                 <!-- 해당 댓글의 관리자 답글들 -->
@@ -252,7 +277,7 @@
                                                                 <div class="d-flex justify-content-between align-items-start mb-1">
                                                                     <div class="fw-bold text-success">관리자 답글</div>
                                                                     <small class="text-muted">
-                                                                        <fmt:formatDate value="${reply.adminCreatedAt}" pattern="yyyy.MM.dd" />
+                                                                        <fmt:formatDate value="${reply.adminCreatedAt}" pattern="yyyy.MM.dd HH:mm" />
                                                                         <c:if test="${not empty reply.admin}">
                                                                             - ${reply.admin.name}
                                                                         </c:if>
@@ -698,38 +723,178 @@ function downloadAdminFile(fileName) {
         alert('다운로드할 파일명이 올바르지 않습니다.');
         return;
     }
-    
+
     // request.id를 가져와야 함 (JSP에서 전달)
     const requestId = '${request.id}';
     if (!requestId) {
         alert('요청 ID를 찾을 수 없습니다.');
         return;
     }
-    
+
     // 의뢰 생성일 가져오기
     <c:if test="${not empty request.createdAt}">
     const createdDate = '${request.createdAt.year}.<fmt:formatNumber value="${request.createdAt.monthValue}" pattern="00"/>.<fmt:formatNumber value="${request.createdAt.dayOfMonth}" pattern="00"/>';
-    
+
     // 날짜 만료 확인
     if (isDateExpired(createdDate)) {
         alert('다운로드 기간이 만료되었습니다.');
         return;
     }
     </c:if>
-    
+
     // 다운로드 URL 생성 (사용자용 엔드포인트 사용)
     const downloadUrl = '/mypage/download-admin-file/' + requestId + '?fileName=' + encodeURIComponent(fileName.trim());
-    
+
     // 다운로드 실행
     const downloadFrame = document.createElement('iframe');
     downloadFrame.style.display = 'none';
     downloadFrame.src = downloadUrl;
     document.body.appendChild(downloadFrame);
-    
+
     // 다운로드 완료 후 iframe 제거
     setTimeout(() => {
         document.body.removeChild(downloadFrame);
     }, 1000);
+}
+
+// ========== 댓글 수정/삭제 기능 ==========
+const REQUEST_ID = '${request.id}';
+
+// 댓글 수정 모드 활성화
+function editComment(commentId) {
+    console.log('=== 댓글 수정 시작 ===');
+    console.log('commentId:', commentId);
+
+    const viewMode = document.getElementById('comment-view-' + commentId);
+    const editMode = document.getElementById('comment-edit-' + commentId);
+
+    if (viewMode && editMode) {
+        viewMode.style.display = 'none';
+        editMode.style.display = 'block';
+
+        // 텍스트 영역에 포커스
+        const textarea = document.getElementById('comment-edit-textarea-' + commentId);
+        if (textarea) {
+            textarea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            setTimeout(() => {
+                textarea.focus();
+                // 커서를 끝으로 이동
+                textarea.setSelectionRange(textarea.value.length, textarea.value.length);
+            }, 300);
+        }
+    }
+
+    console.log('댓글 수정 모드 활성화 완료');
+}
+
+// 댓글 수정 저장
+function saveComment(commentId) {
+    console.log('=== 댓글 저장 시작 ===');
+    console.log('commentId:', commentId);
+
+    const textarea = document.getElementById('comment-edit-textarea-' + commentId);
+    if (!textarea) {
+        alert('수정 내용을 찾을 수 없습니다.');
+        return;
+    }
+
+    const newContent = textarea.value.trim();
+    if (!newContent) {
+        alert('댓글 내용을 입력해주세요.');
+        return;
+    }
+
+    if (!confirm('댓글을 수정하시겠습니까?')) {
+        return;
+    }
+
+    console.log('댓글 수정 요청:', { commentId, newContent, requestId: REQUEST_ID });
+
+    // 서버로 수정 요청 전송
+    fetch('/mypage/update-comment', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            commentId: commentId,
+            userContent: newContent,
+            requestId: REQUEST_ID
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('댓글이 수정되었습니다.');
+            location.reload();
+        } else {
+            alert('댓글 수정 중 오류가 발생했습니다: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('댓글 수정 오류:', error);
+        alert('댓글 수정 중 오류가 발생했습니다.');
+    });
+}
+
+// 댓글 수정 취소
+function cancelEditComment(commentId) {
+    console.log('=== 댓글 수정 취소 ===');
+    console.log('commentId:', commentId);
+
+    const viewMode = document.getElementById('comment-view-' + commentId);
+    const editMode = document.getElementById('comment-edit-' + commentId);
+
+    if (viewMode && editMode) {
+        viewMode.style.display = 'block';
+        editMode.style.display = 'none';
+
+        // 원래 내용으로 복구
+        const textarea = document.getElementById('comment-edit-textarea-' + commentId);
+        const originalContent = document.getElementById('comment-content-' + commentId);
+        if (textarea && originalContent) {
+            textarea.value = originalContent.textContent || originalContent.innerText;
+        }
+    }
+
+    console.log('댓글 수정 모드 취소 완료');
+}
+
+// 댓글 삭제
+function deleteComment(commentId) {
+    console.log('=== 댓글 삭제 시작 ===');
+    console.log('commentId:', commentId);
+
+    if (!confirm('정말로 이 댓글을 삭제하시겠습니까?\n\n삭제된 댓글은 복구할 수 없습니다.')) {
+        return;
+    }
+
+    console.log('댓글 삭제 요청:', { commentId, requestId: REQUEST_ID });
+
+    // 서버로 삭제 요청 전송
+    fetch('/mypage/delete-comment', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            commentId: commentId,
+            requestId: REQUEST_ID
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('댓글이 삭제되었습니다.');
+            location.reload();
+        } else {
+            alert('댓글 삭제 중 오류가 발생했습니다: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('댓글 삭제 오류:', error);
+        alert('댓글 삭제 중 오류가 발생했습니다.');
+    });
 }
 </script>
 

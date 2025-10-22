@@ -1032,6 +1032,54 @@ public class AdminController {
         return "redirect:/admin/view-member-info?memberId=" + memberId;
     }
     
+    // 회원 정보 수정 처리
+    @PostMapping("/view-member-info/update")
+    public String updateMemberInfo(@RequestParam("memberId") Long memberId,
+                                  @RequestParam("hospitalName") String hospitalName,
+                                  @RequestParam("department") String department,
+                                  @RequestParam("name") String name,
+                                  @RequestParam("password") String password,
+                                  @RequestParam("recommendedEmployee") String recommendedEmployee,
+                                  @RequestParam("phone") String phone,
+                                  @RequestParam("recommendCode") String recommendCode,
+                                  @RequestParam("email") String email,
+                                  @RequestParam("address") String address,
+                                  @RequestParam("addressEtc") String addressEtc,
+                                  HttpSession session,
+                                  RedirectAttributes redirectAttributes) {
+        try {
+            // 권한 체크: 수정 권한 또는 모든권한만 회원 정보 수정 가능
+            String adminAuthority = (String) session.getAttribute("adminAuthority");
+            if (!"수정".equals(adminAuthority) && !"모든권한".equals(adminAuthority)) {
+                redirectAttributes.addFlashAttribute("error", "회원 정보를 수정할 권한이 없습니다.");
+                return "redirect:/admin/view-member-info?memberId=" + memberId;
+            }
+            
+            Member member = memberService.getMemberById(memberId);
+            if (member != null) {
+                // 회원 정보 업데이트
+                member.setHospitalName(hospitalName);
+                member.setDepartment(department);
+                member.setName(name);
+                member.setPassword(password);
+                member.setRecommendedEmployee(recommendedEmployee);
+                member.setPhone(phone);
+                member.setRecommendCode(recommendCode);
+                member.setEmail(email);
+                member.setAddress(address);
+                member.setAddressEtc(addressEtc);
+                
+                memberService.updateMember(member);
+                redirectAttributes.addFlashAttribute("success", "회원 정보가 성공적으로 수정되었습니다.");
+            } else {
+                redirectAttributes.addFlashAttribute("error", "회원을 찾을 수 없습니다.");
+            }
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("error", "회원 정보 수정 중 오류가 발생했습니다: " + e.getMessage());
+        }
+        return "redirect:/admin/view-member-info?memberId=" + memberId;
+    }
+    
     // 활동 내역 아이템을 위한 내부 클래스
     public static class ActivityItem {
         private Long id;
@@ -1329,12 +1377,26 @@ public class AdminController {
     
     // 회원목록 엑셀 다운로드
     @GetMapping("/membership-management/excel")
-    public ResponseEntity<Resource> downloadMemberExcel() {
+    public ResponseEntity<Resource> downloadMemberExcel(@RequestParam(value = "memberIds", required = false) String memberIds) {
         try {
             System.out.println("엑셀 다운로드 시작");
             
-            // 모든 활성 회원 조회
-            List<Member> allMembers = memberService.getAllActiveMembers();
+            List<Member> allMembers;
+            
+            // memberIds가 있으면 선택된 회원만 조회, 없으면 전체 조회
+            if (memberIds != null && !memberIds.trim().isEmpty()) {
+                System.out.println("선택된 회원 다운로드 - memberIds: " + memberIds);
+                String[] idArray = memberIds.split(",");
+                List<Long> memberIdList = new ArrayList<>();
+                for (String idStr : idArray) {
+                    memberIdList.add(Long.parseLong(idStr.trim()));
+                }
+                allMembers = memberService.getMembersByIds(memberIdList);
+            } else {
+                System.out.println("전체 회원 다운로드");
+                allMembers = memberService.getAllActiveMembers();
+            }
+            
             System.out.println("조회된 회원 수: " + allMembers.size());
             
             // 각 회원의 의뢰건수와 총 주문금액 계산
@@ -1587,13 +1649,13 @@ public class AdminController {
     @ResponseBody
     public ResponseEntity<Map<String, Object>> deleteAdminFile(@RequestBody Map<String, Object> requestData) {
         Map<String, Object> response = new HashMap<>();
-        
+
         try {
             Long requestId = Long.valueOf(requestData.get("requestId").toString());
             String fileName = requestData.get("fileName").toString();
-            
+
             logger.info("관리자 파일 삭제 시작 - requestId: {}, fileName: {}", requestId, fileName);
-            
+
             // 요청 정보 조회
             Request request = requestService.getRequestById(requestId);
             if (request == null) {
@@ -1613,7 +1675,7 @@ public class AdminController {
             // 파일 목록에서 해당 파일 제거
             List<String> fileList = new ArrayList<>(Arrays.asList(adminFilePath.split("\\|")));
             boolean fileFound = false;
-            
+
             for (int i = fileList.size() - 1; i >= 0; i--) {
                 if (fileList.get(i).trim().equals(fileName.trim())) {
                     fileList.remove(i);
@@ -1621,7 +1683,7 @@ public class AdminController {
                     break;
                 }
             }
-            
+
             if (!fileFound) {
                 response.put("success", false);
                 response.put("message", "삭제할 파일을 찾을 수 없습니다.");
@@ -1631,7 +1693,7 @@ public class AdminController {
             // 물리적 파일 삭제
             String webappPath = System.getProperty("user.dir") + "/src/main/webapp";
             Path filePath = Paths.get(webappPath + "/uploads/request/" + fileName.trim());
-            
+
             try {
                 if (Files.exists(filePath)) {
                     Files.delete(filePath);
@@ -1651,20 +1713,159 @@ public class AdminController {
             } else {
                 request.setAdminFilePath(updatedFilePath);
             }
-            
+
             requestService.updateRequest(request);
 
             response.put("success", true);
             response.put("message", "파일이 성공적으로 삭제되었습니다.");
-            
+
             logger.info("관리자 파일 삭제 완료 - requestId: {}, fileName: {}", requestId, fileName);
             return ResponseEntity.ok(response);
-            
+
         } catch (Exception e) {
             logger.error("관리자 파일 삭제 오류: {}", e.getMessage(), e);
-            
+
             response.put("success", false);
             response.put("message", "파일 삭제 중 오류가 발생했습니다: " + e.getMessage());
+            return ResponseEntity.internalServerError().body(response);
+        }
+    }
+
+    // 관리자 답글 수정 처리
+    @PostMapping("/view-request-details/update-reply")
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> updateReply(@RequestBody Map<String, Object> requestData, HttpSession session) {
+        Map<String, Object> response = new HashMap<>();
+
+        try {
+            Long replyId = Long.valueOf(requestData.get("replyId").toString());
+            String adminContent = requestData.get("adminContent").toString();
+            Long requestId = Long.valueOf(requestData.get("requestId").toString());
+
+            logger.info("관리자 답글 수정 시작 - replyId: {}, requestId: {}", replyId, requestId);
+
+            // 권한 체크
+            if (!hasAuthority(session, "수정") && !hasAuthority(session, "모든권한")) {
+                response.put("success", false);
+                response.put("message", "답글을 수정할 권한이 없습니다.");
+                return ResponseEntity.status(403).body(response);
+            }
+
+            // 답글 조회
+            ReplyRequest reply = replyRequestService.getReplyById(replyId);
+            if (reply == null) {
+                response.put("success", false);
+                response.put("message", "답글을 찾을 수 없습니다.");
+                return ResponseEntity.badRequest().body(response);
+            }
+
+            // 답글 내용 수정
+            reply.setAdminContent(adminContent);
+            reply.setAdminCreatedAt(new Date()); // 수정일시 업데이트
+
+            replyRequestService.updateReply(reply);
+
+            response.put("success", true);
+            response.put("message", "답글이 성공적으로 수정되었습니다.");
+
+            logger.info("관리자 답글 수정 완료 - replyId: {}", replyId);
+            return ResponseEntity.ok(response);
+
+        } catch (Exception e) {
+            logger.error("관리자 답글 수정 오류: {}", e.getMessage(), e);
+
+            response.put("success", false);
+            response.put("message", "답글 수정 중 오류가 발생했습니다: " + e.getMessage());
+            return ResponseEntity.internalServerError().body(response);
+        }
+    }
+
+    // 관리자 답글 삭제 처리
+    @PostMapping("/view-request-details/delete-reply")
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> deleteReply(@RequestBody Map<String, Object> requestData, HttpSession session) {
+        Map<String, Object> response = new HashMap<>();
+
+        try {
+            Long replyId = Long.valueOf(requestData.get("replyId").toString());
+            Long requestId = Long.valueOf(requestData.get("requestId").toString());
+
+            logger.info("관리자 답글 삭제 시작 - replyId: {}, requestId: {}", replyId, requestId);
+
+            // 권한 체크
+            if (!hasAuthority(session, "수정") && !hasAuthority(session, "모든권한")) {
+                response.put("success", false);
+                response.put("message", "답글을 삭제할 권한이 없습니다.");
+                return ResponseEntity.status(403).body(response);
+            }
+
+            // 답글 조회
+            ReplyRequest reply = replyRequestService.getReplyById(replyId);
+            if (reply == null) {
+                response.put("success", false);
+                response.put("message", "답글을 찾을 수 없습니다.");
+                return ResponseEntity.badRequest().body(response);
+            }
+
+            // 답글 삭제
+            replyRequestService.deleteReply(replyId);
+
+            response.put("success", true);
+            response.put("message", "답글이 성공적으로 삭제되었습니다.");
+
+            logger.info("관리자 답글 삭제 완료 - replyId: {}", replyId);
+            return ResponseEntity.ok(response);
+
+        } catch (Exception e) {
+            logger.error("관리자 답글 삭제 오류: {}", e.getMessage(), e);
+
+            response.put("success", false);
+            response.put("message", "답글 삭제 중 오류가 발생했습니다: " + e.getMessage());
+            return ResponseEntity.internalServerError().body(response);
+        }
+    }
+
+    // 사용자 댓글 삭제 처리 (답글도 함께 삭제)
+    @PostMapping("/view-request-details/delete-user-comment")
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> deleteUserComment(@RequestBody Map<String, Object> requestData, HttpSession session) {
+        Map<String, Object> response = new HashMap<>();
+
+        try {
+            Long commentId = Long.valueOf(requestData.get("commentId").toString());
+            Long requestId = Long.valueOf(requestData.get("requestId").toString());
+
+            logger.info("사용자 댓글 삭제 시작 - commentId: {}, requestId: {}", commentId, requestId);
+
+            // 권한 체크
+            if (!hasAuthority(session, "수정") && !hasAuthority(session, "모든권한")) {
+                response.put("success", false);
+                response.put("message", "댓글을 삭제할 권한이 없습니다.");
+                return ResponseEntity.status(403).body(response);
+            }
+
+            // 댓글 조회
+            ReplyRequest comment = replyRequestService.getReplyById(commentId);
+            if (comment == null) {
+                response.put("success", false);
+                response.put("message", "댓글을 찾을 수 없습니다.");
+                return ResponseEntity.badRequest().body(response);
+            }
+
+            // 댓글과 관련된 모든 답글 삭제
+            replyRequestService.deleteCommentWithReplies(commentId);
+
+            response.put("success", true);
+            response.put("message", "댓글과 답글이 모두 삭제되었습니다.");
+
+            logger.info("사용자 댓글 및 답글 삭제 완료 - commentId: {}", commentId);
+            return ResponseEntity.ok(response);
+
+        } catch (Exception e) {
+            logger.error("사용자 댓글 삭제 오류: {}", e.getMessage(), e);
+
+            response.put("success", false);
+            response.put("message", "댓글 삭제 중 오류가 발생했습니다: " + e.getMessage());
             return ResponseEntity.internalServerError().body(response);
         }
     }

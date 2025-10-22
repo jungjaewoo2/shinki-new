@@ -63,13 +63,19 @@ public class ReplyRequestService {
         return replyRequestRepository.save(reply);
     }
 
-    // 답변 ID로 조회
+    // 답변 ID로 조회 (Optional 반환)
     @Transactional(readOnly = true)
-    public Optional<ReplyRequest> getReplyById(Long id) {
+    public Optional<ReplyRequest> getReplyByIdOptional(Long id) {
         return replyRequestRepository.findById(id);
     }
 
-    // 답변 수정
+    // 답변 ID로 조회 (직접 객체 반환, null 가능)
+    @Transactional(readOnly = true)
+    public ReplyRequest getReplyById(Long id) {
+        return replyRequestRepository.findById(id).orElse(null);
+    }
+
+    // 답변 수정 (ID로)
     public ReplyRequest updateReply(Long id, String adminContent) {
         Optional<ReplyRequest> replyOpt = replyRequestRepository.findById(id);
         if (replyOpt.isPresent()) {
@@ -81,17 +87,37 @@ public class ReplyRequestService {
         return null;
     }
 
+    // 답변 수정 (객체로)
+    public ReplyRequest updateReply(ReplyRequest reply) {
+        reply.setUpdatedAt(new Date());
+        return replyRequestRepository.save(reply);
+    }
+
     // 답변 삭제
     public void deleteReply(Long id) {
         replyRequestRepository.deleteById(id);
     }
-    
+
+    // 댓글과 관련된 모든 답글 삭제 (댓글 삭제 시 사용)
+    public void deleteCommentWithReplies(Long commentId) {
+        // 1. 해당 댓글의 모든 답글 조회
+        List<ReplyRequest> replies = getRepliesByParentId(commentId);
+
+        // 2. 모든 답글 삭제
+        for (ReplyRequest reply : replies) {
+            replyRequestRepository.deleteById(reply.getId());
+        }
+
+        // 3. 댓글 자체 삭제
+        replyRequestRepository.deleteById(commentId);
+    }
+
     // 특정 댓글의 답글 목록 조회
     @Transactional(readOnly = true)
     public List<ReplyRequest> getRepliesByParentId(Long parentId) {
         return replyRequestRepository.findByParentIdOrderByCreatedAtAsc(parentId);
     }
-    
+
     // 사용자 댓글 목록 조회 (답글이 아닌 원본 댓글만)
     @Transactional(readOnly = true)
     public List<ReplyRequest> getUserCommentsByRequestId(Long requestId) {

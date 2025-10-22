@@ -165,7 +165,7 @@
                              </tr>
                              <tr>
                                  <th class="text-start"><label class="form-label required w-100">제목</label></th>
-                                 <td class="text-start">${request.title}</td>
+                                 <td class="text-start" style="word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">${request.title}</td>
                              </tr>
                              <tr>
                                  <th class="text-start"><label class="form-label required w-100">의뢰내용</label></th>
@@ -282,21 +282,28 @@
                                             <div class="user-comment p-3 bg-white rounded mb-2">
                                                 <div class="d-flex justify-content-between align-items-start mb-2">
                                                     <div class="fw-bold text-primary">사용자 댓글</div>
-                                                    <small class="text-muted">
-                                                        <c:choose>
-                                                            <c:when test="${comment.userCreatedAt != null}">
-                                                                <fmt:formatDate value="${comment.userCreatedAt}" pattern="yyyy-MM-dd HH:mm"/>
-                                                            </c:when>
-                                                            <c:otherwise>-</c:otherwise>
-                                                        </c:choose>
-                                                    </small>
+                                                    <div class="d-flex gap-2 align-items-center">
+                                                        <small class="text-muted">
+                                                            <c:choose>
+                                                                <c:when test="${comment.userCreatedAt != null}">
+                                                                    <fmt:formatDate value="${comment.userCreatedAt}" pattern="yyyy-MM-dd HH:mm"/>
+                                                                </c:when>
+                                                                <c:otherwise>-</c:otherwise>
+                                                            </c:choose>
+                                                        </small>
+                                                        <c:if test="${canModify || adminAuthority == '모든권한'}">
+                                                            <button type="button" class="btn btn-sm btn-outline-danger" onclick="deleteUserComment(${comment.id})" title="댓글 삭제 (답글 포함)">
+                                                                <i class="bi bi-trash"></i>
+                                                            </button>
+                                                        </c:if>
+                                                    </div>
                                                 </div>
                                                 <div class="comment-content mb-3" style="white-space: pre-wrap;">${comment.userContent}</div>
                                                 
                              <!-- 답글 작성 폼 -->
                              <c:if test="${canReply}">
                                  <div class="reply-form">
-                                     <form method="post" action="/admin/view-request-details/reply-to-comment">
+                                     <form method="post" action="/admin/view-request-details/reply-to-comment" class="reply-submit-form" data-parent-id="${comment.id}">
                                          <input type="hidden" name="requestId" value="${request.id}">
                                          <input type="hidden" name="parentId" value="${comment.id}">
                                          <div class="mb-2">
@@ -315,19 +322,48 @@
                                             <c:if test="${not empty replies}">
                                                 <div class="replies ms-4">
                                                     <c:forEach var="reply" items="${replies}">
-                                                        <div class="reply-item p-2 bg-light rounded mb-2">
-                                                            <div class="d-flex justify-content-between align-items-start mb-1">
-                                                                <div class="fw-bold text-success">관리자 답글</div>
-                                                                <small class="text-muted">
-                                                                    <c:choose>
-                                                                        <c:when test="${reply.adminCreatedAt != null}">
-                                                                            <fmt:formatDate value="${reply.adminCreatedAt}" pattern="yyyy-MM-dd HH:mm"/>
-                                                                        </c:when>
-                                                                        <c:otherwise>-</c:otherwise>
-                                                                    </c:choose>
-                                                                </small>
+                                                        <div class="reply-item p-2 bg-light rounded mb-2" id="reply-${reply.id}">
+                                                            <!-- 답글 보기 모드 -->
+                                                            <div id="reply-view-${reply.id}">
+                                                                <div class="d-flex justify-content-between align-items-start mb-1">
+                                                                    <div class="fw-bold text-success">관리자 답글</div>
+                                                                    <div class="d-flex gap-2 align-items-center">
+                                                                        <small class="text-muted">
+                                                                            <c:choose>
+                                                                                <c:when test="${reply.adminCreatedAt != null}">
+                                                                                    <fmt:formatDate value="${reply.adminCreatedAt}" pattern="yyyy-MM-dd HH:mm"/>
+                                                                                </c:when>
+                                                                                <c:otherwise>-</c:otherwise>
+                                                                            </c:choose>
+                                                                        </small>
+                                                                        <c:if test="${canModify || adminAuthority == '모든권한'}">
+                                                                            <button type="button" class="btn btn-sm btn-outline-primary" onclick="editReplyInline(${reply.id}, ${comment.id})" title="수정">
+                                                                                <i class="bi bi-pencil"></i>
+                                                                            </button>
+                                                                            <button type="button" class="btn btn-sm btn-outline-danger" onclick="deleteReply(${reply.id})" title="삭제">
+                                                                                <i class="bi bi-trash"></i>
+                                                                            </button>
+                                                                        </c:if>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="reply-content" id="reply-content-${reply.id}" style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">${reply.adminContent}</div>
                                                             </div>
-                                                            <div class="reply-content" style="white-space: pre-wrap;">${reply.adminContent}</div>
+
+                                                            <!-- 답글 수정 모드 -->
+                                                            <div id="reply-edit-${reply.id}" style="display: none;">
+                                                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                                                    <div class="fw-bold text-success">관리자 답글 수정</div>
+                                                                </div>
+                                                                <textarea class="form-control mb-2" id="reply-edit-textarea-${reply.id}" rows="4" style="white-space: pre-wrap;">${reply.adminContent}</textarea>
+                                                                <div class="d-flex gap-2 justify-content-end">
+                                                                    <button type="button" class="btn btn-sm btn-success" onclick="saveReply(${reply.id})">
+                                                                        <i class="bi bi-check-circle"></i> 저장
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-sm btn-secondary" onclick="cancelEditReply(${reply.id})">
+                                                                        <i class="bi bi-x-circle"></i> 취소
+                                                                    </button>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </c:forEach>
                                                 </div>
@@ -529,9 +565,37 @@
          <div class="d-flex gap-1 justify-content-center mt-3">
              <!--<button class="btn btn-lg btn-outline-secondary" onclick="location.href='/admin/view-request-details?id=${request.id}'">확인</button>-->
              <button class="btn btn-lg btn-secondary" onclick="location.href='/admin/request-history'">목록</button>
+             <!-- 테스트 버튼 -->
+             <button class="btn btn-lg btn-warning" onclick="testEditReply()">테스트 수정</button>
          </div>
      </div>
  </div>
+
+<!-- 답글 수정 모달 -->
+<div class="modal fade" id="editReplyModal" tabindex="-1" aria-labelledby="editReplyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editReplyModalLabel">답글 수정</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editReplyForm">
+                    <input type="hidden" id="editReplyId" name="replyId">
+                    <input type="hidden" id="editRequestId" name="requestId" value="${request.id}">
+                    <div class="mb-3">
+                        <label for="editReplyContent" class="form-label">답글 내용</label>
+                        <textarea class="form-control" id="editReplyContent" name="adminContent" rows="6" placeholder="답글 내용을 입력하세요"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+                <button type="button" class="btn btn-primary" onclick="saveReplyModal()">저장</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- 처리상태 JS -->
 <script>
@@ -881,10 +945,266 @@
         });
     }
 
+    // 전역 변수로 현재 수정 중인 답글 정보 저장
+    let currentEditingReplyId = null;
+    let currentEditingParentId = null;
+
+    // 답글 인라인 수정 - 답글 자체를 직접 수정 영역으로 변경
+    function editReplyInline(replyId, parentId) {
+        console.log('=== 답글 수정 시작 ===');
+        console.log('replyId:', replyId);
+        console.log('parentId:', parentId);
+
+        // 기존 답글 내용 가져오기
+        const replyContentElement = document.getElementById('reply-content-' + replyId);
+        if (!replyContentElement) {
+            alert('답글 내용을 찾을 수 없습니다.');
+            return;
+        }
+
+        const currentContent = replyContentElement.textContent || replyContentElement.innerText;
+        console.log('현재 답글 내용:', currentContent);
+
+        // 답글 아이템 찾기
+        const replyItem = document.getElementById('reply-' + replyId);
+        if (!replyItem) {
+            alert('답글을 찾을 수 없습니다.');
+            return;
+        }
+
+        // 보기 모드 숨기고 수정 모드 표시
+        const viewMode = document.getElementById('reply-view-' + replyId);
+        const editMode = document.getElementById('reply-edit-' + replyId);
+
+        if (viewMode && editMode) {
+            viewMode.style.display = 'none';
+            editMode.style.display = 'block';
+
+            // 텍스트 영역에 포커스
+            const textarea = document.getElementById('reply-edit-textarea-' + replyId);
+            if (textarea) {
+                textarea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                setTimeout(() => {
+                    textarea.focus();
+                    // 커서를 끝으로 이동
+                    textarea.setSelectionRange(textarea.value.length, textarea.value.length);
+                }, 300);
+            }
+        }
+
+        console.log('답글 수정 모드 활성화 완료');
+    }
+
+    // 답글 수정 저장
+    function saveReply(replyId) {
+        console.log('=== 답글 저장 시작 ===');
+        console.log('replyId:', replyId);
+
+        const textarea = document.getElementById('reply-edit-textarea-' + replyId);
+        if (!textarea) {
+            alert('수정 내용을 찾을 수 없습니다.');
+            return;
+        }
+
+        const newContent = textarea.value.trim();
+        if (!newContent) {
+            alert('답글 내용을 입력해주세요.');
+            return;
+        }
+
+        if (!confirm('답글을 수정하시겠습니까?')) {
+            return;
+        }
+
+        console.log('답글 수정 요청:', { replyId, newContent, requestId: REQUEST_ID });
+
+        // 서버로 수정 요청 전송
+        fetch('/admin/view-request-details/update-reply', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                replyId: replyId,
+                adminContent: newContent,
+                requestId: REQUEST_ID
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('답글이 수정되었습니다.');
+                location.reload();
+            } else {
+                alert('답글 수정 중 오류가 발생했습니다: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('답글 수정 오류:', error);
+            alert('답글 수정 중 오류가 발생했습니다.');
+        });
+    }
+
+    // 답글 수정 취소
+    function cancelEditReply(replyId) {
+        console.log('=== 답글 수정 취소 ===');
+        console.log('replyId:', replyId);
+
+        // 보기 모드 표시하고 수정 모드 숨기기
+        const viewMode = document.getElementById('reply-view-' + replyId);
+        const editMode = document.getElementById('reply-edit-' + replyId);
+
+        if (viewMode && editMode) {
+            viewMode.style.display = 'block';
+            editMode.style.display = 'none';
+
+            // 원래 내용으로 복구 (textarea 값을 원래 값으로)
+            const textarea = document.getElementById('reply-edit-textarea-' + replyId);
+            const originalContent = document.getElementById('reply-content-' + replyId);
+            if (textarea && originalContent) {
+                textarea.value = originalContent.textContent || originalContent.innerText;
+            }
+        }
+
+        console.log('답글 수정 모드 취소 완료');
+    }
+
+    // 모달창에서 답글 저장
+    function saveReplyModal() {
+        const replyId = document.getElementById('editReplyId').value;
+        const newContent = document.getElementById('editReplyContent').value.trim();
+
+        if (!newContent) {
+            alert('답글 내용을 입력해주세요.');
+            return;
+        }
+
+        if (!confirm('답글을 수정하시겠습니까?')) {
+            return;
+        }
+
+        console.log('답글 수정 요청 - replyId:', replyId, 'newContent:', newContent);
+
+        // 서버로 수정 요청 전송
+        fetch('/admin/view-request-details/update-reply', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                replyId: replyId,
+                adminContent: newContent,
+                requestId: REQUEST_ID
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('답글이 수정되었습니다.');
+                // 모달창 닫기
+                const modal = bootstrap.Modal.getInstance(document.getElementById('editReplyModal'));
+                modal.hide();
+                // 페이지 새로고침
+                location.reload();
+            } else {
+                alert('답글 수정 중 오류가 발생했습니다: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('답글 수정 오류:', error);
+            alert('답글 수정 중 오류가 발생했습니다.');
+        });
+    }
+
+    // 테스트 함수
+    function testEditReply() {
+        console.log('=== 테스트 함수 호출됨 ===');
+        alert('테스트 함수가 호출되었습니다!');
+        
+        // 모달창 요소 확인
+        const modalElement = document.getElementById('editReplyModal');
+        console.log('모달창 요소:', modalElement);
+        
+        if (modalElement) {
+            console.log('모달창 요소가 존재합니다.');
+            // 테스트 데이터로 모달창 열기
+            editReply(999, '테스트 답글 내용입니다.');
+        } else {
+            console.error('모달창 요소를 찾을 수 없습니다!');
+            alert('모달창 요소를 찾을 수 없습니다!');
+        }
+    }
+
+    // 답글 삭제
+    function deleteReply(replyId) {
+        if (!confirm('정말로 이 답글을 삭제하시겠습니까?\n\n삭제된 답글은 복구할 수 없습니다.')) {
+            return;
+        }
+
+        // 서버로 삭제 요청 전송
+        fetch('/admin/view-request-details/delete-reply', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                replyId: replyId,
+                requestId: REQUEST_ID
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('답글이 삭제되었습니다.');
+                location.reload();
+            } else {
+                alert('답글 삭제 중 오류가 발생했습니다: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('답글 삭제 오류:', error);
+            alert('답글 삭제 중 오류가 발생했습니다.');
+        });
+    }
+
+    // 사용자 댓글 삭제 (답글도 함께 삭제됨)
+    function deleteUserComment(commentId) {
+        if (!confirm('정말로 이 댓글을 삭제하시겠습니까?\n\n이 댓글에 달린 모든 답글도 함께 삭제됩니다.\n삭제된 내용은 복구할 수 없습니다.')) {
+            return;
+        }
+
+        console.log('사용자 댓글 삭제 요청:', { commentId, requestId: REQUEST_ID });
+
+        // 서버로 삭제 요청 전송
+        fetch('/admin/view-request-details/delete-user-comment', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                commentId: commentId,
+                requestId: REQUEST_ID
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('댓글과 답글이 모두 삭제되었습니다.');
+                location.reload();
+            } else {
+                alert('댓글 삭제 중 오류가 발생했습니다: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('댓글 삭제 오류:', error);
+            alert('댓글 삭제 중 오류가 발생했습니다.');
+        });
+    }
+
     // DOM 로드 완료 후 실행
     document.addEventListener('DOMContentLoaded', function() {
         console.log('=== DOM 로드 완료 ===');
-        
+
         const radios = document.querySelectorAll('input[name="status"]');
         const allDownloadBtn = document.querySelector('.all-download-btn');
         const processContent = document.querySelector('.process-content');
@@ -956,6 +1276,16 @@
                 fileUploadSystem.init();
             }
         }, 500);
+        
+        // 모달창 이벤트 리스너 등록
+        const editReplyModal = document.getElementById('editReplyModal');
+        if (editReplyModal) {
+            editReplyModal.addEventListener('hidden.bs.modal', function () {
+                // 모달창이 닫힐 때 폼 초기화
+                document.getElementById('editReplyForm').reset();
+                document.getElementById('editReplyId').value = '';
+            });
+        }
     });
 </script>
 

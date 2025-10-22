@@ -84,7 +84,7 @@
                              <th class="sortable" data-column="applicationType">의뢰항목<span class="sort-icon"><i class="bi bi-caret-down-fill"></i></span></th>
                              <th>병원명</th>
                              <th>이름</th>
-                             <th>제목</th>
+                             <th class="title-column">제목</th>
                              <th class="sortable" data-column="createdAt">주문일<span class="sort-icon"><i class="bi bi-caret-down-fill"></i></span></th>
                              <th class="sortable" data-column="status">의뢰상태<span class="sort-icon"><i class="bi bi-caret-down-fill"></i></span></th>
                          </tr>
@@ -101,7 +101,7 @@
                                  <td>${request.applicationType}</td>
                                  <td>${request.member != null ? request.member.hospitalName : '-'}</td>
                                  <td>${request.member != null ? request.member.name : '-'}</td>
-                                 <td>${request.title}</td>
+                                 <td class="title-cell">${request.title}</td>
                                  <td>${request.createdAt.toLocalDate()}</td>
                                  <td>
                                      <c:choose>
@@ -212,6 +212,26 @@
 
 .sortable.desc .sort-icon i::before {
     content: "\f140"; /* bi-caret-down-fill */
+}
+
+/* 제목 컬럼 텍스트 줄바꿈 처리 */
+.title-cell {
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    max-width: 300px;
+    min-width: 200px;
+}
+
+/* 테이블 반응형 처리 */
+.table {
+    table-layout: fixed;
+}
+
+/* 제목 컬럼 너비 조정 */
+.title-column {
+    width: 40% !important;
+    max-width: 300px;
 }
 </style>
 

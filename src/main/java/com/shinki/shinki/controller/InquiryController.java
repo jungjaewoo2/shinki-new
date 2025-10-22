@@ -374,6 +374,111 @@ public class InquiryController {
         
         return "redirect:/mypage/inquiry-history";
     }
+    
+    @PostMapping("/inquiry-history-details/update-admin-reply")
+    public String updateAdminReply(@RequestParam("inquiryId") Long inquiryId,
+                                 @RequestParam("adminReply") String adminReply,
+                                 HttpSession session,
+                                 RedirectAttributes redirectAttributes) {
+        logger.info("=== 관리자 답변 수정 요청 시작 ===");
+        logger.info("inquiryId: {}, adminReply: {}", inquiryId, adminReply);
+        
+        String username = (String) session.getAttribute("username");
+        if (username == null) {
+            logger.warn("세션에 사용자 정보가 없음");
+            return "redirect:/mypage/login";
+        }
+        logger.info("사용자명: {}", username);
+
+        try {
+            Member member = memberService.findByUsername(username);
+            logger.info("회원 정보 조회 성공 - Member ID: {}", member.getId());
+            
+            Inquiry inquiry = inquiryService.getInquiryById(inquiryId);
+            logger.info("문의 정보 조회 성공 - Inquiry ID: {}", inquiryId);
+            
+            // 본인이 작성한 문의인지 확인
+            if (inquiry.getMember() == null || !inquiry.getMember().getId().equals(member.getId())) {
+                logger.warn("권한 없음 - 문의 작성자: {}, 현재 사용자: {}", 
+                           inquiry.getMember() != null ? inquiry.getMember().getId() : "null", member.getId());
+                redirectAttributes.addFlashAttribute("error", "수정 권한이 없습니다.");
+                return "redirect:/mypage/inquiry-history";
+            }
+            
+            // 관리자 답변이 있는지 확인
+            if (inquiry.getAdminReply() == null || inquiry.getAdminReply().trim().isEmpty()) {
+                logger.warn("수정할 관리자 답변이 없음");
+                redirectAttributes.addFlashAttribute("error", "수정할 답변이 없습니다.");
+                return "redirect:/mypage/inquiry-history-details?id=" + inquiryId;
+            }
+            
+            logger.info("기존 관리자 답변: {}", inquiry.getAdminReply());
+            
+            // 관리자 답변 수정
+            inquiryService.updateAdminReply(inquiryId, adminReply);
+            
+            redirectAttributes.addFlashAttribute("message", "답변이 성공적으로 수정되었습니다.");
+            logger.info("관리자 답변 수정 성공 - Inquiry ID: {}, Member ID: {}", inquiryId, member.getId());
+            
+        } catch (Exception e) {
+            logger.error("관리자 답변 수정 실패", e);
+            redirectAttributes.addFlashAttribute("error", "답변 수정 중 오류가 발생했습니다: " + e.getMessage());
+        }
+        
+        return "redirect:/mypage/inquiry-history-details?id=" + inquiryId;
+    }
+    
+    @PostMapping("/inquiry-history-details/delete-admin-reply")
+    public String deleteAdminReply(@RequestParam("inquiryId") Long inquiryId,
+                                 HttpSession session,
+                                 RedirectAttributes redirectAttributes) {
+        logger.info("=== 관리자 답변 삭제 요청 시작 ===");
+        logger.info("inquiryId: {}", inquiryId);
+        
+        String username = (String) session.getAttribute("username");
+        if (username == null) {
+            logger.warn("세션에 사용자 정보가 없음");
+            return "redirect:/mypage/login";
+        }
+        logger.info("사용자명: {}", username);
+
+        try {
+            Member member = memberService.findByUsername(username);
+            logger.info("회원 정보 조회 성공 - Member ID: {}", member.getId());
+            
+            Inquiry inquiry = inquiryService.getInquiryById(inquiryId);
+            logger.info("문의 정보 조회 성공 - Inquiry ID: {}", inquiryId);
+            
+            // 본인이 작성한 문의인지 확인
+            if (inquiry.getMember() == null || !inquiry.getMember().getId().equals(member.getId())) {
+                logger.warn("권한 없음 - 문의 작성자: {}, 현재 사용자: {}", 
+                           inquiry.getMember() != null ? inquiry.getMember().getId() : "null", member.getId());
+                redirectAttributes.addFlashAttribute("error", "삭제 권한이 없습니다.");
+                return "redirect:/mypage/inquiry-history";
+            }
+            
+            // 관리자 답변이 있는지 확인
+            if (inquiry.getAdminReply() == null || inquiry.getAdminReply().trim().isEmpty()) {
+                logger.warn("삭제할 관리자 답변이 없음");
+                redirectAttributes.addFlashAttribute("error", "삭제할 답변이 없습니다.");
+                return "redirect:/mypage/inquiry-history-details?id=" + inquiryId;
+            }
+            
+            logger.info("기존 관리자 답변: {}", inquiry.getAdminReply());
+            
+            // 관리자 답변 삭제
+            inquiryService.deleteAdminReply(inquiryId);
+            
+            redirectAttributes.addFlashAttribute("message", "답변이 성공적으로 삭제되었습니다.");
+            logger.info("관리자 답변 삭제 성공 - Inquiry ID: {}, Member ID: {}", inquiryId, member.getId());
+            
+        } catch (Exception e) {
+            logger.error("관리자 답변 삭제 실패", e);
+            redirectAttributes.addFlashAttribute("error", "답변 삭제 중 오류가 발생했습니다: " + e.getMessage());
+        }
+        
+        return "redirect:/mypage/inquiry-history-details?id=" + inquiryId;
+    }
 }
 
 @Controller

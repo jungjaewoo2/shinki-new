@@ -110,6 +110,28 @@ public class InquiryService {
         inquiryRepository.deleteById(id);
     }
     
+    /**
+     * 관리자 답변 수정
+     */
+    public Inquiry updateAdminReply(Long inquiryId, String adminReply) {
+        Inquiry inquiry = getInquiryById(inquiryId);
+        inquiry.setAdminReply(adminReply);
+        inquiry.setReplyDate(new Date());
+        return inquiryRepository.save(inquiry);
+    }
+    
+    /**
+     * 관리자 답변 삭제
+     */
+    public Inquiry deleteAdminReply(Long inquiryId) {
+        Inquiry inquiry = getInquiryById(inquiryId);
+        inquiry.setAdminReply(null);
+        inquiry.setReplyDate(null);
+        inquiry.setAdminReplyFilePath(null);
+        inquiry.setStatus("미확인"); // 상태를 미확인으로 되돌림
+        return inquiryRepository.save(inquiry);
+    }
+    
     // 통계 메서드들
     @Transactional(readOnly = true)
     public Long getTodayInquiryCount() {
