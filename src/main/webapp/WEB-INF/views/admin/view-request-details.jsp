@@ -169,7 +169,7 @@
                              </tr>
                              <tr>
                                  <th class="text-start"><label class="form-label required w-100">의뢰내용</label></th>
-                                 <td class="text-start" style="white-space: pre-wrap; word-wrap: break-word;">${request.content}</td>
+                                 <td class="text-start" style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; max-width: 0; width: 100%;">${request.content}</td>
                              </tr>
                              <tr>
                                  <th class="text-start">첨부파일</th>

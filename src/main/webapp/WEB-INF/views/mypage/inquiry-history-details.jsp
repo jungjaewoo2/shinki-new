@@ -237,8 +237,26 @@
                          <div class="">
                              <div class="d-flex flex-column gap-3">
                                  <div>
-                                     <div class="fw-bold">문의내용</div>
-                                     <div class="border p-3" style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">${inquiry.content}</div>
+                                     <div class="d-flex justify-content-between align-items-center mb-2">
+                                         <div class="fw-bold">문의내용</div>
+                                         <button type="button" class="btn btn-sm btn-outline-primary" onclick="editInquiryContent(${inquiry.id})" title="수정">
+                                             <i class="bi bi-pencil"></i>
+                                         </button>
+                                     </div>
+                                     <!-- 문의내용 보기 모드 -->
+                                     <div id="inquiry-content-view-${inquiry.id}" class="border p-3" style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><c:out value="${inquiry.content}"/></div>
+                                     <!-- 문의내용 수정 모드 -->
+                                     <div id="inquiry-content-edit-${inquiry.id}" style="display: none;">
+                                         <textarea class="form-control mb-2" id="inquiry-content-textarea-${inquiry.id}" rows="5" style="white-space: pre-wrap;"><c:out value="${inquiry.content}"/></textarea>
+                                         <div class="d-flex gap-2 justify-content-end">
+                                             <button type="button" class="btn btn-sm btn-success" onclick="saveInquiryContent(${inquiry.id})">
+                                                 <i class="bi bi-check-circle"></i> 저장
+                                             </button>
+                                             <button type="button" class="btn btn-sm btn-secondary" onclick="cancelEditInquiryContent(${inquiry.id})">
+                                                 <i class="bi bi-x-circle"></i> 취소
+                                             </button>
+                                         </div>
+                                     </div>
                                  </div>
                              </div>
                          </div>
@@ -251,23 +269,13 @@
                                          <div class="d-flex justify-content-between align-items-center mb-2">
                                              <div class="fw-bold">답변</div>
                                              <div class="d-flex gap-2">
-                                                 <button type="button" class="btn btn-sm btn-outline-primary" onclick="editAdminReply(${inquiry.id})" title="수정">
-                                                     <i class="bi bi-pencil"></i>
-                                                 </button>
-                                                 <button type="button" class="btn btn-sm btn-outline-danger" onclick="deleteAdminReply(${inquiry.id})" title="삭제">
-                                                     <i class="bi bi-trash"></i>
-                                                 </button>
+
+
                                              </div>
                                          </div>
-                                         <div class="admin-reply-content bg-white p-3" id="admin-reply-content-${inquiry.id}" style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">
-                                             ${inquiry.adminReply}
-                                             <!-- 디버깅 정보 -->
-                                             <div class="small text-muted mt-2">
-                                                 Debug: inquiryId=${inquiry.id}, adminReply=${inquiry.adminReply != null ? '있음' : '없음'}
-                                             </div>
-                                         </div>
+                                         <div class="admin-reply-content bg-white p-3" id="admin-reply-content-${inquiry.id}" style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><c:out value="${inquiry.adminReply}"/></div>
                                          <div class="admin-reply-edit-form" id="admin-reply-edit-form-${inquiry.id}" style="display: none;">
-                                             <textarea class="form-control mb-2" id="admin-reply-edit-textarea-${inquiry.id}" rows="3">${inquiry.adminReply}</textarea>
+                                             <textarea class="form-control mb-2" id="admin-reply-edit-textarea-${inquiry.id}" rows="3"><c:out value="${inquiry.adminReply}"/></textarea>
                                              <div class="d-flex gap-2">
                                                  <button type="button" class="btn btn-sm btn-success" onclick="saveAdminReply(${inquiry.id})">저장</button>
                                                  <button type="button" class="btn btn-sm btn-secondary" onclick="cancelEditAdminReply(${inquiry.id})">취소</button>
@@ -290,29 +298,70 @@
                                  </div>
                              </div>
                          </c:if>
-                         <!-- 댓글 입력 폼 -->
+                         
+                         <!-- 관리자 답변이 없을 때만 댓글 입력 폼 표시 -->
+                         <c:if test="${empty inquiry.adminReply}">
                          <form method="post" action="/mypage/inquiry-history-details/reply">
                              <input type="hidden" name="inquiryId" value="${inquiry.id}">
                              <div class="d-flex flex-column gap-1 p-3 rounded-2 border">
-                                 <div class="fw-bold">댓글</div>
+                                     <div class="fw-bold">답변하기</div>
                                  <textarea name="content" class="form-control" rows="3" placeholder="내용을 입력하세요" required></textarea>
                                  <div class="text-end">
                                      <button type="submit" class="btn btn-primary btn-sm h-auto">등록</button>
                                  </div>
                              </div>
                          </form>
+                         </c:if>
                          
                          <!-- 댓글 목록 -->
                          <c:forEach var="reply" items="${replies}">
                              <div class="d-flex flex-column gap-1 border-bottom p-1">
-                                 <div class="fw-bold d-flex gap-1">
-                                     <div>
-                                         <fmt:formatDate value="${reply.userCreatedAt}" pattern="yyyy. MM. dd"/>
+                                 <!-- 사용자 댓글 -->
+                                 <div class="d-flex justify-content-between align-items-start mb-2">
+                                     <div class="fw-bold d-flex gap-1">
+                                         <div>
+                                             <fmt:formatDate value="${reply.userCreatedAt}" pattern="yyyy.MM.dd HH:mm"/>
+                                         </div>
+                                     </div>
+                                     <div class="d-flex gap-2">
+                                         <button type="button" class="btn btn-sm btn-outline-primary" onclick="editUserComment(${reply.id})" title="수정">
+                                             <i class="bi bi-pencil"></i>
+                                         </button>
+                                         <button type="button" class="btn btn-sm btn-outline-danger" onclick="deleteUserComment(${reply.id})" title="삭제">
+                                             <i class="bi bi-trash"></i>
+                                         </button>
                                      </div>
                                  </div>
-                                 <div style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">${reply.userContent}</div>
+                                 
+                                 <!-- 사용자 댓글 보기 모드 -->
+                                 <div id="user-comment-view-${reply.id}">
+                                     <div style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><c:out value="${reply.userContent}"/></div>
+                                 </div>
+                                 
+                                 <!-- 사용자 댓글 수정 모드 -->
+                                 <div id="user-comment-edit-${reply.id}" style="display: none;">
+                                     <textarea class="form-control mb-2" id="user-comment-edit-textarea-${reply.id}" rows="3" style="white-space: pre-wrap;"><c:out value="${reply.userContent}"/></textarea>
+                                     <div class="d-flex gap-2 justify-content-end">
+                                         <button type="button" class="btn btn-sm btn-success" onclick="saveUserComment(${reply.id})">
+                                             <i class="bi bi-check-circle"></i> 저장
+                                         </button>
+                                         <button type="button" class="btn btn-sm btn-secondary" onclick="cancelEditUserComment(${reply.id})">
+                                             <i class="bi bi-x-circle"></i> 취소
+                                         </button>
+                                     </div>
+                                 </div>
+                                 
+                                 <!-- 관리자 답글 -->
                                  <c:if test="${not empty reply.adminContent}">
-                                     <div style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><i class="bi bi-arrow-return-right"></i> ${reply.adminContent}</div>
+                                     <div class="d-flex justify-content-between align-items-start mb-2">
+                                         <div class="fw-bold text-success d-flex gap-1">
+                                             <i class="bi bi-arrow-return-right"></i>
+                                             <c:if test="${not empty reply.adminCreatedAt}">
+                                                 <fmt:formatDate value="${reply.adminCreatedAt}" pattern="yyyy.MM.dd HH:mm"/>
+                                             </c:if>
+                                         </div>
+                                     </div>
+                                     <div style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><c:out value="${reply.adminContent}"/></div>
                                  </c:if>
                              </div>
                          </c:forEach>
@@ -541,6 +590,188 @@ function deleteAdminReply(inquiryId) {
     } else {
         console.log('사용자가 삭제를 취소함');
     }
+}
+
+// 사용자 댓글 수정 함수
+function editUserComment(replyId) {
+    console.log('=== 사용자 댓글 수정 시작 ===');
+    console.log('replyId:', replyId);
+
+    const viewMode = document.getElementById('user-comment-view-' + replyId);
+    const editMode = document.getElementById('user-comment-edit-' + replyId);
+    const textarea = document.getElementById('user-comment-edit-textarea-' + replyId);
+
+    if (!viewMode || !editMode || !textarea) {
+        alert('댓글 수정 요소를 찾을 수 없습니다.');
+        return;
+    }
+
+    // 보기 모드 숨기고 수정 모드 표시
+    viewMode.style.display = 'none';
+    editMode.style.display = 'block';
+
+    // 텍스트 영역에 포커스
+    textarea.focus();
+    textarea.select();
+}
+
+// 사용자 댓글 수정 취소 함수
+function cancelEditUserComment(replyId) {
+    console.log('=== 사용자 댓글 수정 취소 ===');
+    console.log('replyId:', replyId);
+
+    const viewMode = document.getElementById('user-comment-view-' + replyId);
+    const editMode = document.getElementById('user-comment-edit-' + replyId);
+
+    if (viewMode && editMode) {
+        viewMode.style.display = 'block';
+        editMode.style.display = 'none';
+    }
+}
+
+// 사용자 댓글 저장 함수
+function saveUserComment(replyId) {
+    console.log('=== 사용자 댓글 저장 시작 ===');
+    console.log('replyId:', replyId);
+
+    const textarea = document.getElementById('user-comment-edit-textarea-' + replyId);
+    if (!textarea) {
+        alert('수정 내용을 찾을 수 없습니다.');
+        return;
+    }
+
+    const newContent = textarea.value.trim();
+    if (!newContent) {
+        alert('댓글 내용을 입력해주세요.');
+        return;
+    }
+
+    if (!confirm('댓글을 수정하시겠습니까?')) {
+        return;
+    }
+
+    // 폼을 동적으로 생성하여 POST 요청 전송
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = '/mypage/inquiry-history-details/update-user-comment';
+    
+    const replyIdInput = document.createElement('input');
+    replyIdInput.type = 'hidden';
+    replyIdInput.name = 'replyId';
+    replyIdInput.value = replyId;
+    
+    const contentInput = document.createElement('input');
+    contentInput.type = 'hidden';
+    contentInput.name = 'userContent';
+    contentInput.value = newContent;
+    
+    form.appendChild(replyIdInput);
+    form.appendChild(contentInput);
+    document.body.appendChild(form);
+    form.submit();
+}
+
+// 사용자 댓글 삭제 함수
+function deleteUserComment(replyId) {
+    console.log('=== 사용자 댓글 삭제 시작 ===');
+    console.log('replyId:', replyId);
+
+    if (!confirm('정말로 이 댓글을 삭제하시겠습니까?\n\n삭제된 댓글은 복구할 수 없습니다.')) {
+        return;
+    }
+
+    // 폼을 동적으로 생성하여 POST 요청 전송
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = '/mypage/inquiry-history-details/delete-user-comment';
+
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = 'replyId';
+    input.value = replyId;
+
+    form.appendChild(input);
+    document.body.appendChild(form);
+    form.submit();
+}
+
+// 문의내용 수정 함수
+function editInquiryContent(inquiryId) {
+    console.log('=== 문의내용 수정 시작 ===');
+    console.log('inquiryId:', inquiryId);
+
+    const viewMode = document.getElementById('inquiry-content-view-' + inquiryId);
+    const editMode = document.getElementById('inquiry-content-edit-' + inquiryId);
+    const textarea = document.getElementById('inquiry-content-textarea-' + inquiryId);
+
+    if (!viewMode || !editMode || !textarea) {
+        alert('문의내용 수정 요소를 찾을 수 없습니다.');
+        return;
+    }
+
+    // 보기 모드 숨기고 수정 모드 표시
+    viewMode.style.display = 'none';
+    editMode.style.display = 'block';
+
+    // 텍스트 영역에 포커스
+    textarea.focus();
+    textarea.select();
+}
+
+// 문의내용 수정 취소 함수
+function cancelEditInquiryContent(inquiryId) {
+    console.log('=== 문의내용 수정 취소 ===');
+    console.log('inquiryId:', inquiryId);
+
+    const viewMode = document.getElementById('inquiry-content-view-' + inquiryId);
+    const editMode = document.getElementById('inquiry-content-edit-' + inquiryId);
+
+    if (viewMode && editMode) {
+        viewMode.style.display = 'block';
+        editMode.style.display = 'none';
+    }
+}
+
+// 문의내용 저장 함수
+function saveInquiryContent(inquiryId) {
+    console.log('=== 문의내용 저장 시작 ===');
+    console.log('inquiryId:', inquiryId);
+
+    const textarea = document.getElementById('inquiry-content-textarea-' + inquiryId);
+    if (!textarea) {
+        alert('수정 내용을 찾을 수 없습니다.');
+        return;
+    }
+
+    const newContent = textarea.value.trim();
+    if (!newContent) {
+        alert('문의내용을 입력해주세요.');
+        return;
+    }
+
+    if (!confirm('문의내용을 수정하시겠습니까?')) {
+        return;
+    }
+
+    // 폼을 동적으로 생성하여 POST 요청 전송
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = '/mypage/inquiry-history-details/update-content';
+
+    const inquiryIdInput = document.createElement('input');
+    inquiryIdInput.type = 'hidden';
+    inquiryIdInput.name = 'inquiryId';
+    inquiryIdInput.value = inquiryId;
+
+    const contentInput = document.createElement('input');
+    contentInput.type = 'hidden';
+    contentInput.name = 'content';
+    contentInput.value = newContent;
+
+    form.appendChild(inquiryIdInput);
+    form.appendChild(contentInput);
+    document.body.appendChild(form);
+    form.submit();
 }
 </script>
 

@@ -52,7 +52,7 @@
                                  <button class="select-btn active p-0 px-2">${inquiry.inquiryType}</button>
                              </div>
                          </div>
-                         <div style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">${inquiry.content}</div>
+                         <div style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><c:out value="${inquiry.content}"/></div>
                      </div>
                      <c:if test="${not empty inquiry.filePath}">
                      <div class="d-flex gap-3">
@@ -132,7 +132,7 @@
                      <div class="">
                          <div class="mb-3">
                              <label for="adminReply" class="form-label">답변 작성</label>
-                             <textarea name="adminReply" class="form-control" id="adminReply" rows="4">${inquiry.adminReply != null ? inquiry.adminReply : ''}</textarea>
+                             <textarea name="adminReply" class="form-control" id="adminReply" rows="4"><c:out value="${inquiry.adminReply != null ? inquiry.adminReply : ''}"/></textarea>
                          </div>
                          <div class="form-group">
                              <label class="form-label">첨부파일 등록</label>
@@ -195,8 +195,13 @@
                                              <fmt:formatDate value="${reply.userCreatedAt}" pattern="yyyy-MM-dd HH:mm"/>
                                          </span>
                                      </div>
+                                     <c:if test="${canModify || adminAuthority == '모든권한'}">
+                                         <button type="button" class="btn btn-sm btn-outline-danger" onclick="deleteUserComment(${reply.id})" title="댓글 삭제">
+                                             <i class="bi bi-trash"></i>
+                                         </button>
+                                     </c:if>
                                  </div>
-                                 <div class="bg-light p-3 rounded mb-3" style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">${reply.userContent}</div>
+                                 <div class="bg-light p-3 rounded mb-3" style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><c:out value="${reply.userContent}"/></div>
                                  
                                  <!-- 관리자 답변 -->
                                  <c:choose>
@@ -204,7 +209,7 @@
                                          <div class="d-flex justify-content-between align-items-start mb-2">
                                              <div class="d-flex align-items-center gap-2">
                                                  <i class="bi bi-person-check-fill text-success"></i>
-                                                 <span class="fw-bold">관리자</span>
+                                                 <span class="fw-bold">관리자 답글</span>
                                                  <c:if test="${not empty reply.admin}">
                                                      <span class="text-muted">(${reply.admin.name})</span>
                                                  </c:if>
@@ -212,8 +217,38 @@
                                                      <fmt:formatDate value="${reply.adminCreatedAt}" pattern="yyyy-MM-dd HH:mm"/>
                                                  </span>
                                              </div>
+                                             <c:if test="${canModify || adminAuthority == '모든권한'}">
+                                                 <div class="d-flex gap-2">
+                                                     <button type="button" class="btn btn-sm btn-outline-primary" onclick="editReplyInline(${reply.id})" title="수정">
+                                                         <i class="bi bi-pencil"></i>
+                                                     </button>
+                                                     <button type="button" class="btn btn-sm btn-outline-danger" onclick="deleteReply(${reply.id})" title="삭제">
+                                                         <i class="bi bi-trash"></i>
+                                                     </button>
+                                                 </div>
+                                             </c:if>
                                          </div>
-                                         <div class="bg-success bg-opacity-10 p-3 rounded" style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">${reply.adminContent}</div>
+                                         
+                                         <!-- 답글 보기 모드 -->
+                                         <div id="reply-view-${reply.id}">
+                                             <div class="bg-success bg-opacity-10 p-3 rounded" style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><c:out value="${reply.adminContent}"/></div>
+                                         </div>
+
+                                         <!-- 답글 수정 모드 -->
+                                         <div id="reply-edit-${reply.id}" style="display: none;">
+                                             <div class="d-flex justify-content-between align-items-start mb-2">
+                                                 <div class="fw-bold text-success">관리자 답글 수정</div>
+                                             </div>
+                                             <textarea class="form-control mb-2" id="reply-edit-textarea-${reply.id}" rows="4" style="white-space: pre-wrap;"><c:out value="${reply.adminContent}"/></textarea>
+                                             <div class="d-flex gap-2 justify-content-end">
+                                                 <button type="button" class="btn btn-sm btn-success" onclick="saveReply(${reply.id})">
+                                                     <i class="bi bi-check-circle"></i> 저장
+                                                 </button>
+                                                 <button type="button" class="btn btn-sm btn-secondary" onclick="cancelEditReply(${reply.id})">
+                                                     <i class="bi bi-x-circle"></i> 취소
+                                                 </button>
+                                             </div>
+                                         </div>
                                      </c:when>
                                      <c:otherwise>
                                          <!-- 관리자 답변 폼 -->
@@ -361,6 +396,187 @@ function validateReply() {
     }
     
     return true;
+}
+
+// JSP에서 전달받은 값들
+const INQUIRY_ID = '<c:out value="${inquiry.id}"/>';
+
+// 답글 인라인 수정 - 답글 자체를 직접 수정 영역으로 변경
+function editReplyInline(replyId) {
+    console.log('=== 답글 수정 시작 ===');
+    console.log('replyId:', replyId);
+
+    // 기존 답글 내용 가져오기 - 올바른 셀렉터 사용
+    const replyContentElement = document.querySelector('#reply-view-' + replyId + ' .bg-success.bg-opacity-10');
+    if (!replyContentElement) {
+        alert('답글 내용을 찾을 수 없습니다.');
+        return;
+    }
+
+    const currentContent = replyContentElement.textContent || replyContentElement.innerText;
+    console.log('현재 답글 내용:', currentContent);
+
+    // 보기 모드 숨기고 수정 모드 표시
+    const viewMode = document.getElementById('reply-view-' + replyId);
+    const editMode = document.getElementById('reply-edit-' + replyId);
+
+    if (viewMode && editMode) {
+        viewMode.style.display = 'none';
+        editMode.style.display = 'block';
+
+        // 텍스트 영역에 포커스
+        const textarea = document.getElementById('reply-edit-textarea-' + replyId);
+        if (textarea) {
+            textarea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            setTimeout(() => {
+                textarea.focus();
+                // 커서를 끝으로 이동
+                textarea.setSelectionRange(textarea.value.length, textarea.value.length);
+            }, 300);
+        }
+    }
+
+    console.log('답글 수정 모드 활성화 완료');
+}
+
+// 답글 수정 저장
+function saveReply(replyId) {
+    console.log('=== 답글 저장 시작 ===');
+    console.log('replyId:', replyId);
+
+    const textarea = document.getElementById('reply-edit-textarea-' + replyId);
+    if (!textarea) {
+        alert('수정 내용을 찾을 수 없습니다.');
+        return;
+    }
+
+    const newContent = textarea.value.trim();
+    if (!newContent) {
+        alert('답글 내용을 입력해주세요.');
+        return;
+    }
+
+    if (!confirm('답글을 수정하시겠습니까?')) {
+        return;
+    }
+
+    console.log('답글 수정 요청:', { replyId, newContent, inquiryId: INQUIRY_ID });
+
+    // 서버로 수정 요청 전송
+    fetch('/admin/inquiry-response-management/update-reply', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            replyId: replyId,
+            adminContent: newContent,
+            inquiryId: INQUIRY_ID
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('답글이 수정되었습니다.');
+            location.reload();
+        } else {
+            alert('답글 수정 중 오류가 발생했습니다: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('답글 수정 오류:', error);
+        alert('답글 수정 중 오류가 발생했습니다.');
+    });
+}
+
+// 답글 수정 취소
+function cancelEditReply(replyId) {
+    console.log('=== 답글 수정 취소 ===');
+    console.log('replyId:', replyId);
+
+    // 보기 모드 표시하고 수정 모드 숨기기
+    const viewMode = document.getElementById('reply-view-' + replyId);
+    const editMode = document.getElementById('reply-edit-' + replyId);
+
+    if (viewMode && editMode) {
+        viewMode.style.display = 'block';
+        editMode.style.display = 'none';
+
+        // 원래 내용으로 복구 (textarea 값을 원래 값으로)
+        const textarea = document.getElementById('reply-edit-textarea-' + replyId);
+        const originalContent = document.querySelector('#reply-view-' + replyId + ' .bg-success.bg-opacity-10');
+        if (textarea && originalContent) {
+            textarea.value = originalContent.textContent || originalContent.innerText;
+        }
+    }
+
+    console.log('답글 수정 모드 취소 완료');
+}
+
+// 답글 삭제
+function deleteReply(replyId) {
+    if (!confirm('정말로 이 답글을 삭제하시겠습니까?\n\n삭제된 답글은 복구할 수 없습니다.')) {
+        return;
+    }
+
+    // 서버로 삭제 요청 전송
+    fetch('/admin/inquiry-response-management/delete-reply', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            replyId: replyId,
+            inquiryId: INQUIRY_ID
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('답글이 삭제되었습니다.');
+            location.reload();
+        } else {
+            alert('답글 삭제 중 오류가 발생했습니다: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('답글 삭제 오류:', error);
+        alert('답글 삭제 중 오류가 발생했습니다.');
+    });
+}
+
+// 사용자 댓글 삭제
+function deleteUserComment(replyId) {
+    if (!confirm('정말로 이 댓글을 삭제하시겠습니까?\n\n이 댓글에 달린 모든 관리자 답글도 함께 삭제됩니다.\n삭제된 내용은 복구할 수 없습니다.')) {
+        return;
+    }
+
+    console.log('사용자 댓글 삭제 요청:', { replyId, inquiryId: INQUIRY_ID });
+
+    // 서버로 삭제 요청 전송
+    fetch('/admin/inquiry-response-management/delete-user-comment', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            replyId: replyId,
+            inquiryId: INQUIRY_ID
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('댓글과 연결된 모든 관리자 답글이 삭제되었습니다.');
+            location.reload();
+        } else {
+            alert('댓글 삭제 중 오류가 발생했습니다: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('댓글 삭제 오류:', error);
+        alert('댓글 삭제 중 오류가 발생했습니다.');
+    });
 }
 </script>
 

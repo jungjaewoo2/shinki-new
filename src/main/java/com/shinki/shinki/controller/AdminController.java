@@ -1869,4 +1869,145 @@ public class AdminController {
             return ResponseEntity.internalServerError().body(response);
         }
     }
+
+    // ===== inquiry-response-management 관련 API 엔드포인트 =====
+    
+    // 관리자 답글 수정 처리 (inquiry-response-management)
+    @PostMapping("/inquiry-response-management/update-reply")
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> updateInquiryReply(@RequestBody Map<String, Object> requestData, HttpSession session) {
+        Map<String, Object> response = new HashMap<>();
+
+        try {
+            Long replyId = Long.valueOf(requestData.get("replyId").toString());
+            String adminContent = requestData.get("adminContent").toString();
+            Long inquiryId = Long.valueOf(requestData.get("inquiryId").toString());
+
+            logger.info("관리자 답글 수정 시작 - replyId: {}, inquiryId: {}", replyId, inquiryId);
+
+            // 권한 체크
+            if (!hasAuthority(session, "수정") && !hasAuthority(session, "모든권한")) {
+                response.put("success", false);
+                response.put("message", "답글을 수정할 권한이 없습니다.");
+                return ResponseEntity.status(403).body(response);
+            }
+
+            // 답글 조회
+            ReplyInquiry reply = replyInquiryService.getReplyById(replyId);
+            if (reply == null) {
+                response.put("success", false);
+                response.put("message", "답글을 찾을 수 없습니다.");
+                return ResponseEntity.badRequest().body(response);
+            }
+
+            // 답글 내용 수정
+            reply.setAdminContent(adminContent);
+            reply.setAdminCreatedAt(new Date()); // 수정일시 업데이트
+
+            replyInquiryService.updateReply(reply);
+
+            response.put("success", true);
+            response.put("message", "답글이 성공적으로 수정되었습니다.");
+
+            logger.info("관리자 답글 수정 완료 - replyId: {}", replyId);
+            return ResponseEntity.ok(response);
+
+        } catch (Exception e) {
+            logger.error("관리자 답글 수정 오류: {}", e.getMessage(), e);
+
+            response.put("success", false);
+            response.put("message", "답글 수정 중 오류가 발생했습니다: " + e.getMessage());
+            return ResponseEntity.internalServerError().body(response);
+        }
+    }
+
+    // 관리자 답글 삭제 처리 (inquiry-response-management)
+    @PostMapping("/inquiry-response-management/delete-reply")
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> deleteInquiryReply(@RequestBody Map<String, Object> requestData, HttpSession session) {
+        Map<String, Object> response = new HashMap<>();
+
+        try {
+            Long replyId = Long.valueOf(requestData.get("replyId").toString());
+            Long inquiryId = Long.valueOf(requestData.get("inquiryId").toString());
+
+            logger.info("관리자 답글 삭제 시작 - replyId: {}, inquiryId: {}", replyId, inquiryId);
+
+            // 권한 체크
+            if (!hasAuthority(session, "수정") && !hasAuthority(session, "모든권한")) {
+                response.put("success", false);
+                response.put("message", "답글을 삭제할 권한이 없습니다.");
+                return ResponseEntity.status(403).body(response);
+            }
+
+            // 답글 조회
+            ReplyInquiry reply = replyInquiryService.getReplyById(replyId);
+            if (reply == null) {
+                response.put("success", false);
+                response.put("message", "답글을 찾을 수 없습니다.");
+                return ResponseEntity.badRequest().body(response);
+            }
+
+            // 관리자 답글만 삭제 (사용자 댓글은 유지)
+            replyInquiryService.deleteAdminReplyOnly(replyId);
+
+            response.put("success", true);
+            response.put("message", "관리자 답글이 성공적으로 삭제되었습니다.");
+
+            logger.info("관리자 답글 삭제 완료 - replyId: {}", replyId);
+            return ResponseEntity.ok(response);
+
+        } catch (Exception e) {
+            logger.error("관리자 답글 삭제 오류: {}", e.getMessage(), e);
+
+            response.put("success", false);
+            response.put("message", "답글 삭제 중 오류가 발생했습니다: " + e.getMessage());
+            return ResponseEntity.internalServerError().body(response);
+        }
+    }
+
+    // 사용자 댓글 삭제 처리 (inquiry-response-management) - 연결된 관리자 답글도 함께 삭제
+    @PostMapping("/inquiry-response-management/delete-user-comment")
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> deleteInquiryUserComment(@RequestBody Map<String, Object> requestData, HttpSession session) {
+        Map<String, Object> response = new HashMap<>();
+
+        try {
+            Long replyId = Long.valueOf(requestData.get("replyId").toString());
+            Long inquiryId = Long.valueOf(requestData.get("inquiryId").toString());
+
+            logger.info("사용자 댓글 삭제 시작 - replyId: {}, inquiryId: {}", replyId, inquiryId);
+
+            // 권한 체크
+            if (!hasAuthority(session, "수정") && !hasAuthority(session, "모든권한")) {
+                response.put("success", false);
+                response.put("message", "댓글을 삭제할 권한이 없습니다.");
+                return ResponseEntity.status(403).body(response);
+            }
+
+            // 댓글 조회
+            ReplyInquiry reply = replyInquiryService.getReplyById(replyId);
+            if (reply == null) {
+                response.put("success", false);
+                response.put("message", "댓글을 찾을 수 없습니다.");
+                return ResponseEntity.badRequest().body(response);
+            }
+
+            // 댓글과 관련된 모든 답글 삭제 (댓글 삭제 시 사용)
+            replyInquiryService.deleteCommentWithReplies(replyId);
+
+            response.put("success", true);
+            response.put("message", "댓글과 연결된 모든 관리자 답글이 성공적으로 삭제되었습니다.");
+
+            logger.info("사용자 댓글 삭제 완료 - replyId: {}", replyId);
+            return ResponseEntity.ok(response);
+
+        } catch (Exception e) {
+            logger.error("사용자 댓글 삭제 오류: {}", e.getMessage(), e);
+
+            response.put("success", false);
+            response.put("message", "댓글 삭제 중 오류가 발생했습니다: " + e.getMessage());
+            return ResponseEntity.internalServerError().body(response);
+        }
+    }
 }

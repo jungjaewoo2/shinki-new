@@ -487,7 +487,7 @@
                                          </c:if>
                                      </div>
                                  </div>
-                                 <div class="order-contents">${request.content}</div>
+                                 <div class="order-contents" style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">${request.content}</div>
                                  <div class="align-items-center d-flex justify-content-end">
                                      <div class="order-date">
                                          <c:choose>

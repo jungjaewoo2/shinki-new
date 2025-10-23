@@ -116,7 +116,7 @@
                  <div class="col-12">
 	                 <div class="form-group mb-3">
 	                     <label class="col-lg-3 col-xl-1 fw-bold">의뢰 내용</label>
-	                     <div class="form-control-plaintext border rounded p-3 bg-light" style="min-height: 100px; white-space: pre-wrap;">${not empty request ? request.content : '내용 없음'}</div>
+	                     <div class="form-control-plaintext border rounded p-3 bg-light" style="min-height: 100px; white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">${not empty request ? request.content : '내용 없음'}</div>
 	                 </div>
                  </div>
                  <c:if test="${not empty request.paymentAmount and request.paymentAmount > 0}">

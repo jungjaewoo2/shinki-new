@@ -121,4 +121,41 @@ public class ReplyInquiryService {
             replyInquiryRepository.save(reply);
         }
     }
+    
+    /**
+     * ID로 댓글 조회
+     */
+    @Transactional(readOnly = true)
+    public ReplyInquiry getReplyById(Long replyId) {
+        return replyInquiryRepository.findById(replyId).orElse(null);
+    }
+    
+    /**
+     * 댓글 수정 (객체로)
+     */
+    public ReplyInquiry updateReply(ReplyInquiry reply) {
+        return replyInquiryRepository.save(reply);
+    }
+    
+    /**
+     * 댓글과 관련된 모든 답글 삭제 (댓글 삭제 시 사용)
+     */
+    public void deleteCommentWithReplies(Long commentId) {
+        replyInquiryRepository.deleteById(commentId);
+    }
+    
+    /**
+     * 관리자 답글만 삭제 (사용자 댓글은 유지)
+     */
+    public void deleteAdminReplyOnly(Long replyId) {
+        ReplyInquiry reply = replyInquiryRepository.findById(replyId)
+                .orElseThrow(() -> new RuntimeException("댓글을 찾을 수 없습니다."));
+        
+        // 관리자 답글 내용만 삭제 (null로 설정)
+        reply.setAdminNo(null);
+        reply.setAdminContent(null);
+        reply.setAdminCreatedAt(null);
+        
+        replyInquiryRepository.save(reply);
+    }
 }

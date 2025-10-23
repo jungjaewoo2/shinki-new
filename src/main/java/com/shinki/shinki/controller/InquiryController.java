@@ -375,6 +375,84 @@ public class InquiryController {
         return "redirect:/mypage/inquiry-history";
     }
     
+    // 사용자 댓글 수정
+    @PostMapping("/inquiry-history-details/update-user-comment")
+    public String updateUserComment(@RequestParam("replyId") Long replyId,
+                                   @RequestParam("userContent") String userContent,
+                                   HttpSession session,
+                                   RedirectAttributes redirectAttributes) {
+        String username = (String) session.getAttribute("username");
+        if (username == null) {
+            return "redirect:/mypage/login";
+        }
+
+        try {
+            Member member = memberService.findByUsername(username);
+            ReplyInquiry reply = replyInquiryService.getReplyById(replyId);
+            
+            // 본인이 작성한 댓글인지 확인
+            if (reply == null || !reply.getMemberId().equals(member.getId())) {
+                redirectAttributes.addFlashAttribute("error", "수정 권한이 없습니다.");
+                return "redirect:/mypage/inquiry-history";
+            }
+            
+            // 댓글 수정
+            replyInquiryService.updateUserReply(replyId, userContent);
+            
+            redirectAttributes.addFlashAttribute("message", "댓글이 수정되었습니다.");
+            logger.info("사용자 댓글 수정 성공 - Reply ID: {}, Member ID: {}", replyId, member.getId());
+            
+        } catch (Exception e) {
+            logger.error("사용자 댓글 수정 실패", e);
+            redirectAttributes.addFlashAttribute("error", "댓글 수정 중 오류가 발생했습니다.");
+        }
+        
+        // 문의 상세 페이지로 리다이렉트 (inquiryId 필요)
+        ReplyInquiry reply = replyInquiryService.getReplyById(replyId);
+        if (reply != null) {
+            return "redirect:/mypage/inquiry-history-details?id=" + reply.getInquiryId();
+        }
+        return "redirect:/mypage/inquiry-history";
+    }
+    
+    // 사용자 댓글 삭제
+    @PostMapping("/inquiry-history-details/delete-user-comment")
+    public String deleteUserComment(@RequestParam("replyId") Long replyId,
+                                   HttpSession session,
+                                   RedirectAttributes redirectAttributes) {
+        String username = (String) session.getAttribute("username");
+        if (username == null) {
+            return "redirect:/mypage/login";
+        }
+
+        try {
+            Member member = memberService.findByUsername(username);
+            ReplyInquiry reply = replyInquiryService.getReplyById(replyId);
+            
+            // 본인이 작성한 댓글인지 확인
+            if (reply == null || !reply.getMemberId().equals(member.getId())) {
+                redirectAttributes.addFlashAttribute("error", "삭제 권한이 없습니다.");
+                return "redirect:/mypage/inquiry-history";
+            }
+            
+            Long inquiryId = reply.getInquiryId();
+            
+            // 댓글 삭제
+            replyInquiryService.deleteReply(replyId);
+            
+            redirectAttributes.addFlashAttribute("message", "댓글이 삭제되었습니다.");
+            logger.info("사용자 댓글 삭제 성공 - Reply ID: {}, Member ID: {}", replyId, member.getId());
+            
+            return "redirect:/mypage/inquiry-history-details?id=" + inquiryId;
+            
+        } catch (Exception e) {
+            logger.error("사용자 댓글 삭제 실패", e);
+            redirectAttributes.addFlashAttribute("error", "댓글 삭제 중 오류가 발생했습니다.");
+        }
+        
+        return "redirect:/mypage/inquiry-history";
+    }
+    
     @PostMapping("/inquiry-history-details/update-admin-reply")
     public String updateAdminReply(@RequestParam("inquiryId") Long inquiryId,
                                  @RequestParam("adminReply") String adminReply,
@@ -434,7 +512,7 @@ public class InquiryController {
                                  RedirectAttributes redirectAttributes) {
         logger.info("=== 관리자 답변 삭제 요청 시작 ===");
         logger.info("inquiryId: {}", inquiryId);
-        
+
         String username = (String) session.getAttribute("username");
         if (username == null) {
             logger.warn("세션에 사용자 정보가 없음");
@@ -445,38 +523,84 @@ public class InquiryController {
         try {
             Member member = memberService.findByUsername(username);
             logger.info("회원 정보 조회 성공 - Member ID: {}", member.getId());
-            
+
             Inquiry inquiry = inquiryService.getInquiryById(inquiryId);
             logger.info("문의 정보 조회 성공 - Inquiry ID: {}", inquiryId);
-            
+
             // 본인이 작성한 문의인지 확인
             if (inquiry.getMember() == null || !inquiry.getMember().getId().equals(member.getId())) {
-                logger.warn("권한 없음 - 문의 작성자: {}, 현재 사용자: {}", 
+                logger.warn("권한 없음 - 문의 작성자: {}, 현재 사용자: {}",
                            inquiry.getMember() != null ? inquiry.getMember().getId() : "null", member.getId());
                 redirectAttributes.addFlashAttribute("error", "삭제 권한이 없습니다.");
                 return "redirect:/mypage/inquiry-history";
             }
-            
+
             // 관리자 답변이 있는지 확인
             if (inquiry.getAdminReply() == null || inquiry.getAdminReply().trim().isEmpty()) {
                 logger.warn("삭제할 관리자 답변이 없음");
                 redirectAttributes.addFlashAttribute("error", "삭제할 답변이 없습니다.");
                 return "redirect:/mypage/inquiry-history-details?id=" + inquiryId;
             }
-            
+
             logger.info("기존 관리자 답변: {}", inquiry.getAdminReply());
-            
+
             // 관리자 답변 삭제
             inquiryService.deleteAdminReply(inquiryId);
-            
+
             redirectAttributes.addFlashAttribute("message", "답변이 성공적으로 삭제되었습니다.");
             logger.info("관리자 답변 삭제 성공 - Inquiry ID: {}, Member ID: {}", inquiryId, member.getId());
-            
+
         } catch (Exception e) {
             logger.error("관리자 답변 삭제 실패", e);
             redirectAttributes.addFlashAttribute("error", "답변 삭제 중 오류가 발생했습니다: " + e.getMessage());
         }
-        
+
+        return "redirect:/mypage/inquiry-history-details?id=" + inquiryId;
+    }
+
+    @PostMapping("/inquiry-history-details/update-content")
+    public String updateInquiryContent(@RequestParam("inquiryId") Long inquiryId,
+                                      @RequestParam("content") String content,
+                                      HttpSession session,
+                                      RedirectAttributes redirectAttributes) {
+        logger.info("=== 문의내용 수정 요청 시작 ===");
+        logger.info("inquiryId: {}, content: {}", inquiryId, content);
+
+        String username = (String) session.getAttribute("username");
+        if (username == null) {
+            logger.warn("세션에 사용자 정보가 없음");
+            return "redirect:/mypage/login";
+        }
+        logger.info("사용자명: {}", username);
+
+        try {
+            Member member = memberService.findByUsername(username);
+            logger.info("회원 정보 조회 성공 - Member ID: {}", member.getId());
+
+            Inquiry inquiry = inquiryService.getInquiryById(inquiryId);
+            logger.info("문의 정보 조회 성공 - Inquiry ID: {}", inquiryId);
+
+            // 본인이 작성한 문의인지 확인
+            if (inquiry.getMember() == null || !inquiry.getMember().getId().equals(member.getId())) {
+                logger.warn("권한 없음 - 문의 작성자: {}, 현재 사용자: {}",
+                           inquiry.getMember() != null ? inquiry.getMember().getId() : "null", member.getId());
+                redirectAttributes.addFlashAttribute("error", "수정 권한이 없습니다.");
+                return "redirect:/mypage/inquiry-history";
+            }
+
+            logger.info("기존 문의내용: {}", inquiry.getContent());
+
+            // 문의내용 수정
+            inquiryService.updateInquiryContent(inquiryId, content);
+
+            redirectAttributes.addFlashAttribute("message", "문의내용이 성공적으로 수정되었습니다.");
+            logger.info("문의내용 수정 성공 - Inquiry ID: {}, Member ID: {}", inquiryId, member.getId());
+
+        } catch (Exception e) {
+            logger.error("문의내용 수정 실패", e);
+            redirectAttributes.addFlashAttribute("error", "문의내용 수정 중 오류가 발생했습니다: " + e.getMessage());
+        }
+
         return "redirect:/mypage/inquiry-history-details?id=" + inquiryId;
     }
 }

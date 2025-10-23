@@ -302,6 +302,32 @@ public class RequestController {
             // 기존 파일 삭제 플래그 확인
             boolean shouldRemoveExistingFile = "true".equals(removeExistingFileFlag);
 
+            // 파일 업로드 처리
+            if (file != null && !file.isEmpty()) {
+                // 파일 확장자 검증 (ZIP 파일만 허용)
+                String originalFilename = file.getOriginalFilename();
+                if (originalFilename == null || !originalFilename.toLowerCase().endsWith(".zip")) {
+                    redirectAttributes.addFlashAttribute("error", "ZIP 파일만 업로드 가능합니다.");
+                    return "redirect:/mypage/edit-request/" + request.getId();
+                }
+
+                // 파일 업로드 처리
+                String uploadDir = uploadPath + "/request/";
+                File dir = new File(uploadDir);
+                if (!dir.exists()) {
+                    dir.mkdirs();
+                }
+
+                // 파일명 생성 (날짜시간_사용자명_원본파일명)
+                java.time.LocalDateTime now = java.time.LocalDateTime.now();
+                String timestamp = now.format(java.time.format.DateTimeFormatter.ofPattern("yyyyMMddHHmm"));
+                String fileName = timestamp + "_" + username + "_" + originalFilename;
+                Path filePath = Paths.get(uploadDir + fileName);
+                Files.write(filePath, file.getBytes());
+
+                request.setFilePath(fileName);
+            }
+
             // 파일 업로드 서비스 호출
             requestService.updateRequest(request, file, existingFilePath, shouldRemoveExistingFile);
 

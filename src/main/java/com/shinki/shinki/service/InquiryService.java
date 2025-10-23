@@ -131,6 +131,15 @@ public class InquiryService {
         inquiry.setStatus("미확인"); // 상태를 미확인으로 되돌림
         return inquiryRepository.save(inquiry);
     }
+
+    /**
+     * 문의내용 수정
+     */
+    public Inquiry updateInquiryContent(Long inquiryId, String content) {
+        Inquiry inquiry = getInquiryById(inquiryId);
+        inquiry.setContent(content);
+        return inquiryRepository.save(inquiry);
+    }
     
     // 통계 메서드들
     @Transactional(readOnly = true)

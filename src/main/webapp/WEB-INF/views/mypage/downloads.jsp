@@ -61,7 +61,7 @@
                                              </td>
                                              <td>${request.title}</td>
                                              <td class="w-50">
-                                                 <div class="request-details">
+                                                 <div class="request-details" style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">
                                                      <c:choose>
                                                          <c:when test="${fn:length(request.content) > 100}">
                                                              ${fn:substring(request.content, 0, 100)}....
@@ -84,7 +84,7 @@
                                          <input class="form-check-input request-checkbox" type="checkbox" value="${request.id}" data-group="${groupKey}">
                                          <div>No. Project${request.id}</div>
                                      </div>
-                                     <div class="download-contents">${request.content}</div>
+                                     <div class="download-contents" style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">${request.content}</div>
                                  </div>
                              </c:forEach>
                          </div>
