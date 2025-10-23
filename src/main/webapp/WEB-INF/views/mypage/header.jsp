@@ -117,7 +117,7 @@
                         </c:otherwise>
                     </c:choose>
                 </div>
-                <div class="align-items-baseline d-flex gap-1" style=""><img src="../assets/images/fujifilm-logo.png" alt="후지필름로고" width="96" height="32"></div>
+                <div class="align-items-baseline d-flex gap-1" style=""><img src="/assets/images/fujifilm-logo.png" alt="후지필름로고" width="96" height="32"></div>
                 </div>
             </div>
         </nav>
