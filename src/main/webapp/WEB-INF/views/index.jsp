@@ -1464,10 +1464,10 @@ function updateNavigationButtons(swiper) {
     try {
         const swiper = new Swiper('.mySwiper', {
             loop: true,
-            /* autoplay: {
+            autoplay: {
                 delay: 10000,
                 disableOnInteraction: false,
-            }, */
+            },
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,

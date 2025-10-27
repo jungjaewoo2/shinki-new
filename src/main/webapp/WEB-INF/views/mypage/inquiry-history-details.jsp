@@ -267,7 +267,7 @@
                                  <div class="d-flex flex-column gap-3">
                                      <div>
                                          <div class="d-flex justify-content-between align-items-center mb-2">
-                                             <div class="fw-bold">답변</div>
+                                             <div class="fw-bold">댓글</div>
                                              <div class="d-flex gap-2">
 
 
