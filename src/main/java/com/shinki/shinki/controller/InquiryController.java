@@ -55,7 +55,7 @@ public class InquiryController {
     public String inquiryPage(HttpSession session, Model model) {
         String username = (String) session.getAttribute("username");
         if (username == null) {
-            return "redirect:/mypage/login";
+            return "redirect:/mypage/login?redirectUrl=/mypage/inquiry";
         }
         
         try {
@@ -63,7 +63,7 @@ public class InquiryController {
             model.addAttribute("memberId", member.getId());
         } catch (Exception e) {
             logger.error("사용자 정보 조회 실패", e);
-            return "redirect:/mypage/login";
+            return "redirect:/mypage/login?redirectUrl=/mypage/inquiry";
         }
         return "mypage/inquiry";
     }
@@ -153,7 +153,7 @@ public class InquiryController {
                                      Model model) {
         String username = (String) session.getAttribute("username");
         if (username == null) {
-            return "redirect:/mypage/login";
+            return "redirect:/mypage/login?redirectUrl=/mypage/inquiry-history";
         }
 
         try {

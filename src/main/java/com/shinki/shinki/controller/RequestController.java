@@ -74,14 +74,14 @@ public class RequestController {
         // 세션에서 로그인된 사용자 정보 가져오기
         String username = (String) session.getAttribute("username");
         if (username == null) {
-            return "redirect:/mypage/login";
+            return "redirect:/mypage/login?redirectUrl=/mypage/request";
         }
         
         try {
             Member member = memberService.findByUsername(username);
             model.addAttribute("memberId", member.getId());
         } catch (Exception e) {
-            return "redirect:/mypage/login";
+            return "redirect:/mypage/login?redirectUrl=/mypage/request";
         }
         return "mypage/request";
     }

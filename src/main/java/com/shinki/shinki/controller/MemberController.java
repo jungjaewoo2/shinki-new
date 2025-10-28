@@ -227,6 +227,10 @@ public class MemberController {
                 // 탈퇴회원(status = 'N')인 경우 로그인 차단
                 if ("N".equals(member.getStatus())) {
                     redirectAttributes.addFlashAttribute("error", "탈퇴된 회원입니다. 관리자에게 문의하세요.");
+                    // redirectUrl이 있으면 유지하고, 없으면 기본값 사용
+                    if (redirectUrl != null && !redirectUrl.trim().isEmpty()) {
+                        return "redirect:/mypage/login?redirectUrl=" + redirectUrl;
+                    }
                     return "redirect:/mypage/login";
                 }
                 
@@ -247,10 +251,18 @@ public class MemberController {
                 }
             } else {
                 redirectAttributes.addFlashAttribute("error", "아이디 또는 비밀번호가 일치하지 않습니다.");
+                // redirectUrl이 있으면 유지하고, 없으면 기본값 사용
+                if (redirectUrl != null && !redirectUrl.trim().isEmpty()) {
+                    return "redirect:/mypage/login?redirectUrl=" + redirectUrl;
+                }
                 return "redirect:/mypage/login";
             }
         } catch (Exception e) {
             redirectAttributes.addFlashAttribute("error", "아이디 또는 비밀번호가 일치하지 않습니다.");
+            // redirectUrl이 있으면 유지하고, 없으면 기본값 사용
+            if (redirectUrl != null && !redirectUrl.trim().isEmpty()) {
+                return "redirect:/mypage/login?redirectUrl=" + redirectUrl;
+            }
             return "redirect:/mypage/login";
         }
     }
