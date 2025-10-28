@@ -1584,16 +1584,16 @@ function checkLoginAndRedirect() {
         .then(data => {
             console.log('[index.jsp] 로그인 상태:', data.loggedIn);
             if (data.loggedIn) {
-                console.log('[index.jsp] 로그인 됨 - ./mypage/inquiry로 이동');
-                location.href = './mypage/inquiry';
+                console.log('[index.jsp] 로그인 됨 - ./mypage/request로 이동');
+                location.href = './mypage/request';
             } else {
-                console.log('[index.jsp] 로그인 안됨 - ./mypage/login?redirectUrl=/mypage/inquiry로 이동');
-                location.href = './mypage/login?redirectUrl=/mypage/inquiry';
+                console.log('[index.jsp] 로그인 안됨 - ./mypage/login?redirectUrl=/mypage/request로 이동');
+                location.href = './mypage/login?redirectUrl=/mypage/request';
             }
         })
         .catch(error => {
             console.error('[index.jsp] API 호출 오류:', error);
-            location.href = './mypage/login?redirectUrl=/mypage/inquiry';
+            location.href = './mypage/login?redirectUrl=/mypage/request';
         });
 }
 </script>

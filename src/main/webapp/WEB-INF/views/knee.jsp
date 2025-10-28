@@ -406,7 +406,7 @@
                  spaceBetween: 0,
              },
          },
-         loop: true,
+         loop: false,
      });
 
  </script>

@@ -538,7 +538,7 @@
                 spaceBetween: 0,
             },
         },
-        loop: true,
+        loop: false,
     });
 
     var swiperResection = new Swiper(".mySwiperResection", {
@@ -558,7 +558,7 @@
                 spaceBetween: 0,
             },
         },
-        loop: true,
+        loop: false,
     });
 
     var swiperScope = new Swiper(".mySwiperScope", {
@@ -578,7 +578,7 @@
                 spaceBetween: 0,
             },
         },
-        loop: true,
+        loop: false,
     });
 
     // 아코디언 이벤트 리스너
