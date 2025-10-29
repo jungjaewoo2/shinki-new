@@ -1439,9 +1439,10 @@ public class AdminController {
                 dataRow.createCell(9).setCellValue("Y".equals(member.getStatus()) ? "정상" : "탈퇴");
             }
             
-            // 컬럼 너비 자동 조정
+            // 컬럼 너비 설정 (헤드리스 환경에서 autoSizeColumn 오류 방지)
+            int[] columnWidths = {5000, 3000, 3000, 3000, 6000, 4000, 3000, 3500, 2500, 2500};
             for (int i = 0; i < headers.length; i++) {
-                sheet.autoSizeColumn(i);
+                sheet.setColumnWidth(i, columnWidths[i]);
             }
             
             System.out.println("엑셀 파일 생성 완료");
