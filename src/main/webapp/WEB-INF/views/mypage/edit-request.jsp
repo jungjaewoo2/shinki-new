@@ -69,8 +69,9 @@
                     <input class="form-control d-none" type="file" id="formFile" name="file" accept=".zip">
                     <div id="fileList" class="file-list mt-2">
                         <c:if test="${not empty request.filePath}">
-                            <div>기존 파일: ${request.filePath}
-                                <button type="button" class="btn btn-sm btn-danger ms-2" onclick="removeExistingFile()">삭제</button>
+                            <div class="d-flex align-items-center gap-2">
+                                <span>기존 파일: ${request.filePath}</span>
+                                <button type="button" class="btn btn-sm btn-danger" onclick="return removeExistingFile(event);">삭제</button>
                             </div>
                         </c:if>
                     </div>
@@ -87,62 +88,52 @@
 </div>
 
 <script>
-// 드래그 기본 동작 방지 헬퍼 함수
-function preventDefaults(e) {
-    e.preventDefault();
-    e.stopPropagation();
-}
-
 // 파일 목록을 표시하는 함수
 function displayFiles(files) {
+    console.log('displayFiles 호출됨, 파일 개수:', files.length);
     const fileList = document.getElementById('fileList');
+    console.log('fileList 요소:', fileList);
     fileList.innerHTML = ''; // 기존 목록 초기화
 
     if (files.length > 0) {
         for (let i = 0; i < files.length; i++) {
+            console.log('파일 추가 중:', files[i].name);
             const fileItem = document.createElement('div');
-            fileItem.textContent = files[i].name;
+            fileItem.className = 'd-flex align-items-center gap-2';
+            
+            const fileName = document.createElement('span');
+            fileName.textContent = '선택된 파일: ' + files[i].name;
+            
+            const removeBtn = document.createElement('button');
+            removeBtn.type = 'button';
+            removeBtn.className = 'btn btn-sm btn-danger';
+            removeBtn.textContent = '삭제';
+            removeBtn.onclick = function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                clearFile();
+                return false;
+            };
+            
+            fileItem.appendChild(fileName);
+            fileItem.appendChild(removeBtn);
             fileList.appendChild(fileItem);
+            console.log('파일 항목 추가됨');
         }
         document.getElementById('dropAreaText').style.display = 'none'; // 텍스트 숨기기
+        console.log('드롭 영역 텍스트 숨김');
     } else {
         fileList.textContent = '';
         document.getElementById('dropAreaText').style.display = 'block'; // 텍스트 보이기
+        console.log('파일 목록 초기화');
     }
 }
 
 // 파일 선택 초기화 (삭제 버튼)
 function clearFile() {
-    document.getElementById('formFile').value = '';
+    const formFile = document.getElementById('formFile');
+    formFile.value = '';
     displayFiles([]); // 파일 목록 초기화
-}
-
-// 드래그 오버 핸들러 (하이라이트)
-function highlight(e) {
-    const dropArea = document.getElementById('dropArea');
-    if (dropArea) dropArea.classList.add('dragover');
-}
-
-// 드래그 리브 핸들러 (하이라이트 해제)
-function unhighlight(e) {
-    const dropArea = document.getElementById('dropArea');
-    if (dropArea) dropArea.classList.remove('dragover');
-}
-
-// 드롭 핸들러
-function dropHandler(e) {
-    const dt = e.dataTransfer;
-    const files = dt.files;
-
-    if (files.length > 0) {
-        const file = files[0];
-        if (!file.name.toLowerCase().endsWith('.zip')) {
-            alert('ZIP 파일만 업로드 가능합니다.');
-            return;
-        }
-        document.getElementById('formFile').files = files;
-        displayFiles(files);
-    }
 }
 
 // 폼 유효성 검사
@@ -194,13 +185,24 @@ function validateForm() {
     return true;
 }
 
-function removeExistingFile() {
-    if (confirm('기존 파일을 삭제하시겠습니까?')) {
-        const fileList = document.getElementById('fileList');
-        fileList.innerHTML = ''; // 기존 파일 표시 제거
-        document.getElementById('dropAreaText').style.display = 'block'; // 드롭 영역 텍스트 표시
-        document.getElementById('removeExistingFileFlag').value = 'true'; // 기존 파일 삭제 플래그 설정
+function removeExistingFile(event) {
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
     }
+    
+    if (confirm('기존 파일을 삭제하시겠습니까?')) {
+        console.log('기존 파일 삭제 시작');
+        const fileList = document.getElementById('fileList');
+        
+        fileList.innerHTML = ''; // 기존 파일 표시 제거
+        document.getElementById('removeExistingFileFlag').value = 'true'; // 기존 파일 삭제 플래그 설정
+        // existingFilePath는 초기화하지 않음 (새 파일 선택 시 플래그 설정을 위해 유지)
+        document.getElementById('dropAreaText').style.display = 'block'; // 드롭 영역 텍스트 표시
+        console.log('기존 파일 삭제 완료, removeExistingFileFlag:', document.getElementById('removeExistingFileFlag').value);
+    }
+    
+    return false;
 }
 
 // DOM 로드 후 실행 (window.onload 사용)
@@ -208,6 +210,11 @@ window.onload = function() {
     var dropArea = document.getElementById('dropArea');
     var formFile = document.getElementById('formFile');
     var fileList = document.getElementById('fileList');
+    
+    // 기존 파일이 있으면 드롭 영역 텍스트 숨기기
+    if (fileList && fileList.children.length > 0) {
+        document.getElementById('dropAreaText').style.display = 'none';
+    }
 
     // 드래그 기본 동작 방지 헬퍼 함수
     function preventDefaults(e) {
@@ -227,10 +234,12 @@ window.onload = function() {
 
     // 드롭 핸들러
     function dropHandler(e) {
+        console.log('드롭 핸들러 시작');
         var dt = e.dataTransfer;
         var files = dt.files;
 
         if (files.length > 0) {
+            console.log('드롭된 파일:', files[0].name);
             var file = files[0];
             if (!file.name.toLowerCase().endsWith('.zip')) {
                 alert('ZIP 파일만 업로드 가능합니다.');
@@ -238,15 +247,20 @@ window.onload = function() {
             }
             formFile.files = files;
             displayFiles(files);
+            // 기존 파일이 있으면 삭제 플래그 설정
+            if (document.getElementById('existingFilePath').value) {
+                document.getElementById('removeExistingFileFlag').value = 'true';
+                console.log('드롭으로 인한 기존 파일 삭제 플래그 설정');
+            }
         }
     }
 
     // 드래그 앤 드롭 이벤트 등록
     if (dropArea) {
-        // dropArea와 document.body에 대한 preventDefaults 등록 (inquiry.jsp와 동일하게)
+        // dropArea와 document.body에 대한 preventDefaults 등록
         ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
             dropArea.addEventListener(eventName, preventDefaults, false);
-            document.body.addEventListener(eventName, preventDefaults, false); // 전체 페이지 기본 동작 방지
+            document.body.addEventListener(eventName, preventDefaults, false);
         });
 
         // highlight 이벤트 등록
@@ -259,15 +273,32 @@ window.onload = function() {
             dropArea.addEventListener(eventName, unhighlight, false);
         });
 
-        dropArea.addEventListener('click', function() {
-            formFile.click(); // 드롭 영역 클릭 시 파일 입력 열기
+        // 드롭 영역 클릭 시 파일 선택창 열기 (fileList 내부 클릭 제외)
+        dropArea.addEventListener('click', function(e) {
+            // fileList 또는 그 내부 요소를 클릭한 경우 파일 선택창 열지 않음
+            if (fileList.contains(e.target) && e.target !== dropArea) {
+                return;
+            }
+            formFile.click();
         });
+        
         dropArea.addEventListener('drop', dropHandler, false);
     }
 
     if (formFile) {
         formFile.addEventListener('change', function() {
-            displayFiles(this.files);
+            console.log('파일 선택됨:', this.files.length);
+            if (this.files.length > 0) {
+                console.log('파일명:', this.files[0].name);
+                displayFiles(this.files);
+                // 새 파일이 선택되면 기존 파일 삭제 플래그 설정
+                var existingPath = document.getElementById('existingFilePath').value;
+                console.log('기존 파일 경로:', existingPath);
+                if (existingPath && existingPath.trim() !== '') {
+                    document.getElementById('removeExistingFileFlag').value = 'true';
+                    console.log('기존 파일 삭제 플래그 설정됨');
+                }
+            }
         });
     }
 };

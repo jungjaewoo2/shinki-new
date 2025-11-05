@@ -112,17 +112,16 @@ public class RequestService {
     
     // 의뢰 업데이트
     public Request updateRequest(@Valid Request request, MultipartFile file, String existingFilePath, boolean shouldRemoveFile) {
-        // 파일 삭제 플래그가 true면 파일 경로를 null로 설정
-        if (shouldRemoveFile) {
+        // 새 파일이 업로드되어 Controller에서 이미 filePath가 설정된 경우
+        if (request.getFilePath() != null && !request.getFilePath().trim().isEmpty()) {
+            // Controller에서 설정한 새 파일 경로를 그대로 유지
+            // (Controller에서 파일을 저장하고 filePath를 설정했음)
+        }
+        // 새 파일이 없고 기존 파일 삭제 플래그가 true인 경우
+        else if (shouldRemoveFile) {
             request.setFilePath(null);
         }
-        // 새 파일이 업로드된 경우
-        else if (file != null && !file.isEmpty()) {
-            // 파일 업로드 처리는 컨트롤러나 별도 로직에서 수행하고
-            // 여기서는 filePath만 설정 (실제 파일 저장은 컨트롤러에서 처리해야 함)
-            // request.setFilePath는 컨트롤러에서 처리된 후 전달되어야 함
-        }
-        // 파일이 업로드되지 않았고 삭제하지도 않은 경우 기존 파일 경로 유지
+        // 새 파일이 없고 삭제하지도 않은 경우 기존 파일 경로 유지
         else if (existingFilePath != null && !existingFilePath.trim().isEmpty()) {
             request.setFilePath(existingFilePath);
         }

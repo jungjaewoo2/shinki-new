@@ -566,7 +566,6 @@
              <!--<button class="btn btn-lg btn-outline-secondary" onclick="location.href='/admin/view-request-details?id=${request.id}'">확인</button>-->
              <button class="btn btn-lg btn-secondary" onclick="location.href='/admin/request-history'">목록</button>
              <!-- 테스트 버튼 -->
-             <button class="btn btn-lg btn-warning" onclick="testEditReply()">테스트 수정</button>
          </div>
      </div>
  </div>

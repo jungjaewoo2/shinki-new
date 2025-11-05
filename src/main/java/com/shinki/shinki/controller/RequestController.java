@@ -318,6 +318,14 @@ public class RequestController {
                     dir.mkdirs();
                 }
 
+                // 기존 파일이 있다면 물리적으로 삭제
+                if (existingFilePath != null && !existingFilePath.trim().isEmpty()) {
+                    File existingFile = new File(uploadDir + existingFilePath);
+                    if (existingFile.exists()) {
+                        existingFile.delete();
+                    }
+                }
+
                 // 파일명 생성 (날짜시간_사용자명_원본파일명)
                 java.time.LocalDateTime now = java.time.LocalDateTime.now();
                 String timestamp = now.format(java.time.format.DateTimeFormatter.ofPattern("yyyyMMddHHmm"));
@@ -326,6 +334,15 @@ public class RequestController {
                 Files.write(filePath, file.getBytes());
 
                 request.setFilePath(fileName);
+            }
+            // 새 파일이 없고 기존 파일만 삭제하는 경우
+            else if (shouldRemoveExistingFile && existingFilePath != null && !existingFilePath.trim().isEmpty()) {
+                // 기존 파일을 물리적으로 삭제
+                String uploadDir = uploadPath + "/request/";
+                File existingFile = new File(uploadDir + existingFilePath);
+                if (existingFile.exists()) {
+                    existingFile.delete();
+                }
             }
 
             // 파일 업로드 서비스 호출
