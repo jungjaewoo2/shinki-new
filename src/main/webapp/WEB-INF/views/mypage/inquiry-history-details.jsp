@@ -267,7 +267,7 @@
                                  <div class="d-flex flex-column gap-3">
                                      <div>
                                          <div class="d-flex justify-content-between align-items-center mb-2">
-                                             <div class="fw-bold">댓글</div>
+                                             <div class="fw-bold">답글</div>
                                              <div class="d-flex gap-2">
 
 
@@ -299,72 +299,100 @@
                              </div>
                          </c:if>
                          
-                         <!-- 관리자 답변이 없을 때만 댓글 입력 폼 표시 -->
-                         <c:if test="${empty inquiry.adminReply}">
-                         <form method="post" action="/mypage/inquiry-history-details/reply">
-                             <input type="hidden" name="inquiryId" value="${inquiry.id}">
-                             <div class="d-flex flex-column gap-1 p-3 rounded-2 border">
-                                     <div class="fw-bold">답변하기</div>
-                                 <textarea name="content" class="form-control" rows="3" placeholder="내용을 입력하세요" required></textarea>
-                                 <div class="text-end">
-                                     <button type="submit" class="btn btn-primary btn-sm h-auto">등록</button>
-                                 </div>
-                             </div>
-                         </form>
-                         </c:if>
-                         
-                         <!-- 댓글 목록 -->
-                         <c:forEach var="reply" items="${replies}">
-                             <div class="d-flex flex-column gap-1 border-bottom p-1">
-                                 <!-- 사용자 댓글 -->
-                                 <div class="d-flex justify-content-between align-items-start mb-2">
-                                     <div class="fw-bold d-flex gap-1">
-                                         <div>
-                                             <fmt:formatDate value="${reply.userCreatedAt}" pattern="yyyy.MM.dd HH:mm"/>
-                                         </div>
-                                     </div>
-                                     <div class="d-flex gap-2">
-                                         <button type="button" class="btn btn-sm btn-outline-primary" onclick="editUserComment(${reply.id})" title="수정">
-                                             <i class="bi bi-pencil"></i>
-                                         </button>
-                                         <button type="button" class="btn btn-sm btn-outline-danger" onclick="deleteUserComment(${reply.id})" title="삭제">
-                                             <i class="bi bi-trash"></i>
-                                         </button>
-                                     </div>
-                                 </div>
-                                 
-                                 <!-- 사용자 댓글 보기 모드 -->
-                                 <div id="user-comment-view-${reply.id}">
-                                     <div style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><c:out value="${reply.userContent}"/></div>
-                                 </div>
-                                 
-                                 <!-- 사용자 댓글 수정 모드 -->
-                                 <div id="user-comment-edit-${reply.id}" style="display: none;">
-                                     <textarea class="form-control mb-2" id="user-comment-edit-textarea-${reply.id}" rows="3" style="white-space: pre-wrap;"><c:out value="${reply.userContent}"/></textarea>
-                                     <div class="d-flex gap-2 justify-content-end">
-                                         <button type="button" class="btn btn-sm btn-success" onclick="saveUserComment(${reply.id})">
-                                             <i class="bi bi-check-circle"></i> 저장
-                                         </button>
-                                         <button type="button" class="btn btn-sm btn-secondary" onclick="cancelEditUserComment(${reply.id})">
-                                             <i class="bi bi-x-circle"></i> 취소
-                                         </button>
-                                     </div>
-                                 </div>
-                                 
-                                 <!-- 관리자 답글 -->
-                                 <c:if test="${not empty reply.adminContent}">
-                                     <div class="d-flex justify-content-between align-items-start mb-2">
-                                         <div class="fw-bold text-success d-flex gap-1">
-                                             <i class="bi bi-arrow-return-right"></i>
-                                             <c:if test="${not empty reply.adminCreatedAt}">
-                                                 <fmt:formatDate value="${reply.adminCreatedAt}" pattern="yyyy.MM.dd HH:mm"/>
-                                             </c:if>
-                                         </div>
-                                     </div>
-                                     <div style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><c:out value="${reply.adminContent}"/></div>
-                                 </c:if>
-                             </div>
-                         </c:forEach>
+                        <!-- 사용자 댓글 및 관리자 답변 섹션 -->
+                        <div class="border-top pt-3 mt-3">
+                            <div class="fw-bold mb-3" style="font-size: 1.1rem;">
+                                <i class="bi bi-chat-dots"></i> 사용자 댓글 및 관리자 댓글
+                            </div>
+                            
+                            <!-- 댓글 목록 -->
+                            <c:choose>
+                                <c:when test="${not empty replies}">
+                                    <c:forEach var="reply" items="${replies}">
+                                        <div class="d-flex flex-column gap-2 border rounded p-3 mb-2 bg-white">
+                                            <!-- 사용자 댓글 -->
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div class="fw-bold d-flex gap-2 align-items-center">
+                                                    <i class="bi bi-person-circle text-primary" style="font-size: 1.2rem;"></i>
+                                                    <div class="text-muted small">
+                                                        <fmt:formatDate value="${reply.userCreatedAt}" pattern="yyyy.MM.dd HH:mm"/>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex gap-2">
+                                                    <button type="button" class="btn btn-sm btn-outline-primary" onclick="editUserComment(${reply.id})" title="수정">
+                                                        <i class="bi bi-pencil"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-sm btn-outline-danger" onclick="deleteUserComment(${reply.id})" title="삭제">
+                                                        <i class="bi bi-trash"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- 사용자 댓글 보기 모드 -->
+                                            <div id="user-comment-view-${reply.id}">
+                                                <div style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><c:out value="${reply.userContent}"/></div>
+                                            </div>
+                                            
+                                            <!-- 사용자 댓글 수정 모드 -->
+                                            <div id="user-comment-edit-${reply.id}" style="display: none;">
+                                                <textarea class="form-control mb-2" id="user-comment-edit-textarea-${reply.id}" rows="3" style="white-space: pre-wrap;"><c:out value="${reply.userContent}"/></textarea>
+                                                <div class="d-flex gap-2 justify-content-end">
+                                                    <button type="button" class="btn btn-sm btn-success" onclick="saveUserComment(${reply.id})">
+                                                        <i class="bi bi-check-circle"></i> 저장
+                                                    </button>
+                                                    <button type="button" class="btn btn-sm btn-secondary" onclick="cancelEditUserComment(${reply.id})">
+                                                        <i class="bi bi-x-circle"></i> 취소
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- 관리자 답글 -->
+                                            <c:if test="${not empty reply.adminContent}">
+                                                <div class="ms-4 mt-2 p-3 bg-light rounded border-start border-success border-3">
+                                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                                        <div class="fw-bold text-success d-flex gap-2 align-items-center">
+                                                            <i class="bi bi-arrow-return-right"></i>
+                                                            <span>관리자</span>
+                                                            <c:if test="${not empty reply.adminCreatedAt}">
+                                                                <span class="text-muted small fw-normal">
+                                                                    <fmt:formatDate value="${reply.adminCreatedAt}" pattern="yyyy.MM.dd HH:mm"/>
+                                                                </span>
+                                                            </c:if>
+                                                        </div>
+                                                    </div>
+                                                    <div style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><c:out value="${reply.adminContent}"/></div>
+                                                </div>
+                                            </c:if>
+                                        </div>
+                                    </c:forEach>
+                                </c:when>
+                                <c:otherwise>
+                                    <!-- 댓글이 없을 때 표시 -->
+                                    <div class="text-center py-5 border rounded bg-white">
+                                        <i class="bi bi-chat-dots text-muted" style="font-size: 3rem;"></i>
+                                        <p class="text-muted mt-3 mb-0">등록된 댓글이 없습니다.</p>
+                                    </div>
+                                </c:otherwise>
+                            </c:choose>
+                            
+                            <!-- 댓글 입력 폼 (항상 표시) -->
+                            <div class="mt-3">
+                                <form method="post" action="/mypage/inquiry-history-details/reply">
+                                    <input type="hidden" name="inquiryId" value="${inquiry.id}">
+                                    <div class="d-flex flex-column gap-2 p-3 rounded-2 border bg-white">
+                                        <div class="fw-bold">
+                                            <i class="bi bi-pencil-square"></i> 댓글 작성
+                                        </div>
+                                        <textarea name="content" class="form-control" rows="3" placeholder="댓글을 입력하세요" required></textarea>
+                                        <div class="text-end">
+                                            <button type="submit" class="btn btn-primary btn-sm h-auto">
+                                                <i class="bi bi-send"></i> 등록
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                      </div>
                  </div>
              </div>
