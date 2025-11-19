@@ -42,13 +42,13 @@
                                 </colgroup>
                                  <thead>
                                      <tr>
-                                         <th>
+                                         <th style="text-align: center;">
                                              <div class="form-check d-flex justify-content-center">
                                                  <input class="form-check-input group-checkbox" type="checkbox" value="" data-group="${groupKey}">
                                              </div>
                                          </th>
-                                         <th>제목</th>
-                                         <th>의뢰내용</th>
+                                         <th style="text-align: left;">제목</th>
+                                         <th style="text-align: left;">의뢰내용</th>
                                      </tr>
                                  </thead>
                                  <tbody class="">
@@ -59,18 +59,9 @@
                                                      <input class="form-check-input request-checkbox" type="checkbox" value="${request.id}" data-group="${groupKey}">
                                                  </div>
                                              </td>
-                                             <td>${request.title}</td>
-                                             <td class="w-50">
-                                                 <div class="request-details" style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">
-                                                     <c:choose>
-                                                         <c:when test="${fn:length(request.content) > 100}">
-                                                             ${fn:substring(request.content, 0, 100)}....
-                                                         </c:when>
-                                                         <c:otherwise>
-                                                             ${request.content}
-                                                         </c:otherwise>
-                                                     </c:choose>
-                                                 </div>
+                                             <td class="text-start align-middle">${request.title}</td>
+                                             <td class="text-start align-top" style="padding: 0.75rem !important; vertical-align: top !important;">
+                                                 <c:out value="${request.content}"/>
                                              </td>
                                          </tr>
                                      </c:forEach>
@@ -84,7 +75,7 @@
                                          <input class="form-check-input request-checkbox" type="checkbox" value="${request.id}" data-group="${groupKey}">
                                          <div>No. Project${request.id}</div>
                                      </div>
-                                     <div class="download-contents" style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">${request.content}</div>
+                                     <div class="download-contents" style="white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">${request.content}</div>
                                  </div>
                              </c:forEach>
                          </div>
@@ -97,10 +88,54 @@
                  </div>
              </c:otherwise>
          </c:choose>
-     </div>
- </div>
+    </div>
+</div>
 
- <!-- 체크박스 전체선택 및 다운로드 기능 js -->
+<!-- 의뢰내용 스타일 오버라이드 -->
+<style>
+    /* downloads 페이지의 테이블 의뢰내용 칼럼 스타일 */
+    #download-page .table tbody td:last-child {
+        text-align: left !important;
+        vertical-align: top !important;
+        padding: 0.75rem !important;
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        max-width: none !important;
+        width: 55% !important;
+    }
+    
+    /* request-details 클래스가 있다면 오버라이드 */
+    #download-page .table td.request-details,
+    #download-page .table td .request-details {
+        width: 100% !important;
+        text-overflow: clip !important;
+        overflow: visible !important;
+        display: block !important;
+        -webkit-line-clamp: unset !important;
+        -webkit-box-orient: horizontal !important;
+        height: auto !important;
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+        text-align: left !important;
+    }
+    
+    /* 테이블 헤더 정렬 */
+    #download-page .table thead th:first-child {
+        text-align: center !important;
+    }
+    
+    #download-page .table thead th:not(:first-child) {
+        text-align: left !important;
+    }
+</style>
+
+<!-- 체크박스 전체선택 및 다운로드 기능 js -->
  <script>
      document.addEventListener('DOMContentLoaded', function() {
          // 그룹별 전체 선택 기능

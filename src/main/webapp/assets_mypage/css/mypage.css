@@ -796,13 +796,27 @@ rgb(255, 255, 255).status-completed {
 
 .request-details {
     width: 100%;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-    height: 1.5em;
+    text-overflow: clip;
+    overflow: visible;
+    display: block;
+    -webkit-box-orient: horizontal;
+    -webkit-line-clamp: unset;
+    height: auto;
     text-align: left;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* downloads 페이지의 테이블에서는 ellipsis 비활성화 */
+#download-page .request-details {
+    text-overflow: clip !important;
+    overflow: visible !important;
+    display: block !important;
+    -webkit-line-clamp: unset !important;
+    -webkit-box-orient: horizontal !important;
+    height: auto !important;
 }
 
 #inquiry-history-page .table th,
