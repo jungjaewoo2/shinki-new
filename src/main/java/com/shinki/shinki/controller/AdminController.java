@@ -382,6 +382,26 @@ public class AdminController {
         
         return "admin/consultation-request";
     }
+
+    @PostMapping("/consultation-request/update-status")
+    public String updateConsultationStatus(@RequestParam("consultationId") Long consultationId,
+                                           @RequestParam("status") String status,
+                                           RedirectAttributes redirectAttributes) {
+        try {
+            if (status == null || status.trim().isEmpty()) {
+                status = "미확인";
+            }
+            ConReg updated = conRegService.updateConsultationStatus(consultationId, status.trim());
+            if (updated != null) {
+                redirectAttributes.addFlashAttribute("success", "문의상태가 변경되었습니다.");
+            } else {
+                redirectAttributes.addFlashAttribute("error", "해당 문의를 찾을 수 없습니다.");
+            }
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("error", "상의 상태 변경 중 오류가 발생했습니다: " + e.getMessage());
+        }
+        return "redirect:/admin/consultation-request";
+    }
     
     @GetMapping("/inquiry-request")
     public String inquiryRequest(@RequestParam(defaultValue = "0") int page, 

@@ -45,47 +45,60 @@
              <div class="fw-bold">총 ${totalElements}건</div>
              <div class="">
                  <table class="table table-striped table-hover table-bordered  cursor-pointer">
-                     <colgroup>
-                         <col width="5%">
-                         <col width="15%">
-                         <col width="10%">
-                         <col width="15%">
-                         <col width="35%">
-                         <col width="20%">
-                     </colgroup>
-                     <thead>
-                         <tr>
-                             <th>NO</th>
-                             <th>병원명</th>
-                             <th>이름</th>
-                             <th>전화번호</th>
-                             <th>상담내용</th>
-                             <th>상담날짜</th>
-                         </tr>
-                     </thead>
+                    <colgroup>
+                        <col width="5%">
+                        <col width="15%">
+                        <col width="10%">
+                        <col width="15%">
+                        <col width="10%">
+                        <col width="35%">
+                        <col width="10%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>NO</th>
+                            <th>병원명</th>
+                            <th>이름</th>
+                            <th>전화번호</th>
+                            <th>문의상태</th>
+                            <th>상담내용</th>
+                            <th>상담날짜</th>
+                        </tr>
+                    </thead>
                      <tbody class="">
                          <c:choose>
                              <c:when test="${not empty consultations}">
                                  <c:forEach var="consultation" items="${consultations}" varStatus="status">
                                      <tr>
                                          <td>${totalElements - (currentPage * size) - status.index}</td>
-                                         <td>${consultation.hospitalName}</td>
-                                         <td>${consultation.name}</td>
-                                         <td>${consultation.phone}</td>
-                                         <td class="text-start">
-                                             <c:choose>
-                                                 <c:when test="${fn:length(consultation.consultationContent) > 50}">
-                                                     ${fn:substring(consultation.consultationContent, 0, 50)}...
-                                                 </c:when>
-                                                 <c:otherwise>
-                                                     ${consultation.consultationContent}
-                                                 </c:otherwise>
-                                             </c:choose>
-                                         </td>
-                                         <td>
-                                             ${consultation.consultationDate}<br>
-                                             ${consultation.consultationTime}
-                                         </td>
+                                        <td>${consultation.hospitalName}</td>
+                                        <td>${consultation.name}</td>
+                                        <td>${consultation.phone}</td>
+                                        <td>
+                                            <form method="post" action="<c:url value='/admin/consultation-request/update-status' />" class="m-0 p-0">
+                                                <input type="hidden" name="consultationId" value="${consultation.id}">
+                                                <select name="status" class="form-select form-select-sm" onchange="this.form.submit()">
+                                                    <c:set var="currentStatus" value="${empty consultation.status ? '미확인' : consultation.status}" />
+                                                    <option value="미확인" ${currentStatus == '미확인' ? 'selected' : ''}>미확인</option>
+                                                    <option value="답변 진행중" ${currentStatus == '답변 진행중' ? 'selected' : ''}>답변 진행중</option>
+                                                    <option value="답변 완료" ${currentStatus == '답변 완료' ? 'selected' : ''}>답변 완료</option>
+                                                </select>
+                                            </form>
+                                        </td>
+                                        <td class="text-start">
+                                            <c:choose>
+                                                <c:when test="${fn:length(consultation.consultationContent) > 50}">
+                                                    ${fn:substring(consultation.consultationContent, 0, 50)}...
+                                                </c:when>
+                                                <c:otherwise>
+                                                    ${consultation.consultationContent}
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </td>
+                                        <td>
+                                            ${consultation.consultationDate}<br>
+                                            ${consultation.consultationTime}
+                                        </td>
                                      </tr>
                                  </c:forEach>
                              </c:when>
