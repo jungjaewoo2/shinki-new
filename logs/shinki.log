@@ -1,25 +1,25 @@
-2025-11-22 10:10:34 [restartedMain] INFO  com.shinki.shinki.ShinkiApplication - Starting ShinkiApplication using Java 21.0.7 with PID 15876 (D:\Project\Zetta_Git\shinki-new\target\classes started by zetta in D:\Project\Zetta_Git\shinki-new)
-2025-11-22 10:10:34 [restartedMain] DEBUG com.shinki.shinki.ShinkiApplication - Running with Spring Boot v3.5.5, Spring v6.2.10
-2025-11-22 10:10:34 [restartedMain] INFO  com.shinki.shinki.ShinkiApplication - No active profile set, falling back to 1 default profile: "default"
-2025-11-22 10:10:34 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-11-22 10:10:34 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-11-22 10:10:36 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-11-22 10:10:36 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 129 ms. Found 7 JPA repository interfaces.
-2025-11-22 10:10:37 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2025-11-22 10:10:37 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-11-22 10:10:37 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-11-22 10:10:38 [restartedMain] INFO  o.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2025-11-22 10:10:38 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-11-22 10:10:38 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3348 ms
-2025-11-22 10:10:38 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-11-22 10:10:38 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6babb9a0
-2025-11-22 10:10:38 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-11-22 10:10:39 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-11-22 10:10:39 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-11-22 10:10:39 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-11-22 10:10:39 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-11-22 10:10:39 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-11-22 10:10:39 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+2025-11-27 07:22:45 [restartedMain] INFO  com.shinki.shinki.ShinkiApplication - Starting ShinkiApplication using Java 21.0.7 with PID 24352 (D:\Project\Zetta_Git\shinki-new\target\classes started by zetta in D:\Project\Zetta_Git\shinki-new)
+2025-11-27 07:22:45 [restartedMain] DEBUG com.shinki.shinki.ShinkiApplication - Running with Spring Boot v3.5.5, Spring v6.2.10
+2025-11-27 07:22:45 [restartedMain] INFO  com.shinki.shinki.ShinkiApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-27 07:22:45 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-27 07:22:45 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-27 07:22:47 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-27 07:22:48 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 278 ms. Found 7 JPA repository interfaces.
+2025-11-27 07:22:49 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-11-27 07:22:49 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-27 07:22:49 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-11-27 07:22:50 [restartedMain] INFO  o.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2025-11-27 07:22:50 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-27 07:22:50 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4477 ms
+2025-11-27 07:22:50 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-11-27 07:22:50 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4c7cdafc
+2025-11-27 07:22:50 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-11-27 07:22:51 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-27 07:22:51 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-11-27 07:22:51 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-11-27 07:22:51 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-27 07:22:52 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-27 07:22:52 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0.42
@@ -27,273 +27,30 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-11-22 10:10:41 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-11-22 10:10:41 [restartedMain] DEBUG org.hibernate.SQL - 
+2025-11-27 07:22:53 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-27 07:22:53 [restartedMain] DEBUG org.hibernate.SQL - 
     alter table member 
        modify column status VARCHAR(1) DEFAULT 'Y' not null
-2025-11-22 10:10:41 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-11-22 10:10:42 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-11-22 10:10:47 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-11-22 10:10:47 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
-2025-11-22 10:10:48 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/shinki?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8&allowPublicKeyRetrieval=true'
-2025-11-22 10:10:48 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2025-11-22 10:10:48 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2025-11-22 10:10:48 [restartedMain] INFO  com.shinki.shinki.ShinkiApplication - Started ShinkiApplication in 14.368 seconds (process running for 15.267)
-2025-11-22 10:10:48 [restartedMain] DEBUG org.hibernate.SQL - 
+2025-11-27 07:22:54 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-27 07:22:54 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-11-27 07:23:00 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-27 07:23:01 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2025-11-27 07:23:01 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/shinki?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8&allowPublicKeyRetrieval=true'
+2025-11-27 07:23:01 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-11-27 07:23:01 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-11-27 07:23:01 [restartedMain] INFO  com.shinki.shinki.ShinkiApplication - Started ShinkiApplication in 17.11 seconds (process running for 17.949)
+2025-11-27 07:23:01 [restartedMain] DEBUG org.hibernate.SQL - 
     select
         count(*) 
     from
         member m1_0
-2025-11-22 10:10:48 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-11-22 10:10:48 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-11-22 10:10:48 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 12 ms
-2025-11-22 10:10:48 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 10:10:48 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {message=Hello from Spring Boot JSP!}
-2025-11-22 10:10:48 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/index.jsp]
-2025-11-22 10:10:52 [http-nio-8080-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
-2025-11-22 10:10:52 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-11-22T10:10:52.734257700}
-2025-11-22 10:10:52 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
-2025-11-22 10:10:54 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 10:10:54 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/login], model {redirectUrl=null}
-2025-11-22 10:10:54 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/login.jsp]
-2025-11-22 10:10:55 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 10:10:55 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/login], model {redirectUrl=null}
-2025-11-22 10:10:55 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/login.jsp]
-2025-11-22 10:10:57 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 10:10:57 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/login], model {redirectUrl=null}
-2025-11-22 10:10:57 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/login.jsp]
-2025-11-22 10:11:37 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
-    select
-        m1_0.id,
-        m1_0.address,
-        m1_0.address_etc,
-        m1_0.created_at,
-        m1_0.department,
-        m1_0.email,
-        m1_0.hospital_name,
-        m1_0.memo,
-        m1_0.name,
-        m1_0.password,
-        m1_0.phone,
-        m1_0.recommend_code,
-        m1_0.recommended_employee,
-        m1_0.status,
-        m1_0.updated_at,
-        m1_0.username,
-        m1_0.visit_num 
-    from
-        member m1_0 
-    where
-        m1_0.username=?
-2025-11-22 10:11:37 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
-    update
-        member 
-    set
-        address=?,
-        address_etc=?,
-        created_at=?,
-        department=?,
-        email=?,
-        hospital_name=?,
-        memo=?,
-        name=?,
-        password=?,
-        phone=?,
-        recommend_code=?,
-        recommended_employee=?,
-        status=?,
-        updated_at=?,
-        username=?,
-        visit_num=? 
-    where
-        id=?
-2025-11-22 10:11:37 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.RedirectView - View name [redirect:], model {}
-2025-11-22 10:11:37 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
-    select
-        m1_0.id,
-        m1_0.address,
-        m1_0.address_etc,
-        m1_0.created_at,
-        m1_0.department,
-        m1_0.email,
-        m1_0.hospital_name,
-        m1_0.memo,
-        m1_0.name,
-        m1_0.password,
-        m1_0.phone,
-        m1_0.recommend_code,
-        m1_0.recommended_employee,
-        m1_0.status,
-        m1_0.updated_at,
-        m1_0.username,
-        m1_0.visit_num 
-    from
-        member m1_0 
-    where
-        m1_0.username=?
-2025-11-22 10:11:37 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 10:11:37 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/profile], model {message=로그인되었습니다., member=com.shinki.shinki.entity.Member@288866b0, org.springframework.validation.BindingResult.member=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
-2025-11-22 10:11:37 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/profile.jsp]
-2025-11-22 10:11:40 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
-    select
-        m1_0.id,
-        m1_0.address,
-        m1_0.address_etc,
-        m1_0.created_at,
-        m1_0.department,
-        m1_0.email,
-        m1_0.hospital_name,
-        m1_0.memo,
-        m1_0.name,
-        m1_0.password,
-        m1_0.phone,
-        m1_0.recommend_code,
-        m1_0.recommended_employee,
-        m1_0.status,
-        m1_0.updated_at,
-        m1_0.username,
-        m1_0.visit_num 
-    from
-        member m1_0 
-    where
-        m1_0.username=?
-2025-11-22 10:11:40 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 10:11:40 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry], model {memberId=123}
-2025-11-22 10:11:40 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry.jsp]
-2025-11-22 10:11:41 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
-    select
-        m1_0.id,
-        m1_0.address,
-        m1_0.address_etc,
-        m1_0.created_at,
-        m1_0.department,
-        m1_0.email,
-        m1_0.hospital_name,
-        m1_0.memo,
-        m1_0.name,
-        m1_0.password,
-        m1_0.phone,
-        m1_0.recommend_code,
-        m1_0.recommended_employee,
-        m1_0.status,
-        m1_0.updated_at,
-        m1_0.username,
-        m1_0.visit_num 
-    from
-        member m1_0 
-    where
-        m1_0.username=?
-2025-11-22 10:11:41 [http-nio-8080-exec-4] INFO  c.s.shinki.service.InquiryService - getInquiriesByMemberIdWithPaging 호출 - memberId: 123, page: 0
-2025-11-22 10:11:41 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
-    select
-        i1_0.id,
-        i1_0.admin_no,
-        i1_0.admin_reply,
-        i1_0.admin_reply_file_path,
-        i1_0.content,
-        i1_0.created_at,
-        i1_0.file_path,
-        i1_0.inquiry_type,
-        i1_0.member_id,
-        i1_0.reply_date,
-        i1_0.status,
-        i1_0.updated_at 
-    from
-        inquiry i1_0 
-    where
-        i1_0.member_id=? 
-    order by
-        i1_0.created_at desc,
-        i1_0.created_at desc 
-    limit
-        ?
-2025-11-22 10:11:41 [http-nio-8080-exec-4] INFO  c.s.shinki.service.InquiryService - 페이징 문의 조회 완료 - memberId: 123, 문의 수: 6
-2025-11-22 10:11:41 [http-nio-8080-exec-4] INFO  c.s.s.controller.InquiryController - 문의 내역 조회 성공 - 사용자: hop1, 현재 페이지: 0, 총 페이지: 1, 문의 수: 6
-2025-11-22 10:11:41 [http-nio-8080-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 10:11:41 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history], model {inquiries=[com.shinki.shinki.entity.Inquiry@54a2817f, com.shinki.shinki.entity.Inquiry@54cb4ec1, com.shinki.shinki.entity.Inquiry@63a65b89, com.shinki.shinki.entity.Inquiry@793a2d73, com.shinki.shinki.entity.Inquiry@39d3e252, com.shinki.shinki.entity.Inquiry@37600eef], currentPage=0, totalPages=1, totalElements=6, size=10}
-2025-11-22 10:11:41 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history.jsp]
-2025-11-22 10:11:53 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
-    select
-        m1_0.id,
-        m1_0.address,
-        m1_0.address_etc,
-        m1_0.created_at,
-        m1_0.department,
-        m1_0.email,
-        m1_0.hospital_name,
-        m1_0.memo,
-        m1_0.name,
-        m1_0.password,
-        m1_0.phone,
-        m1_0.recommend_code,
-        m1_0.recommended_employee,
-        m1_0.status,
-        m1_0.updated_at,
-        m1_0.username,
-        m1_0.visit_num 
-    from
-        member m1_0 
-    where
-        m1_0.username=?
-2025-11-22 10:11:53 [http-nio-8080-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 10:11:53 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/request], model {memberId=123}
-2025-11-22 10:11:53 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/request.jsp]
-2025-11-22 10:11:56 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
-    select
-        m1_0.id,
-        m1_0.address,
-        m1_0.address_etc,
-        m1_0.created_at,
-        m1_0.department,
-        m1_0.email,
-        m1_0.hospital_name,
-        m1_0.memo,
-        m1_0.name,
-        m1_0.password,
-        m1_0.phone,
-        m1_0.recommend_code,
-        m1_0.recommended_employee,
-        m1_0.status,
-        m1_0.updated_at,
-        m1_0.username,
-        m1_0.visit_num 
-    from
-        member m1_0 
-    where
-        m1_0.username=?
-2025-11-22 10:11:56 [http-nio-8080-exec-1] INFO  c.s.shinki.service.InquiryService - getInquiriesByMemberIdWithPaging 호출 - memberId: 123, page: 0
-2025-11-22 10:11:56 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
-    select
-        i1_0.id,
-        i1_0.admin_no,
-        i1_0.admin_reply,
-        i1_0.admin_reply_file_path,
-        i1_0.content,
-        i1_0.created_at,
-        i1_0.file_path,
-        i1_0.inquiry_type,
-        i1_0.member_id,
-        i1_0.reply_date,
-        i1_0.status,
-        i1_0.updated_at 
-    from
-        inquiry i1_0 
-    where
-        i1_0.member_id=? 
-    order by
-        i1_0.created_at desc,
-        i1_0.created_at desc 
-    limit
-        ?
-2025-11-22 10:11:56 [http-nio-8080-exec-1] INFO  c.s.shinki.service.InquiryService - 페이징 문의 조회 완료 - memberId: 123, 문의 수: 6
-2025-11-22 10:11:56 [http-nio-8080-exec-1] INFO  c.s.s.controller.InquiryController - 문의 내역 조회 성공 - 사용자: hop1, 현재 페이지: 0, 총 페이지: 1, 문의 수: 6
-2025-11-22 10:11:56 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 10:11:56 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [mypage/inquiry-history], model {inquiries=[com.shinki.shinki.entity.Inquiry@13f829cd, com.shinki.shinki.entity.Inquiry@1f22a338, com.shinki.shinki.entity.Inquiry@6f53354e, com.shinki.shinki.entity.Inquiry@15464166, com.shinki.shinki.entity.Inquiry@47a2b442, com.shinki.shinki.entity.Inquiry@4d93e4ed], currentPage=0, totalPages=1, totalElements=6, size=10}
-2025-11-22 10:11:56 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/mypage/inquiry-history.jsp]
-2025-11-22 10:16:22 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 10:16:22 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [admin/login], model {adminAuthority=null, canRead=false, canReply=false, canModify=false}
-2025-11-22 10:16:22 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/login.jsp]
-2025-11-22 10:16:25 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+2025-11-27 07:23:07 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-27 07:23:07 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-11-27 07:23:07 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-11-27 07:23:07 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-11-27 07:23:07 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [admin/login], model {adminAuthority=null, canRead=false, canReply=false, canModify=false}
+2025-11-27 07:23:07 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/login.jsp]
+2025-11-27 07:23:10 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
     select
         a1_0.admin_no,
         a1_0.admin_id,
@@ -312,8 +69,8 @@
     where
         a1_0.admin_id=? 
         and a1_0.password=?
-2025-11-22 10:16:25 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.RedirectView - View name [redirect:], model {}
-2025-11-22 10:16:25 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+2025-11-27 07:23:10 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.RedirectView - View name [redirect:], model {}
+2025-11-27 07:23:10 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
     select
         a1_0.admin_no,
         a1_0.admin_id,
@@ -333,423 +90,108 @@
         a1_0.admin_no desc 
     limit
         ?, ?
-2025-11-22 10:16:25 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 10:16:25 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [admin/admin-account], model {adminAuthority=모든권한, canRead=true, canReply=true, canModify=true, admins=[com.shinki.shinki.entity.Admin@4a5f2102, com.shinki.shinki.entity.Admin@5d872f26, com.shinki.shinki.entity.Admin@3a97a5a8, com.shinki.shinki.entity.Admin@15793e35, com.shinki.shinki.entity.Admin@261d5aa9, com.shinki.shinki.entity.Admin@4207bf53, com.shinki.shinki.entity.Admin@45baf85e], currentPage=0, totalPages=1, totalElements=7, size=10}
-2025-11-22 10:16:25 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/admin-account.jsp]
-2025-11-22 10:16:30 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+2025-11-27 07:23:11 [http-nio-8080-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-11-27 07:23:11 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [admin/admin-account], model {adminAuthority=모든권한, canRead=true, canReply=true, canModify=true, admins=[com.shinki.shinki.entity.Admin@6d3f5896, com.shinki.shinki.entity.Admin@759a1b2, com.shinki.shinki.entity.Admin@5bee82ec, com.shinki.shinki.entity.Admin@474d55ee, com.shinki.shinki.entity.Admin@50214e79, com.shinki.shinki.entity.Admin@1a3f31fe, com.shinki.shinki.entity.Admin@356939b7], currentPage=0, totalPages=1, totalElements=7, size=10}
+2025-11-27 07:23:11 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/admin-account.jsp]
+2025-11-27 07:23:16 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
     select
-        cr1_0.id,
-        cr1_0.consultation_content,
-        cr1_0.consultation_date,
-        cr1_0.consultation_time,
-        cr1_0.created_at,
-        cr1_0.hospital_name,
-        cr1_0.name,
-        cr1_0.phone,
-        cr1_0.status,
-        cr1_0.updated_at 
+        r1_0.id,
+        r1_0.admin_file_path,
+        r1_0.application_type,
+        r1_0.content,
+        r1_0.created_at,
+        r1_0.file_path,
+        r1_0.member_id,
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num,
+        r1_0.money,
+        r1_0.payment_amount,
+        r1_0.payment_method,
+        r1_0.payment_status,
+        r1_0.privacy_agreed,
+        r1_0.privacy_agreement,
+        r1_0.reg_condition,
+        r1_0.status,
+        r1_0.status_cancel,
+        r1_0.title,
+        r1_0.updated_at 
     from
-        con_reg cr1_0 
+        request r1_0 
+    left join
+        member m1_0 
+            on m1_0.id=r1_0.member_id 
     order by
-        cr1_0.created_at desc 
+        r1_0.id desc,
+        r1_0.id desc 
     limit
-        ?, ?
-2025-11-22 10:16:30 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 10:16:30 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [admin/consultation-request], model {adminAuthority=모든권한, canRead=true, canReply=true, canModify=true, consultations=[ConReg{id=3, name='정재우', hospitalName='재우병원3', phone='01023453433', consultationDate=2025-10-23, consultationTime=11:42, consultationContent='ㅇㄹㄴㅁㄹㄴㄹㄴㅁㄻㄴㅇㄹ
-ㄴㅇㄹㄴㅁㅇㄹㄴㅇㅁㄹㅇㄴㅁㄹ', status='대기', createdAt=2025-10-01T07:39, updatedAt=2025-10-01T07:39}, ConReg{id=4, name='정재우', hospitalName='재우병원3', phone='01023453433', consultationDate=2025-10-23, consultationTime=11:42, consultationContent='ㅇㄹㄴㅁㄹㄴㄹㄴㅁㄻㄴㅇㄹ
-ㄴㅇㄹㄴㅁㅇㄹㄴㅇㅁㄹㅇㄴㅁㄹ', status='대기', createdAt=2025-10-01T07:39, updatedAt=2025-10-01T07:39}, ConReg{id=2, name='정재일', hospitalName='재일병원', phone='024662357', consultationDate=2025-09-23, consultationTime=13:42, consultationContent='상담하고파
-이제 상담하자', status='대기', createdAt=2025-09-23T23:39:55, updatedAt=2025-09-23T23:39:55}, ConReg{id=1, name='정재우', hospitalName='재우병원', phone='01212121', consultationDate=2025-09-26, consultationTime=14:37, consultationContent='ㅇㄹㄴㅇㄹㅇㄹㅇㄴㄹㅇㄴㄹㅇㄹ
-ㄴㅇㄹㅇㄴㄹㄴㅇㄹㅇㄴㄹ', status='대기', createdAt=2025-09-23T23:33:45, updatedAt=2025-09-23T23:33:45}], currentPage=0, totalPages=1, totalElements=4, size=10, searchType=consultationContent, searchValue=, sortBy=createdAt, sortDir=desc}
-2025-11-22 10:16:30 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/consultation-request.jsp]
-2025-11-22 10:25:57 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+        ?
+2025-11-27 07:23:16 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
     select
-        cr1_0.id,
-        cr1_0.consultation_content,
-        cr1_0.consultation_date,
-        cr1_0.consultation_time,
-        cr1_0.created_at,
-        cr1_0.hospital_name,
-        cr1_0.name,
-        cr1_0.phone,
-        cr1_0.status,
-        cr1_0.updated_at 
+        count(r1_0.id) 
     from
-        con_reg cr1_0 
+        request r1_0
+2025-11-27 07:23:16 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-11-27 07:23:16 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [admin/request-history], model {adminAuthority=모든권한, canRead=true, canReply=true, canModify=true, requests=[com.shinki.shinki.entity.Request@5b84ae23, com.shinki.shinki.entity.Request@751c1a56, com.shinki.shinki.entity.Request@18f002e7, com.shinki.shinki.entity.Request@49e46d07, com.shinki.shinki.entity.Request@376f37ae, com.shinki.shinki.entity.Request@223445bf, com.shinki.shinki.entity.Request@3a4b9c24, com.shinki.shinki.entity.Request@502d523f, com.shinki.shinki.entity.Request@1e31cdd3, com.shinki.shinki.entity.Request@78e46f5a], currentPage=0, totalPages=2, totalElements=13, size=10, search=null, applicationType=null, status=null, startDate=null}
+2025-11-27 07:23:16 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/request-history.jsp]
+2025-11-27 07:23:17 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.id,
+        i1_0.admin_no,
+        i1_0.admin_reply,
+        i1_0.admin_reply_file_path,
+        i1_0.content,
+        i1_0.created_at,
+        i1_0.file_path,
+        i1_0.inquiry_type,
+        m1_0.id,
+        m1_0.address,
+        m1_0.address_etc,
+        m1_0.created_at,
+        m1_0.department,
+        m1_0.email,
+        m1_0.hospital_name,
+        m1_0.memo,
+        m1_0.name,
+        m1_0.password,
+        m1_0.phone,
+        m1_0.recommend_code,
+        m1_0.recommended_employee,
+        m1_0.status,
+        m1_0.updated_at,
+        m1_0.username,
+        m1_0.visit_num,
+        i1_0.reply_date,
+        i1_0.status,
+        i1_0.updated_at 
+    from
+        inquiry i1_0 
+    left join
+        member m1_0 
+            on m1_0.id=i1_0.member_id 
     order by
-        cr1_0.created_at desc 
+        i1_0.id desc,
+        i1_0.id desc 
     limit
-        ?, ?
-2025-11-22 10:25:58 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 10:25:58 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - View name [admin/consultation-request], model {adminAuthority=모든권한, canRead=true, canReply=true, canModify=true, consultations=[ConReg{id=3, name='정재우', hospitalName='재우병원3', phone='01023453433', consultationDate=2025-10-23, consultationTime=11:42, consultationContent='ㅇㄹㄴㅁㄹㄴㄹㄴㅁㄻㄴㅇㄹ
-ㄴㅇㄹㄴㅁㅇㄹㄴㅇㅁㄹㅇㄴㅁㄹ', status='대기', createdAt=2025-10-01T07:39, updatedAt=2025-10-01T07:39}, ConReg{id=4, name='정재우', hospitalName='재우병원3', phone='01023453433', consultationDate=2025-10-23, consultationTime=11:42, consultationContent='ㅇㄹㄴㅁㄹㄴㄹㄴㅁㄻㄴㅇㄹ
-ㄴㅇㄹㄴㅁㅇㄹㄴㅇㅁㄹㅇㄴㅁㄹ', status='대기', createdAt=2025-10-01T07:39, updatedAt=2025-10-01T07:39}, ConReg{id=2, name='정재일', hospitalName='재일병원', phone='024662357', consultationDate=2025-09-23, consultationTime=13:42, consultationContent='상담하고파
-이제 상담하자', status='대기', createdAt=2025-09-23T23:39:55, updatedAt=2025-09-23T23:39:55}, ConReg{id=1, name='정재우', hospitalName='재우병원', phone='01212121', consultationDate=2025-09-26, consultationTime=14:37, consultationContent='ㅇㄹㄴㅇㄹㅇㄹㅇㄴㄹㅇㄴㄹㅇㄹ
-ㄴㅇㄹㅇㄴㄹㄴㅇㄹㅇㄴㄹ', status='대기', createdAt=2025-09-23T23:33:45, updatedAt=2025-09-23T23:33:45}], currentPage=0, totalPages=1, totalElements=4, size=10, searchType=consultationContent, searchValue=, sortBy=createdAt, sortDir=desc}
-2025-11-22 10:25:58 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/consultation-request.jsp]
-2025-11-22 10:26:04 [http-nio-8080-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 10:26:04 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-11-22T10:26:04.266366}
-2025-11-22 10:26:04 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
-2025-11-22 10:26:23 [http-nio-8080-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 10:26:23 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-11-22T10:26:23.234073400}
-2025-11-22 10:26:23 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
-2025-11-22 10:27:48 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
-    select
-        cr1_0.id,
-        cr1_0.consultation_content,
-        cr1_0.consultation_date,
-        cr1_0.consultation_time,
-        cr1_0.created_at,
-        cr1_0.hospital_name,
-        cr1_0.name,
-        cr1_0.phone,
-        cr1_0.status,
-        cr1_0.updated_at 
-    from
-        con_reg cr1_0 
-    order by
-        cr1_0.created_at desc 
-    limit
-        ?, ?
-2025-11-22 10:27:48 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 10:27:48 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [admin/consultation-request], model {adminAuthority=모든권한, canRead=true, canReply=true, canModify=true, consultations=[ConReg{id=3, name='정재우', hospitalName='재우병원3', phone='01023453433', consultationDate=2025-10-23, consultationTime=11:42, consultationContent='ㅇㄹㄴㅁㄹㄴㄹㄴㅁㄻㄴㅇㄹ
-ㄴㅇㄹㄴㅁㅇㄹㄴㅇㅁㄹㅇㄴㅁㄹ', status='대기', createdAt=2025-10-01T07:39, updatedAt=2025-10-01T07:39}, ConReg{id=4, name='정재우', hospitalName='재우병원3', phone='01023453433', consultationDate=2025-10-23, consultationTime=11:42, consultationContent='ㅇㄹㄴㅁㄹㄴㄹㄴㅁㄻㄴㅇㄹ
-ㄴㅇㄹㄴㅁㅇㄹㄴㅇㅁㄹㅇㄴㅁㄹ', status='대기', createdAt=2025-10-01T07:39, updatedAt=2025-10-01T07:39}, ConReg{id=2, name='정재일', hospitalName='재일병원', phone='024662357', consultationDate=2025-09-23, consultationTime=13:42, consultationContent='상담하고파
-이제 상담하자', status='대기', createdAt=2025-09-23T23:39:55, updatedAt=2025-09-23T23:39:55}, ConReg{id=1, name='정재우', hospitalName='재우병원', phone='01212121', consultationDate=2025-09-26, consultationTime=14:37, consultationContent='ㅇㄹㄴㅇㄹㅇㄹㅇㄴㄹㅇㄴㄹㅇㄹ
-ㄴㅇㄹㅇㄴㄹㄴㅇㄹㅇㄴㄹ', status='대기', createdAt=2025-09-23T23:33:45, updatedAt=2025-09-23T23:33:45}], currentPage=0, totalPages=1, totalElements=4, size=10, searchType=consultationContent, searchValue=, sortBy=createdAt, sortDir=desc}
-2025-11-22 10:27:48 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/consultation-request.jsp]
-2025-11-22 10:27:51 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 10:27:51 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-11-22T10:27:51.782778900}
-2025-11-22 10:27:51 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
-2025-11-22 10:28:10 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 10:28:10 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-11-22T10:28:10.026099700}
-2025-11-22 10:28:10 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
-2025-11-22 10:28:55 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 10:28:55 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-11-22T10:28:55.241274200}
-2025-11-22 10:28:55 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
-2025-11-22 10:29:08 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
-    select
-        cr1_0.id,
-        cr1_0.consultation_content,
-        cr1_0.consultation_date,
-        cr1_0.consultation_time,
-        cr1_0.created_at,
-        cr1_0.hospital_name,
-        cr1_0.name,
-        cr1_0.phone,
-        cr1_0.status,
-        cr1_0.updated_at 
-    from
-        con_reg cr1_0 
-    order by
-        cr1_0.created_at desc 
-    limit
-        ?, ?
-2025-11-22 10:29:08 [http-nio-8080-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 10:29:08 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [admin/consultation-request], model {adminAuthority=모든권한, canRead=true, canReply=true, canModify=true, consultations=[ConReg{id=3, name='정재우', hospitalName='재우병원3', phone='01023453433', consultationDate=2025-10-23, consultationTime=11:42, consultationContent='ㅇㄹㄴㅁㄹㄴㄹㄴㅁㄻㄴㅇㄹ
-ㄴㅇㄹㄴㅁㅇㄹㄴㅇㅁㄹㅇㄴㅁㄹ', status='대기', createdAt=2025-10-01T07:39, updatedAt=2025-10-01T07:39}, ConReg{id=4, name='정재우', hospitalName='재우병원3', phone='01023453433', consultationDate=2025-10-23, consultationTime=11:42, consultationContent='ㅇㄹㄴㅁㄹㄴㄹㄴㅁㄻㄴㅇㄹ
-ㄴㅇㄹㄴㅁㅇㄹㄴㅇㅁㄹㅇㄴㅁㄹ', status='대기', createdAt=2025-10-01T07:39, updatedAt=2025-10-01T07:39}, ConReg{id=2, name='정재일', hospitalName='재일병원', phone='024662357', consultationDate=2025-09-23, consultationTime=13:42, consultationContent='상담하고파
-이제 상담하자', status='대기', createdAt=2025-09-23T23:39:55, updatedAt=2025-09-23T23:39:55}, ConReg{id=1, name='정재우', hospitalName='재우병원', phone='01212121', consultationDate=2025-09-26, consultationTime=14:37, consultationContent='ㅇㄹㄴㅇㄹㅇㄹㅇㄴㄹㅇㄴㄹㅇㄹ
-ㄴㅇㄹㅇㄴㄹㄴㅇㄹㅇㄴㄹ', status='대기', createdAt=2025-09-23T23:33:45, updatedAt=2025-09-23T23:33:45}], currentPage=0, totalPages=1, totalElements=4, size=10, searchType=consultationContent, searchValue=, sortBy=createdAt, sortDir=desc}
-2025-11-22 10:29:08 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/consultation-request.jsp]
-2025-11-22 10:29:10 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 10:29:10 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-11-22T10:29:10.440902500}
-2025-11-22 10:29:10 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
-2025-11-22 10:29:15 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-11-22 10:29:15 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
-2025-11-22 10:29:15 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-11-22 10:29:15 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-11-22 10:29:15 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-11-22 10:29:46 [restartedMain] INFO  com.shinki.shinki.ShinkiApplication - Starting ShinkiApplication using Java 21.0.7 with PID 12520 (D:\Project\Zetta_Git\shinki-new\target\classes started by zetta in D:\Project\Zetta_Git\shinki-new)
-2025-11-22 10:29:46 [restartedMain] DEBUG com.shinki.shinki.ShinkiApplication - Running with Spring Boot v3.5.5, Spring v6.2.10
-2025-11-22 10:29:46 [restartedMain] INFO  com.shinki.shinki.ShinkiApplication - No active profile set, falling back to 1 default profile: "default"
-2025-11-22 10:29:46 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-11-22 10:29:46 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-11-22 10:29:48 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-11-22 10:29:48 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 174 ms. Found 7 JPA repository interfaces.
-2025-11-22 10:29:50 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2025-11-22 10:29:50 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-11-22 10:29:50 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-11-22 10:29:50 [restartedMain] INFO  o.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2025-11-22 10:29:50 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-11-22 10:29:50 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3899 ms
-2025-11-22 10:29:51 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-11-22 10:29:51 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@e35018c
-2025-11-22 10:29:51 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-11-22 10:29:51 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-11-22 10:29:52 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-11-22 10:29:52 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-11-22 10:29:52 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-11-22 10:29:52 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-11-22 10:29:52 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 8.0.42
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-11-22 10:29:56 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-11-22 10:29:56 [restartedMain] DEBUG org.hibernate.SQL - 
-    alter table member 
-       modify column status VARCHAR(1) DEFAULT 'Y' not null
-2025-11-22 10:29:56 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-11-22 10:29:56 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-11-22 10:30:02 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-11-22 10:30:02 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
-2025-11-22 10:30:03 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/shinki?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8&allowPublicKeyRetrieval=true'
-2025-11-22 10:30:03 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2025-11-22 10:30:03 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2025-11-22 10:30:03 [restartedMain] INFO  com.shinki.shinki.ShinkiApplication - Started ShinkiApplication in 17.724 seconds (process running for 18.426)
-2025-11-22 10:30:03 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-11-22 10:30:03 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-11-22 10:30:03 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2025-11-22 10:30:03 [restartedMain] DEBUG org.hibernate.SQL - 
-    select
-        count(*) 
-    from
-        member m1_0
-2025-11-22 10:30:04 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
-    select
-        cr1_0.id,
-        cr1_0.consultation_content,
-        cr1_0.consultation_date,
-        cr1_0.consultation_time,
-        cr1_0.created_at,
-        cr1_0.hospital_name,
-        cr1_0.name,
-        cr1_0.phone,
-        cr1_0.status,
-        cr1_0.updated_at 
-    from
-        con_reg cr1_0 
-    order by
-        cr1_0.created_at desc 
-    limit
-        ?, ?
-2025-11-22 10:30:04 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 10:30:04 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [admin/consultation-request], model {adminAuthority=모든권한, canRead=true, canReply=true, canModify=true, consultations=[ConReg{id=3, name='정재우', hospitalName='재우병원3', phone='01023453433', consultationDate=2025-10-23, consultationTime=11:42, consultationContent='ㅇㄹㄴㅁㄹㄴㄹㄴㅁㄻㄴㅇㄹ
-ㄴㅇㄹㄴㅁㅇㄹㄴㅇㅁㄹㅇㄴㅁㄹ', status='대기', createdAt=2025-10-01T07:39, updatedAt=2025-10-01T07:39}, ConReg{id=4, name='정재우', hospitalName='재우병원3', phone='01023453433', consultationDate=2025-10-23, consultationTime=11:42, consultationContent='ㅇㄹㄴㅁㄹㄴㄹㄴㅁㄻㄴㅇㄹ
-ㄴㅇㄹㄴㅁㅇㄹㄴㅇㅁㄹㅇㄴㅁㄹ', status='대기', createdAt=2025-10-01T07:39, updatedAt=2025-10-01T07:39}, ConReg{id=2, name='정재일', hospitalName='재일병원', phone='024662357', consultationDate=2025-09-23, consultationTime=13:42, consultationContent='상담하고파
-이제 상담하자', status='대기', createdAt=2025-09-23T23:39:55, updatedAt=2025-09-23T23:39:55}, ConReg{id=1, name='정재우', hospitalName='재우병원', phone='01212121', consultationDate=2025-09-26, consultationTime=14:37, consultationContent='ㅇㄹㄴㅇㄹㅇㄹㅇㄴㄹㅇㄴㄹㅇㄹ
-ㄴㅇㄹㅇㄴㄹㄴㅇㄹㅇㄴㄹ', status='대기', createdAt=2025-09-23T23:33:45, updatedAt=2025-09-23T23:33:45}], currentPage=0, totalPages=1, totalElements=4, size=10, searchType=consultationContent, searchValue=, sortBy=createdAt, sortDir=desc}
-2025-11-22 10:30:04 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/consultation-request.jsp]
-2025-11-22 10:30:12 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
-    select
-        cr1_0.id,
-        cr1_0.consultation_content,
-        cr1_0.consultation_date,
-        cr1_0.consultation_time,
-        cr1_0.created_at,
-        cr1_0.hospital_name,
-        cr1_0.name,
-        cr1_0.phone,
-        cr1_0.status,
-        cr1_0.updated_at 
-    from
-        con_reg cr1_0 
-    where
-        cr1_0.id=?
-2025-11-22 10:30:13 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
-    update
-        con_reg 
-    set
-        consultation_content=?,
-        consultation_date=?,
-        consultation_time=?,
-        hospital_name=?,
-        name=?,
-        phone=?,
-        status=?,
-        updated_at=? 
-    where
-        id=?
-2025-11-22 10:30:13 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.RedirectView - View name [redirect:], model {}
-2025-11-22 10:30:13 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
-    select
-        cr1_0.id,
-        cr1_0.consultation_content,
-        cr1_0.consultation_date,
-        cr1_0.consultation_time,
-        cr1_0.created_at,
-        cr1_0.hospital_name,
-        cr1_0.name,
-        cr1_0.phone,
-        cr1_0.status,
-        cr1_0.updated_at 
-    from
-        con_reg cr1_0 
-    order by
-        cr1_0.created_at desc 
-    limit
-        ?, ?
-2025-11-22 10:30:13 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 10:30:13 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [admin/consultation-request], model {success=문의상태가 변경되었습니다., adminAuthority=모든권한, canRead=true, canReply=true, canModify=true, consultations=[ConReg{id=3, name='정재우', hospitalName='재우병원3', phone='01023453433', consultationDate=2025-10-23, consultationTime=11:42, consultationContent='ㅇㄹㄴㅁㄹㄴㄹㄴㅁㄻㄴㅇㄹ
-ㄴㅇㄹㄴㅁㅇㄹㄴㅇㅁㄹㅇㄴㅁㄹ', status='답변 진행중', createdAt=2025-10-01T07:39, updatedAt=2025-11-22T10:30:13}, ConReg{id=4, name='정재우', hospitalName='재우병원3', phone='01023453433', consultationDate=2025-10-23, consultationTime=11:42, consultationContent='ㅇㄹㄴㅁㄹㄴㄹㄴㅁㄻㄴㅇㄹ
-ㄴㅇㄹㄴㅁㅇㄹㄴㅇㅁㄹㅇㄴㅁㄹ', status='대기', createdAt=2025-10-01T07:39, updatedAt=2025-10-01T07:39}, ConReg{id=2, name='정재일', hospitalName='재일병원', phone='024662357', consultationDate=2025-09-23, consultationTime=13:42, consultationContent='상담하고파
-이제 상담하자', status='대기', createdAt=2025-09-23T23:39:55, updatedAt=2025-09-23T23:39:55}, ConReg{id=1, name='정재우', hospitalName='재우병원', phone='01212121', consultationDate=2025-09-26, consultationTime=14:37, consultationContent='ㅇㄹㄴㅇㄹㅇㄹㅇㄴㄹㅇㄴㄹㅇㄹ
-ㄴㅇㄹㅇㄴㄹㄴㅇㄹㅇㄴㄹ', status='대기', createdAt=2025-09-23T23:33:45, updatedAt=2025-09-23T23:33:45}], currentPage=0, totalPages=1, totalElements=4, size=10, searchType=consultationContent, searchValue=, sortBy=createdAt, sortDir=desc}
-2025-11-22 10:30:13 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/consultation-request.jsp]
-2025-11-22 10:30:17 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
-    select
-        cr1_0.id,
-        cr1_0.consultation_content,
-        cr1_0.consultation_date,
-        cr1_0.consultation_time,
-        cr1_0.created_at,
-        cr1_0.hospital_name,
-        cr1_0.name,
-        cr1_0.phone,
-        cr1_0.status,
-        cr1_0.updated_at 
-    from
-        con_reg cr1_0 
-    where
-        cr1_0.id=?
-2025-11-22 10:30:17 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
-    update
-        con_reg 
-    set
-        consultation_content=?,
-        consultation_date=?,
-        consultation_time=?,
-        hospital_name=?,
-        name=?,
-        phone=?,
-        status=?,
-        updated_at=? 
-    where
-        id=?
-2025-11-22 10:30:17 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.RedirectView - View name [redirect:], model {}
-2025-11-22 10:30:17 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
-    select
-        cr1_0.id,
-        cr1_0.consultation_content,
-        cr1_0.consultation_date,
-        cr1_0.consultation_time,
-        cr1_0.created_at,
-        cr1_0.hospital_name,
-        cr1_0.name,
-        cr1_0.phone,
-        cr1_0.status,
-        cr1_0.updated_at 
-    from
-        con_reg cr1_0 
-    order by
-        cr1_0.created_at desc 
-    limit
-        ?, ?
-2025-11-22 10:30:17 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 10:30:17 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [admin/consultation-request], model {success=문의상태가 변경되었습니다., adminAuthority=모든권한, canRead=true, canReply=true, canModify=true, consultations=[ConReg{id=3, name='정재우', hospitalName='재우병원3', phone='01023453433', consultationDate=2025-10-23, consultationTime=11:42, consultationContent='ㅇㄹㄴㅁㄹㄴㄹㄴㅁㄻㄴㅇㄹ
-ㄴㅇㄹㄴㅁㅇㄹㄴㅇㅁㄹㅇㄴㅁㄹ', status='답변 진행중', createdAt=2025-10-01T07:39, updatedAt=2025-11-22T10:30:13}, ConReg{id=4, name='정재우', hospitalName='재우병원3', phone='01023453433', consultationDate=2025-10-23, consultationTime=11:42, consultationContent='ㅇㄹㄴㅁㄹㄴㄹㄴㅁㄻㄴㅇㄹ
-ㄴㅇㄹㄴㅁㅇㄹㄴㅇㅁㄹㅇㄴㅁㄹ', status='답변 진행중', createdAt=2025-10-01T07:39, updatedAt=2025-11-22T10:30:17}, ConReg{id=2, name='정재일', hospitalName='재일병원', phone='024662357', consultationDate=2025-09-23, consultationTime=13:42, consultationContent='상담하고파
-이제 상담하자', status='대기', createdAt=2025-09-23T23:39:55, updatedAt=2025-09-23T23:39:55}, ConReg{id=1, name='정재우', hospitalName='재우병원', phone='01212121', consultationDate=2025-09-26, consultationTime=14:37, consultationContent='ㅇㄹㄴㅇㄹㅇㄹㅇㄴㄹㅇㄴㄹㅇㄹ
-ㄴㅇㄹㅇㄴㄹㄴㅇㄹㅇㄴㄹ', status='대기', createdAt=2025-09-23T23:33:45, updatedAt=2025-09-23T23:33:45}], currentPage=0, totalPages=1, totalElements=4, size=10, searchType=consultationContent, searchValue=, sortBy=createdAt, sortDir=desc}
-2025-11-22 10:30:17 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/consultation-request.jsp]
-2025-11-22 10:30:19 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
-    select
-        cr1_0.id,
-        cr1_0.consultation_content,
-        cr1_0.consultation_date,
-        cr1_0.consultation_time,
-        cr1_0.created_at,
-        cr1_0.hospital_name,
-        cr1_0.name,
-        cr1_0.phone,
-        cr1_0.status,
-        cr1_0.updated_at 
-    from
-        con_reg cr1_0 
-    where
-        cr1_0.id=?
-2025-11-22 10:30:19 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
-    update
-        con_reg 
-    set
-        consultation_content=?,
-        consultation_date=?,
-        consultation_time=?,
-        hospital_name=?,
-        name=?,
-        phone=?,
-        status=?,
-        updated_at=? 
-    where
-        id=?
-2025-11-22 10:30:19 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.RedirectView - View name [redirect:], model {}
-2025-11-22 10:30:19 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
-    select
-        cr1_0.id,
-        cr1_0.consultation_content,
-        cr1_0.consultation_date,
-        cr1_0.consultation_time,
-        cr1_0.created_at,
-        cr1_0.hospital_name,
-        cr1_0.name,
-        cr1_0.phone,
-        cr1_0.status,
-        cr1_0.updated_at 
-    from
-        con_reg cr1_0 
-    order by
-        cr1_0.created_at desc 
-    limit
-        ?, ?
-2025-11-22 10:30:19 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 10:30:19 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - View name [admin/consultation-request], model {success=문의상태가 변경되었습니다., adminAuthority=모든권한, canRead=true, canReply=true, canModify=true, consultations=[ConReg{id=3, name='정재우', hospitalName='재우병원3', phone='01023453433', consultationDate=2025-10-23, consultationTime=11:42, consultationContent='ㅇㄹㄴㅁㄹㄴㄹㄴㅁㄻㄴㅇㄹ
-ㄴㅇㄹㄴㅁㅇㄹㄴㅇㅁㄹㅇㄴㅁㄹ', status='답변 진행중', createdAt=2025-10-01T07:39, updatedAt=2025-11-22T10:30:13}, ConReg{id=4, name='정재우', hospitalName='재우병원3', phone='01023453433', consultationDate=2025-10-23, consultationTime=11:42, consultationContent='ㅇㄹㄴㅁㄹㄴㄹㄴㅁㄻㄴㅇㄹ
-ㄴㅇㄹㄴㅁㅇㄹㄴㅇㅁㄹㅇㄴㅁㄹ', status='미확인', createdAt=2025-10-01T07:39, updatedAt=2025-11-22T10:30:19}, ConReg{id=2, name='정재일', hospitalName='재일병원', phone='024662357', consultationDate=2025-09-23, consultationTime=13:42, consultationContent='상담하고파
-이제 상담하자', status='대기', createdAt=2025-09-23T23:39:55, updatedAt=2025-09-23T23:39:55}, ConReg{id=1, name='정재우', hospitalName='재우병원', phone='01212121', consultationDate=2025-09-26, consultationTime=14:37, consultationContent='ㅇㄹㄴㅇㄹㅇㄹㅇㄴㄹㅇㄴㄹㅇㄹ
-ㄴㅇㄹㅇㄴㄹㄴㅇㄹㅇㄴㄹ', status='대기', createdAt=2025-09-23T23:33:45, updatedAt=2025-09-23T23:33:45}], currentPage=0, totalPages=1, totalElements=4, size=10, searchType=consultationContent, searchValue=, sortBy=createdAt, sortDir=desc}
-2025-11-22 10:30:19 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/consultation-request.jsp]
-2025-11-22 10:30:22 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
-    select
-        cr1_0.id,
-        cr1_0.consultation_content,
-        cr1_0.consultation_date,
-        cr1_0.consultation_time,
-        cr1_0.created_at,
-        cr1_0.hospital_name,
-        cr1_0.name,
-        cr1_0.phone,
-        cr1_0.status,
-        cr1_0.updated_at 
-    from
-        con_reg cr1_0 
-    order by
-        cr1_0.created_at desc 
-    limit
-        ?, ?
-2025-11-22 10:30:22 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 10:30:22 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - View name [admin/consultation-request], model {adminAuthority=모든권한, canRead=true, canReply=true, canModify=true, consultations=[ConReg{id=3, name='정재우', hospitalName='재우병원3', phone='01023453433', consultationDate=2025-10-23, consultationTime=11:42, consultationContent='ㅇㄹㄴㅁㄹㄴㄹㄴㅁㄻㄴㅇㄹ
-ㄴㅇㄹㄴㅁㅇㄹㄴㅇㅁㄹㅇㄴㅁㄹ', status='답변 진행중', createdAt=2025-10-01T07:39, updatedAt=2025-11-22T10:30:13}, ConReg{id=4, name='정재우', hospitalName='재우병원3', phone='01023453433', consultationDate=2025-10-23, consultationTime=11:42, consultationContent='ㅇㄹㄴㅁㄹㄴㄹㄴㅁㄻㄴㅇㄹ
-ㄴㅇㄹㄴㅁㅇㄹㄴㅇㅁㄹㅇㄴㅁㄹ', status='미확인', createdAt=2025-10-01T07:39, updatedAt=2025-11-22T10:30:19}, ConReg{id=2, name='정재일', hospitalName='재일병원', phone='024662357', consultationDate=2025-09-23, consultationTime=13:42, consultationContent='상담하고파
-이제 상담하자', status='대기', createdAt=2025-09-23T23:39:55, updatedAt=2025-09-23T23:39:55}, ConReg{id=1, name='정재우', hospitalName='재우병원', phone='01212121', consultationDate=2025-09-26, consultationTime=14:37, consultationContent='ㅇㄹㄴㅇㄹㅇㄹㅇㄴㄹㅇㄴㄹㅇㄹ
-ㄴㅇㄹㅇㄴㄹㄴㅇㄹㅇㄴㄹ', status='대기', createdAt=2025-09-23T23:33:45, updatedAt=2025-09-23T23:33:45}], currentPage=0, totalPages=1, totalElements=4, size=10, searchType=consultationContent, searchValue=, sortBy=createdAt, sortDir=desc}
-2025-11-22 10:30:22 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/consultation-request.jsp]
-2025-11-22 14:41:32 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 14:41:32 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [admin/login], model {adminAuthority=null, canRead=false, canReply=false, canModify=false}
-2025-11-22 14:41:32 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/login.jsp]
-2025-11-22 14:41:34 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
-    select
-        a1_0.admin_no,
-        a1_0.admin_id,
-        a1_0.authority,
-        a1_0.created_at,
-        a1_0.department,
-        a1_0.email,
-        a1_0.name,
-        a1_0.password,
-        a1_0.phone,
-        a1_0.position,
-        a1_0.`rank`,
-        a1_0.updated_at 
-    from
-        admin a1_0 
-    where
-        a1_0.admin_id=? 
-        and a1_0.password=?
-2025-11-22 14:41:34 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.view.RedirectView - View name [redirect:], model {}
-2025-11-22 14:41:34 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+        ?
+2025-11-27 07:23:18 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-11-27 07:23:18 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [admin/inquiry-history], model {adminAuthority=모든권한, canRead=true, canReply=true, canModify=true, inquiries=[com.shinki.shinki.entity.Inquiry@24cdb449, com.shinki.shinki.entity.Inquiry@70db3fd6, com.shinki.shinki.entity.Inquiry@13e6cf37, com.shinki.shinki.entity.Inquiry@42e65979, com.shinki.shinki.entity.Inquiry@bc0c290, com.shinki.shinki.entity.Inquiry@22cc69b1], currentPage=0, totalPages=1, totalElements=6, size=10, search=null}
+2025-11-27 07:23:18 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/inquiry-history.jsp]
+2025-11-27 07:23:21 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
     select
         a1_0.admin_no,
         a1_0.admin_id,
@@ -769,104 +211,37 @@
         a1_0.admin_no desc 
     limit
         ?, ?
-2025-11-22 14:41:34 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 14:41:34 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - View name [admin/admin-account], model {adminAuthority=모든권한, canRead=true, canReply=true, canModify=true, admins=[com.shinki.shinki.entity.Admin@4d99409e, com.shinki.shinki.entity.Admin@77c491ff, com.shinki.shinki.entity.Admin@795fe9f8, com.shinki.shinki.entity.Admin@7e32bddc, com.shinki.shinki.entity.Admin@79a89f34, com.shinki.shinki.entity.Admin@2a30b297, com.shinki.shinki.entity.Admin@2ca69e00], currentPage=0, totalPages=1, totalElements=7, size=10}
-2025-11-22 14:41:34 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/admin-account.jsp]
-2025-11-22 14:41:42 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
-    select
-        cr1_0.id,
-        cr1_0.consultation_content,
-        cr1_0.consultation_date,
-        cr1_0.consultation_time,
-        cr1_0.created_at,
-        cr1_0.hospital_name,
-        cr1_0.name,
-        cr1_0.phone,
-        cr1_0.status,
-        cr1_0.updated_at 
-    from
-        con_reg cr1_0 
-    order by
-        cr1_0.created_at desc 
-    limit
-        ?, ?
-2025-11-22 14:41:42 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 14:41:42 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - View name [admin/consultation-request], model {adminAuthority=모든권한, canRead=true, canReply=true, canModify=true, consultations=[ConReg{id=3, name='정재우', hospitalName='재우병원3', phone='01023453433', consultationDate=2025-10-23, consultationTime=11:42, consultationContent='ㅇㄹㄴㅁㄹㄴㄹㄴㅁㄻㄴㅇㄹ
-ㄴㅇㄹㄴㅁㅇㄹㄴㅇㅁㄹㅇㄴㅁㄹ', status='답변 진행중', createdAt=2025-10-01T07:39, updatedAt=2025-11-22T10:30:13}, ConReg{id=4, name='정재우', hospitalName='재우병원3', phone='01023453433', consultationDate=2025-10-23, consultationTime=11:42, consultationContent='ㅇㄹㄴㅁㄹㄴㄹㄴㅁㄻㄴㅇㄹ
-ㄴㅇㄹㄴㅁㅇㄹㄴㅇㅁㄹㅇㄴㅁㄹ', status='미확인', createdAt=2025-10-01T07:39, updatedAt=2025-11-22T10:30:19}, ConReg{id=2, name='정재일', hospitalName='재일병원', phone='024662357', consultationDate=2025-09-23, consultationTime=13:42, consultationContent='상담하고파
-이제 상담하자', status='대기', createdAt=2025-09-23T23:39:55, updatedAt=2025-09-23T23:39:55}, ConReg{id=1, name='정재우', hospitalName='재우병원', phone='01212121', consultationDate=2025-09-26, consultationTime=14:37, consultationContent='ㅇㄹㄴㅇㄹㅇㄹㅇㄴㄹㅇㄴㄹㅇㄹ
-ㄴㅇㄹㅇㄴㄹㄴㅇㄹㅇㄴㄹ', status='대기', createdAt=2025-09-23T23:33:45, updatedAt=2025-09-23T23:33:45}], currentPage=0, totalPages=1, totalElements=4, size=10, searchType=consultationContent, searchValue=, sortBy=createdAt, sortDir=desc}
-2025-11-22 14:41:42 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/consultation-request.jsp]
-2025-11-22 14:42:03 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
-    select
-        cr1_0.id,
-        cr1_0.consultation_content,
-        cr1_0.consultation_date,
-        cr1_0.consultation_time,
-        cr1_0.created_at,
-        cr1_0.hospital_name,
-        cr1_0.name,
-        cr1_0.phone,
-        cr1_0.status,
-        cr1_0.updated_at 
-    from
-        con_reg cr1_0 
-    order by
-        cr1_0.created_at desc 
-    limit
-        ?, ?
-2025-11-22 14:42:03 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 14:42:03 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [admin/consultation-request], model {adminAuthority=모든권한, canRead=true, canReply=true, canModify=true, consultations=[ConReg{id=3, name='정재우', hospitalName='재우병원3', phone='01023453433', consultationDate=2025-10-23, consultationTime=11:42, consultationContent='ㅇㄹㄴㅁㄹㄴㄹㄴㅁㄻㄴㅇㄹ
-ㄴㅇㄹㄴㅁㅇㄹㄴㅇㅁㄹㅇㄴㅁㄹ', status='답변 진행중', createdAt=2025-10-01T07:39, updatedAt=2025-11-22T10:30:13}, ConReg{id=4, name='정재우', hospitalName='재우병원3', phone='01023453433', consultationDate=2025-10-23, consultationTime=11:42, consultationContent='ㅇㄹㄴㅁㄹㄴㄹㄴㅁㄻㄴㅇㄹ
-ㄴㅇㄹㄴㅁㅇㄹㄴㅇㅁㄹㅇㄴㅁㄹ', status='미확인', createdAt=2025-10-01T07:39, updatedAt=2025-11-22T10:30:19}, ConReg{id=2, name='정재일', hospitalName='재일병원', phone='024662357', consultationDate=2025-09-23, consultationTime=13:42, consultationContent='상담하고파
-이제 상담하자', status='대기', createdAt=2025-09-23T23:39:55, updatedAt=2025-09-23T23:39:55}, ConReg{id=1, name='정재우', hospitalName='재우병원', phone='01212121', consultationDate=2025-09-26, consultationTime=14:37, consultationContent='ㅇㄹㄴㅇㄹㅇㄹㅇㄴㄹㅇㄴㄹㅇㄹ
-ㄴㅇㄹㅇㄴㄹㄴㅇㄹㅇㄴㄹ', status='대기', createdAt=2025-09-23T23:33:45, updatedAt=2025-09-23T23:33:45}], currentPage=0, totalPages=1, totalElements=4, size=10, searchType=consultationContent, searchValue=, sortBy=createdAt, sortDir=desc}
-2025-11-22 14:42:03 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/consultation-request.jsp]
-2025-11-22 14:42:16 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
-    select
-        cr1_0.id,
-        cr1_0.consultation_content,
-        cr1_0.consultation_date,
-        cr1_0.consultation_time,
-        cr1_0.created_at,
-        cr1_0.hospital_name,
-        cr1_0.name,
-        cr1_0.phone,
-        cr1_0.status,
-        cr1_0.updated_at 
-    from
-        con_reg cr1_0 
-    order by
-        cr1_0.created_at desc 
-    limit
-        ?, ?
-2025-11-22 14:42:16 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-11-22 14:42:16 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [admin/consultation-request], model {adminAuthority=모든권한, canRead=true, canReply=true, canModify=true, consultations=[ConReg{id=3, name='정재우', hospitalName='재우병원3', phone='01023453433', consultationDate=2025-10-23, consultationTime=11:42, consultationContent='ㅇㄹㄴㅁㄹㄴㄹㄴㅁㄻㄴㅇㄹ
-ㄴㅇㄹㄴㅁㅇㄹㄴㅇㅁㄹㅇㄴㅁㄹ', status='답변 진행중', createdAt=2025-10-01T07:39, updatedAt=2025-11-22T10:30:13}, ConReg{id=4, name='정재우', hospitalName='재우병원3', phone='01023453433', consultationDate=2025-10-23, consultationTime=11:42, consultationContent='ㅇㄹㄴㅁㄹㄴㄹㄴㅁㄻㄴㅇㄹ
-ㄴㅇㄹㄴㅁㅇㄹㄴㅇㅁㄹㅇㄴㅁㄹ', status='미확인', createdAt=2025-10-01T07:39, updatedAt=2025-11-22T10:30:19}, ConReg{id=2, name='정재일', hospitalName='재일병원', phone='024662357', consultationDate=2025-09-23, consultationTime=13:42, consultationContent='상담하고파
-이제 상담하자', status='대기', createdAt=2025-09-23T23:39:55, updatedAt=2025-09-23T23:39:55}, ConReg{id=1, name='정재우', hospitalName='재우병원', phone='01212121', consultationDate=2025-09-26, consultationTime=14:37, consultationContent='ㅇㄹㄴㅇㄹㅇㄹㅇㄴㄹㅇㄴㄹㅇㄹ
-ㄴㅇㄹㅇㄴㄹㄴㅇㄹㅇㄴㄹ', status='대기', createdAt=2025-09-23T23:33:45, updatedAt=2025-09-23T23:33:45}], currentPage=0, totalPages=1, totalElements=4, size=10, searchType=consultationContent, searchValue=, sortBy=createdAt, sortDir=desc}
-2025-11-22 14:42:16 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/consultation-request.jsp]
-2025-11-22 14:42:42 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 37 class path changes (0 additions, 37 deletions, 0 modifications)
-2025-11-22 14:42:42 [Thread-5] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-11-22 14:42:42 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
-2025-11-22 14:42:42 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-11-22 14:42:42 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-11-22 14:42:42 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-11-22 15:03:40 [main] INFO  c.s.shinki.ShinkiApplicationTests - Starting ShinkiApplicationTests using Java 21.0.7 with PID 8600 (started by zetta in D:\Project\Zetta_Git\shinki-new)
-2025-11-22 15:03:40 [main] DEBUG c.s.shinki.ShinkiApplicationTests - Running with Spring Boot v3.5.5, Spring v6.2.10
-2025-11-22 15:03:40 [main] INFO  c.s.shinki.ShinkiApplicationTests - No active profile set, falling back to 1 default profile: "default"
-2025-11-22 15:03:42 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-11-22 15:03:42 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 188 ms. Found 7 JPA repository interfaces.
-2025-11-22 15:03:43 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-11-22 15:03:44 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@273fa9e
-2025-11-22 15:03:44 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-11-22 15:03:45 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-11-22 15:03:45 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-11-22 15:03:45 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-11-22 15:03:46 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-11-22 15:03:46 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-11-22 15:03:46 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+2025-11-27 07:23:21 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-11-27 07:23:21 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [admin/admin-account], model {adminAuthority=모든권한, canRead=true, canReply=true, canModify=true, admins=[com.shinki.shinki.entity.Admin@11815d4f, com.shinki.shinki.entity.Admin@97cc2dd, com.shinki.shinki.entity.Admin@1c01b42, com.shinki.shinki.entity.Admin@5468828f, com.shinki.shinki.entity.Admin@4f18d668, com.shinki.shinki.entity.Admin@209d8f7c, com.shinki.shinki.entity.Admin@21069a26], currentPage=0, totalPages=1, totalElements=7, size=10}
+2025-11-27 07:23:21 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/admin-account.jsp]
+2025-11-27 07:25:49 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 37 class path changes (0 additions, 37 deletions, 0 modifications)
+2025-11-27 07:25:49 [Thread-5] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-27 07:25:49 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-11-27 07:25:50 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-27 07:25:50 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-11-27 07:25:50 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-11-27 07:32:28 [restartedMain] INFO  com.shinki.shinki.ShinkiApplication - Starting ShinkiApplication using Java 21.0.7 with PID 3864 (D:\Project\Zetta_Git\shinki-new\target\classes started by zetta in D:\Project\Zetta_Git\shinki-new)
+2025-11-27 07:32:28 [restartedMain] DEBUG com.shinki.shinki.ShinkiApplication - Running with Spring Boot v3.5.5, Spring v6.2.10
+2025-11-27 07:32:28 [restartedMain] INFO  com.shinki.shinki.ShinkiApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-27 07:32:28 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-27 07:32:28 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-27 07:32:29 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-27 07:32:29 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 103 ms. Found 7 JPA repository interfaces.
+2025-11-27 07:32:30 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-11-27 07:32:30 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-27 07:32:30 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-11-27 07:32:31 [restartedMain] INFO  o.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2025-11-27 07:32:31 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-27 07:32:31 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2903 ms
+2025-11-27 07:32:31 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-11-27 07:32:31 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1f1670f8
+2025-11-27 07:32:31 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-11-27 07:32:31 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-27 07:32:32 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-11-27 07:32:32 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-11-27 07:32:32 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-27 07:32:32 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-27 07:32:32 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0.42
@@ -874,20 +249,106 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-11-22 15:03:48 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-11-22 15:03:48 [main] DEBUG org.hibernate.SQL - 
+2025-11-27 07:32:34 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-27 07:32:34 [restartedMain] DEBUG org.hibernate.SQL - 
     alter table member 
        modify column status VARCHAR(1) DEFAULT 'Y' not null
-2025-11-22 15:03:48 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-11-22 15:03:49 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-11-22 15:03:55 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-11-22 15:03:55 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
-2025-11-22 15:03:56 [main] INFO  c.s.shinki.ShinkiApplicationTests - Started ShinkiApplicationTests in 16.836 seconds (process running for 20.077)
-2025-11-22 15:03:56 [main] DEBUG org.hibernate.SQL - 
+2025-11-27 07:32:34 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-27 07:32:34 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-11-27 07:32:38 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-27 07:32:38 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2025-11-27 07:32:38 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/shinki?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8&allowPublicKeyRetrieval=true'
+2025-11-27 07:32:38 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-11-27 07:32:38 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-11-27 07:32:38 [restartedMain] INFO  com.shinki.shinki.ShinkiApplication - Started ShinkiApplication in 11.355 seconds (process running for 12.008)
+2025-11-27 07:32:39 [restartedMain] DEBUG org.hibernate.SQL - 
     select
         count(*) 
     from
         member m1_0
-2025-11-22 15:03:57 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-11-22 15:03:57 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-11-22 15:03:57 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-11-27 07:32:43 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-27 07:32:43 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-11-27 07:32:43 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-11-27 07:32:43 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-11-27 07:32:43 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {message=Hello from Spring Boot JSP!}
+2025-11-27 07:32:43 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/index.jsp]
+2025-11-27 07:32:46 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
+2025-11-27 07:32:46 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - View name [error], model {status=404, timestamp=2025-11-27T07:32:46.313070600}
+2025-11-27 07:32:46 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/error.jsp]
+2025-11-27 07:32:48 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-11-27 07:32:49 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [admin/login], model {adminAuthority=null, canRead=false, canReply=false, canModify=false}
+2025-11-27 07:32:49 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/login.jsp]
+2025-11-27 07:32:52 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at 
+    from
+        admin a1_0 
+    where
+        a1_0.admin_id=? 
+        and a1_0.password=?
+2025-11-27 07:32:53 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.RedirectView - View name [redirect:], model {}
+2025-11-27 07:32:53 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.admin_no,
+        a1_0.admin_id,
+        a1_0.authority,
+        a1_0.created_at,
+        a1_0.department,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password,
+        a1_0.phone,
+        a1_0.position,
+        a1_0.`rank`,
+        a1_0.updated_at 
+    from
+        admin a1_0 
+    order by
+        a1_0.admin_no desc 
+    limit
+        ?, ?
+2025-11-27 07:32:53 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-11-27 07:32:53 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - View name [admin/admin-account], model {adminAuthority=모든권한, canRead=true, canReply=true, canModify=true, admins=[com.shinki.shinki.entity.Admin@416ed726, com.shinki.shinki.entity.Admin@75d10e7a, com.shinki.shinki.entity.Admin@2ba093af, com.shinki.shinki.entity.Admin@1a60fa3c, com.shinki.shinki.entity.Admin@2d00c9b1, com.shinki.shinki.entity.Admin@505fa0b5, com.shinki.shinki.entity.Admin@7f4d7cfa], currentPage=0, totalPages=1, totalElements=7, size=10}
+2025-11-27 07:32:53 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/admin-account.jsp]
+2025-11-27 07:33:00 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        cr1_0.id,
+        cr1_0.consultation_content,
+        cr1_0.consultation_date,
+        cr1_0.consultation_time,
+        cr1_0.created_at,
+        cr1_0.hospital_name,
+        cr1_0.name,
+        cr1_0.phone,
+        cr1_0.status,
+        cr1_0.updated_at 
+    from
+        con_reg cr1_0 
+    order by
+        cr1_0.created_at desc 
+    limit
+        ?, ?
+2025-11-27 07:33:00 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-11-27 07:33:00 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [admin/consultation-request], model {adminAuthority=모든권한, canRead=true, canReply=true, canModify=true, consultations=[ConReg{id=3, name='정재우', hospitalName='재우병원3', phone='01023453433', consultationDate=2025-10-23, consultationTime=11:42, consultationContent='ㅇㄹㄴㅁㄹㄴㄹㄴㅁㄻㄴㅇㄹ
+ㄴㅇㄹㄴㅁㅇㄹㄴㅇㅁㄹㅇㄴㅁㄹ', status='답변 진행중', createdAt=2025-10-01T07:39, updatedAt=2025-11-22T10:30:13}, ConReg{id=4, name='정재우', hospitalName='재우병원3', phone='01023453433', consultationDate=2025-10-23, consultationTime=11:42, consultationContent='ㅇㄹㄴㅁㄹㄴㄹㄴㅁㄻㄴㅇㄹ
+ㄴㅇㄹㄴㅁㅇㄹㄴㅇㅁㄹㅇㄴㅁㄹ', status='미확인', createdAt=2025-10-01T07:39, updatedAt=2025-11-22T10:30:19}, ConReg{id=2, name='정재일', hospitalName='재일병원', phone='024662357', consultationDate=2025-09-23, consultationTime=13:42, consultationContent='상담하고파
+이제 상담하자', status='대기', createdAt=2025-09-23T23:39:55, updatedAt=2025-09-23T23:39:55}, ConReg{id=1, name='정재우', hospitalName='재우병원', phone='01212121', consultationDate=2025-09-26, consultationTime=14:37, consultationContent='ㅇㄹㄴㅇㄹㅇㄹㅇㄴㄹㅇㄴㄹㅇㄹ
+ㄴㅇㄹㅇㄴㄹㄴㅇㄹㅇㄴㄹ', status='대기', createdAt=2025-09-23T23:33:45, updatedAt=2025-09-23T23:33:45}], currentPage=0, totalPages=1, totalElements=4, size=10, searchType=consultationContent, searchValue=, sortBy=createdAt, sortDir=desc}
+2025-11-27 07:33:00 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/WEB-INF/views/admin/consultation-request.jsp]
+2025-11-27 07:33:31 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 37 class path changes (0 additions, 37 deletions, 0 modifications)
+2025-11-27 07:33:31 [Thread-5] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-27 07:33:31 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-11-27 07:33:31 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-27 07:33:31 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-11-27 07:33:31 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

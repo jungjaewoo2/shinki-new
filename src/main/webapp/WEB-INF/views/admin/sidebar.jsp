@@ -10,9 +10,9 @@
                 <span><i class="bi bi-caret-down-fill"></i></span>
             </div>
             <div class="nav-items">
-                <div class="nav-item" onclick="location.href='admin-account'">관리자 계정</div>
-                <div class="nav-item" onclick="location.href='subscription-fee-info'">구독료 안내</div>
-                <div class="nav-item" onclick="location.href='payment-coupon-management'">결제&amp;쿠폰관리</div>
+                <div class="nav-item" onclick="location.href='/admin/admin-account'">관리자 계정</div>
+                <div class="nav-item" onclick="location.href='/admin/subscription-fee-info'">구독료 안내</div>
+                <div class="nav-item" onclick="location.href='/admin/payment-coupon-management'">결제&amp;쿠폰관리</div>
             </div>
         </div>
 
@@ -22,8 +22,8 @@
                 <span><i class="bi bi-caret-down-fill"></i></span>
             </div>
             <div class="nav-items">
-                <div class="nav-item" onclick="location.href='membership-management'">가입회원 관리</div>
-                <div class="nav-item" onclick="location.href='withdrawal-management'">탈퇴회원 관리</div>
+                <div class="nav-item" onclick="location.href='/admin/membership-management'">가입회원 관리</div>
+                <div class="nav-item" onclick="location.href='/admin/withdrawal-management'">탈퇴회원 관리</div>
             </div>
         </div>
 
@@ -33,7 +33,7 @@
                 <span><i class="bi bi-caret-down-fill"></i></span>
             </div>
             <div class="nav-items">
-                <div class="nav-item" onclick="location.href='request-history'">의뢰내역조회</div>
+                <div class="nav-item" onclick="location.href='/admin/request-history'">의뢰내역조회</div>
             </div>
         </div>
 
@@ -43,7 +43,7 @@
                 <span><i class="bi bi-caret-down-fill"></i></span>
             </div>
             <div class="nav-items">
-                <div class="nav-item" onclick="location.href='inquiry-history'">문의내역조회</div>
+                <div class="nav-item" onclick="location.href='/admin/inquiry-history'">문의내역조회</div>
             </div>
         </div>
 
@@ -53,7 +53,7 @@
                 <span><i class="bi bi-caret-down-fill"></i></span>
             </div>
             <div class="nav-items">
-                <div class="nav-item" onclick="location.href='dashboard'">통계</div>
+                <div class="nav-item" onclick="location.href='/admin/dashboard'">통계</div>
             </div>
         </div>
         
@@ -63,7 +63,7 @@
                 <span><i class="bi bi-caret-down-fill"></i></span>
             </div>
             <div class="nav-items">
-                <div class="nav-item" onclick="location.href='consultation-request'">상담신청 내역조회</div>
+                <div class="nav-item" onclick="location.href='/admin/consultation-request'">상담신청 내역조회</div>
             </div>
         </div>
         
@@ -72,7 +72,7 @@
     <div class="d-block d-lg-none " style="padding: 15px 20px;font-weight: bold;">
         <div class="d-flex flex-column gap-2">
             <div><i class="bi bi-person-circle fs-5"></i> 관리자페이지</div>
-        <div onclick="location.href='login'"><i class="bi bi-box-arrow-right fs-5"></i> 로그아웃</div>
+        <div onclick="location.href='/admin/logout'"><i class="bi bi-box-arrow-right fs-5"></i> 로그아웃</div>
         </div>
     </div>
     <div class="sidebar-logo ps-3 pb-3" style="bottom: 5%"><img src="/assets/images/logo_header.png" height="45"></div>

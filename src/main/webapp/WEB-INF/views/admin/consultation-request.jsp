@@ -50,8 +50,8 @@
                         <col width="15%">
                         <col width="10%">
                         <col width="15%">
-                        <col width="10%">
                         <col width="35%">
+                        <col width="10%">
                         <col width="10%">
                     </colgroup>
                     <thead>
@@ -60,9 +60,9 @@
                             <th>병원명</th>
                             <th>이름</th>
                             <th>전화번호</th>
-                            <th>문의상태</th>
                             <th>상담내용</th>
                             <th>상담날짜</th>
+                            <th>문의상태</th>
                         </tr>
                     </thead>
                      <tbody class="">
@@ -74,17 +74,6 @@
                                         <td>${consultation.hospitalName}</td>
                                         <td>${consultation.name}</td>
                                         <td>${consultation.phone}</td>
-                                        <td>
-                                            <form method="post" action="<c:url value='/admin/consultation-request/update-status' />" class="m-0 p-0">
-                                                <input type="hidden" name="consultationId" value="${consultation.id}">
-                                                <select name="status" class="form-select form-select-sm" onchange="this.form.submit()">
-                                                    <c:set var="currentStatus" value="${empty consultation.status ? '미확인' : consultation.status}" />
-                                                    <option value="미확인" ${currentStatus == '미확인' ? 'selected' : ''}>미확인</option>
-                                                    <option value="답변 진행중" ${currentStatus == '답변 진행중' ? 'selected' : ''}>답변 진행중</option>
-                                                    <option value="답변 완료" ${currentStatus == '답변 완료' ? 'selected' : ''}>답변 완료</option>
-                                                </select>
-                                            </form>
-                                        </td>
                                         <td class="text-start">
                                             <c:choose>
                                                 <c:when test="${fn:length(consultation.consultationContent) > 50}">
@@ -99,12 +88,23 @@
                                             ${consultation.consultationDate}<br>
                                             ${consultation.consultationTime}
                                         </td>
+                                        <td>
+                                            <form method="post" action="<c:url value='/admin/consultation-request/update-status' />" class="m-0 p-0">
+                                                <input type="hidden" name="consultationId" value="${consultation.id}">
+                                                <select name="status" class="form-select form-select-sm" onchange="this.form.submit()">
+                                                    <c:set var="currentStatus" value="${empty consultation.status ? '미확인' : consultation.status}" />
+                                                    <option value="미확인" ${currentStatus == '미확인' ? 'selected' : ''}>미확인</option>
+                                                    <option value="답변 진행중" ${currentStatus == '답변 진행중' ? 'selected' : ''}>답변 진행중</option>
+                                                    <option value="답변 완료" ${currentStatus == '답변 완료' ? 'selected' : ''}>답변 완료</option>
+                                                </select>
+                                            </form>
+                                        </td>
                                      </tr>
                                  </c:forEach>
                              </c:when>
                              <c:otherwise>
                                  <tr>
-                                     <td colspan="6" class="text-center">등록된 상담신청이 없습니다.</td>
+                                     <td colspan="7" class="text-center">등록된 상담신청이 없습니다.</td>
                                  </tr>
                              </c:otherwise>
                          </c:choose>
